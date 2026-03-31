@@ -1,6 +1,9 @@
 import json
 import urllib.request
 import csv
+from pathlib import Path
+
+DB_ROOT = Path(__file__).resolve().parent.parent
 def fetch_json(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req) as response:
@@ -46,8 +49,8 @@ def scrape_recent(fileName):
                 appended_urls.add(replay_url)
 
 def main():
-    # scrape_all("replaysDraft.csv")
-    scrape_recent("test.csv")
+    replay_csv_path = DB_ROOT / 'CSV' / 'replaysDraftTest.csv'
+    scrape_recent(replay_csv_path)
 
 if __name__ == "__main__":
     main()
