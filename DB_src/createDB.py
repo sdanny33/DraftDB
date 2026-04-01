@@ -94,8 +94,8 @@ def nothing():
 
 def main():
     dbName = DB_ROOT / 'database' / 'monDBTest.sqlite'
-    replay_csv_path = DB_ROOT / 'CSV' / 'replaysDraftTest.csv'
-    archive_csv_path = DB_ROOT / 'CSV' / 'replaysDraft.csv'
+    replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
+    archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
     update_db(replay_csv_path, dbName, archive_csv_path)
     update_column(dbName)
     nothing()

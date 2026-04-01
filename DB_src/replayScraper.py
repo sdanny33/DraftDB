@@ -49,7 +49,7 @@ def scrape_recent(fileName):
                 appended_urls.add(replay_url)
 
 def main():
-    replay_csv_path = DB_ROOT / 'CSV' / 'replaysDraftTest.csv'
+    replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
     scrape_recent(replay_csv_path)
 
 if __name__ == "__main__":
