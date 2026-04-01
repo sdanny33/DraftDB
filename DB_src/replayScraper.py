@@ -23,6 +23,21 @@ def scrape_all(fileName):
                 replay_url = f"https://replay.pokemonshowdown.com/{id}.json"
                 writer.writerow([replay_url])
 
+def scrape_time(fileName, startTime, endTime):
+    time = startTime
+    while time > endTime:
+        url = f"https://replay.pokemonshowdown.com/search.json?format=gen9draft&before={time}"
+        data = fetch_json(url)
+        print(f"Fetched page with {len(data)} replays.")
+        ids = [item["id"] for item in data]
+        times = [item["uploadtime"] for item in data]
+        with open(fileName, 'a', newline='') as file:
+            writer = csv.writer(file)
+            for id in ids:
+                replay_url = f"https://replay.pokemonshowdown.com/{id}.json"
+                writer.writerow([replay_url])
+        time = min(times)
+
 def scrape_recent(fileName):
     existing_urls = set()
     with open(fileName, 'r') as file:
@@ -51,6 +66,7 @@ def scrape_recent(fileName):
 def main():
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
     scrape_recent(replay_csv_path)
+    # scrape_time(replay_csv_path, 1767992260, 1767000000)
 
 if __name__ == "__main__":
     main()
