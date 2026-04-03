@@ -1,7 +1,9 @@
 import urllib.request
+import urllib.error
 import json
 from mon import Mon
 import sqlite3
+import time
 
 player1, player2 = "", ""
 players = {
@@ -9,15 +11,22 @@ players = {
     "p2": []
 }
 
-def fetch_json(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req) as response:
-        html = response.read().decode('utf-8')
-        data = json.loads(html)
-        return data
+def fetch_json(url, timeout=15, max_retries=3, retry_backoff=0.5):
+    last_error = None
+    for attempt in range(max_retries):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=timeout) as response:
+                return json.load(response)
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as error:
+            last_error = error
+            if attempt < max_retries - 1:
+                time.sleep(retry_backoff * (2 ** attempt))
 
-def teams(log):
-    for line in log.split("\n"):
+    raise RuntimeError(f"Failed to fetch replay JSON from {url}") from last_error
+
+def teams(lines):
+    for line in lines:
         if line.startswith("|poke|p1|"):
             name = line.split("|poke|p1|")[1].split(",")[0].strip("|")
             players["p1"].append(Mon(name))
@@ -25,8 +34,8 @@ def teams(log):
             name = line.split("|poke|p2|")[1].split(",")[0].strip("|")
             players["p2"].append(Mon(name))
 
-def nickname(log):
-    for line in log.split("\n"):
+def nickname(lines):
+    for line in lines:
         if line.startswith("|switch|"):
             parts = line.split("|")
             nickname = parts[2]
@@ -38,8 +47,8 @@ def nickname(log):
                     elif (players["p2"][i].name == species):
                         players["p2"][i].set_nickname(nickname)
 
-def faint(log):
-    for line in log.split("\n"):
+def faint(lines):
+    for line in lines:
         if line.startswith("|faint|"):
             parts = line.split("|")
             nickname = parts[2]
@@ -55,10 +64,10 @@ def actors(line) -> tuple[str, str]:
     nickname2 = parts[4]
     return nickname1, nickname2
 
-def kd(log):
+def kd(lines):
     actor1 = None
     actor2 = None
-    for line in log.split("\n"):
+    for line in lines:
         if line.startswith("|move|"):
             actor1, actor2 = actors(line)
         if line.startswith("|faint|"):
@@ -80,8 +89,8 @@ def games_played():
         players["p1"][i].increment_games()
         players["p2"][i].increment_games()
 
-def wins(log):
-    for line in log.split("\n"):
+def wins(lines):
+    for line in lines:
         if line.startswith("|win|"):
             winner = line.split("|win|")[1]
             if winner == player1:
@@ -101,19 +110,29 @@ def print_stats():
         players["p2"][i].print_stats()
     print()
 
-def save_to_db(dbName):
-    conn = sqlite3.connect(dbName)
-    cursor = conn.cursor()
+def save_to_db(dbName=None, cursor=None):
+    own_connection = False
+    if cursor is None:
+        if dbName is None:
+            raise ValueError("dbName is required when cursor is not provided")
+        conn = sqlite3.connect(dbName)
+        cursor = conn.cursor()
+        own_connection = True
 
-    def add_mon_stats(mon):
-        cursor.execute('''UPDATE mons SET kills = kills + ?, deaths = deaths + ?, games_played = games_played + ?, wins = wins + ? WHERE name = ?''', (mon.kills, mon.deaths, mon.games_played, mon.wins, mon.name))
-
+    updates = []
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-        add_mon_stats(players["p1"][i])
-        add_mon_stats(players["p2"][i])
+        updates.append((players["p1"][i].kills, players["p1"][i].deaths, players["p1"][i].games_played, players["p1"][i].wins, players["p1"][i].name))
+        updates.append((players["p2"][i].kills, players["p2"][i].deaths, players["p2"][i].games_played, players["p2"][i].wins, players["p2"][i].name))
 
-    conn.commit()
-    conn.close()
+    if updates:
+        cursor.executemany(
+            '''UPDATE mons SET kills = kills + ?, deaths = deaths + ?, games_played = games_played + ?, wins = wins + ? WHERE name = ?''',
+            updates,
+        )
+
+    if own_connection:
+        conn.commit()
+        conn.close()
 
 def player(data):
     player1 = data["players"][0]
@@ -126,24 +145,24 @@ def reset():
     players["p1"] = []
     players["p2"] = []
 
-def parse(url, dbName):
+def parse(url, dbName=None, cursor=None):
     data = fetch_json(url)
+    lines = data["log"].splitlines()
     global player1, player2 
     player1, player2 = player(data)
 
-    teams(data["log"])
-    nickname(data["log"])
-    faint(data["log"])
-    kd(data["log"])
-    wins(data["log"])
+    teams(lines)
+    nickname(lines)
+    faint(lines)
+    kd(lines)
+    wins(lines)
     games_played()
-    save_to_db(dbName)
+    save_to_db(dbName=dbName, cursor=cursor)
     # print_stats()
     reset()
 
 def main():
-    data = fetch_json("https://replay.pokemonshowdown.com/gen9draft-2518249638.json")
-    teams(data["log"])
+    parse("https://replay.pokemonshowdown.com/gen9draft-2518249638.json", "testDB.sqlite")  
 
 if __name__ == "__main__":
     main()

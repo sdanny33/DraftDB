@@ -6,23 +6,16 @@ from parser import parse
 DB_ROOT = Path(__file__).resolve().parent.parent
 
 def create_db(dbName):
-    # Connect to the database. If it doesn't exist, it will be created.
-    conn = sqlite3.connect(dbName)
-    cursor = conn.cursor()
-    # Create a new table called 'users' with columns 'id' and 'name'
-    cursor.execute('''CREATE TABLE IF NOT EXISTS mons
-                    (id DOUBLE, name TEXT PRIMARY KEY, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, kills DOUBLE DEFAULT 0, deaths DOUBLE DEFAULT 0)''')
+    with sqlite3.connect(dbName) as conn:
+        cursor = conn.cursor()
+        cursor.execute('''CREATE TABLE IF NOT EXISTS mons
+                        (id DOUBLE, name TEXT PRIMARY KEY, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, kills DOUBLE DEFAULT 0, deaths DOUBLE DEFAULT 0)''')
 
-    mons_csv_path = DB_ROOT / 'DraftDB' / 'CSV' / 'mons.csv'
-    with open(mons_csv_path, 'r') as file:
-        reader = csv.reader(file)
-        for row in reader:
-            # Assuming the CSV has columns: id, name
-            cursor.execute('INSERT INTO mons (id, name) VALUES (?, ?)', (row[0], row[1]))
-
-    # Commit the changes and close the connection
-    conn.commit()
-    conn.close()
+        mons_csv_path = DB_ROOT / 'DraftDB' / 'CSV' / 'mons.csv'
+        with open(mons_csv_path, 'r') as file:
+            reader = csv.reader(file)
+            rows = [(row[0], row[1]) for row in reader if row]
+            cursor.executemany('INSERT OR IGNORE INTO mons (id, name) VALUES (?, ?)', rows)
 
 def update_db(fileName, dbName, outName):
     links = []
@@ -39,12 +32,23 @@ def update_db(fileName, dbName, outName):
     # Only process truly new links to avoid adding roots twice across runs.
     links_to_process = links[2:] if len(links) > 2 else []
 
-    count = 0
-    for link in links_to_process:
-        if count % 10 == 0:
-            print(f'Parsing {link}...')
-        count += 1
-        parse(link, dbName)
+    if not links_to_process:
+        return
+
+    with sqlite3.connect(dbName) as conn:
+        cursor = conn.cursor()
+        cursor.execute('PRAGMA journal_mode=WAL')
+        cursor.execute('PRAGMA synchronous=NORMAL')
+
+        for count, link in enumerate(links_to_process, start=1):
+            if count % 10 == 1:
+                print(f'Parsing {link}...')
+            parse(link, cursor=cursor)
+
+            if count % 50 == 0:
+                conn.commit()
+
+        conn.commit()
 
     with open(outName, 'a', newline='') as file:
         writer = csv.writer(file)
