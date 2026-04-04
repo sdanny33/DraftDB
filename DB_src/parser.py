@@ -4,6 +4,7 @@ import json
 from mon import Mon
 import sqlite3
 import time
+import socket
 
 player1, player2 = "", ""
 players = {
@@ -11,17 +12,28 @@ players = {
     "p2": []
 }
 
-def fetch_json(url, timeout=15, max_retries=3, retry_backoff=0.5):
-    last_error = None
-    for attempt in range(max_retries):
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=timeout) as response:
-                return json.load(response)
-        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as error:
-            last_error = error
-            if attempt < max_retries - 1:
-                time.sleep(retry_backoff * (2 ** attempt))
+def _is_timeout_error(error):
+    if isinstance(error, (TimeoutError, socket.timeout)):
+        return True
+
+    if isinstance(error, urllib.error.URLError):
+        reason = error.reason
+        if isinstance(reason, (TimeoutError, socket.timeout)):
+            return True
+        if isinstance(reason, str) and "timed out" in reason.lower():
+            return True
+
+    return False
+
+def fetch_json(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req) as response:
+        html = response.read().decode('utf-8')
+        data = json.loads(html)
+        return data
+
+    if last_error is not None and _is_timeout_error(last_error):
+        raise TimeoutError(f"Replay fetch timed out for {url}") from last_error
 
     raise RuntimeError(f"Failed to fetch replay JSON from {url}") from last_error
 
@@ -119,17 +131,13 @@ def save_to_db(dbName=None, cursor=None):
         cursor = conn.cursor()
         own_connection = True
 
-    updates = []
+    def add_mon_stats(mon):
+        cursor.execute('''UPDATE mons SET kills = kills + ?, deaths = deaths + ?, games_played = games_played + ?, wins = wins + ? WHERE name = ?''', (mon.kills, mon.deaths, mon.games_played, mon.wins, mon.name))
+
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-        updates.append((players["p1"][i].kills, players["p1"][i].deaths, players["p1"][i].games_played, players["p1"][i].wins, players["p1"][i].name))
-        updates.append((players["p2"][i].kills, players["p2"][i].deaths, players["p2"][i].games_played, players["p2"][i].wins, players["p2"][i].name))
-
-    if updates:
-        cursor.executemany(
-            '''UPDATE mons SET kills = kills + ?, deaths = deaths + ?, games_played = games_played + ?, wins = wins + ? WHERE name = ?''',
-            updates,
-        )
-
+        add_mon_stats(players["p1"][i])
+        add_mon_stats(players["p2"][i])
+    
     if own_connection:
         conn.commit()
         conn.close()
