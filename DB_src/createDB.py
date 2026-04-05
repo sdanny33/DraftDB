@@ -7,6 +7,31 @@ from parser import parse
 
 DB_ROOT = Path(__file__).resolve().parent.parent
 
+def _is_timeout_exception(error):
+    current = error
+    seen = set()
+
+    while current is not None and id(current) not in seen:
+        seen.add(id(current))
+
+        if isinstance(current, (TimeoutError, socket.timeout)):
+            return True
+
+        if isinstance(current, urllib.error.URLError):
+            reason = current.reason
+            if isinstance(reason, (TimeoutError, socket.timeout)):
+                return True
+            if isinstance(reason, str) and "timed out" in reason.lower():
+                return True
+
+        message = str(current).lower()
+        if "timed out" in message or "timeout" in message:
+            return True
+
+        current = current.__cause__ or current.__context__
+
+    return False
+
 def create_db(dbName):
     # Connect to the database. If it doesn't exist, it will be created.
     conn = sqlite3.connect(dbName)
@@ -44,12 +69,23 @@ def update_db(fileName, dbName, outName):
     if not links_to_process:
         return
 
+    successful_links = []
+
     with sqlite3.connect(dbName) as conn:
         cursor = conn.cursor()
         count = 0
         for link in links_to_process:
             count += 1
-            parse(link, cursor=cursor)
+
+            try:
+                parse(link, cursor=cursor)
+                successful_links.append(link)
+            except Exception as error:
+                error_type = type(error).__name__
+                error_message = str(error).strip() or "(no error message)"
+                timeout_tag = "timeout" if _is_timeout_exception(error) else "error"
+                print(f'Skipping replay ({timeout_tag}): {link} | {error_type}: {error_message}')
+                continue
 
             if count % 100 == 0:
                 print(f'Parsing {link}...')
@@ -59,7 +95,7 @@ def update_db(fileName, dbName, outName):
 
     with open(outName, 'a', newline='') as file:
         writer = csv.writer(file)
-        for link in links_to_process:
+        for link in successful_links:
             writer.writerow([link])
 
     # Keep the original second row as the new first row for the next run.
