@@ -65,8 +65,8 @@ def scrape_recent(fileName):
 
 def main():
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
-    # scrape_recent(replay_csv_path)
-    scrape_time(replay_csv_path, 1749999824, 1740000000)
+    scrape_recent(replay_csv_path)
+    # scrape_time(replay_csv_path, 1740000000, 1735000000)
 
 if __name__ == "__main__":
     main()
