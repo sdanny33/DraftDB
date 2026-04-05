@@ -48,12 +48,11 @@ def update_db(fileName, dbName, outName):
         cursor = conn.cursor()
         count = 0
         for link in links_to_process:
-            if count % 10 == 0:
-                print(f'Parsing {link}...')
             count += 1
             parse(link, cursor=cursor)
 
             if count % 100 == 0:
+                print(f'Parsing {link}...')
                 conn.commit()
 
         conn.commit()
