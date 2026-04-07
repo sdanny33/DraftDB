@@ -36,18 +36,39 @@ def create_db(dbName):
     # Connect to the database. If it doesn't exist, it will be created.
     conn = sqlite3.connect(dbName)
     cursor = conn.cursor()
-    # Create a new table called 'users' with columns 'id' and 'name'
+    # Create a new table with `sprite` as a BLOB to store PNG bytes.
     cursor.execute('''CREATE TABLE IF NOT EXISTS mons
-                    (id DOUBLE, sprite TEXT, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0)''')
+                    (id DOUBLE, sprite BLOB, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0)''')
 
-    mons_csv_path = DB_ROOT / 'DraftDB' / 'CSV' / 'mons.csv'
+    mons_csv_path = DB_ROOT / 'DB_CSV' / 'mons.csv'
     with open(mons_csv_path, 'r') as file:
         reader = csv.reader(file)
         for row in reader:
-            # Assuming the CSV has columns: id, name
+            # Assuming the CSV has columns: id, name, points
             cursor.execute('INSERT INTO mons (id, name, points) VALUES (?, ?, ?)', (row[0], row[1], row[2]))
     
     # Commit the changes and close the connection
+    conn.commit()
+    conn.close()
+
+def add_sprites(dbName):
+    conn = sqlite3.connect(dbName)
+    cursor = conn.cursor()
+    sprite_path = DB_ROOT / 'sprites' / 'sprites' / 'pokemon'
+    cursor.execute('SELECT id FROM mons')
+    for i in cursor.fetchall():
+        index = int(i[0])
+        default_index = i[0]
+        sprite_file = sprite_path / f'{index}.png'
+        default_file = sprite_path / '0.png'
+        with open(default_file, 'rb') as fh:
+            blob = fh.read()
+        cursor.execute('UPDATE mons SET sprite = ? WHERE id = ?', (blob, default_index))
+        if sprite_file.exists():
+            with open(sprite_file, 'rb') as fh:
+                blob = fh.read()
+            cursor.execute('UPDATE mons SET sprite = ? WHERE id = ?', (blob, index))
+
     conn.commit()
     conn.close()
 
@@ -136,14 +157,29 @@ def reset_db(dbName):
     conn.commit()
     conn.close()
 
+def copy_stats(source_db, target_db):
+    source_conn = sqlite3.connect(source_db)
+    source_cursor = source_conn.cursor()
+    source_cursor.execute('SELECT id, games_played, wins, kills, deaths FROM mons')
+    stats = {row[0]: row[1:] for row in source_cursor.fetchall()}
+    source_conn.close()
+
+    target_conn = sqlite3.connect(target_db)
+    target_cursor = target_conn.cursor()
+    for mon_id, (games_played, wins, kills, deaths) in stats.items():
+        target_cursor.execute('UPDATE mons SET games_played = ?, wins = ?, kills = ?, deaths = ? WHERE id = ?', (games_played, wins, kills, deaths, mon_id))
+    target_conn.commit()
+    target_conn.close()
+
 def nothing():
     pass
 
 def main():
-    dbName = DB_ROOT / 'database' / 'monDBTest2.sqlite'
+    dbName = DB_ROOT / 'database' / 'monDB.sqlite'
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
     archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
-    create_db(dbName)
+    update_db(replay_csv_path, dbName, archive_csv_path)
+    update_column(dbName)
     nothing()
 
 if __name__ == "__main__":
