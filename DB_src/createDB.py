@@ -54,7 +54,7 @@ def create_db(dbName):
 def add_sprites(dbName):
     conn = sqlite3.connect(dbName)
     cursor = conn.cursor()
-    sprite_path = DB_ROOT / 'sprites' / 'sprites' / 'pokemon'
+    sprite_path = DB_ROOT / 'images'
     cursor.execute('SELECT id FROM mons')
     for i in cursor.fetchall():
         index = int(i[0])
