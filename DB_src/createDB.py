@@ -38,14 +38,14 @@ def create_db(dbName):
     cursor = conn.cursor()
     # Create a new table called 'users' with columns 'id' and 'name'
     cursor.execute('''CREATE TABLE IF NOT EXISTS mons
-                    (id DOUBLE, name TEXT PRIMARY KEY, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, kills DOUBLE DEFAULT 0, deaths DOUBLE DEFAULT 0)''')
+                    (id DOUBLE, sprite TEXT, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0)''')
 
     mons_csv_path = DB_ROOT / 'DraftDB' / 'CSV' / 'mons.csv'
     with open(mons_csv_path, 'r') as file:
         reader = csv.reader(file)
         for row in reader:
             # Assuming the CSV has columns: id, name
-            cursor.execute('INSERT INTO mons (id, name) VALUES (?, ?)', (row[0], row[1]))
+            cursor.execute('INSERT INTO mons (id, name, points) VALUES (?, ?, ?)', (row[0], row[1], row[2]))
     
     # Commit the changes and close the connection
     conn.commit()
@@ -140,11 +140,10 @@ def nothing():
     pass
 
 def main():
-    dbName = DB_ROOT / 'database' / 'monDBTest.sqlite'
+    dbName = DB_ROOT / 'database' / 'monDBTest2.sqlite'
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
     archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
-    update_db(replay_csv_path, dbName, archive_csv_path)
-    update_column(dbName)
+    create_db(dbName)
     nothing()
 
 if __name__ == "__main__":
