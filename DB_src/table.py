@@ -57,7 +57,7 @@ def print_table(dbName, tableName, fileName):
 
     # Fetch all rows from the specified table.
     cursor.execute(f"SELECT * FROM {tableName}")
-    rows = cursor.execute("SELECT name, points, games_played, winrate, kills, deaths, diff FROM mons").fetchall()
+    rows = cursor.execute("SELECT ROWID, name, points, games_played, winrate, kills, deaths, diff FROM mons WHERE games_played > 0.0").fetchall()
     column_names = [description[0] for description in cursor.description]
     conn.close()
 
@@ -70,9 +70,6 @@ def print_table(dbName, tableName, fileName):
         if updated_html is not None:
             output_path.write_text(updated_html, encoding="utf-8")
             return
-
-    # Fallback: write only the table when no .intro target exists.
-    output_path.write_text(table_html, encoding="utf-8")
 
 def main():
     dbName = DB_ROOT / 'database' / 'monDB.sqlite'
