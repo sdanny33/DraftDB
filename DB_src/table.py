@@ -11,12 +11,20 @@ GENERATED_END = "<!-- GENERATED_TABLE_END -->"
 
 def _build_table_html(column_names, rows):
     parts = ["<table>", "<tr>"]
+    # Add sprite column header before name
+    parts.append("<th>sprite</th>")
     parts.append("\t".join(f"<th>{escape(str(name))}</th>" for name in column_names))
     parts.append("</tr>")
 
     for row in rows:
         parts.append("<tr>")
-        parts.append("\t".join(f"<td>{escape(str(value))}</td>" for value in row))
+        # row is (rowid, name, points, games_played, winrate, kills, deaths, diff, path)
+        # Extract the sprite path (last element)
+        sprite_path = row[-1] if row[-1] else "sprites/0.png"
+        sprite_html = f'<td><img src="{escape(sprite_path)}" alt="sprite" style="height: 40px; width: 40px; object-fit: contain;"/></td>'
+        parts.append(sprite_html)
+        # Render the rest of the columns
+        parts.append("\t".join(f"<td>{escape(str(value))}</td>" for value in row[:-1]))
         parts.append("</tr>")
 
     parts.append("</table>")
@@ -32,7 +40,8 @@ def _inject_into_intro(html_content, table_html):
             rf"{re.escape(GENERATED_START)}.*?{re.escape(GENERATED_END)}",
             re.DOTALL,
         )
-        return pattern.sub(generated_block, html_content, count=1)
+        # Use a lambda to avoid regex escape sequence issues in replacement
+        return pattern.sub(lambda m: generated_block, html_content, count=1)
 
     intro_opening_div = re.search(
         r'<div[^>]*class=["\'][^"\']*\bintro\b[^"\']*["\'][^>]*>',
@@ -55,10 +64,9 @@ def print_table(dbName, tableName, fileName):
     conn = sqlite3.connect(dbName)
     cursor = conn.cursor()
 
-    # Fetch all rows from the specified table.
-    cursor.execute(f"SELECT * FROM {tableName}")
-    rows = cursor.execute("SELECT ROWID, name, points, games_played, winrate, kills, deaths, diff FROM mons WHERE games_played > 0.0").fetchall()
-    column_names = [description[0] for description in cursor.description]
+    # Fetch all rows from the specified table with sprite paths.
+    rows = cursor.execute("SELECT ROWID, name, points, games_played, winrate, kills, deaths, diff, COALESCE(path, 'sprites/0.png') as path FROM mons WHERE games_played > 0.0").fetchall()
+    column_names = ["rowid", "name", "points", "games_played", "winrate", "kills", "deaths", "diff"]
     conn.close()
 
     table_html = _build_table_html(column_names, rows)

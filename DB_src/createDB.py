@@ -54,7 +54,7 @@ def create_db(dbName):
 def add_sprites(dbName):
     conn = sqlite3.connect(dbName)
     cursor = conn.cursor()
-    sprite_path = DB_ROOT / 'images'
+    sprite_path = DB_ROOT / 'sprites'
     cursor.execute('SELECT id FROM mons')
     for i in cursor.fetchall():
         index = int(i[0])
@@ -63,12 +63,22 @@ def add_sprites(dbName):
         default_file = sprite_path / '0.png'
         with open(default_file, 'rb') as fh:
             blob = fh.read()
+        cursor.execute('UPDATE mons SET path = ? WHERE id = ?', (str(sprite_file) if sprite_file.exists() else str(default_file), default_index))
         cursor.execute('UPDATE mons SET sprite = ? WHERE id = ?', (blob, default_index))
         if sprite_file.exists():
             with open(sprite_file, 'rb') as fh:
                 blob = fh.read()
+            cursor.execute('UPDATE mons SET path = ? WHERE id = ?', (str(sprite_file), index))
             cursor.execute('UPDATE mons SET sprite = ? WHERE id = ?', (blob, index))
 
+    conn.commit()
+    conn.close()
+
+def add(dbName):
+    conn = sqlite3.connect(dbName)
+    cursor = conn.cursor()
+    cursor.execute('AlTER TABLE mons DROP COLUMN path')
+    cursor.execute('AlTER TABLE mons ADD COLUMN path TEXT DEFAULT NULL')
     conn.commit()
     conn.close()
 

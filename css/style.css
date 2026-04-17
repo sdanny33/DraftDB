@@ -169,6 +169,19 @@ img {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.intro th:first-child,
+.intro td:first-child {
+    text-align: center;
+    min-width: 60px;
+    padding: .5rem;
+}
+
+.intro td:first-child img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
 .intro th {
     cursor: pointer;
     user-select: none;
