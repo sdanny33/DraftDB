@@ -140,7 +140,107 @@ img {
 } 
 
 .intro {
-    margin: 0 auto;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    width: min(95vw, 1280px);
+    overflow-x: auto;
+    background: rgba(7, 10, 18, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.intro table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: var(--primaryText);
+    font-size: .82em;
+    font-variant-numeric: tabular-nums;
+}
+
+.intro th,
+.intro td {
+    padding: .78rem .95rem;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.intro th {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-right: 2rem;
+}
+
+.intro th::after {
+    content: "↕";
+    position: absolute;
+    right: .75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .7;
+    font-size: .75em;
+}
+
+.intro th[data-sort="asc"]::after {
+    content: "↑";
+    opacity: 1;
+}
+
+.intro th[data-sort="desc"]::after {
+    content: "↓";
+    opacity: 1;
+}
+
+.intro tr:first-child th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: linear-gradient(135deg, rgba(255, 1, 94, 0.95), rgba(156, 39, 176, 0.95));
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .78em;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.intro tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.intro tr:hover td {
+    background: rgba(255, 255, 255, 0.10);
+}
+
+.intro th:first-child {
+    border-top-left-radius: 18px;
+}
+
+.intro th:last-child {
+    border-top-right-radius: 18px;
+}
+
+.intro tr:last-child td:first-child {
+    border-bottom-left-radius: 18px;
+}
+
+.intro tr:last-child td:last-child {
+    border-bottom-right-radius: 18px;
+}
+
+.intro th:nth-child(2),
+.intro td:nth-child(2) {
+    text-align: left;
+    min-width: 210px;
+}
+
+.intro th:not(:nth-child(2)),
+.intro td:not(:nth-child(2)) {
+    text-align: right;
 }
 
 .section {
@@ -228,4 +328,8 @@ img {
     .slidedown {
         width: 40%;
     }
+}
+
+.intro {
+    width: min(95vw, 1280px);
 }
