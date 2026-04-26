@@ -38,7 +38,7 @@ def create_db(dbName):
     cursor = conn.cursor()
     # Create a new table with `sprite` as a BLOB to store PNG bytes.
     cursor.execute('''CREATE TABLE IF NOT EXISTS mons
-                    (id DOUBLE, sprite BLOB, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0)''')
+                    (id DOUBLE, sprite BLOB, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0, path TEXT DEFAULT NULL)''')
 
     mons_csv_path = DB_ROOT / 'DB_CSV' / 'mons.csv'
     with open(mons_csv_path, 'r') as file:
@@ -77,8 +77,7 @@ def add_sprites(dbName):
 def add(dbName):
     conn = sqlite3.connect(dbName)
     cursor = conn.cursor()
-    cursor.execute('AlTER TABLE mons DROP COLUMN path')
-    cursor.execute('AlTER TABLE mons ADD COLUMN path TEXT DEFAULT NULL')
+    cursor.execute('ALTER TABLE mons ADD COLUMN KPG DOUBLE DEFAULT 0')
     conn.commit()
     conn.close()
 
@@ -146,6 +145,10 @@ def update_column(dbName):
         END
     ''')
     cursor.execute('UPDATE mons SET diff = kills - deaths')
+    cursor.execute('''UPDATE mons set KPG = CASE
+        WHEN games_played = 0 THEN 0
+        ELSE ROUND((kills) / games_played, 2)
+    END''')
     conn.commit()
     conn.close()
 

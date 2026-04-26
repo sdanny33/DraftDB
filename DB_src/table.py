@@ -65,8 +65,8 @@ def print_table(dbName, tableName, fileName):
     cursor = conn.cursor()
 
     # Fetch all rows from the specified table with sprite paths.
-    rows = cursor.execute("SELECT ROWID, name, points, games_played, winrate, kills, deaths, diff, COALESCE(path, 'sprites/0.png') as path FROM mons WHERE games_played > 500.0").fetchall()
-    column_names = ["rowid", "name", "points", "games_played", "winrate", "kills", "deaths", "diff"]
+    rows = cursor.execute("SELECT ROWID, name, points, games_played, winrate, kills, deaths, diff, KPG, COALESCE(path, 'sprites/0.png') as path FROM mons WHERE games_played > 500.0").fetchall()
+    column_names = ["rowid", "name", "points", "games_played", "winrate", "kills", "deaths", "diff", "KPG"]
     conn.close()
 
     table_html = _build_table_html(column_names, rows)
