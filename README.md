@@ -14,7 +14,7 @@ The replay scraper scrapes the saved draft replays from the Pokémon Showdown se
 
 ## Teams
 
-The team’s portion of the project extracts given pokepastes to get the raw data for each mon. The data include the mon's name, items, abilities, EVs, nature, and moves.
+The team’s portion of the project extracts given pokepastes to get the raw data for each mon. The data includes the mon's name, items, abilities, EVs, nature, and moves.
 
 ## Website
 
