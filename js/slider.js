@@ -1,4 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
+const initIntroTableSorting = () => {
+  const table = document.querySelector(".intro table");
+  if (!table || table.dataset.sortingInitialized === "true") {
+    return;
+  }
+
+  table.dataset.sortingInitialized = "true";
+
   const a = document.querySelectorAll(".toggle");
   a.forEach((e) => {
     e.addEventListener("click", function () {
@@ -16,11 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   })
-
-  const table = document.querySelector(".intro table");
-  if (!table) {
-    return;
-  }
 
   const headerCells = Array.from(table.rows[0].cells);
   const sortState = new WeakMap();
@@ -76,4 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
       headerCell.dataset.type = isNumericColumn ? "numeric" : "text";
     });
   });
-})
+};
+
+document.addEventListener("DOMContentLoaded", initIntroTableSorting);
+
+window.initializeIntroTableSorting = initIntroTableSorting;

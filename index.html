@@ -19,6 +19,9 @@
       .then(function (response) { return response.text(); })
       .then(function (html) {
         document.getElementById('table-slot').innerHTML = html;
+        if (window.initializeIntroTableSorting) {
+          window.initializeIntroTableSorting();
+        }
       })
       .catch(function () {
         document.getElementById('table-slot').textContent = 'Table could not be loaded.';
