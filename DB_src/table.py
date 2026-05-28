@@ -57,7 +57,7 @@ def print_table(dbName, tableName, fileName):
 def main():
     dbName = DB_ROOT / 'database' / 'monDB.sqlite'
     tableName = 'mons'
-    fileName = DB_ROOT / 'table.html'
+    fileName = DB_ROOT / 'index.html'
     print_table(dbName, tableName, fileName)
 
 
