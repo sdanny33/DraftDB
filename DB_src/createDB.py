@@ -52,28 +52,30 @@ def create_db(dbName):
     conn.commit()
     conn.close()
 
+
+def _sprite_stem(mon_id):
+    if bool(re.search(r'\.00\d$', str(mon_id))):
+        return str(mon_id)
+    return str(int(float(mon_id)))
+
 def add_sprites(dbName):
     conn = sqlite3.connect(dbName)
     cursor = conn.cursor()
     sprite_path = DB_ROOT / 'sprites'
     cursor.execute('SELECT id FROM mons')
     for i in cursor.fetchall():
-        if not bool(re.search(r'\.00\d$', str(i[0]))):
-            index = int(i[0])
-        else:
-            index = i[0]
-        default_index = i[0]
-        sprite_file = sprite_path / f'{index}.png'
+        sprite_name = _sprite_stem(i[0])
+        sprite_file = sprite_path / f'{sprite_name}.png'
         default_file = sprite_path / '0.png'
         with open(default_file, 'rb') as fh:
             blob = fh.read()
-        cursor.execute('UPDATE mons SET path = ? WHERE id = ?', (str(sprite_file) if sprite_file.exists() else str(default_file), default_index))
-        cursor.execute('UPDATE mons SET sprite = ? WHERE id = ?', (blob, default_index))
+        cursor.execute('UPDATE mons SET path = ? WHERE id = ?', (f'sprites/{sprite_name}.png' if sprite_file.exists() else 'sprites/0.png', i[0]))
+        cursor.execute('UPDATE mons SET sprite = ? WHERE id = ?', (blob, i[0]))
         if sprite_file.exists():
             with open(sprite_file, 'rb') as fh:
                 blob = fh.read()
-            cursor.execute('UPDATE mons SET path = ? WHERE id = ?', (str(sprite_file), index))
-            cursor.execute('UPDATE mons SET sprite = ? WHERE id = ?', (blob, index))
+            cursor.execute('UPDATE mons SET path = ? WHERE id = ?', (f'sprites/{sprite_name}.png', i[0]))
+            cursor.execute('UPDATE mons SET sprite = ? WHERE id = ?', (blob, i[0]))
 
     conn.commit()
     conn.close()
@@ -195,8 +197,8 @@ def main():
     dbName = DB_ROOT / 'database' / 'monDB.sqlite'
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
     archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
-    #update_db(replay_csv_path, dbName, archive_csv_path)
-    add_sprites(dbName)
+    update_db(replay_csv_path, dbName, archive_csv_path)
+    # add_sprites(dbName)
     update_column(dbName)
     nothing()
 
