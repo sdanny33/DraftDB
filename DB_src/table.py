@@ -6,21 +6,18 @@ DB_ROOT = Path(__file__).resolve().parent.parent
 
 
 def _build_table_html(column_names, rows):
-    parts = ["<table>", "<tr>"]
-    parts.append("<th>sprite</th>")
-    parts.append("\t".join(f"<th>{escape(str(name))}</th>" for name in column_names))
-    parts.append("</tr>")
+    parts = ["<table>"]
+    header_cells = "".join(f"<th>{escape(str(name))}</th>" for name in column_names)
+    parts.append(f"<tr><th>sprite</th>{header_cells}</tr>")
 
     for row in rows:
-        parts.append("<tr>")
         sprite_path = row[-1] if row[-1] else "sprites/0.png"
+        row_cells = "".join(f"<td>{escape(str(value))}</td>" for value in row[:-1])
         sprite_html = (
             f'<td><img src="{escape(sprite_path)}" alt="sprite" '
             'style="height: 40px; width: 40px; object-fit: contain;"/></td>'
         )
-        parts.append(sprite_html)
-        parts.append("\t".join(f"<td>{escape(str(value))}</td>" for value in row[:-1]))
-        parts.append("</tr>")
+        parts.append(f"<tr>{sprite_html}{row_cells}</tr>")
 
     parts.append("</table>")
     return "\n".join(parts)
