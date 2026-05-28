@@ -12,21 +12,12 @@
 <body class="main-text-color">
   <div class="container"></div>
   <div class="intro">
-    <div id="table-slot">Loading table...</div>
+    <iframe
+      src="table.html"
+      title="DraftDB table"
+      style="width: 100%; min-height: 75vh; border: 0; display: block; background: transparent;"
+    ></iframe>
   </div>
-  <script>
-    fetch('table.html')
-      .then(function (response) { return response.text(); })
-      .then(function (html) {
-        document.getElementById('table-slot').innerHTML = html;
-        if (window.initializeIntroTableSorting) {
-          window.initializeIntroTableSorting();
-        }
-      })
-      .catch(function () {
-        document.getElementById('table-slot').textContent = 'Table could not be loaded.';
-      });
-  </script>
   <script type="text/javascript" src="js/slider.js"></script>
 </body>
 

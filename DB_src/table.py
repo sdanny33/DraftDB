@@ -38,7 +38,23 @@ def print_table(dbName, tableName, fileName):
     conn.close()
 
     table_html = _build_table_html(column_names, rows)
-    Path(fileName).write_text(table_html, encoding="utf-8")
+    page_html = f"""<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"utf-8\" />
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+    <title>DraftDB Table</title>
+    <link rel=\"stylesheet\" href=\"css/style.css\" />
+</head>
+<body class=\"main-text-color\">
+    <div class=\"intro\">
+{table_html}
+    </div>
+    <script type=\"text/javascript\" src=\"js/slider.js\"></script>
+</body>
+</html>
+"""
+    Path(fileName).write_text(page_html, encoding="utf-8")
 
 
 def main():
