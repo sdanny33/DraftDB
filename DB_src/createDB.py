@@ -4,6 +4,7 @@ import socket
 import urllib.error
 from pathlib import Path
 from parser import parse
+import re
 
 DB_ROOT = Path(__file__).resolve().parent.parent
 
@@ -57,7 +58,10 @@ def add_sprites(dbName):
     sprite_path = DB_ROOT / 'sprites'
     cursor.execute('SELECT id FROM mons')
     for i in cursor.fetchall():
-        index = int(i[0])
+        if not bool(re.search(r'\.00\d$', str(i[0]))):
+            index = int(i[0])
+        else:
+            index = i[0]
         default_index = i[0]
         sprite_file = sprite_path / f'{index}.png'
         default_file = sprite_path / '0.png'
@@ -191,7 +195,8 @@ def main():
     dbName = DB_ROOT / 'database' / 'monDB.sqlite'
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
     archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
-    update_db(replay_csv_path, dbName, archive_csv_path)
+    #update_db(replay_csv_path, dbName, archive_csv_path)
+    add_sprites(dbName)
     update_column(dbName)
     nothing()
 
