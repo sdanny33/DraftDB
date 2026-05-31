@@ -37,6 +37,12 @@ def fetch_json(url):
 
     raise RuntimeError(f"Failed to fetch replay JSON from {url}") from last_error
 
+def _rosters_full():
+    return len(players["p1"]) >= 6 and len(players["p2"]) >= 6
+
+def _nicknames_full():
+    return _rosters_full() and all(mon.nickname for mon in players["p1"][:6]) and all(mon.nickname for mon in players["p2"][:6])
+
 def teams(lines):
     for line in lines:
         if line.startswith("|poke|p1|"):
@@ -45,6 +51,9 @@ def teams(lines):
         elif line.startswith("|poke|p2|"):
             name = line.split("|poke|p2|")[1].split(",")[0].strip("|")
             players["p2"].append(Mon(name))
+
+        if _rosters_full():
+            break
 
 def nickname(lines):
     for line in lines:
@@ -58,6 +67,9 @@ def nickname(lines):
                         players["p1"][i].set_nickname(nickname)
                     elif (players["p2"][i].name == species):
                         players["p2"][i].set_nickname(nickname)
+
+            if _nicknames_full():
+                break
 
 def faint(lines):
     for line in lines:
@@ -96,11 +108,6 @@ def kd(lines):
                     elif (players["p2"][i].nickname == ky):
                         players["p2"][i].increment_kills()
 
-def games_played():
-    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-        players["p1"][i].increment_games()
-        players["p2"][i].increment_games()
-
 def wins(lines):
     for line in lines:
         if line.startswith("|win|"):
@@ -111,6 +118,49 @@ def wins(lines):
             elif winner == player2:
                 for i in range(min(6, len(players["p2"]))):
                     players["p2"][i].increment_wins()
+
+def battle_stats(lines):
+    actor1 = None
+    actor2 = None
+    for line in lines:
+        if line.startswith("|move|"):
+            actor1, actor2 = actors(line)
+
+        if line.startswith("|faint|"):
+            parts = line.split("|")
+            nickname = parts[2]
+            for i in range(min(6, len(players["p1"]), len(players["p2"]))):
+                if (players["p1"][i].nickname == nickname):
+                    players["p1"][i].increment_deaths()
+                elif (players["p2"][i].nickname == nickname):
+                    players["p2"][i].increment_deaths()
+
+            ky = None
+            if nickname == actor1:
+                ky = actor2
+            elif nickname == actor2:
+                ky = actor1
+
+            if ky is not None:
+                for i in range(min(6, len(players["p1"]), len(players["p2"]))):
+                    if (players["p1"][i].nickname == ky):
+                        players["p1"][i].increment_kills()
+                    elif (players["p2"][i].nickname == ky):
+                        players["p2"][i].increment_kills()
+
+        if line.startswith("|win|"):
+            winner = line.split("|win|")[1]
+            if winner == player1:
+                for i in range(min(6, len(players["p1"]))):
+                    players["p1"][i].increment_wins()
+            elif winner == player2:
+                for i in range(min(6, len(players["p2"]))):
+                    players["p2"][i].increment_wins()
+
+def games_played():
+    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
+        players["p1"][i].increment_games()
+        players["p2"][i].increment_games()
 
 def print_stats():
     print(f"Player 1: {player1}")
@@ -161,16 +211,25 @@ def parse(url, dbName=None, cursor=None):
 
     teams(lines)
     nickname(lines)
-    faint(lines)
-    kd(lines)
-    wins(lines)
+    battle_stats(lines)
     games_played()
     save_to_db(dbName=dbName, cursor=cursor)
     # print_stats()
     reset()
 
 def main():
-    parse("https://replay.pokemonshowdown.com/gen9draft-2518249638.json", "testDB.sqlite")  
+    url = "https://replay.pokemonshowdown.com/gen9draft-2521486668-1staiapfnxd9h1hhwskqvfbeyh9dxdwpw.json"
+    data = fetch_json(url)
+    lines = data["log"].splitlines()
+    global player1, player2 
+    player1, player2 = player(data)
+
+    teams(lines)
+    nickname(lines)
+    battle_stats(lines)
+    games_played()
+    print_stats()
+
 
 if __name__ == "__main__":
     main()
