@@ -20,6 +20,9 @@ class Mon:
     def increment_wins(self):
         self.wins += 1
         
+    def set_name(self, name):
+        self.name = name
+
     def set_nickname(self, nickname):
         self.nickname = nickname
 

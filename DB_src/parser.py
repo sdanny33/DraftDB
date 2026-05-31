@@ -47,9 +47,13 @@ def teams(lines):
     for line in lines:
         if line.startswith("|poke|p1|"):
             name = line.split("|poke|p1|")[1].split(",")[0].strip("|")
+            if (name.endswith("-*")):
+                name = name[:-2]
             players["p1"].append(Mon(name))
         elif line.startswith("|poke|p2|"):
             name = line.split("|poke|p2|")[1].split(",")[0].strip("|")
+            if (name.endswith("-*")):
+                name = name[:-2]
             players["p2"].append(Mon(name))
 
         if _rosters_full():
@@ -61,11 +65,20 @@ def nickname(lines):
             parts = line.split("|")
             nickname = parts[2]
             species = parts[3].split(",")[0].strip("|")
+
             for i in range(min(6, len(players["p1"]), len(players["p2"]))):
                 if (nickname != ""):
                     if (players["p1"][i].name == species):
                         players["p1"][i].set_nickname(nickname)
+                    # urshifu clause
+                    elif (players["p1"][i].name == "Urshifu" and species == "Urshifu-Rapid-Strike"):
+                        players["p1"][i].set_name(species)
+                        players["p1"][i].set_nickname(nickname)
                     elif (players["p2"][i].name == species):
+                        players["p2"][i].set_nickname(nickname)
+                    # urshifu clause
+                    elif (players["p2"][i].name == "Urshifu" and species == "Urshifu-Rapid-Strike"):
+                        players["p2"][i].set_name(species)
                         players["p2"][i].set_nickname(nickname)
 
             if _nicknames_full():
@@ -218,7 +231,7 @@ def parse(url, dbName=None, cursor=None):
     reset()
 
 def main():
-    url = "https://replay.pokemonshowdown.com/gen9draft-2521486668-1staiapfnxd9h1hhwskqvfbeyh9dxdwpw.json"
+    url = "https://replay.pokemonshowdown.com/gen9draft-2293887145.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
     global player1, player2 
