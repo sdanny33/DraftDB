@@ -190,6 +190,10 @@ def copy_stats(source_db, target_db):
     target_conn.commit()
     target_conn.close()
 
+def create_new_db(source_db, new_db):
+    create_db(new_db)
+    copy_stats(source_db, new_db)
+
 def nothing():
     pass
 
@@ -198,7 +202,6 @@ def main():
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
     archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
     update_db(replay_csv_path, dbName, archive_csv_path)
-    # add_sprites(dbName)
     update_column(dbName)
     nothing()
 

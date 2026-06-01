@@ -3,8 +3,10 @@ import urllib.error
 import json
 from mon import Mon
 import sqlite3
-import time
 import socket
+from pathlib import Path
+
+DB_ROOT = Path(__file__).resolve().parent.parent
 
 player1, player2 = "", ""
 players = {
@@ -230,8 +232,35 @@ def parse(url, dbName=None, cursor=None):
     # print_stats()
     reset()
 
-def main():
-    url = "https://replay.pokemonshowdown.com/gen9draft-2293887145.json"
+def edges(lines):
+    list = ["Urshifu", "Greninja", "Dudunsparce", "Zacian", "Zamazenta", "Necrozma-Dusk-Mane", "Necrozma-Dawn-Wings"]
+    reset()
+    teams(lines)
+    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
+        if players["p1"][i].name in list or players["p2"][i].name in list:
+            reset()
+            return True
+    reset()
+    return False
+
+def reparse(start, end):
+    with open(start, 'r') as file:
+        for line in file:
+            url = line.strip()
+            if not url:
+                continue
+
+            print(f"Parsing replay: {url}")
+            data = fetch_json(url)
+            lines = data["log"].splitlines()
+            edge = edges(lines)
+            if edge:
+                with open(end, 'a') as edge_file:
+                    edge_file.write(url + "\n")
+                    print(f"Edge found and saved: {url}")
+
+def test():
+    url = "https://replay.pokemonshowdown.com/gen9draft-2326260502.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
     global player1, player2 
@@ -243,6 +272,10 @@ def main():
     games_played()
     print_stats()
 
+def main():
+    replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
+    archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysReDraft.csv'
+    reparse(replay_csv_path, archive_csv_path)
 
 if __name__ == "__main__":
     main()
