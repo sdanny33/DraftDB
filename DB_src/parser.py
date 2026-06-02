@@ -233,7 +233,7 @@ def parse(url, dbName=None, cursor=None):
     reset()
 
 def edges(lines):
-    list = ["Urshifu", "Greninja", "Dudunsparce", "Zacian", "Zamazenta", "Necrozma-Dusk-Mane", "Necrozma-Dawn-Wings"]
+    list = ["Urshifu", "Greninja", "Dudunsparce", "Zacian", "Zamazenta", "Necrozma-Dusk-Mane", "Necrozma-Dawn-Wings", "Tauros-Paldea-Combat", "Tauros-Paldea-Blaze", "Tauros-Paldea-Aqua"]
     reset()
     teams(lines)
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
@@ -243,14 +243,16 @@ def edges(lines):
     reset()
     return False
 
-def reparse(start, end):
+def reparse(start, end, start_from):
+    # If start_from is an int, treat it as a 0-based line index to skip.
     with open(start, 'r') as file:
-        for line in file:
-            url = line.strip()
+        for idx, raw in enumerate(file):
+            if idx < start_from:
+                continue
+            url = raw.strip()
             if not url:
                 continue
 
-            print(f"Parsing replay: {url}")
             data = fetch_json(url)
             lines = data["log"].splitlines()
             edge = edges(lines)
@@ -275,7 +277,7 @@ def test():
 def main():
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
     archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysReDraft.csv'
-    reparse(replay_csv_path, archive_csv_path)
+    reparse(replay_csv_path, archive_csv_path, 87611) 
 
 if __name__ == "__main__":
     main()

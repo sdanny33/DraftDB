@@ -39,7 +39,7 @@ def create_db(dbName):
     cursor = conn.cursor()
     # Create a new table with `sprite` as a BLOB to store PNG bytes.
     cursor.execute('''CREATE TABLE IF NOT EXISTS mons
-                    (id DOUBLE, sprite BLOB, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0, path TEXT DEFAULT NULL)''')
+                    (id DOUBLE, sprite BLOB, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0, KPG DOUBLE DEFAULT 0, path TEXT DEFAULT NULL)''')
 
     mons_csv_path = DB_ROOT / 'DB_CSV' / 'mons.csv'
     with open(mons_csv_path, 'r') as file:
@@ -190,6 +190,63 @@ def copy_stats(source_db, target_db):
     target_conn.commit()
     target_conn.close()
 
+def subtract_stats(source_db, target_db):
+    source_conn = sqlite3.connect(source_db)
+    source_cursor = source_conn.cursor()
+    source_cursor.execute('SELECT id, games_played, wins, kills, deaths FROM mons')
+    stats = {row[0]: row[1:] for row in source_cursor.fetchall()}
+    source_conn.close()
+
+    target_conn = sqlite3.connect(target_db)
+    target_cursor = target_conn.cursor()
+    for mon_id, (games_played, wins, kills, deaths) in stats.items():
+        target_cursor.execute('SELECT games_played, wins, kills, deaths FROM mons WHERE id = ?', (mon_id,))
+        target_stats = target_cursor.fetchone()
+        if target_stats:
+            new_games_played = max(0, target_stats[0] - games_played)
+            new_wins = max(0, target_stats[1] - wins)
+            new_kills = max(0, target_stats[2] - kills)
+            new_deaths = max(0, target_stats[3] - deaths)
+            target_cursor.execute('UPDATE mons SET games_played = ?, wins = ?, kills = ?, deaths = ? WHERE id = ?', (new_games_played, new_wins, new_kills, new_deaths, mon_id))
+    target_conn.commit()
+    target_conn.close()
+
+def add_stats(source_db, target_db):
+    source_conn = sqlite3.connect(source_db)
+    source_cursor = source_conn.cursor()
+    source_cursor.execute('SELECT id, games_played, wins, kills, deaths FROM mons')
+    stats = {row[0]: row[1:] for row in source_cursor.fetchall()}
+    source_conn.close()
+
+    target_conn = sqlite3.connect(target_db)
+    target_cursor = target_conn.cursor()
+    for mon_id, (games_played, wins, kills, deaths) in stats.items():
+        target_cursor.execute('SELECT games_played, wins, kills, deaths FROM mons WHERE id = ?', (mon_id,))
+        target_stats = target_cursor.fetchone()
+        if target_stats:
+            new_games_played = target_stats[0] + games_played
+            new_wins = target_stats[1] + wins
+            new_kills = target_stats[2] + kills
+            new_deaths = target_stats[3] + deaths
+            target_cursor.execute('UPDATE mons SET games_played = ?, wins = ?, kills = ?, deaths = ? WHERE id = ?', (new_games_played, new_wins, new_kills, new_deaths, mon_id))
+    target_conn.commit()
+    target_conn.close()
+
+def add_row(source_db, target_db, id):
+    source_conn = sqlite3.connect(source_db)
+    source_cursor = source_conn.cursor()
+    source_cursor.execute('SELECT id, name, games_played, wins, kills, deaths FROM mons')
+    rows = source_cursor.fetchall()
+    source_conn.close()
+
+    target_conn = sqlite3.connect(target_db)
+    target_cursor = target_conn.cursor()
+    for row in rows:
+        if row[0] == id:
+            target_cursor.execute('INSERT OR IGNORE INTO mons (id, name, games_played, wins, kills, deaths) VALUES (?, ?, ?, ?, ?, ?)', row)
+    target_conn.commit()
+    target_conn.close()
+
 def create_new_db(source_db, new_db):
     create_db(new_db)
     copy_stats(source_db, new_db)
@@ -201,7 +258,8 @@ def main():
     dbName = DB_ROOT / 'database' / 'monDB.sqlite'
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
     archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
-    update_db(replay_csv_path, dbName, archive_csv_path)
+    # update_db(replay_csv_path, dbName, archive_csv_path)
+    add(dbName)
     update_column(dbName)
     nothing()
 
