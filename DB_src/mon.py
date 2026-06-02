@@ -1,12 +1,14 @@
 class Mon:
-    kills = 0
-    deaths = 0
-    games_played = 0
-    wins = 0
-    nickname = ""
-
     def __init__(self, name):
         self.name = name
+        self.kills = 0
+        self.deaths = 0
+        self.games_played = 0
+        self.wins = 0
+        self.nickname = ""
+        self.moves = []
+        self.item = ""
+        self.ability = ""
 
     def increment_kills(self):
         self.kills += 1
@@ -26,5 +28,17 @@ class Mon:
     def set_nickname(self, nickname):
         self.nickname = nickname
 
+    def add_moves(self, moves):
+        self.moves.extend(moves)
+
+    def set_item(self, item):
+        self.item = item
+
+    def set_ability(self, ability):
+        self.ability = ability
+
     def print_stats(self):
         print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins")
+
+    def print_paste(self):
+        print(f"{self.name}: {self.moves}, {self.item}, {self.ability}")
