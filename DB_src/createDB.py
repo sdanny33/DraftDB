@@ -232,18 +232,28 @@ def add_stats(source_db, target_db):
     target_conn.commit()
     target_conn.close()
 
-def add_row(source_db, target_db, id):
+def add_row(source_db, target_db, mon_id):
     source_conn = sqlite3.connect(source_db)
     source_cursor = source_conn.cursor()
-    source_cursor.execute('SELECT id, name, games_played, wins, kills, deaths FROM mons')
-    rows = source_cursor.fetchall()
+    source_cursor.execute('SELECT games_played, wins, kills, deaths FROM mons WHERE id = ?', (mon_id,))
+    source_stats = source_cursor.fetchone()
     source_conn.close()
+
+    if not source_stats:
+        return
 
     target_conn = sqlite3.connect(target_db)
     target_cursor = target_conn.cursor()
-    for row in rows:
-        if row[0] == id:
-            target_cursor.execute('INSERT OR IGNORE INTO mons (id, name, games_played, wins, kills, deaths) VALUES (?, ?, ?, ?, ?, ?)', row)
+    target_cursor.execute('SELECT games_played, wins, kills, deaths FROM mons WHERE id = ?', (mon_id,))
+    target_stats = target_cursor.fetchone()
+
+    if target_stats:
+        new_games_played = target_stats[0] + source_stats[0]
+        new_wins = target_stats[1] + source_stats[1]
+        new_kills = target_stats[2] + source_stats[2]
+        new_deaths = target_stats[3] + source_stats[3]
+        target_cursor.execute('UPDATE mons SET games_played = ?, wins = ?, kills = ?, deaths = ? WHERE id = ?', (new_games_played, new_wins, new_kills, new_deaths, mon_id))
+
     target_conn.commit()
     target_conn.close()
 
@@ -255,11 +265,10 @@ def nothing():
     pass
 
 def main():
-    dbName = DB_ROOT / 'database' / 'monDB.sqlite'
-    replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
-    archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
-    # update_db(replay_csv_path, dbName, archive_csv_path)
-    add(dbName)
+    dbName = DB_ROOT / 'database' / 'monDBTest.sqlite'
+    replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysReDraft.csv'
+    archive_csv_path = DB_ROOT / 'DB_CSV' / 'random.csv'
+    update_db(replay_csv_path, dbName, archive_csv_path)
     update_column(dbName)
     nothing()
 
