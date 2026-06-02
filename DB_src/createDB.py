@@ -265,9 +265,9 @@ def nothing():
     pass
 
 def main():
-    dbName = DB_ROOT / 'database' / 'monDBTest.sqlite'
-    replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysReDraft.csv'
-    archive_csv_path = DB_ROOT / 'DB_CSV' / 'random.csv'
+    dbName = DB_ROOT / 'database' / 'monDB.sqlite'
+    replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
+    archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
     update_db(replay_csv_path, dbName, archive_csv_path)
     update_column(dbName)
     nothing()
