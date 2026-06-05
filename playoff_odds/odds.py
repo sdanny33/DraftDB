@@ -65,12 +65,44 @@ def odds(player, wins, losses, diff, matchups, make_playoffs):
 
 def main():
     # Example data
-    player = ['Team A', 'Team B', 'Team C', 'Team D', 'Team E', 'Team F', 'Team G', 'Team H']
-    wins = [10, 9, 8, 7, 6, 5, 4, 3]
-    losses = [2, 3, 4, 5, 6, 7, 8, 9]
-    diff = [20, 15, 10, 5, -5, -10, -15, -20]
-    matchups = [('Team A', 'Team B'), ('Team C', 'Team D'), ('Team E', 'Team F'), ('Team G', 'Team H')]
-    make_playoffs = 4
+    player = ['Zen Mode Wigletts', 'Jamity Square', 'Arizona Heatwave', 'De Witt Diancies', 'Baltiomore Rookidees', 'Alabama Feraligatrs', 'Metro Boomburstin', 'Edinburgh Enamorus', 'Boston Banettes', 'Prescott Pidgeots', 'We Ballin W Rocks', 'Sunnyside Scream Tails', 'San Isidro Sinistchas', 'Washed Woopers']
+    wins = [4,3,2,2,2,2,2,2,1,1,1,1,1,0]
+    losses = [0,0,1,1,1,2,2,2,2,2,2,3,3,3]
+    diff = [8,7,7,6,2,4,1,0,-2,-3,-5,-4,-9,-12]
+    matchups = [   
+    ('Boston Banettes', 'Prescott Pidgeots'),
+    ('We Ballin W Rocks', 'Arizona Heatwave'),
+    ('De Witt Diancies', 'Washed Woopers'),
+    ('Jamity Square', 'Baltiomore Rookidees'),
+    ('Washed Woopers', 'Metro Boomburstin'),
+    ('Boston Banettes', 'Alabama Feraligatrs'),
+    ('Jamity Square', 'Arizona Heatwave'),
+    ('Baltiomore Rookidees', 'Sunnyside Scream Tails'),
+    ('Prescott Pidgeots', 'Zen Mode Wigletts'),
+    ('De Witt Diancies', 'We Ballin W Rocks'),
+    ('Edinburgh Enamorus', 'San Isidro Sinistchas'),
+    ('Zen Mode Wigletts', 'Boston Banettes'),
+    ('Baltiomore Rookidees', 'Metro Boomburstin'),
+    ('Alabama Feraligatrs', 'Jamity Square'),
+    ('Prescott Pidgeots', 'Sunnyside Scream Tails'),
+    ('De Witt Diancies', 'Arizona Heatwave'),
+    ('Washed Woopers', 'Edinburgh Enamorus'),
+    ('We Ballin W Rocks', 'San Isidro Sinistchas'),
+    ('Boston Banettes', 'De Witt Diancies'),
+    ('Baltiomore Rookidees', 'Alabama Feraligatrs'),
+    ('Prescott Pidgeots', 'Washed Woopers'),
+    ('Metro Boomburstin', 'Jamity Square'),
+    ('San Isidro Sinistchas', 'Sunnyside Scream Tails'),
+    ('Arizona Heatwave', 'Edinburgh Enamorus'),
+    ('Zen Mode Wigletts', 'We Ballin W Rocks'),
+    ('Sunnyside Scream Tails', 'Metro Boomburstin'),
+    ('San Isidro Sinistchas', 'Prescott Pidgeots'),
+    ('Alabama Feraligatrs', 'De Witt Diancies'),
+    ('Zen Mode Wigletts', 'Jamity Square'),
+    ('Edinburgh Enamorus', 'Baltiomore Rookidees'),
+    ('Arizona Heatwave', 'Washed Woopers'),
+    ('We Ballin W Rocks', 'Boston Banettes')]
+    make_playoffs = 8
 
     odds(player, wins, losses, diff, matchups, make_playoffs)
 
