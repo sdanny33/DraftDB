@@ -65,40 +65,22 @@ def odds(player, wins, losses, diff, matchups, make_playoffs):
 
 def main():
     # Example data
-    player = ['Zen Mode Wigletts', 'Jamity Square', 'Arizona Heatwave', 'De Witt Diancies', 'Baltiomore Rookidees', 'Alabama Feraligatrs', 'Metro Boomburstin', 'Edinburgh Enamorus', 'Boston Banettes', 'Prescott Pidgeots', 'We Ballin W Rocks', 'Sunnyside Scream Tails', 'San Isidro Sinistchas', 'Washed Woopers']
-    wins = [4,3,2,2,2,2,2,2,1,1,1,1,1,0]
-    losses = [0,0,1,1,1,2,2,2,2,2,2,3,3,3]
-    diff = [8,7,7,6,2,4,1,0,-2,-3,-5,-4,-9,-12]
-    matchups = [   
-    ('Boston Banettes', 'Prescott Pidgeots'),
-    ('We Ballin W Rocks', 'Arizona Heatwave'),
-    ('De Witt Diancies', 'Washed Woopers'),
-    ('Jamity Square', 'Baltiomore Rookidees'),
-    ('Washed Woopers', 'Metro Boomburstin'),
-    ('Boston Banettes', 'Alabama Feraligatrs'),
-    ('Jamity Square', 'Arizona Heatwave'),
-    ('Baltiomore Rookidees', 'Sunnyside Scream Tails'),
-    ('Prescott Pidgeots', 'Zen Mode Wigletts'),
-    ('De Witt Diancies', 'We Ballin W Rocks'),
-    ('Edinburgh Enamorus', 'San Isidro Sinistchas'),
-    ('Zen Mode Wigletts', 'Boston Banettes'),
-    ('Baltiomore Rookidees', 'Metro Boomburstin'),
-    ('Alabama Feraligatrs', 'Jamity Square'),
-    ('Prescott Pidgeots', 'Sunnyside Scream Tails'),
-    ('De Witt Diancies', 'Arizona Heatwave'),
-    ('Washed Woopers', 'Edinburgh Enamorus'),
-    ('We Ballin W Rocks', 'San Isidro Sinistchas'),
+    player = ['Consul of Regigigas', 'Jamity Square', 'Arizona Heatwave', 'Baltiomore Rookidees', 'Alabama Feraligatrs', 'De Witt Diancies', 'Metro Boomburstin', 'San Isidro Sinistchas', 'Boston Banettes', 'Sunnyside Scream Tails', 'Edinburgh Enamorus', 'We Ballin W Rocks', 'Prescott Pidgeots', 'Washed Woopers']
+    wins =   [5, 5, 4, 4, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1]
+    losses = [1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5]
+    diff =   [9, 7, 11, 7, 3, 3, 2, -3, -1, -5, -6, -8, -9, -16]
+    matchups = [
     ('Boston Banettes', 'De Witt Diancies'),
     ('Baltiomore Rookidees', 'Alabama Feraligatrs'),
     ('Prescott Pidgeots', 'Washed Woopers'),
     ('Metro Boomburstin', 'Jamity Square'),
     ('San Isidro Sinistchas', 'Sunnyside Scream Tails'),
     ('Arizona Heatwave', 'Edinburgh Enamorus'),
-    ('Zen Mode Wigletts', 'We Ballin W Rocks'),
+    ('Consul of Regigigas', 'We Ballin W Rocks'),
     ('Sunnyside Scream Tails', 'Metro Boomburstin'),
     ('San Isidro Sinistchas', 'Prescott Pidgeots'),
     ('Alabama Feraligatrs', 'De Witt Diancies'),
-    ('Zen Mode Wigletts', 'Jamity Square'),
+    ('Consul of Regigigas', 'Jamity Square'),
     ('Edinburgh Enamorus', 'Baltiomore Rookidees'),
     ('Arizona Heatwave', 'Washed Woopers'),
     ('We Ballin W Rocks', 'Boston Banettes')]
