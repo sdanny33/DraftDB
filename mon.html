@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DraftDB Mon Lookup</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="main-text-color lookup-page">
+    <main class="lookup-shell">
+        <section class="lookup-panel lookup-hero">
+            <div class="lookup-hero-copy">
+                <a class="lookup-back" href="index.html">Back to full table</a>
+                <h1>Mon lookup</h1>
+                <p>Type a mon name to see one set of stats at a time.</p>
+            </div>
+
+            <form class="lookup-form" id="lookup-form" autocomplete="off">
+                <label class="lookup-label" for="mon-query">Mon name</label>
+                <div class="lookup-input-row">
+                    <input id="mon-query" class="lookup-input" list="mon-names" name="mon-query" placeholder="Type a name like Garchomp or Rotom-Wash" />
+                    <button class="lookup-submit" type="submit">Search</button>
+                </div>
+                <datalist id="mon-names"></datalist>
+            </form>
+
+            <p class="lookup-status" id="lookup-status">Loading mon data...</p>
+        </section>
+
+        <section class="lookup-panel lookup-result" id="lookup-result" aria-live="polite">
+            <div class="lookup-empty-state">
+                Start typing a name to load a mon card.
+            </div>
+        </section>
+
+        <section class="lookup-panel lookup-matches is-hidden" id="lookup-matches" aria-live="polite"></section>
+    </main>
+    <script type="text/javascript" src="js/mon-data.js"></script>
+    <script type="text/javascript" src="js/mon.js"></script>
+</body>
+</html>

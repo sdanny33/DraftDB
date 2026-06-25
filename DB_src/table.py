@@ -1,4 +1,5 @@
 import sqlite3
+import json
 from html import escape
 from pathlib import Path
 
@@ -32,9 +33,33 @@ def print_table(dbName, tableName, fileName):
         "COALESCE(path, 'sprites/0.png') as path FROM mons WHERE games_played > 500.0"
     ).fetchall()
     column_names = ["name", "points", "games_played", "winrate", "kills", "deaths", "diff", "KPG"]
+
+    lookup_rows = cursor.execute(
+        "SELECT name, points, games_played, winrate, kills, deaths, diff, KPG, "
+        "COALESCE(path, 'sprites/0.png') as path FROM mons ORDER BY name"
+    ).fetchall()
     conn.close()
 
     table_html = _build_table_html(column_names, rows)
+    lookup_data = [
+        {
+            "name": row[0],
+            "points": row[1],
+            "gamesPlayed": row[2],
+            "winrate": row[3],
+            "kills": row[4],
+            "deaths": row[5],
+            "diff": row[6],
+            "kpg": row[7],
+            "sprite": row[8],
+        }
+        for row in lookup_rows
+    ]
+    lookup_data_js = "window.DRAFT_DB_MON_DATA = " + json.dumps(lookup_data, ensure_ascii=True) + ";"
+
+    lookup_data_path = Path(fileName).parent / 'js' / 'mon-data.js'
+    lookup_data_path.write_text(lookup_data_js, encoding="utf-8")
+
     page_html = f"""<!DOCTYPE html>
 <html lang=\"en\">
 <head>
@@ -45,6 +70,7 @@ def print_table(dbName, tableName, fileName):
 </head>
 <body class=\"main-text-color\">
     <div class=\"intro\">
+        <a class=\"external-link\" href=\"mon.html\">Mon lookup</a>
 {table_html}
     </div>
     <script type=\"text/javascript\" src=\"js/slider.js\"></script>
