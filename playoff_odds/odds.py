@@ -1,7 +1,10 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
 
-def odds(player, wins, losses, diff, matchups, make_playoffs):
+DB_ROOT = Path(__file__).resolve().parent.parent
+
+def odds(player, wins, losses, diff, matchups, make_playoffs, file):
 
     # Current standings data
     teams_data = {
@@ -61,7 +64,8 @@ def odds(player, wins, losses, diff, matchups, make_playoffs):
         'playoff_odds (%)': playoff_odds_optimized.values()
     }).sort_values(by='playoff_odds (%)', ascending=False).reset_index(drop=True)
 
-    print(playoff_odds_optimized_df)
+    with open('odds.csv', 'w') as f:
+        playoff_odds_optimized_df.to_csv(f, index=False)
 
 def main():
     # Example data
@@ -85,8 +89,9 @@ def main():
     ('Arizona Heatwave', 'Washed Woopers'),
     ('We Ballin W Rocks', 'Boston Banettes')]
     make_playoffs = 8
+    file = 'DB_ROOT / playoff_odds/ odds.csv'
 
-    odds(player, wins, losses, diff, matchups, make_playoffs)
+    odds(player, wins, losses, diff, matchups, make_playoffs, file)
 
 if __name__ == "__main__":
     main()
