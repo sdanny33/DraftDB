@@ -104,11 +104,24 @@ def item(lines):
             parts = line.split("|")
             nickname = parts[2]
             item = parts[3].strip("|")
+            print(f"Item line: {line}, nickname: {nickname}, item: {item}")
+
+            for i in range(min(6, len(players["p1"]), len(players["p2"]))):
+                if (nickname != ""):
+                    if (players["p1"][i].nickname == nickname and item != ""):
+                        players["p1"][i].set_item(item)
+                    elif (players["p2"][i].nickname == nickname and item != ""):
+                        players["p2"][i].set_item(item)
 
         elif "item:" in line:
             parts = line.split("|")
-            nickname = parts[2]
-            item = parts[4].strip("[from] item: ")
+            if len(parts) == 5:
+                nickname = parts[2]
+                item = parts[4].strip("[from] item: ")
+            if len(parts) == 6:
+                nickname = parts[5].strip("[of] ")
+                item = parts[4].strip("[from] item: ")
+            print(f"Item line: {line}, nickname: {nickname}, item: {item}")
 
             for i in range(min(6, len(players["p1"]), len(players["p2"]))):
                 if (nickname != ""):
@@ -123,6 +136,13 @@ def ability(lines):
             parts = line.split("|")
             nickname = parts[2]
             ability = parts[3].strip("|")
+
+            for i in range(min(6, len(players["p1"]), len(players["p2"]))):
+                if (nickname != ""):
+                    if (players["p1"][i].nickname == nickname and ability != ""):
+                        players["p1"][i].set_ability(ability)
+                    elif (players["p2"][i].nickname == nickname and ability != ""):
+                        players["p2"][i].set_ability(ability)
 
         elif "ability:" in line:
             parts = line.split("|")
@@ -156,7 +176,7 @@ def main():
     nickname(lines)
     moves(lines)
     item(lines)
-    # ability(lines)
+    ability(lines)
     print_paste()
 
 if __name__ == "__main__":
