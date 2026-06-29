@@ -64,23 +64,16 @@ def odds(player, wins, losses, diff, matchups, make_playoffs, file):
         'playoff_odds (%)': playoff_odds_optimized.values()
     }).sort_values(by='playoff_odds (%)', ascending=False).reset_index(drop=True)
 
-    with open('odds.csv', 'w') as f:
+    with open(file, 'w') as f:
         playoff_odds_optimized_df.to_csv(f, index=False)
 
 def main():
     # Example data
-    player = ['Consul of Regigigas', 'Jamity Square', 'Arizona Heatwave', 'Baltiomore Rookidees', 'Alabama Feraligatrs', 'De Witt Diancies', 'Metro Boomburstin', 'San Isidro Sinistchas', 'Boston Banettes', 'Sunnyside Scream Tails', 'Edinburgh Enamorus', 'We Ballin W Rocks', 'Prescott Pidgeots', 'Washed Woopers']
-    wins =   [5, 5, 4, 4, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1]
-    losses = [1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5]
-    diff =   [9, 7, 11, 7, 3, 3, 2, -3, -1, -5, -6, -8, -9, -16]
+    player = ['Arizona Heatwave', 'Consul of Regigigas', 'Jamity Square', 'Alabama Feraligatrs', 'Metro Boomburstin', 'Baltiomore Rookidees', 'Sunnyside Scream Tails', 'Boston Banettes', 'De Witt Diancies', 'Prescott Pidgeots', 'We Ballin W Rocks', 'San Isidro Sinistchas', 'Edinburgh Enamorus', 'Washed Woopers']
+    wins =   [5, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 1]
+    losses = [2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 6]
+    diff =   [14, 7, 4, 7, 5, 3, 1, 1, 1, -6, -6, -9, -9, -19]
     matchups = [
-    ('Boston Banettes', 'De Witt Diancies'),
-    ('Baltiomore Rookidees', 'Alabama Feraligatrs'),
-    ('Prescott Pidgeots', 'Washed Woopers'),
-    ('Metro Boomburstin', 'Jamity Square'),
-    ('San Isidro Sinistchas', 'Sunnyside Scream Tails'),
-    ('Arizona Heatwave', 'Edinburgh Enamorus'),
-    ('Consul of Regigigas', 'We Ballin W Rocks'),
     ('Sunnyside Scream Tails', 'Metro Boomburstin'),
     ('San Isidro Sinistchas', 'Prescott Pidgeots'),
     ('Alabama Feraligatrs', 'De Witt Diancies'),
@@ -89,7 +82,7 @@ def main():
     ('Arizona Heatwave', 'Washed Woopers'),
     ('We Ballin W Rocks', 'Boston Banettes')]
     make_playoffs = 8
-    file = 'DB_ROOT / playoff_odds/ odds.csv'
+    file = DB_ROOT / "playoff_odds" / "odds.csv"
 
     odds(player, wins, losses, diff, matchups, make_playoffs, file)
 
