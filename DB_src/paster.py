@@ -4,6 +4,7 @@ import urllib.request
 import urllib.error
 import pathlib
 from mon import Mon
+from populateAbilities import populate_abilities
 
 DB_ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -42,6 +43,24 @@ def _rosters_full():
 
 def _nicknames_full():
     return _rosters_full() and all(mon.nickname for mon in players["p1"][:6]) and all(mon.nickname for mon in players["p2"][:6])
+
+def _remove_prefix(value, prefix):
+    if value.startswith(prefix):
+        return value[len(prefix):]
+    return value
+
+def _extract_slot(parts):
+    for part in parts:
+        cleaned = _remove_prefix(part, "[of] ").strip()
+        if cleaned.startswith(("p1", "p2")):
+            return cleaned.split(",", 1)[0].strip()
+    return ""
+
+def _extract_source(parts, prefix):
+    for part in parts:
+        if part.startswith(prefix):
+            return _remove_prefix(part, prefix)
+    return ""
 
 def teams(lines):
     for line in lines:
@@ -104,7 +123,7 @@ def item(lines):
             parts = line.split("|")
             nickname = parts[2]
             item = parts[3].strip("|")
-            print(f"Item line: {line}, nickname: {nickname}, item: {item}")
+            #print(f"Item line: {line}, nickname: {nickname}, item: {item}")
 
             for i in range(min(6, len(players["p1"]), len(players["p2"]))):
                 if (nickname != ""):
@@ -115,13 +134,9 @@ def item(lines):
 
         elif "item:" in line:
             parts = line.split("|")
-            if len(parts) == 5:
-                nickname = parts[2]
-                item = parts[4].strip("[from] item: ")
-            if len(parts) == 6:
-                nickname = parts[5].strip("[of] ")
-                item = parts[4].strip("[from] item: ")
-            print(f"Item line: {line}, nickname: {nickname}, item: {item}")
+            nickname = _extract_slot(parts)
+            item = _extract_source(parts, "[from] item: ")
+            # print(f"Item line: {line}, nickname: {nickname}, item: {item}")
 
             for i in range(min(6, len(players["p1"]), len(players["p2"]))):
                 if (nickname != ""):
@@ -131,11 +146,13 @@ def item(lines):
                         players["p2"][i].set_item(item)
 
 def ability(lines):
+    populate_abilities(players["p1"], players["p2"])
     for line in lines:
-        if line.startswith("|-ability|") or line.startswith("|-end|"):
+        if line.startswith("|-ability|"):
             parts = line.split("|")
             nickname = parts[2]
             ability = parts[3].strip("|")
+            # print(f"Ability line: {line}, nickname: {nickname}, ability: {ability}")
 
             for i in range(min(6, len(players["p1"]), len(players["p2"]))):
                 if (nickname != ""):
@@ -146,8 +163,9 @@ def ability(lines):
 
         elif "ability:" in line:
             parts = line.split("|")
-            nickname = parts[2]
-            ability = parts[4].strip("[from] ability: ")
+            nickname = _extract_slot(parts)
+            ability = _extract_source(parts, "[from] ability: ")
+            # print(f"Ability line: {line}, nickname: {nickname}, ability: {ability}")
 
             for i in range(min(6, len(players["p1"]), len(players["p2"]))):
                 if (nickname != ""):
@@ -167,8 +185,7 @@ def print_data(lines):
     print(lines)
 
 def main():
-    # url = "https://replay.pokemonshowdown.com/gen9draft-2521486668-1staiapfnxd9h1hhwskqvfbeyh9dxdwpw.json"
-    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2616414331.json"
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2642542095.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
 
