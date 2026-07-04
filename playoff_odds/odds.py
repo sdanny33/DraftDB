@@ -69,16 +69,14 @@ def odds(player, wins, losses, diff, matchups, make_playoffs, file):
 
 def main():
     # Example data
-    player = ['Arizona Heatwave', 'Consul of Regigigas', 'Jamity Square', 'Alabama Feraligatrs', 'Metro Boomburstin', 'Baltiomore Rookidees', 'Sunnyside Scream Tails', 'Boston Banettes', 'De Witt Diancies', 'Prescott Pidgeots', 'We Ballin W Rocks', 'San Isidro Sinistchas', 'Edinburgh Enamorus', 'Washed Woopers']
-    wins =   [5, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 1]
-    losses = [2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 6]
-    diff =   [14, 7, 4, 7, 5, 3, 1, 1, 1, -6, -6, -9, -9, -19]
+    player = ['Arizona Heatwave', 'Consul of Regigigas', 'Jamity Square', 'Baltiomore Rookidees', 'Alabama Feraligatrs', 'Sunnyside Scream Tails', 'Metro Boomburstin', 'Boston Banettes', 'De Witt Diancies', 'Prescott Pidgeots', 'We Ballin W Rocks', 'San Isidro Sinistchas', 'Edinburgh Enamorus', 'Washed Woopers']
+    wins =   [5, 5, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3, 2, 1]
+    losses = [2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 6, 6]
+    diff =   [14, 7, 4, 6, 7, 3, 3, 1, 1, -6, -6, -9, -12, -19]
     matchups = [
-    ('Sunnyside Scream Tails', 'Metro Boomburstin'),
     ('San Isidro Sinistchas', 'Prescott Pidgeots'),
     ('Alabama Feraligatrs', 'De Witt Diancies'),
     ('Consul of Regigigas', 'Jamity Square'),
-    ('Edinburgh Enamorus', 'Baltiomore Rookidees'),
     ('Arizona Heatwave', 'Washed Woopers'),
     ('We Ballin W Rocks', 'Boston Banettes')]
     make_playoffs = 8
