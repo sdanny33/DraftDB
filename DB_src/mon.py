@@ -41,4 +41,20 @@ class Mon:
         print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins")
 
     def print_paste(self):
-        print(f"{self.name}: {self.moves}, {self.item}, {self.ability}")
+        moves = self.moves[:4]
+        while len(moves) < 4:
+            moves.append("Unseen Move")
+
+        if self.item == "":
+            self.item = "Unseen Item"
+            
+        print(
+            f"{self.name} @ {self.item}\n"
+            f"Ability: {self.ability}\n"
+            f"EVs: placeholder\n"
+            f"placeholder Nature\n"
+            f"- {moves[0]}\n"
+            f"- {moves[1]}\n"
+            f"- {moves[2]}\n"
+            f"- {moves[3]}"
+        )
