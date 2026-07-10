@@ -134,8 +134,13 @@ def item(lines):
 
         elif "item:" in line:
             parts = line.split("|")
-            nickname = _extract_slot(parts)
-            item = _extract_source(parts, "[from] item: ")
+            if line.startswith("|-damage|") and len(parts) > 5:
+                # print(f"Damage line: {parts}")
+                nickname = parts[5].strip("[of] ")
+                item = _extract_source(parts, "[from] item: ")
+            else:
+                nickname = _extract_slot(parts)
+                item = _extract_source(parts, "[from] item: ")
             # print(f"Item line: {line}, nickname: {nickname}, item: {item}")
 
             for i in range(min(6, len(players["p1"]), len(players["p2"]))):
@@ -173,6 +178,12 @@ def ability(lines):
                         players["p1"][i].set_ability(ability)
                     elif (players["p2"][i].nickname == nickname and ability != ""):
                         players["p2"][i].set_ability(ability)
+def print_clear():
+    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
+        players["p1"][i].print_clear()
+    print("VS")
+    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
+        players["p2"][i].print_clear()
 
 def print_paste():
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
@@ -185,7 +196,7 @@ def print_data(lines):
     print(lines)
 
 def main():
-    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2642542095.json"
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2616414331.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
 
@@ -194,7 +205,7 @@ def main():
     moves(lines)
     item(lines)
     ability(lines)
-    print_paste()
+    print_clear()
 
 if __name__ == "__main__":
     main()

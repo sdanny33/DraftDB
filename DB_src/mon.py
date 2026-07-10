@@ -40,6 +40,9 @@ class Mon:
     def print_stats(self):
         print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins")
 
+    def print_clear(self):
+        print(f"{self.name}: {self.ability}, {self.item}, {self.moves}")
+
     def print_paste(self):
         moves = self.moves[:4]
         while len(moves) < 4:
