@@ -1,8 +1,8 @@
 from pathlib import Path
 import re
+from parser import edges, fetch_json
 
 DB_ROOT = Path(__file__).resolve().parent.parent
-
 
 def _normalize_name(name):
     return re.sub(r"[^a-z0-9]", "", name.lower())
@@ -38,17 +38,32 @@ def populate_abilities(team1, team2):
             if abilities:
                 team2[i].set_ability(" / ".join(abilities))
 
+def public_ability(lines, file):
+    for line in lines:
+        if line.startswith("|-ability|"):
+            parts = line.split("|")
+            ability = parts[3].strip("|")
+
+            with open(file, "a") as f:
+                if ability not in file.read_text():
+                    f.write(f"{ability}\n")
+                    print(f"Added ability: {ability}")
+
+def get_public_abilities(input_file, output_file):
+        with open(input_file, 'r') as f:
+            for raw in f:
+                url = raw.strip()
+                data = fetch_json(url)
+                lines = data["log"].splitlines()
+                public_ability(lines, output_file)
+
+
 def main():
     # Example usage
-    from mon import Mon
+    input_file = DB_ROOT / "DB_CSV" /"replaysDraft.csv"
+    output_file = DB_ROOT / "dex" / "public_abilities.txt"
 
-    team1 = [Mon("Bulbasaur"), Mon("Charmander"), Mon("Squirtle")]
-    team2 = [Mon("Pikachu"), Mon("Eevee"), Mon("Jigglypuff")]
-
-    populate_abilities(team1, team2)
-
-    for mon in team1 + team2:
-        print(f"{mon.name} has ability: {mon.ability}")
+    get_public_abilities(input_file, output_file)
 
 if __name__ == "__main__":
     main()

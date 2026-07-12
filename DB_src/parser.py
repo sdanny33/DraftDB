@@ -13,6 +13,10 @@ players = {
     "p1": [],
     "p2": []
 }
+nickname_lookup = {
+    "p1": {},
+    "p2": {}
+}
 
 def _is_timeout_error(error):
     if isinstance(error, (TimeoutError, socket.timeout)):
@@ -44,6 +48,23 @@ def _rosters_full():
 
 def _nicknames_full():
     return _rosters_full() and all(mon.nickname for mon in players["p1"][:6]) and all(mon.nickname for mon in players["p2"][:6])
+
+def _clear_nickname_lookup():
+    nickname_lookup["p1"].clear()
+    nickname_lookup["p2"].clear()
+
+def _rebuild_nickname_lookup():
+    _clear_nickname_lookup()
+    for side in ("p1", "p2"):
+        for mon in players[side]:
+            if mon.nickname:
+                nickname_lookup[side][mon.nickname] = mon
+
+def _mon_for_nickname(nickname):
+    mon = nickname_lookup["p1"].get(nickname)
+    if mon is not None:
+        return mon
+    return nickname_lookup["p2"].get(nickname)
 
 def teams(lines):
     for line in lines:
@@ -91,11 +112,9 @@ def faint(lines):
         if line.startswith("|faint|"):
             parts = line.split("|")
             nickname = parts[2]
-            for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-                if (players["p1"][i].nickname == nickname):
-                    players["p1"][i].increment_deaths()
-                elif (players["p2"][i].nickname == nickname):
-                    players["p2"][i].increment_deaths()
+            mon = _mon_for_nickname(nickname)
+            if mon is not None:
+                mon.increment_deaths()
 
 def actors(line) -> tuple[str, str]:
     parts = line.split("|")
@@ -117,11 +136,9 @@ def kd(lines):
             elif parts[2] == actor2:
                 ky = actor1
             if ky is not None:
-                for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-                    if (players["p1"][i].nickname == ky):
-                        players["p1"][i].increment_kills()
-                    elif (players["p2"][i].nickname == ky):
-                        players["p2"][i].increment_kills()
+                mon = _mon_for_nickname(ky)
+                if mon is not None:
+                    mon.increment_kills()
 
 def wins(lines):
     for line in lines:
@@ -144,11 +161,9 @@ def battle_stats(lines):
         if line.startswith("|faint|"):
             parts = line.split("|")
             nickname = parts[2]
-            for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-                if (players["p1"][i].nickname == nickname):
-                    players["p1"][i].increment_deaths()
-                elif (players["p2"][i].nickname == nickname):
-                    players["p2"][i].increment_deaths()
+            mon = _mon_for_nickname(nickname)
+            if mon is not None:
+                mon.increment_deaths()
 
             ky = None
             if nickname == actor1:
@@ -157,11 +172,9 @@ def battle_stats(lines):
                 ky = actor1
 
             if ky is not None:
-                for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-                    if (players["p1"][i].nickname == ky):
-                        players["p1"][i].increment_kills()
-                    elif (players["p2"][i].nickname == ky):
-                        players["p2"][i].increment_kills()
+                mon = _mon_for_nickname(ky)
+                if mon is not None:
+                    mon.increment_kills()
 
         if line.startswith("|win|"):
             winner = line.split("|win|")[1]
@@ -217,6 +230,7 @@ def reset():
     player1, player2 = "", ""
     players["p1"] = []
     players["p2"] = []
+    _clear_nickname_lookup()
 
 def parse(url, dbName=None, cursor=None):
     data = fetch_json(url)
@@ -226,6 +240,7 @@ def parse(url, dbName=None, cursor=None):
 
     teams(lines)
     nickname(lines)
+    _rebuild_nickname_lookup()
     battle_stats(lines)
     games_played()
     save_to_db(dbName=dbName, cursor=cursor)
