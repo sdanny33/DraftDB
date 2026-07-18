@@ -65,20 +65,16 @@ def odds(player, wins, losses, diff, matchups, make_playoffs):
 
 def main():
     # Example data
-    player = ['Johning Johners', 'Krooked Kingdom', 'Skull and Bones', 'Phoenix Ho-Ohs', 'Double Trouble', 'Dos Sweepers', 'Carcinogang', 'The Phantom Typhlosion', 'New York Latios', 'Emogla Gaming']
-    wins =   [8, 8, 8, 7, 7, 7, 6, 6, 6, 6]
-    losses = [6, 6, 6, 7, 7, 8, 8, 8, 8, 9]
-    diff =   [14, 12, 3, -2, -4, -4, 1, -8, -11, -13]
+    player = ['Skull and Bones', 'Johning Johners', 'Krooked Kingdom', 'Dos Sweepers', 'Double Trouble', 'New York Latios', 'Carcinogang', 'Phoenix Ho-Ohs', 'The Phantom Typhlosion', 'Emogla Gaming']
+    wins =   [9, 8, 8, 8, 7, 8, 6, 7, 6, 6]
+    losses = [6, 6, 7, 8, 7, 8, 8, 9, 8, 10]
+    diff =   [5, 14, 10, -1, -4, -5, 1, -8, -8, -16]
     matchups = [
-            ('Skull and Bones', 'Krooked Kingdom'),
-    ('Dos Sweepers', 'Emogla Gaming'),
     ('Carcinogang', 'Johning Johners'),
     ('Double Trouble', 'The Phantom Typhlosion'),
-    ('New York Latios', 'Phoenix Ho-Ohs'),
     ('Skull and Bones', 'Krooked Kingdom'),
     ('Carcinogang', 'Johning Johners'),
     ('Double Trouble', 'The Phantom Typhlosion'),
-    ('New York Latios', 'Phoenix Ho-Ohs'),
     ]
     make_playoffs = 6
 
