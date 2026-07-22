@@ -9,6 +9,8 @@ class Mon:
         self.moves = []
         self.item = ""
         self.ability = ""
+        self.evs = [0, 0, 0, 0, 0, 0]
+        self.nature = ""
 
     def increment_kills(self):
         self.kills += 1
@@ -37,6 +39,12 @@ class Mon:
     def set_ability(self, ability):
         self.ability = ability
 
+    def set_evs(self, evs):
+        self.evs = evs
+
+    def set_nature(self, nature):
+        self.nature = nature
+
     def print_stats(self):
         print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins")
 
@@ -54,8 +62,8 @@ class Mon:
         print(
             f"{self.name} @ {self.item}\n"
             f"Ability: {self.ability}\n"
-            f"EVs: placeholder\n"
-            f"placeholder Nature\n"
+            f"EVs: {self.evs[0]}/{self.evs[1]}/{self.evs[2]}/{self.evs[3]}/{self.evs[4]}/{self.evs[5]}\n"
+            f"{self.nature} Nature\n"
             f"- {moves[0]}\n"
             f"- {moves[1]}\n"
             f"- {moves[2]}\n"

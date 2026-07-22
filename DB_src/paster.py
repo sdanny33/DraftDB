@@ -1,7 +1,7 @@
 import json
 import pathlib
 from mon import Mon
-from populateAbilities import populate_abilities
+from populateAbilities import populate_abilities, populate_evs, populate_nature
 from parser import fetch_json, teams, nickname, players
 
 DB_ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -105,6 +105,12 @@ def ability(lines):
             if mon is not None and ability != "":
                 mon.set_ability(ability)
 
+def evs(lines):
+    populate_evs(players["p1"], players["p2"])
+
+def nature(lines):
+    populate_nature(players["p1"], players["p2"])
+
 def print_clear():
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
         players["p1"][i].print_clear()
@@ -133,7 +139,10 @@ def main():
     moves(lines)
     item(lines)
     ability(lines)
-    print_clear()
+    evs(lines)
+    nature(lines)
+    print_paste()
+    # print_clear()
 
 if __name__ == "__main__":
     main()

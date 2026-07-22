@@ -1,8 +1,13 @@
 from pathlib import Path
 import re
-from parser import edges, fetch_json
+from parser import fetch_json, teams
 
 DB_ROOT = Path(__file__).resolve().parent.parent
+
+players = {
+    "p1": [],
+    "p2": []
+}
 
 def _normalize_name(name):
     return re.sub(r"[^a-z0-9]", "", name.lower())
@@ -38,6 +43,74 @@ def populate_abilities(team1, team2):
             if abilities:
                 team2[i].set_ability(" / ".join(abilities))
 
+def get_evs(name):
+    file = DB_ROOT / "dex" / "gen9.js"
+    text = file.read_text()
+    normalized_name = _normalize_name(name)
+
+    pattern = re.compile(
+        r'"(?P<name>[^"]+)":\s*\{(?P<movesets>.*?\}\s*(?:,\s*"[^"]+":\s*\{|\}\s*,|\}\s*$))',
+        re.DOTALL,
+    )
+
+    for match in pattern.finditer(text):
+        if _normalize_name(match.group("name")) != normalized_name:
+            continue
+
+        movesets = match.group("movesets")
+        evs_match = re.search(r'"evs":\{([^}]+)\}', movesets)
+        if evs_match:
+            evs_str = evs_match.group(1)
+            evs_dict = {}
+            for stat_val in re.findall(r'"([a-z]+)":(\d+)', evs_str):
+                evs_dict[stat_val[0]] = int(stat_val[1])
+            return [evs_dict.get(stat, 0) for stat in ['hp', 'at', 'df', 'sa', 'sd', 'sp']]
+
+    return [0, 0, 0, 0, 0, 0]
+
+def populate_evs(team1, team2):
+    for i in range(min(6, len(team1), len(team2))):
+        if team1[i].name:
+            evs = get_evs(team1[i].name)
+            if any(evs):
+                team1[i].set_evs(evs)
+        if team2[i].name:
+            evs = get_evs(team2[i].name)
+            if any(evs):
+                team2[i].set_evs(evs)
+
+def get_nature(name):
+    file = DB_ROOT / "dex" / "gen9.js"
+    text = file.read_text()
+    normalized_name = _normalize_name(name)
+
+    pattern = re.compile(
+        r'"(?P<name>[^"]+)":\s*\{(?P<movesets>.*?\}\s*(?:,\s*"[^"]+":\s*\{|\}\s*,|\}\s*$))',
+        re.DOTALL,
+    )
+
+    for match in pattern.finditer(text):
+        if _normalize_name(match.group("name")) != normalized_name:
+            continue
+
+        movesets = match.group("movesets")
+        nature_match = re.search(r'"nature":"([^"]+)"', movesets)
+        if nature_match:
+            return nature_match.group(1)
+
+    return ""
+
+def populate_nature(team1, team2):
+    for i in range(min(6, len(team1), len(team2))):
+        if team1[i].name:
+            nature = get_nature(team1[i].name)
+            if nature:
+                team1[i].set_nature(nature)
+        if team2[i].name:
+            nature = get_nature(team2[i].name)
+            if nature:
+                team2[i].set_nature(nature)
+
 def public_ability(lines, file):
     for line in lines:
         if line.startswith("|-ability|"):
@@ -45,7 +118,8 @@ def public_ability(lines, file):
             ability = parts[3].strip("|")
 
             with open(file, "a") as f:
-                if ability not in file.read_text():
+                f.seek(0)
+                if ability not in f.read():
                     f.write(f"{ability}\n")
                     print(f"Added ability: {ability}")
 
@@ -60,10 +134,13 @@ def get_public_abilities(input_file, output_file):
 
 def main():
     # Example usage
-    input_file = DB_ROOT / "DB_CSV" /"replaysDraft.csv"
-    output_file = DB_ROOT / "dex" / "public_abilities.txt"
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2616414331.json"
+    data = fetch_json(url)
+    lines = data["log"].splitlines()
 
-    get_public_abilities(input_file, output_file)
+    teams(lines)
+    populate_abilities(players["p1"], players["p2"])
+    populate_evs(players["p1"], players["p2"])
 
 if __name__ == "__main__":
     main()
