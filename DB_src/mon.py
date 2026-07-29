@@ -42,6 +42,24 @@ class Mon:
     def set_evs(self, evs):
         self.evs = evs
 
+    def set_hp_ev(self, hp_ev):
+        self.evs[0] = hp_ev
+
+    def set_atk_ev(self, atk_ev):
+        self.evs[1] = atk_ev
+
+    def set_def_ev(self, def_ev):
+        self.evs[2] = def_ev
+
+    def set_spa_ev(self, spa_ev):
+        self.evs[3] = spa_ev
+
+    def set_spd_ev(self, spd_ev):
+        self.evs[4] = spd_ev
+
+    def set_spe_ev(self, spe_ev):
+        self.evs[5] = spe_ev
+
     def set_nature(self, nature):
         self.nature = nature
 
@@ -62,7 +80,7 @@ class Mon:
         print(
             f"{self.name} @ {self.item}\n"
             f"Ability: {self.ability}\n"
-            f"EVs: {self.evs[0]}/{self.evs[1]}/{self.evs[2]}/{self.evs[3]}/{self.evs[4]}/{self.evs[5]}\n"
+            f"EVs: {self.evs[0]} HP / {self.evs[1]} Atk / {self.evs[2]} Def / {self.evs[3]} SpA / {self.evs[4]} SpD / {self.evs[5]} Spe\n"
             f"{self.nature} Nature\n"
             f"- {moves[0]}\n"
             f"- {moves[1]}\n"
