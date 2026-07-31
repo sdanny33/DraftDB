@@ -1,9 +1,7 @@
-
-from os import link
-from urllib import response
 from bs4 import BeautifulSoup
 import requests
 from mon import Mon
+
 
 def extract(url):
         response = requests.get(url)
@@ -66,11 +64,66 @@ def find_index(mon_data, search_string):
 
 def index_exists(mon_data, move_index):
     return move_index < len(mon_data) and move_index >= 0
+
+import math
+import random
+
+def calculate_damage(
+    attacker_level: int,
+    move_power: int,
+    attack_stat: int,
+    defense_stat: int,
+    targets: int = 1,
+    weather_multiplier: float = 1.0,
+    is_critical: bool = False,
+    stab: float = 1.0,
+    type_effectiveness: float = 1.0,
+    burn_multiplier: float = 1.0,
+) -> list[int]:
+    """Calculates all 16 possible damage roll outcomes."""
+    if move_power == 0:
+        return [0]
+
+    # Base damage step
+    level_factor = math.floor((2 * attacker_level) / 5) + 2
+    base_damage = math.floor(
+        (level_factor * move_power * (attack_stat / defense_stat)) / 50
+    ) + 2
+
+    # Modifier stacking
+    modifier = 1.0
+    if targets > 1:
+        modifier *= 0.75
+    if weather_multiplier != 1.0:
+        modifier *= weather_multiplier
+    if is_critical:
+        modifier *= 1.5
     
+    # Apply STAB, Type, and Status
+    modifier *= stab * type_effectiveness * burn_multiplier
+
+    # Compute all 16 damage rolls (85% to 100%)
+    damage_rolls = []
+    for roll in range(85, 101):
+        final_damage = math.floor(base_damage * (roll / 100.0) * modifier)
+        damage_rolls.append(max(1, final_damage))
+
+    return damage_rolls  
      
 def main():
-    url = "https://pokepast.es/df340272f67d375e"
-    extract(url)
+    #url = "https://pokepast.es/df340272f67d375e"
+    #extract(url)
+
+    # Example Usage:
+    rolls = calculate_damage(
+    attacker_level=100,
+    move_power=90,          # e.g., Thunderbolt
+    attack_stat=300,        # Special Attack
+    defense_stat=200,       # Special Defense
+    stab=1.5,
+    type_effectiveness=2.0  # Super effective
+    )
+    print("Damage Rolls:", rolls)
 
 if __name__ == "__main__":
     main()
