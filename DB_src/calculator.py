@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 from mon import Mon
-
+import math
 
 def extract(url):
         response = requests.get(url)
@@ -65,9 +65,6 @@ def find_index(mon_data, search_string):
 def index_exists(mon_data, move_index):
     return move_index < len(mon_data) and move_index >= 0
 
-import math
-import random
-
 def calculate_damage(
     attacker_level: int,
     move_power: int,
@@ -109,7 +106,27 @@ def calculate_damage(
         damage_rolls.append(max(1, final_damage))
 
     return damage_rolls  
-     
+
+def calcuate_hp(mon: Mon) -> int:
+    """Calculates the HP of a Pokémon based on its base stats, level, and EVs."""
+    base_hp = mon.get_base_stats()["hp"]
+    ev_hp = mon.get_evs()["hp"]
+    level = mon.get_level()
+
+    # HP formula: ((2 * Base + IV + (EV/4)) * Level / 100) + Level + 10
+    hp = math.floor(((2 * base_hp + 0 + (ev_hp / 4)) * level) / 100) + level + 10
+    return hp
+
+def calculate_stat(mon: Mon, stat_name: str) -> int:
+    """Calculates a specific stat (other than HP) of a Pokémon based on its base stats, level, and EVs."""
+    base_stat = mon.get_base_stats()[stat_name]
+    ev_stat = mon.get_evs()[stat_name]
+    level = mon.get_level()
+
+    # Stat formula: ((2 * Base + IV + (EV/4)) * Level / 100) + 5
+    stat_value = math.floor(((2 * base_stat + 0 + (ev_stat / 4)) * level) / 100) + 5
+    return stat_value
+   
 def main():
     #url = "https://pokepast.es/df340272f67d375e"
     #extract(url)
