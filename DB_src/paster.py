@@ -1,7 +1,7 @@
 import json
 import pathlib
 from mon import Mon
-from populateAbilities import populate_abilities, populate_evs, populate_nature, populate_base_stats
+from populateAbilities import populate_abilities, populate_evs, populate_nature, populate_base_stats, populate_types
 from parser import fetch_json, teams, nickname, players
 
 DB_ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -114,6 +114,23 @@ def nature(lines):
 def base_stats(lines):
     populate_base_stats(players["p1"], players["p2"])
 
+def types(lines):
+    populate_types(players["p1"], players["p2"])
+
+def print_base_stats():
+    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
+        print(f"{players['p1'][i].name}: {players['p1'][i].base_stats}")
+    print("VS")
+    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
+        print(f"{players['p2'][i].name}: {players['p2'][i].base_stats}")
+
+def print_types():
+    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
+        print(f"{players['p1'][i].name}: {players['p1'][i].type}")
+    print("VS")
+    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
+        print(f"{players['p2'][i].name}: {players['p2'][i].type}")
+
 def print_clear():
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
         players["p1"][i].print_clear()
@@ -144,8 +161,8 @@ def main():
     ability(lines)
     evs(lines)
     nature(lines)
-    base_stats(lines)
-    print_paste()
+    types(lines)
+    print_types()
     # print_clear()
 
 if __name__ == "__main__":

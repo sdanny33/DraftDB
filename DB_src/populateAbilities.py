@@ -1,6 +1,7 @@
 from pathlib import Path
 import re
 from parser import fetch_json, teams
+from mon import Mon
 
 DB_ROOT = Path(__file__).resolve().parent.parent
 
@@ -151,6 +152,37 @@ def populate_base_stats(team1, team2):
             if base_stats:
                 team2[i].set_base_stats(base_stats)
 
+def get_types(name):
+    file = DB_ROOT / "dex" / "pokedex.ts"
+    text = file.read_text()
+    normalized_name = _normalize_name(name)
+
+    pattern = re.compile(
+        r'name:\s*"(?P<name>[^"]+)".*?types:\s*\[(?P<types>.*?)\]',
+        re.DOTALL,
+    )
+
+    for match in pattern.finditer(text):
+        if _normalize_name(match.group("name")) != normalized_name:
+            continue
+
+        types_block = match.group("types")
+        types = re.findall(r'"([^\"]+)"', types_block)
+        return types
+
+    return []
+
+def populate_types(team1, team2):
+    for i in range(min(6, len(team1), len(team2))):
+        if team1[i].name:
+            types = get_types(team1[i].name)
+            if types:
+                team1[i].set_type(types)
+        if team2[i].name:
+            types = get_types(team2[i].name)
+            if types:
+                team2[i].set_type(types)
+
 def public_ability(lines, file):
     for line in lines:
         if line.startswith("|-ability|"):
@@ -178,7 +210,6 @@ def main():
     lines = data["log"].splitlines()
 
     teams(lines)
-    get_base_stats("Pikachu")
 
 if __name__ == "__main__":
     main()

@@ -1,8 +1,3 @@
-import re
-from pathlib import Path
-
-DB_ROOT = Path(__file__).resolve().parent.parent
-
 class Mon:
     def __init__(self, name):
         self.name = name
@@ -31,6 +26,7 @@ class Mon:
             "spd": 0,
             "spe": 0
         }
+        self.type = []
 
     def increment_kills(self):
         self.kills += 1
@@ -69,24 +65,6 @@ class Mon:
             "spe": evs.get("spe", 0)
         }
 
-    def set_hp_ev(self, hp_ev):
-        self.evs["hp"] = hp_ev
-
-    def set_atk_ev(self, atk_ev):
-        self.evs["atk"] = atk_ev
-
-    def set_def_ev(self, def_ev):
-        self.evs["def"] = def_ev
-
-    def set_spa_ev(self, spa_ev):
-        self.evs["spa"] = spa_ev
-
-    def set_spd_ev(self, spd_ev):
-        self.evs["spd"] = spd_ev
-
-    def set_spe_ev(self, spe_ev):
-        self.evs["spe"] = spe_ev
-
     def set_nature(self, nature):
         self.nature = nature
 
@@ -98,6 +76,9 @@ class Mon:
 
     def get_base_stats(self):
         return self.base_stats
+
+    def set_type(self, types):
+        self.type = types
     
     def print_stats(self):
         print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins")

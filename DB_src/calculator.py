@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 from mon import Mon
 import math
+from parser import fetch_json, teams, nickname, players
 
 def extract(url):
         response = requests.get(url)
