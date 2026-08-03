@@ -1,25 +1,30 @@
 from pathlib import Path
-import sys
 import re
-from parser import fetch_json, teams
-from mon import Mon
 import importlib.util
 
 DB_ROOT = Path(__file__).resolve().parent.parent
 
-players = {
-    "p1": [],
-    "p2": []
-}
+dex = {}
+pokedex_path = DB_ROOT / "dex" / "pokedex.py"
+if pokedex_path.exists():
+    spec = importlib.util.spec_from_file_location("pokedex", str(pokedex_path))
+    pokedex_mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(pokedex_mod)
+    dex = getattr(pokedex_mod, "dex", {})
 
 def _normalize_name(name):
-    return re.sub(r"[^a-z0-9]", "", name.lower())
+    new_name = re.sub(r"[^a-z0-9]", "", name.lower())
+    new_name = re.sub(r"-", "", new_name)
+    new_name = re.sub(r" ", "", new_name)
+    # print(new_name)
+    return new_name
 
 def get_abilities(name):
     normalized_name = _normalize_name(name)
 
     if normalized_name in dex:
         abilities = dex[normalized_name].get("abilities", {})
+        # print(f"Found abilities for {name}: {abilities}")
         return [ability for ability in abilities.values() if ability]
 
     return []
@@ -113,23 +118,12 @@ def populate_nature(team1, team2):
                 team2[i].set_nature(nature)
 
 def get_base_stats(name):
-    file = DB_ROOT / "dex" / "pokedex.ts"
-    text = file.read_text()
     normalized_name = _normalize_name(name)
 
-    pattern = re.compile(
-        r'name:\s*"(?P<name>[^"]+)".*?baseStats:\s*\{(?P<baseStats>.*?)\}',
-        re.DOTALL,
-    )
-
-    for match in pattern.finditer(text):
-        if _normalize_name(match.group("name")) != normalized_name:
-            continue
-
-        stats_block = match.group("baseStats")
-        stat_pairs = re.findall(r'([a-z]+)\s*:\s*(\d+)', stats_block)
-        if stat_pairs:
-            return {stat: int(value) for stat, value in stat_pairs}
+    if normalized_name in dex:
+        base_stats = dex[normalized_name].get("baseStats", {})
+        # print(f"Found base stats for {name}: {base_stats}")
+        return {stat: int(value) for stat, value in base_stats.items()}
 
     return {}
 
@@ -144,23 +138,13 @@ def populate_base_stats(team1, team2):
             if base_stats:
                 team2[i].set_base_stats(base_stats)
 
+
 def get_types(name):
-    file = DB_ROOT / "dex" / "pokedex.ts"
-    text = file.read_text()
     normalized_name = _normalize_name(name)
 
-    pattern = re.compile(
-        r'name:\s*"(?P<name>[^"]+)".*?types:\s*\[(?P<types>.*?)\]',
-        re.DOTALL,
-    )
-
-    for match in pattern.finditer(text):
-        if _normalize_name(match.group("name")) != normalized_name:
-            continue
-
-        types_block = match.group("types")
-        types = re.findall(r'"([^\"]+)"', types_block)
-        return types
+    if normalized_name in dex:
+        # print(f"Found types for {name}: {dex[normalized_name].get('types', [])}")
+        return dex[normalized_name].get("types", [])
 
     return []
 
@@ -175,33 +159,9 @@ def populate_types(team1, team2):
             if types:
                 team2[i].set_type(types)
 
-def public_ability(lines, file):
-    for line in lines:
-        if line.startswith("|-ability|"):
-            parts = line.split("|")
-            ability = parts[3].strip("|")
-
-            with open(file, "a") as f:
-                f.seek(0)
-                if ability not in f.read():
-                    f.write(f"{ability}\n")
-                    print(f"Added ability: {ability}")
-
-def get_public_abilities(input_file, output_file):
-        with open(input_file, 'r') as f:
-            for raw in f:
-                url = raw.strip()
-                data = fetch_json(url)
-                lines = data["log"].splitlines()
-                public_ability(lines, output_file)
-
 def main():
     # Example usage
-    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2616414331.json"
-    data = fetch_json(url)
-    lines = data["log"].splitlines()
-
-    teams(lines)
+    get_types("Pikachu")
 
 if __name__ == "__main__":
     main()
