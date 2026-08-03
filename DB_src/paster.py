@@ -1,7 +1,7 @@
 import json
 import pathlib
 from mon import Mon
-from populateAbilities import populate_abilities, populate_evs, populate_nature, populate_base_stats, populate_types
+from populateInfo import populate_abilities, populate_evs, populate_nature, populate_base_stats, populate_types
 from parser import fetch_json, teams, nickname, players
 
 DB_ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -159,11 +159,7 @@ def main():
     moves(lines)
     item(lines)
     ability(lines)
-    evs(lines)
-    nature(lines)
-    types(lines)
-    print_types()
-    # print_clear()
+    print_paste()
 
 if __name__ == "__main__":
     main()

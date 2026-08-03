@@ -1,7 +1,9 @@
 from pathlib import Path
+import sys
 import re
 from parser import fetch_json, teams
 from mon import Mon
+import importlib.util
 
 DB_ROOT = Path(__file__).resolve().parent.parent
 
@@ -14,21 +16,11 @@ def _normalize_name(name):
     return re.sub(r"[^a-z0-9]", "", name.lower())
 
 def get_abilities(name):
-    file = DB_ROOT / "dex" / "pokedex.ts"
-    text = file.read_text()
     normalized_name = _normalize_name(name)
 
-    pattern = re.compile(
-        r'name:\s*"(?P<name>[^"]+)".*?abilities:\s*\{(?P<abilities>.*?)\}',
-        re.DOTALL,
-    )
-
-    for match in pattern.finditer(text):
-        if _normalize_name(match.group("name")) != normalized_name:
-            continue
-
-        abilities = re.findall(r':\s*"([^"]+)"', match.group("abilities"))
-        return abilities
+    if normalized_name in dex:
+        abilities = dex[normalized_name].get("abilities", {})
+        return [ability for ability in abilities.values() if ability]
 
     return []
 

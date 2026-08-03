@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 
 SRC = Path(__file__).with_name('moves_cleaned.ts')
-DST = Path(__file__).with_name('moves_converted.py')
+DST = Path(__file__).with_name('moves.py')
 
 def main():
     text = SRC.read_text(encoding='utf-8')
