@@ -1,7 +1,4 @@
 import csv
-from bs4 import BeautifulSoup
-import requests
-import pandas
 from pathlib import Path
 
 DB_ROOT = Path(__file__).resolve().parent.parent
