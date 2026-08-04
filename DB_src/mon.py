@@ -27,6 +27,7 @@ class Mon:
             "spe": 0
         }
         self.type = []
+        self.level = 100  # Default level
 
     def increment_kills(self):
         self.kills += 1
@@ -79,6 +80,18 @@ class Mon:
 
     def set_type(self, types):
         self.type = types
+
+    def set_level(self, level):
+        self.level = level
+
+    def get_types(self):
+        return self.type
+
+    def get_level(self):
+        return self.level
+
+    def get_nature(self):
+        return self.nature
     
     def print_stats(self):
         print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins")

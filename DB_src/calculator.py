@@ -3,6 +3,7 @@ import requests
 from mon import Mon
 import math
 from parser import fetch_json, teams, nickname, players
+import populateInfo
 
 def extract(url):
         response = requests.get(url)
@@ -14,10 +15,10 @@ def extract(url):
             all_pre = soup.find_all('pre')
             for pre in all_pre:
                 extract = pre.get_text()
-                set_mon_data(extract)
+                set_mon_data(extract, "Example Name")
 
-def set_mon_data(info):
-    m = Mon("")
+def set_mon_data(info, name):
+    m = Mon(name)
     mon_data = info.splitlines()
     #name
     m.set_name(mon_data[0].split(" @ ")[0])
@@ -67,10 +68,10 @@ def index_exists(mon_data, move_index):
     return move_index < len(mon_data) and move_index >= 0
 
 def calculate_damage(
-    attacker_level: int,
     move_power: int,
     attack_stat: int,
     defense_stat: int,
+    attacker_level: int = 100,
     targets: int = 1,
     weather_multiplier: float = 1.0,
     is_critical: bool = False,
@@ -79,13 +80,14 @@ def calculate_damage(
     burn_multiplier: float = 1.0,
 ) -> list[int]:
     """Calculates all 16 possible damage roll outcomes."""
+    print(f"Calculating damage with parameters: move_power={move_power}, attack_stat={attack_stat}, defense_stat={defense_stat}, attacker_level={attacker_level}, targets={targets}, weather_multiplier={weather_multiplier}, is_critical={is_critical}, stab={stab}, type_effectiveness={type_effectiveness}, burn_multiplier={burn_multiplier}")
     if move_power == 0:
         return [0]
 
     # Base damage step
     level_factor = math.floor((2 * attacker_level) / 5) + 2
     base_damage = math.floor(
-        (level_factor * move_power * (attack_stat / defense_stat)) / 50
+        math.floor((level_factor * move_power * (attack_stat / defense_stat))) / 50
     ) + 2
 
     # Modifier stacking
@@ -115,7 +117,7 @@ def calcuate_hp(mon: Mon) -> int:
     level = mon.get_level()
 
     # HP formula: ((2 * Base + IV + (EV/4)) * Level / 100) + Level + 10
-    hp = math.floor(((2 * base_hp + 0 + (ev_hp / 4)) * level) / 100) + level + 10
+    hp = math.floor(((2 * base_hp + 31 + math.floor(ev_hp / 4)) * level) / 100) + level + 10
     return hp
 
 def calculate_stat(mon: Mon, stat_name: str) -> int:
@@ -125,23 +127,63 @@ def calculate_stat(mon: Mon, stat_name: str) -> int:
     level = mon.get_level()
 
     # Stat formula: ((2 * Base + IV + (EV/4)) * Level / 100) + 5
-    stat_value = math.floor(((2 * base_stat + 0 + (ev_stat / 4)) * level) / 100) + 5
+    stat_value = math.floor((math.floor(((2 * base_stat + 31 + math.floor(ev_stat / 4)) * level) / 100) + 5) * calculate_nature_modifiers(mon, stat_name))
     return stat_value
-   
+
+def calculate_nature_modifiers(mon: Mon, stat_name: str) -> float:
+    """Calculates the nature modifiers for a specific stat of a Pokémon."""
+    nature = mon.get_nature()
+    if not nature:
+        return 1.0
+
+    modifiers = populateInfo.get_nature_modifiers(nature)
+    return modifiers.get(stat_name, 1.0)
+
+def is_stab(move_type: str, mon_types: list[str]) -> int:
+    """Checks if a move gets STAB (Same Type Attack Bonus) based on the Pokémon's types."""
+    if move_type in mon_types:
+        return 1.5  # STAB multiplier
+    return 1.0  # No STAB
+
+def get_type_effectiveness(move_type: str, target_types: list[str]) -> float:
+    """Calculates the type effectiveness multiplier based on the move's type and the target Pokémon's types."""
+    type_chart = populateInfo.get_type_chart()
+    print(f"Calculating type effectiveness for move type '{move_type}' against target types {target_types}")
+    effectiveness = 1.0
+
+    for target_type in target_types:
+        if move_type in type_chart and target_type in type_chart[move_type]:
+            effectiveness *= type_chart[move_type][target_type]
+
+    return effectiveness
+
 def main():
     #url = "https://pokepast.es/df340272f67d375e"
     #extract(url)
 
+    m = Mon("Pikachu")
+    m.set_base_stats(populateInfo.get_base_stats("Pikachu"))
+    m.set_evs(populateInfo.get_evs("Pikachu"))
+    m.set_type(populateInfo.get_types("Pikachu"))
+
+    m2 = Mon("Blastoise")
+    m2.set_base_stats(populateInfo.get_base_stats("Blastoise"))
+    m2.set_evs(populateInfo.get_evs("Blastoise"))
+    m2.set_type(populateInfo.get_types("Blastoise"))
+
     # Example Usage:
     rolls = calculate_damage(
-    attacker_level=100,
-    move_power=90,          # e.g., Thunderbolt
-    attack_stat=300,        # Special Attack
-    defense_stat=200,       # Special Defense
-    stab=1.5,
-    type_effectiveness=2.0  # Super effective
+        move_power=populateInfo.get_move_base_power("Thunderbolt"),          # e.g., Thunderbolt
+        attack_stat=calculate_stat(m, "spa"),        # Special Attack
+        defense_stat=calculate_stat(m2, "spd"),       # Special Defense
+        stab=is_stab(populateInfo.get_move_type("Thunderbolt"), m.get_types()),
+        type_effectiveness=get_type_effectiveness(populateInfo.get_move_type("Thunderbolt"), m2.get_types()),
     )
     print("Damage Rolls:", rolls)
+    calculated_hp = calcuate_hp(m2)
+    min_percent = ((calculated_hp - rolls[-1]) / calculated_hp) * 100
+    max_percent = ((calculated_hp - rolls[0]) / calculated_hp) * 100
+    print(f"{m2.name}: {min_percent:.2f} to {max_percent:.2f} percent")
 
 if __name__ == "__main__":
     main()

@@ -12,6 +12,26 @@ if pokedex_path.exists():
     spec.loader.exec_module(pokedex_mod)
     dex = getattr(pokedex_mod, "dex", {})
 
+moves = {}
+moves_path = DB_ROOT / "dex" / "moves.py"
+if moves_path.exists():
+    spec = importlib.util.spec_from_file_location("moves", str(moves_path))
+    moves_mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(moves_mod)
+    moves = getattr(moves_mod, "moves", {})
+
+typeChart = {}
+type_chart_path = DB_ROOT / "dex" / "types.py"
+if type_chart_path.exists():
+    spec = importlib.util.spec_from_file_location("types", str(type_chart_path))
+    type_chart_mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(type_chart_mod)
+    typeChart = getattr(type_chart_mod, "typeChart", {})
+
+def get_type_chart():
+    return typeChart
+    moves = getattr(moves_mod, "moves", {})
+
 def _normalize_name(name):
     new_name = re.sub(r"[^a-z0-9]", "", name.lower())
     new_name = re.sub(r"-", "", new_name)
@@ -159,9 +179,68 @@ def populate_types(team1, team2):
             if types:
                 team2[i].set_type(types)
 
+def get_move_base_power(name):
+    normalized_name = _normalize_name(name)
+
+    if normalized_name in moves:
+        move = moves[normalized_name].get("basePower", 0)
+        # print(f"Found move for {name}: {move}")
+        return move
+
+def get_move_type(name):
+    normalized_name = _normalize_name(name)
+
+    if normalized_name in moves:
+        move_type = moves[normalized_name].get("type", "")
+        # print(f"Found move type for {name}: {move_type}")
+        return move_type
+
+def get_move_category(name):
+    normalized_name = _normalize_name(name)
+
+    if normalized_name in moves:
+        move_category = moves[normalized_name].get("category", "")
+        # print(f"Found move category for {name}: {move_category}")
+        return move_category
+
+def get_type_chart():
+    return typeChart
+
+def get_nature_modifiers(nature):
+    """Returns a dictionary of stat modifiers based on the Pokémon's nature."""
+    nature_modifiers = {
+        "adamant": {"atk": 1.1, "spa": 0.9},
+        "bashful": {},
+        "bold": {"def": 1.1, "atk": 0.9},
+        "brave": {"atk": 1.1, "spe": 0.9},
+        "calm": {"spd": 1.1, "atk": 0.9},
+        "careful": {"spd": 1.1, "spa": 0.9},
+        "docile": {},
+        "gentle": {"spd": 1.1, "def": 0.9},
+        "hardy": {},
+        "hasty": {"spe": 1.1, "def": 0.9},
+        "impish": {"def": 1.1, "spa": 0.9},
+        "jolly": {"spe": 1.1, "spa": 0.9},
+        "lax": {"def": 1.1, "spd": 0.9},
+        "lonely": {"atk": 1.1, "def": 0.9},
+        "mild": {"spa": 1.1, "def": 0.9},
+        "modest": {"spa": 1.1, "atk": 0.9},
+        "naive": {"spe": 1.1, "spd": 0.9},
+        "naughty": {"atk": 1.1, "spd": 0.9},
+        "quiet": {"spa": 1.1, "spe": 0.9},
+        "quirky": {},
+        "rash": {"spa": 1.1, "spd": 0.9},
+        "relaxed": {"def": 1.1, "spe": 0.9},
+        "sassy": {"spd": 1.1, "spe": 0.9},
+        "serious": {},
+        "timid": {"spe": 1.1, "atk": 0.9}
+    }
+    return nature_modifiers.get(nature.lower(), {})
+
 def main():
     # Example usage
-    get_types("Pikachu")
+    get_move_base_power("Thunderbolt")
+    get_move_type("Thunderbolt")
 
 if __name__ == "__main__":
     main()

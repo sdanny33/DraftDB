@@ -1,7 +1,7 @@
 import pathlib
-from DraftDB.DB_src.mon import Mon
-from DraftDB.DB_src.populateInfo import populate_abilities, populate_evs, populate_nature, populate_base_stats, populate_types
-from DraftDB.DB_src.parser import fetch_json, teams, nickname, players
+from mon import Mon
+from populateInfo import populate_abilities, populate_evs, populate_nature, populate_base_stats, populate_types
+from parser import fetch_json, teams, nickname, players
 
 DB_ROOT = pathlib.Path(__file__).resolve().parent.parent
 nickname_lookup = {
