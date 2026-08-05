@@ -119,12 +119,39 @@ def calculate_stat(mon: Mon, stat_name: str) -> int:
 
     # Stat formula: ((2 * Base + IV + (EV/4)) * Level / 100) + 5
     stat_value = math.floor((math.floor(((2 * base_stat + 31 + math.floor(ev_stat / 4)) * level) / 100) + 5) * calculate_nature_modifiers(mon, stat_name))
-    if stat_name in boosts:
-        boost_stage = boosts[stat_name]
-        if boost_stage > 0:
-            stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))
-        elif boost_stage < 0:
-            stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))  # Negative boosts reduce the stat
+    # if stat_name in boosts:
+    #     boost_stage = boosts[stat_name]
+    #     if boost_stage > 0:
+    #         stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))
+    #     elif boost_stage < 0:
+    #         stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))  # Negative boosts reduce the stat
+    return stat_value
+
+def calcuate_hp_evs(mon: Mon, evs: int) -> int:
+    """Calculates the HP of a Pokémon based on its base stats, level, and EVs."""
+    base_hp = mon.get_base_stats()["hp"]
+    ev_hp = evs
+    level = mon.get_level()
+
+    # HP formula: ((2 * Base + IV + (EV/4)) * Level / 100) + Level + 10
+    hp = math.floor(((2 * base_hp + 31 + math.floor(ev_hp / 4)) * level) / 100) + level + 10
+    return hp
+
+def calculate_stat_evs(mon: Mon, stat_name: str, evs: int) -> int:
+    """Calculates a specific stat (other than HP) of a Pokémon based on its base stats, level, and EVs."""
+    base_stat = mon.get_base_stats()[stat_name]
+    ev_stat = evs
+    level = mon.get_level()
+    boosts = mon.get_boosts()
+
+    # Stat formula: ((2 * Base + IV + (EV/4)) * Level / 100) + 5
+    stat_value = math.floor((math.floor(((2 * base_stat + 31 + math.floor(ev_stat / 4)) * level) / 100) + 5) * calculate_nature_modifiers(mon, stat_name))
+    # if stat_name in boosts:
+    #     boost_stage = boosts[stat_name]
+    #     if boost_stage > 0:
+    #         stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))
+    #     elif boost_stage < 0:
+    #         stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))  # Negative boosts reduce the stat
     return stat_value
 
 def calculate_nature_modifiers(mon: Mon, stat_name: str) -> float:
@@ -161,24 +188,6 @@ def turn(lines):
         if line.startswith("|move|"):
             actor1, actor2 = actors(line)
             move = line.split("|")[3]
-        if line.startswith("|-boost|"):
-            parts = line.split("|")
-            nickname = parts[2]
-            stat = parts[3]
-            change = int(parts[4])
-            mon = _mon_for_nickname(nickname)
-            if mon is not None:
-                mon.set_boosts({stat: mon.get_boosts().get(stat, 0) + change})  # Update the boost value
-                print(f"{mon.name} had its {stat} boosted by {change}")
-        if line.startswith("|-unboost|"):
-            parts = line.split("|")
-            nickname = parts[2]
-            stat = parts[3]
-            change = int(parts[4])
-            mon = _mon_for_nickname(nickname)
-            if mon is not None:
-                mon.set_boosts({stat: mon.get_boosts().get(stat, 0) - change})  # Update the boost value
-                print(f"{mon.name} had its {stat} unboosted by {change}")
         if line.startswith("|-damage|"):
             parts = line.split("|")
             nickname = parts[2]
@@ -194,24 +203,39 @@ def turn(lines):
             else:
                 print(f"Could not find Pokémon with nickname: {nickname}")
 
-def attack(lines):
+def boosts(lines):
+    # boosts should not stay if the Pokemon is switched out, so we need to reset them if the Pokemon is switched out
     for line in lines:
-        if line.startswith("|move|"):
-            actor1, actor2 = actors(line)
-
-def defense(lines):
-    for line in lines:
-        if line.startswith("|-damage|"):
+        if line.startswith("|-boost|"):
             parts = line.split("|")
             nickname = parts[2]
-            current_hp = int(parts[3].split("/")[0])
+            boosts_str = parts[3]
+            boosts_dict = {}
+            for boost in boosts_str.split(","):
+                stat, value = boost.split("=")
+                boosts_dict[stat] = int(value)
             mon = _mon_for_nickname(nickname)
             if mon is not None:
-                damage = mon.get_current_hp() - current_hp
-                mon.set_current_hp(current_hp)
-                print(f"{mon.name} took damage {damage}, current HP: {mon.current_hp}, alive: {mon.alive}")
-            else:
-                print(f"Could not find Pokémon with nickname: {nickname}")
+                mon.set_boosts(boosts_dict)
+                print(f"{mon.name} had its boosts updated to: {boosts_dict}")
+        if line.startswith("|-unboost|"):
+            parts = line.split("|")
+            nickname = parts[2]
+            unboosts_str = parts[3]
+            unboosts_dict = {}
+            for unboost in unboosts_str.split(","):
+                stat, value = unboost.split("=")
+                unboosts_dict[stat] = int(value)
+            mon = _mon_for_nickname(nickname)
+            if mon is not None:
+                current_boosts = mon.get_boosts()
+                for stat, value in unboosts_dict.items():
+                    if stat in current_boosts:
+                        current_boosts[stat] += value
+                    else:
+                        current_boosts[stat] = value
+                mon.set_boosts(current_boosts)
+                print(f"{mon.name} had its boosts updated to: {current_boosts}")
 
 def test():
         m = Mon("Pikachu")
