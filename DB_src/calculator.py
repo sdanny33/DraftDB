@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 from mon import Mon
 import math
-from parser import fetch_json, teams, nickname, players
+from parser import _mon_for_nickname, _rebuild_nickname_lookup, fetch_json, actors, teams, nickname, players
 import populateInfo
 
 def extract(url):
@@ -15,10 +15,10 @@ def extract(url):
             all_pre = soup.find_all('pre')
             for pre in all_pre:
                 extract = pre.get_text()
-                set_mon_data(extract, "Example Name")
+                set_mon_data(extract)
 
-def set_mon_data(info, name):
-    m = Mon(name)
+def set_mon_data(info):
+    m = Mon("")
     mon_data = info.splitlines()
     #name
     m.set_name(mon_data[0].split(" @ ")[0])
@@ -34,18 +34,8 @@ def set_mon_data(info, name):
     evs_values = [ev.strip() for ev in evs_values]  # Remove leading/trailing whitespace
     for ev in evs_values:
         ev_value = int(ev.split(" ")[0])
-        if "HP" in ev:
-            m.set_hp_ev(ev_value)
-        elif "Atk" in ev:
-            m.set_atk_ev(ev_value)
-        elif "Def" in ev:
-            m.set_def_ev(ev_value)
-        elif "SpA" in ev:
-            m.set_spa_ev(ev_value)
-        elif "SpD" in ev:
-            m.set_spd_ev(ev_value)
-        elif "Spe" in ev:
-            m.set_spe_ev(ev_value)
+        ev_stat = ev.split(" ")[1]
+        m.evs[ev_stat.lower()] = ev_value
     #moves
     move_index = find_index(mon_data, "- ")
     m.add_moves([mon_data[move_index].strip().removeprefix("- ").strip()])
@@ -56,7 +46,7 @@ def set_mon_data(info, name):
     if index_exists(mon_data, move_index + 3):
         m.add_moves([mon_data[move_index + 3].strip().removeprefix("- ").strip()])
     # print
-    # m.print_paste()
+    m.print_paste()
 
 def find_index(mon_data, search_string):
     for i, line in enumerate(mon_data):
@@ -125,9 +115,16 @@ def calculate_stat(mon: Mon, stat_name: str) -> int:
     base_stat = mon.get_base_stats()[stat_name]
     ev_stat = mon.get_evs()[stat_name]
     level = mon.get_level()
+    boosts = mon.get_boosts()
 
     # Stat formula: ((2 * Base + IV + (EV/4)) * Level / 100) + 5
     stat_value = math.floor((math.floor(((2 * base_stat + 31 + math.floor(ev_stat / 4)) * level) / 100) + 5) * calculate_nature_modifiers(mon, stat_name))
+    if stat_name in boosts:
+        boost_stage = boosts[stat_name]
+        if boost_stage > 0:
+            stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))
+        elif boost_stage < 0:
+            stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))  # Negative boosts reduce the stat
     return stat_value
 
 def calculate_nature_modifiers(mon: Mon, stat_name: str) -> float:
@@ -157,33 +154,98 @@ def get_type_effectiveness(move_type: str, target_types: list[str]) -> float:
 
     return effectiveness
 
+def turn(lines):
+    actor1 = None
+    actor2 = None
+    for line in lines:
+        if line.startswith("|move|"):
+            actor1, actor2 = actors(line)
+            move = line.split("|")[3]
+        if line.startswith("|-boost|"):
+            parts = line.split("|")
+            nickname = parts[2]
+            stat = parts[3]
+            change = int(parts[4])
+            mon = _mon_for_nickname(nickname)
+            if mon is not None:
+                mon.set_boosts({stat: mon.get_boosts().get(stat, 0) + change})  # Update the boost value
+                print(f"{mon.name} had its {stat} boosted by {change}")
+        if line.startswith("|-unboost|"):
+            parts = line.split("|")
+            nickname = parts[2]
+            stat = parts[3]
+            change = int(parts[4])
+            mon = _mon_for_nickname(nickname)
+            if mon is not None:
+                mon.set_boosts({stat: mon.get_boosts().get(stat, 0) - change})  # Update the boost value
+                print(f"{mon.name} had its {stat} unboosted by {change}")
+        if line.startswith("|-damage|"):
+            parts = line.split("|")
+            nickname = parts[2]
+            if "0 fnt" in parts:
+                current_hp = 0
+            else:
+                current_hp = int(parts[3].split("/")[0])
+            mon = _mon_for_nickname(nickname)
+            if mon is not None:
+                damage = mon.get_current_hp() - current_hp
+                mon.set_current_hp(current_hp)
+                print(f"{mon.name} took damage {damage}, current HP: {mon.current_hp}, alive: {mon.alive}")
+            else:
+                print(f"Could not find Pokémon with nickname: {nickname}")
+
+def attack(lines):
+    for line in lines:
+        if line.startswith("|move|"):
+            actor1, actor2 = actors(line)
+
+def defense(lines):
+    for line in lines:
+        if line.startswith("|-damage|"):
+            parts = line.split("|")
+            nickname = parts[2]
+            current_hp = int(parts[3].split("/")[0])
+            mon = _mon_for_nickname(nickname)
+            if mon is not None:
+                damage = mon.get_current_hp() - current_hp
+                mon.set_current_hp(current_hp)
+                print(f"{mon.name} took damage {damage}, current HP: {mon.current_hp}, alive: {mon.alive}")
+            else:
+                print(f"Could not find Pokémon with nickname: {nickname}")
+
+def test():
+        m = Mon("Pikachu")
+        m.set_evs(populateInfo.get_evs("Pikachu"))
+    
+        m2 = Mon("Blastoise")
+        m2.set_evs(populateInfo.get_evs("Blastoise"))
+    
+        # Example Usage:
+        rolls = calculate_damage(
+            move_power=populateInfo.get_move_base_power("Thunderbolt"),          # e.g., Thunderbolt
+            attack_stat=calculate_stat(m, "spa"),        # Special Attack
+            defense_stat=calculate_stat(m2, "spd"),       # Special Defense
+            stab=is_stab(populateInfo.get_move_type("Thunderbolt"), m.get_types()),
+            type_effectiveness=get_type_effectiveness(populateInfo.get_move_type("Thunderbolt"), m2.get_types()),
+        )
+        print("Damage Rolls:", rolls)
+        calculated_hp = calcuate_hp(m2)
+        min_percent = ((calculated_hp - rolls[-1]) / calculated_hp) * 100
+        max_percent = ((calculated_hp - rolls[0]) / calculated_hp) * 100
+        print(f"{m2.name}: {min_percent:.2f} to {max_percent:.2f} percent")
+    
 def main():
-    #url = "https://pokepast.es/df340272f67d375e"
-    #extract(url)
+    #team = "https://pokepast.es/4840cb0f46311589"
+    #extract(team)
 
-    m = Mon("Pikachu")
-    m.set_base_stats(populateInfo.get_base_stats("Pikachu"))
-    m.set_evs(populateInfo.get_evs("Pikachu"))
-    m.set_type(populateInfo.get_types("Pikachu"))
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2636733351.json"
+    data = fetch_json(url)
+    lines = data["log"].splitlines()
+    teams(lines)
+    nickname(lines)
+    _rebuild_nickname_lookup()
+    turn(lines)
 
-    m2 = Mon("Blastoise")
-    m2.set_base_stats(populateInfo.get_base_stats("Blastoise"))
-    m2.set_evs(populateInfo.get_evs("Blastoise"))
-    m2.set_type(populateInfo.get_types("Blastoise"))
-
-    # Example Usage:
-    rolls = calculate_damage(
-        move_power=populateInfo.get_move_base_power("Thunderbolt"),          # e.g., Thunderbolt
-        attack_stat=calculate_stat(m, "spa"),        # Special Attack
-        defense_stat=calculate_stat(m2, "spd"),       # Special Defense
-        stab=is_stab(populateInfo.get_move_type("Thunderbolt"), m.get_types()),
-        type_effectiveness=get_type_effectiveness(populateInfo.get_move_type("Thunderbolt"), m2.get_types()),
-    )
-    print("Damage Rolls:", rolls)
-    calculated_hp = calcuate_hp(m2)
-    min_percent = ((calculated_hp - rolls[-1]) / calculated_hp) * 100
-    max_percent = ((calculated_hp - rolls[0]) / calculated_hp) * 100
-    print(f"{m2.name}: {min_percent:.2f} to {max_percent:.2f} percent")
 
 if __name__ == "__main__":
     main()

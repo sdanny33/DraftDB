@@ -1,3 +1,5 @@
+import populateInfo
+
 class Mon:
     def __init__(self, name):
         self.name = name
@@ -28,6 +30,19 @@ class Mon:
         }
         self.type = []
         self.level = 100  # Default level
+        self.current_hp = 100  # Default current HP
+        self.alive = True  # Default alive status
+        self.boosts = {
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0,
+            "accuracy": 0,
+            "evasion": 0
+        }
+        self.set_base_stats(populateInfo.get_base_stats(name))
+        self.set_type(populateInfo.get_types(name))
 
     def increment_kills(self):
         self.kills += 1
@@ -92,6 +107,20 @@ class Mon:
 
     def get_nature(self):
         return self.nature
+
+    def set_current_hp(self, hp):
+        self.current_hp = hp
+        if self.current_hp <= 0:
+            self.alive = False
+
+    def get_current_hp(self):
+        return self.current_hp
+
+    def set_boosts(self, boosts):
+        self.boosts = boosts
+
+    def get_boosts(self):
+        return self.boosts
     
     def print_stats(self):
         print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins")
