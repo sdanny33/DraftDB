@@ -237,10 +237,31 @@ def get_nature_modifiers(nature):
     }
     return nature_modifiers.get(nature.lower(), {})
 
+def get_forme_name(name):
+    normalized_name = _normalize_name(name)
+
+    if normalized_name in dex:
+        forme_name = dex[normalized_name].get("otherFormes", [])
+        # print(f"Found forme name for {name}: {forme_name}")
+        return forme_name
+
+    return []
+
+def get_base_species(name):
+    normalized_name = _normalize_name(name)
+
+    if normalized_name in dex:
+        base_species = dex[normalized_name].get("baseSpecies", "")
+        # print(f"Found base species for {name}: {base_species}")
+        return base_species
+
+    return ""
+
 def main():
     # Example usage
     get_move_base_power("Thunderbolt")
     get_move_type("Thunderbolt")
+    get_forme_name("Venusaur")
 
 if __name__ == "__main__":
     main()

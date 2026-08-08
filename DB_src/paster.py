@@ -61,13 +61,9 @@ def item(lines):
             nickname = parts[2]
             item = parts[3].strip("|")
             #print(f"Item line: {line}, nickname: {nickname}, item: {item}")
-
-            for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-                if (nickname != ""):
-                    if (players["p1"][i].nickname == nickname and item != ""):
-                        players["p1"][i].set_item(item)
-                    elif (players["p2"][i].nickname == nickname and item != ""):
-                        players["p2"][i].set_item(item)
+            mon = _mon_for_nickname(nickname)
+            if mon is not None and item != "":
+                mon.set_item(item)
 
         elif "item:" in line:
             parts = line.split("|")
@@ -79,6 +75,15 @@ def item(lines):
                 nickname = _extract_slot(parts)
                 item = _extract_source(parts, "[from] item: ")
             # print(f"Item line: {line}, nickname: {nickname}, item: {item}")
+            mon = _mon_for_nickname(nickname)
+            if mon is not None and item != "":
+                mon.set_item(item)
+
+        elif line.startswith("|-mega|"):
+            parts = line.split("|")
+            print(f"Mega line: {line}, parts: {parts}")
+            nickname = parts[2]
+            item = parts[4]
             mon = _mon_for_nickname(nickname)
             if mon is not None and item != "":
                 mon.set_item(item)
@@ -103,32 +108,6 @@ def ability(lines):
             mon = _mon_for_nickname(nickname)
             if mon is not None and ability != "":
                 mon.set_ability(ability)
-
-def evs(lines):
-    populate_evs(players["p1"], players["p2"])
-
-def nature(lines):
-    populate_nature(players["p1"], players["p2"])
-
-def base_stats(lines):
-    populate_base_stats(players["p1"], players["p2"])
-
-def types(lines):
-    populate_types(players["p1"], players["p2"])
-
-def print_base_stats():
-    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-        print(f"{players['p1'][i].name}: {players['p1'][i].base_stats}")
-    print("VS")
-    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-        print(f"{players['p2'][i].name}: {players['p2'][i].base_stats}")
-
-def print_types():
-    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-        print(f"{players['p1'][i].name}: {players['p1'][i].type}")
-    print("VS")
-    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-        print(f"{players['p2'][i].name}: {players['p2'][i].type}")
 
 def print_clear():
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):

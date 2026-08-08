@@ -1,8 +1,11 @@
+import re
+
 from bs4 import BeautifulSoup
 import requests
 from mon import Mon
 import math
 from parser import _mon_for_nickname, _rebuild_nickname_lookup, fetch_json, actors, teams, nickname, players
+from paster import print_paste
 import populateInfo
 
 def extract(url):
@@ -15,13 +18,52 @@ def extract(url):
             all_pre = soup.find_all('pre')
             for pre in all_pre:
                 extract = pre.get_text()
+
+                # Clean the uneeded text
+                replacements = [
+                    (r'Shiny: Yes  ', ''),
+                    (r'IVs: .*', ''),
+                    (r'\((F)\) ', ''),
+                    (r'\((M)\) ', '')                ]
+                for pattern, replacement in replacements:
+                    extract = re.sub(pattern, replacement, extract)
+
+                # Remove empty lines
+                lines = [line for line in extract.splitlines() if line.strip()]
+                if not lines:
+                    continue
+                
+                # Removes the nicknames and gets the mons name
+                def replace_parenthetical(line):
+                    m = re.match(r'.*\(([^)]*)\)\s*(.*)', line)
+                    if m:
+                        name = m.group(1).strip()
+                        rest = m.group(2).strip()
+                        return f"{name} {rest}".strip()
+                    return line
+
+                lines = [replace_parenthetical(line) for line in lines]
+
+                clean_extract = '\n'.join(lines) + '\n'
+                extract = clean_extract
                 set_mon_data(extract)
 
 def set_mon_data(info):
-    m = Mon("")
+    m = Mon("temp")
     mon_data = info.splitlines()
     #name
-    m.set_name(mon_data[0].split(" @ ")[0])
+    # print(f"Setting mon data for {mon_data[0].split(' @ ')[0]}")
+    name = mon_data[0].split(" @ ")[0]
+    formes = populateInfo.get_base_species(name)
+    
+    index = min(6, len(players["p1"]), len(players["p2"]))
+    for i in range(index):
+            if (players["p1"][i].name == name or players["p1"][i].name == formes):
+                    players["p1"][i].set_name(name)
+                    m = players["p1"][i]
+            elif (players["p2"][i].name == name or players["p2"][i].name == formes):
+                    players["p2"][i].set_name(name)
+                    m = players["p2"][i]
     #item
     m.set_item(mon_data[0].split(" @ ")[1])
     #ability
@@ -29,6 +71,7 @@ def set_mon_data(info):
     #nature
     m.set_nature(mon_data[find_index(mon_data, " Nature")].split(" Nature")[0])
     # evs
+    m.reset_evs()
     evs_line = mon_data[find_index(mon_data, "EVs: ")]
     evs_values = evs_line.removeprefix("EVs: ").split("/")
     evs_values = [ev.strip() for ev in evs_values]  # Remove leading/trailing whitespace
@@ -46,7 +89,7 @@ def set_mon_data(info):
     if index_exists(mon_data, move_index + 3):
         m.add_moves([mon_data[move_index + 3].strip().removeprefix("- ").strip()])
     # print
-    m.print_paste()
+    # m.print_paste()
 
 def find_index(mon_data, search_string):
     for i, line in enumerate(mon_data):
@@ -119,12 +162,12 @@ def calculate_stat(mon: Mon, stat_name: str) -> int:
 
     # Stat formula: ((2 * Base + IV + (EV/4)) * Level / 100) + 5
     stat_value = math.floor((math.floor(((2 * base_stat + 31 + math.floor(ev_stat / 4)) * level) / 100) + 5) * calculate_nature_modifiers(mon, stat_name))
-    # if stat_name in boosts:
-    #     boost_stage = boosts[stat_name]
-    #     if boost_stage > 0:
-    #         stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))
-    #     elif boost_stage < 0:
-    #         stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))  # Negative boosts reduce the stat
+    if stat_name in boosts:
+        boost_stage = boosts[stat_name]
+        if boost_stage > 0:
+            stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))
+        elif boost_stage < 0:
+            stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))  # Negative boosts reduce the stat
     return stat_value
 
 def calcuate_hp_evs(mon: Mon, evs: int) -> int:
@@ -146,12 +189,12 @@ def calculate_stat_evs(mon: Mon, stat_name: str, evs: int) -> int:
 
     # Stat formula: ((2 * Base + IV + (EV/4)) * Level / 100) + 5
     stat_value = math.floor((math.floor(((2 * base_stat + 31 + math.floor(ev_stat / 4)) * level) / 100) + 5) * calculate_nature_modifiers(mon, stat_name))
-    # if stat_name in boosts:
-    #     boost_stage = boosts[stat_name]
-    #     if boost_stage > 0:
-    #         stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))
-    #     elif boost_stage < 0:
-    #         stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))  # Negative boosts reduce the stat
+    if stat_name in boosts:
+        boost_stage = boosts[stat_name]
+        if boost_stage > 0:
+            stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))
+        elif boost_stage < 0:
+            stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))  # Negative boosts reduce the stat
     return stat_value
 
 def calculate_nature_modifiers(mon: Mon, stat_name: str) -> float:
@@ -181,12 +224,15 @@ def get_type_effectiveness(move_type: str, target_types: list[str]) -> float:
 
     return effectiveness
 
-def turn(lines):
+def damage(lines):
     actor1 = None
     actor2 = None
+    move = None
     for line in lines:
         if line.startswith("|move|"):
             actor1, actor2 = actors(line)
+            actor1 = _mon_for_nickname(actor1)
+            actor2 = _mon_for_nickname(actor2)
             move = line.split("|")[3]
         if line.startswith("|-damage|"):
             parts = line.split("|")
@@ -196,46 +242,47 @@ def turn(lines):
             else:
                 current_hp = int(parts[3].split("/")[0])
             mon = _mon_for_nickname(nickname)
+            actor2 = mon
             if mon is not None:
                 damage = mon.get_current_hp() - current_hp
                 mon.set_current_hp(current_hp)
-                print(f"{mon.name} took damage {damage}, current HP: {mon.current_hp}, alive: {mon.alive}")
-            else:
-                print(f"Could not find Pokémon with nickname: {nickname}")
+                if len(parts) == 4 and damage > 0:
+                    print(f"{actor2.name} took {damage} percent from {move} from {actor1.name}. Current HP: {current_hp}")
+
 
 def boosts(lines):
     # boosts should not stay if the Pokemon is switched out, so we need to reset them if the Pokemon is switched out
     for line in lines:
         if line.startswith("|-boost|"):
             parts = line.split("|")
+            #print(f"Boost line: {line}, parts: {parts}")
             nickname = parts[2]
             boosts_str = parts[3]
-            boosts_dict = {}
-            for boost in boosts_str.split(","):
-                stat, value = boost.split("=")
-                boosts_dict[stat] = int(value)
-            mon = _mon_for_nickname(nickname)
-            if mon is not None:
-                mon.set_boosts(boosts_dict)
-                print(f"{mon.name} had its boosts updated to: {boosts_dict}")
+            boosts_value = parts[4]
+            boosts = _mon_for_nickname(nickname).get_boosts()
+            boosts[boosts_str] = int(boosts_value)
         if line.startswith("|-unboost|"):
             parts = line.split("|")
+            #print(f"Unboost line: {line}, parts: {parts}")
             nickname = parts[2]
-            unboosts_str = parts[3]
-            unboosts_dict = {}
-            for unboost in unboosts_str.split(","):
-                stat, value = unboost.split("=")
-                unboosts_dict[stat] = int(value)
+            boosts_str = parts[3]
+            boosts_value = parts[4]
+            boosts = _mon_for_nickname(nickname).get_boosts()
+            boosts[boosts_str] = int(boosts_value)
+        if line.startswith("|switch|"):
+            parts = line.split("|")
+            nickname = parts[2]
             mon = _mon_for_nickname(nickname)
             if mon is not None:
-                current_boosts = mon.get_boosts()
-                for stat, value in unboosts_dict.items():
-                    if stat in current_boosts:
-                        current_boosts[stat] += value
-                    else:
-                        current_boosts[stat] = value
-                mon.set_boosts(current_boosts)
-                print(f"{mon.name} had its boosts updated to: {current_boosts}")
+                mon.set_boosts({
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 0,
+                    "accuracy": 0,
+                    "evasion": 0
+                })
 
 def test():
         m = Mon("Pikachu")
@@ -259,17 +306,17 @@ def test():
         print(f"{m2.name}: {min_percent:.2f} to {max_percent:.2f} percent")
     
 def main():
-    #team = "https://pokepast.es/4840cb0f46311589"
-    #extract(team)
-
     url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2636733351.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
     teams(lines)
     nickname(lines)
     _rebuild_nickname_lookup()
-    turn(lines)
-
+    # damage(lines)
+    # boosts(lines)
+    team = "https://pokepast.es/4840cb0f46311589"
+    extract(team)
+    print_paste()
 
 if __name__ == "__main__":
     main()

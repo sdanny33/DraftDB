@@ -41,8 +41,12 @@ class Mon:
             "accuracy": 0,
             "evasion": 0
         }
+        self.damage = {}
         self.set_base_stats(populateInfo.get_base_stats(name))
         self.set_type(populateInfo.get_types(name))
+        self.set_ability(populateInfo.get_abilities(name))
+        self.set_evs(populateInfo.get_evs(name))
+        self.set_nature(populateInfo.get_nature(name))
 
     def increment_kills(self):
         self.kills += 1
@@ -90,6 +94,16 @@ class Mon:
     def get_evs(self):
         return self.evs
 
+    def reset_evs(self):
+        self.evs = {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+
     def get_base_stats(self):
         return self.base_stats
 
@@ -121,7 +135,7 @@ class Mon:
 
     def get_boosts(self):
         return self.boosts
-    
+        
     def print_stats(self):
         print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins")
 
