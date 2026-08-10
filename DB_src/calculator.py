@@ -1,5 +1,4 @@
 import re
-
 from bs4 import BeautifulSoup
 import requests
 from mon import Mon
@@ -113,7 +112,7 @@ def calculate_damage(
     burn_multiplier: float = 1.0,
 ) -> list[int]:
     """Calculates all 16 possible damage roll outcomes."""
-    print(f"Calculating damage with parameters: move_power={move_power}, attack_stat={attack_stat}, defense_stat={defense_stat}, attacker_level={attacker_level}, targets={targets}, weather_multiplier={weather_multiplier}, is_critical={is_critical}, stab={stab}, type_effectiveness={type_effectiveness}, burn_multiplier={burn_multiplier}")
+    # print(f"Calculating damage with parameters: move_power={move_power}, attack_stat={attack_stat}, defense_stat={defense_stat}, attacker_level={attacker_level}, targets={targets}, weather_multiplier={weather_multiplier}, is_critical={is_critical}, stab={stab}, type_effectiveness={type_effectiveness}, burn_multiplier={burn_multiplier}")
     if move_power == 0:
         return [0]
 
@@ -167,7 +166,7 @@ def calculate_stat(mon: Mon, stat_name: str) -> int:
         if boost_stage > 0:
             stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))
         elif boost_stage < 0:
-            stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))  # Negative boosts reduce the stat
+            stat_value = math.floor(stat_value * (1 + 0.33 * boost_stage))  # Negative boosts reduce the stat
     return stat_value
 
 def calcuate_hp_evs(mon: Mon, evs: int) -> int:
@@ -215,7 +214,7 @@ def is_stab(move_type: str, mon_types: list[str]) -> int:
 def get_type_effectiveness(move_type: str, target_types: list[str]) -> float:
     """Calculates the type effectiveness multiplier based on the move's type and the target Pokémon's types."""
     type_chart = populateInfo.get_type_chart()
-    print(f"Calculating type effectiveness for move type '{move_type}' against target types {target_types}")
+    # print(f"Calculating type effectiveness for move type '{move_type}' against target types {target_types}")
     effectiveness = 1.0
 
     for target_type in target_types:
@@ -223,6 +222,22 @@ def get_type_effectiveness(move_type: str, target_types: list[str]) -> float:
             effectiveness *= type_chart[move_type][target_type]
 
     return effectiveness
+
+def get_category(move_name: str) -> str:
+    """Returns the category of a move (Physical, Special, or Status)."""
+    category = populateInfo.get_move_category(move_name)
+    if category == "Physical":
+        return "atk"
+    elif category == "Special":
+        return "spa"
+
+def get_defense_category(move_name: str) -> str:
+    """Returns the defense category of a move (Physical or Special)."""
+    category = populateInfo.get_move_category(move_name)
+    if category == "Physical":
+        return "def"
+    elif category == "Special":
+        return "spd"
 
 def damage(lines):
     actor1 = None
@@ -234,25 +249,6 @@ def damage(lines):
             actor1 = _mon_for_nickname(actor1)
             actor2 = _mon_for_nickname(actor2)
             move = line.split("|")[3]
-        if line.startswith("|-damage|"):
-            parts = line.split("|")
-            nickname = parts[2]
-            if "0 fnt" in parts:
-                current_hp = 0
-            else:
-                current_hp = int(parts[3].split("/")[0])
-            mon = _mon_for_nickname(nickname)
-            actor2 = mon
-            if mon is not None:
-                damage = mon.get_current_hp() - current_hp
-                mon.set_current_hp(current_hp)
-                if len(parts) == 4 and damage > 0:
-                    print(f"{actor2.name} took {damage} percent from {move} from {actor1.name}. Current HP: {current_hp}")
-
-
-def boosts(lines):
-    # boosts should not stay if the Pokemon is switched out, so we need to reset them if the Pokemon is switched out
-    for line in lines:
         if line.startswith("|-boost|"):
             parts = line.split("|")
             #print(f"Boost line: {line}, parts: {parts}")
@@ -268,7 +264,7 @@ def boosts(lines):
             boosts_str = parts[3]
             boosts_value = parts[4]
             boosts = _mon_for_nickname(nickname).get_boosts()
-            boosts[boosts_str] = int(boosts_value)
+            boosts[boosts_str] = -int(boosts_value)
         if line.startswith("|switch|"):
             parts = line.split("|")
             nickname = parts[2]
@@ -283,6 +279,34 @@ def boosts(lines):
                     "accuracy": 0,
                     "evasion": 0
                 })
+        if line.startswith("|-damage|"):
+            parts = line.split("|")
+            nickname = parts[2]
+            if "0 fnt" in parts:
+                current_hp = 0
+            else:
+                current_hp = int(parts[3].split("/")[0])
+            mon = _mon_for_nickname(nickname)
+            actor2 = mon
+            if mon is not None:
+                damage = mon.get_current_hp() - current_hp
+                mon.set_current_hp(current_hp)
+                if len(parts) == 4 and damage > 0:
+                    estimated = calculate_damage(
+                        move_power=populateInfo.get_move_base_power(move),
+                        attack_stat=calculate_stat(actor1, get_category(move)),
+                        defense_stat=calculate_stat(actor2, get_defense_category(move)),
+                        stab=is_stab(populateInfo.get_move_type(move), actor1.get_types()),
+                        type_effectiveness=get_type_effectiveness(populateInfo.get_move_type(move), actor2.get_types()),
+                    )
+                    hp = calcuate_hp(actor2)
+                    min_percent = 100 - ((hp - estimated[0]) / hp) * 100
+                    max_percent = 100 - ((hp - estimated[-1]) / hp) * 100
+                    if min_percent <= damage and max_percent >= damage or actor2.get_current_hp() == 0:
+                        print(f"{actor2.name} took valid {damage} percent from {move} from {actor1.name}. Current HP: {current_hp}. Estimated: {min_percent:.2f} to {max_percent:.2f} percent")
+                    else:
+                        print(f"{actor2.name} took invalid {damage} percent from {move} from {actor1.name}. Current HP: {current_hp}. Estimated: {min_percent:.2f} to {max_percent:.2f} percent. (Mismatch!)")
+
 
 def test():
         m = Mon("Pikachu")
@@ -303,7 +327,7 @@ def test():
         calculated_hp = calcuate_hp(m2)
         min_percent = ((calculated_hp - rolls[-1]) / calculated_hp) * 100
         max_percent = ((calculated_hp - rolls[0]) / calculated_hp) * 100
-        print(f"{m2.name}: {min_percent:.2f} to {max_percent:.2f} percent")
+        print(f"{m2.name}, {calculated_hp}: {100 - max_percent:.2f} to {100 - min_percent:.2f} percent")
     
 def main():
     url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2636733351.json"
@@ -312,11 +336,10 @@ def main():
     teams(lines)
     nickname(lines)
     _rebuild_nickname_lookup()
-    # damage(lines)
-    # boosts(lines)
     team = "https://pokepast.es/4840cb0f46311589"
     extract(team)
     print_paste()
+    damage(lines)
 
 if __name__ == "__main__":
     main()

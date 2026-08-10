@@ -42,11 +42,12 @@ class Mon:
             "evasion": 0
         }
         self.damage = {}
+        self.valid = True  # Default validity status
         self.set_base_stats(populateInfo.get_base_stats(name))
         self.set_type(populateInfo.get_types(name))
         self.set_ability(populateInfo.get_abilities(name))
-        self.set_evs(populateInfo.get_evs(name))
-        self.set_nature(populateInfo.get_nature(name))
+        self.set_evs(populateInfo.get_evs(name, 1))
+        self.set_nature(populateInfo.get_nature(name, 1))
 
     def increment_kills(self):
         self.kills += 1
@@ -135,6 +136,9 @@ class Mon:
 
     def get_boosts(self):
         return self.boosts
+
+    def set_valid(self, valid):
+        self.valid = valid
         
     def print_stats(self):
         print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins")

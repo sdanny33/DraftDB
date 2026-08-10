@@ -28,9 +28,13 @@ if type_chart_path.exists():
     spec.loader.exec_module(type_chart_mod)
     typeChart = getattr(type_chart_mod, "typeChart", {})
 
-def get_type_chart():
-    return typeChart
-    moves = getattr(moves_mod, "moves", {})
+sets = {}
+sets_path = DB_ROOT / "dex" / "gen9.py"
+if sets_path.exists():
+    spec = importlib.util.spec_from_file_location("gen9", str(sets_path))
+    sets_mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(sets_mod)
+    sets = getattr(sets_mod, "SETDEX_SV", {})
 
 def _normalize_name(name):
     new_name = re.sub(r"[^a-z0-9]", "", name.lower())
@@ -60,25 +64,13 @@ def populate_abilities(team1, team2):
             if abilities:
                 team2[i].set_ability(" / ".join(abilities))
 
-def get_evs(name):
-    file = DB_ROOT / "dex" / "gen9.js"
-    text = file.read_text()
-    normalized_name = _normalize_name(name)
+def get_evs(name, set_number=1):
+    normalized_name = name
 
-    pattern = re.compile(
-        r'"(?P<name>[^"]+)":\s*\{(?P<movesets>.*?\}\s*(?:,\s*"[^"]+":\s*\{|\}\s*,|\}\s*$))',
-        re.DOTALL,
-    )
-
-    for match in pattern.finditer(text):
-        if _normalize_name(match.group("name")) != normalized_name:
-            continue
-
-        movesets = match.group("movesets")
-        evs_match = re.search(r'"evs":\{([^}]+)\}', movesets)
-        if evs_match:
-            evs_str = evs_match.group(1)
-            evs_dict = {"hp": 0, "atk": 0, "def": 0, "spa": 0, "spd": 0, "spe": 0}
+    if normalized_name in sets:
+        items = list(sets[normalized_name].values())
+        if set_number <= len(items):
+            evs_data = items[set_number - 1].get("evs", {})
             stat_map = {
                 "hp": "hp",
                 "at": "atk",
@@ -87,12 +79,11 @@ def get_evs(name):
                 "sd": "spd",
                 "sp": "spe",
             }
-            for stat_key, value in re.findall(r'"([a-z]+)":(\d+)', evs_str):
-                if stat_key in stat_map:
-                    evs_dict[stat_map[stat_key]] = int(value)
-            return evs_dict
+            evs_data = {stat_map.get(k, k): v for k, v in evs_data.items()}
+            # print(f"Found EVs for {name} (Set {set_number}): {evs_data}")
+            return {stat: int(value) for stat, value in evs_data.items()}
 
-    return {"hp": 0, "atk": 0, "def": 0, "spa": 0, "spd": 0, "spe": 0}
+    return {}
 
 def populate_evs(team1, team2):
     for i in range(min(6, len(team1), len(team2))):
@@ -105,24 +96,13 @@ def populate_evs(team1, team2):
             if any(evs.values()):
                 team2[i].set_evs(evs)
 
-def get_nature(name):
-    file = DB_ROOT / "dex" / "gen9.js"
-    text = file.read_text()
-    normalized_name = _normalize_name(name)
+def get_nature(name, set_number=1):
+    normalized_name = name
 
-    pattern = re.compile(
-        r'"(?P<name>[^"]+)":\s*\{(?P<movesets>.*?\}\s*(?:,\s*"[^"]+":\s*\{|\}\s*,|\}\s*$))',
-        re.DOTALL,
-    )
-
-    for match in pattern.finditer(text):
-        if _normalize_name(match.group("name")) != normalized_name:
-            continue
-
-        movesets = match.group("movesets")
-        nature_match = re.search(r'"nature":"([^"]+)"', movesets)
-        if nature_match:
-            return nature_match.group(1)
+    if normalized_name in sets:
+        items = list(sets[normalized_name].values())
+        if set_number <= len(items):
+            return items[set_number - 1].get("nature", "")
 
     return ""
 
@@ -259,9 +239,7 @@ def get_base_species(name):
 
 def main():
     # Example usage
-    get_move_base_power("Thunderbolt")
-    get_move_type("Thunderbolt")
-    get_forme_name("Venusaur")
+    get_nature("Pecharunt", 2)
 
 if __name__ == "__main__":
     main()
