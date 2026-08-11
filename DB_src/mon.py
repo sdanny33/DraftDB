@@ -32,7 +32,7 @@ class Mon:
         self.level = 100  # Default level
         self.current_hp = 100  # Default current HP
         self.alive = True  # Default alive status
-        self.boosts = {
+        self.base_boosts = {
             "atk": 0,
             "def": 0,
             "spa": 0,
@@ -41,6 +41,7 @@ class Mon:
             "accuracy": 0,
             "evasion": 0
         }
+        self.boosts = self.base_boosts  # Initialize boosts to base boosts
         self.damage = {}
         self.valid = True  # Default validity status
         self.set_base_stats(populateInfo.get_base_stats(name))
@@ -73,9 +74,15 @@ class Mon:
     def set_item(self, item):
         self.item = item
 
+    def get_item(self):
+        return self.item
+
     def set_ability(self, ability):
         self.ability = ability
 
+    def get_ability(self):
+        return self.ability
+    
     def set_evs(self, evs):
         self.evs = {
             "hp": evs.get("hp", 0),
@@ -137,8 +144,15 @@ class Mon:
     def get_boosts(self):
         return self.boosts
 
+    def get_base_boosts(self):
+        return self.base_boosts
+
+    def set_base_boosts(self, base_boosts):
+        self.base_boosts = base_boosts
+
     def set_valid(self, valid):
         self.valid = valid
+
         
     def print_stats(self):
         print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins")
