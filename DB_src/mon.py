@@ -150,10 +150,12 @@ class Mon:
     def set_base_boosts(self, base_boosts):
         self.base_boosts = base_boosts
 
+    def reset_boosts(self):
+        self.boosts = self.base_boosts.copy()
+
     def set_valid(self, valid):
         self.valid = valid
 
-        
     def print_stats(self):
         print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins")
 
