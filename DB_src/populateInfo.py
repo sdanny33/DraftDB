@@ -117,6 +117,16 @@ def populate_nature(team1, team2):
             if nature:
                 team2[i].set_nature(nature)
 
+def get_item(name, set_number=1):
+    normalized_name = name
+
+    if normalized_name in sets:
+        items = list(sets[normalized_name].values())
+        if set_number <= len(items):
+            return items[set_number - 1].get("item", "")
+
+    return ""
+
 def get_base_stats(name):
     normalized_name = _normalize_name(name)
 
@@ -236,6 +246,12 @@ def get_base_species(name):
         return base_species
 
     return ""
+
+def get_set_count(name: str) -> int:
+    """Returns the total number of sets available for a given Pokemon."""
+    if name in sets:
+        return len(sets[name])
+    return 0
 
 def main():
     # Example usage

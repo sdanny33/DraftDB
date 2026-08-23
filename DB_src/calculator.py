@@ -6,79 +6,75 @@ import math
 from parser import _mon_for_nickname, _rebuild_nickname_lookup, fetch_json, actors, teams, nickname, players
 from paster import print_paste
 import populateInfo
+from items import get_item_power_multiplier, get_item_stat_multiplier
 
 def extract(url):
-        response = requests.get(url)
+    response = requests.get(url)
 
-        if response.status_code == 200:
-            soup = BeautifulSoup(response.content, 'html.parser')
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.content, 'html.parser')
 
-            # Find all <pre> tags and extract text
-            all_pre = soup.find_all('pre')
-            for pre in all_pre:
-                extract = pre.get_text()
+        all_pre = soup.find_all('pre')
+        for pre in all_pre:
+            extract = pre.get_text()
 
-                # Clean the uneeded text
-                replacements = [
-                    (r'Shiny: Yes  ', ''),
-                    (r'IVs: .*', ''),
-                    (r'\((F)\) ', ''),
-                    (r'\((M)\) ', '')                ]
-                for pattern, replacement in replacements:
-                    extract = re.sub(pattern, replacement, extract)
+            replacements = [
+                (r'Shiny: Yes  ', ''),
+                (r'IVs: .*', ''),
+                (r'\((F)\) ', ''),
+                (r'\((M)\) ', '')
+            ]
+            for pattern, replacement in replacements:
+                extract = re.sub(pattern, replacement, extract)
 
-                # Remove empty lines
-                lines = [line for line in extract.splitlines() if line.strip()]
-                if not lines:
-                    continue
-                
-                # Removes the nicknames and gets the mons name
-                def replace_parenthetical(line):
-                    m = re.match(r'.*\(([^)]*)\)\s*(.*)', line)
-                    if m:
-                        name = m.group(1).strip()
-                        rest = m.group(2).strip()
-                        return f"{name} {rest}".strip()
-                    return line
+            lines = [line for line in extract.splitlines() if line.strip()]
+            if not lines:
+                continue
+            
+            def replace_parenthetical(line):
+                m = re.match(r'.*\(([^)]*)\)\s*(.*)', line)
+                if m:
+                    name = m.group(1).strip()
+                    rest = m.group(2).strip()
+                    return f"{name} {rest}".strip()
+                return line
 
-                lines = [replace_parenthetical(line) for line in lines]
+            lines = [replace_parenthetical(line) for line in lines]
 
-                clean_extract = '\n'.join(lines) + '\n'
-                extract = clean_extract
-                set_mon_data(extract)
+            clean_extract = '\n'.join(lines) + '\n'
+            extract = clean_extract
+            set_mon_data(extract)
 
 def set_mon_data(info):
     m = Mon("temp")
     mon_data = info.splitlines()
-    #name
-    # print(f"Setting mon data for {mon_data[0].split(' @ ')[0]}")
     name = mon_data[0].split(" @ ")[0]
     formes = populateInfo.get_base_species(name)
     
     index = min(6, len(players["p1"]), len(players["p2"]))
     for i in range(index):
-            if (players["p1"][i].name == name or players["p1"][i].name == formes):
-                    players["p1"][i].set_name(name)
-                    m = players["p1"][i]
-            elif (players["p2"][i].name == name or players["p2"][i].name == formes):
-                    players["p2"][i].set_name(name)
-                    m = players["p2"][i]
-    #item
+        if (players["p1"][i].name == name or players["p1"][i].name == formes):
+            players["p1"][i].set_name(name)
+            m = players["p1"][i]
+        elif (players["p2"][i].name == name or players["p2"][i].name == formes):
+            players["p2"][i].set_name(name)
+            m = players["p2"][i]
+    
+    # Mark as extracted so its set stays static
+    m.is_extracted = True
+
     m.set_item(mon_data[0].split(" @ ")[1])
-    #ability
     m.set_ability(mon_data[1].strip("Ability: "))
-    #nature
     m.set_nature(mon_data[find_index(mon_data, " Nature")].split(" Nature")[0])
-    # evs
     m.reset_evs()
     evs_line = mon_data[find_index(mon_data, "EVs: ")]
     evs_values = evs_line.removeprefix("EVs: ").split("/")
-    evs_values = [ev.strip() for ev in evs_values]  # Remove leading/trailing whitespace
+    evs_values = [ev.strip() for ev in evs_values]
     for ev in evs_values:
         ev_value = int(ev.split(" ")[0])
         ev_stat = ev.split(" ")[1]
         m.evs[ev_stat.lower()] = ev_value
-    #moves
+    
     move_index = find_index(mon_data, "- ")
     m.add_moves([mon_data[move_index].strip().removeprefix("- ").strip()])
     if index_exists(mon_data, move_index + 1):
@@ -87,8 +83,6 @@ def set_mon_data(info):
         m.add_moves([mon_data[move_index + 2].strip().removeprefix("- ").strip()])
     if index_exists(mon_data, move_index + 3):
         m.add_moves([mon_data[move_index + 3].strip().removeprefix("- ").strip()])
-    # print
-    # m.print_paste()
 
 def find_index(mon_data, search_string):
     for i, line in enumerate(mon_data):
@@ -98,6 +92,35 @@ def find_index(mon_data, search_string):
 
 def index_exists(mon_data, move_index):
     return move_index < len(mon_data) and move_index >= 0
+
+# --- Stat & Damage Calculations ---
+
+def calculate_stat(mon: Mon, stat_name: str, is_critical: bool = False, is_attacker: bool = True) -> int:
+    """Calculates stat of a Pokémon including nature, boosts, and items, respecting crit rules."""
+    base_stat = mon.get_base_stats()[stat_name]
+    ev_stat = mon.get_evs()[stat_name]
+    level = mon.get_level()
+    boosts = mon.get_boosts()
+
+    stat_value = math.floor((math.floor(((2 * base_stat + 31 + math.floor(ev_stat / 4)) * level) / 100) + 5) * calculate_nature_modifiers(mon, stat_name))
+    
+    if stat_name in boosts:
+        boost_stage = boosts[stat_name]
+        apply_boost = True
+        if is_critical:
+            if is_attacker and boost_stage < 0:
+                apply_boost = False
+            elif not is_attacker and boost_stage > 0:
+                apply_boost = False
+
+        if apply_boost:
+            if boost_stage > 0:
+                stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))
+            elif boost_stage < 0:
+                stat_value = math.floor(stat_value * (2 / (2 - boost_stage)))
+
+    stat_value = math.floor(stat_value * get_item_stat_multiplier(mon.get_item(), stat_name))
+    return stat_value
 
 def calculate_damage(
     move_power: int,
@@ -112,17 +135,14 @@ def calculate_damage(
     burn_multiplier: float = 1.0,
 ) -> list[int]:
     """Calculates all 16 possible damage roll outcomes."""
-    # print(f"Calculating damage with parameters: move_power={move_power}, attack_stat={attack_stat}, defense_stat={defense_stat}, attacker_level={attacker_level}, targets={targets}, weather_multiplier={weather_multiplier}, is_critical={is_critical}, stab={stab}, type_effectiveness={type_effectiveness}, burn_multiplier={burn_multiplier}")
-    if move_power == 0:
+    if move_power == 0 or defense_stat == 0:
         return [0]
 
-    # Base damage step
     level_factor = math.floor((2 * attacker_level) / 5) + 2
     base_damage = math.floor(
         math.floor((level_factor * move_power * (attack_stat / defense_stat))) / 50
     ) + 2
 
-    # Modifier stacking
     modifier = 1.0
     if targets > 1:
         modifier *= 0.75
@@ -131,204 +151,232 @@ def calculate_damage(
     if is_critical:
         modifier *= 1.5
     
-    # Apply STAB, Type, and Status
     modifier *= stab * type_effectiveness * burn_multiplier
 
-    # Compute all 16 damage rolls (85% to 100%)
     damage_rolls = []
     for roll in range(85, 101):
         final_damage = math.floor(base_damage * (roll / 100.0) * modifier)
         damage_rolls.append(max(1, final_damage))
 
-    return damage_rolls  
+    return damage_rolls
 
 def calcuate_hp(mon: Mon) -> int:
-    """Calculates the HP of a Pokémon based on its base stats, level, and EVs."""
+    """Calculates the max HP of a Pokémon."""
     base_hp = mon.get_base_stats()["hp"]
     ev_hp = mon.get_evs()["hp"]
     level = mon.get_level()
-
-    # HP formula: ((2 * Base + IV + (EV/4)) * Level / 100) + Level + 10
-    hp = math.floor(((2 * base_hp + 31 + math.floor(ev_hp / 4)) * level) / 100) + level + 10
-    return hp
-
-def calculate_stat(mon: Mon, stat_name: str) -> int:
-    """Calculates a specific stat (other than HP) of a Pokémon based on its base stats, level, and EVs."""
-    base_stat = mon.get_base_stats()[stat_name]
-    ev_stat = mon.get_evs()[stat_name]
-    level = mon.get_level()
-    boosts = mon.get_boosts()
-
-    # Stat formula: ((2 * Base + IV + (EV/4)) * Level / 100) + 5
-    stat_value = math.floor((math.floor(((2 * base_stat + 31 + math.floor(ev_stat / 4)) * level) / 100) + 5) * calculate_nature_modifiers(mon, stat_name))
-    if stat_name in boosts:
-        boost_stage = boosts[stat_name]
-        if boost_stage > 0:
-            stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))
-        elif boost_stage < 0:
-            stat_value = math.floor(stat_value * (1 + 0.33 * boost_stage))  # Negative boosts reduce the stat
-    return stat_value
-
-def calcuate_hp_evs(mon: Mon, evs: int) -> int:
-    """Calculates the HP of a Pokémon based on its base stats, level, and EVs."""
-    base_hp = mon.get_base_stats()["hp"]
-    ev_hp = evs
-    level = mon.get_level()
-
-    # HP formula: ((2 * Base + IV + (EV/4)) * Level / 100) + Level + 10
-    hp = math.floor(((2 * base_hp + 31 + math.floor(ev_hp / 4)) * level) / 100) + level + 10
-    return hp
-
-def calculate_stat_evs(mon: Mon, stat_name: str, evs: int) -> int:
-    """Calculates a specific stat (other than HP) of a Pokémon based on its base stats, level, and EVs."""
-    base_stat = mon.get_base_stats()[stat_name]
-    ev_stat = evs
-    level = mon.get_level()
-    boosts = mon.get_boosts()
-
-    # Stat formula: ((2 * Base + IV + (EV/4)) * Level / 100) + 5
-    stat_value = math.floor((math.floor(((2 * base_stat + 31 + math.floor(ev_stat / 4)) * level) / 100) + 5) * calculate_nature_modifiers(mon, stat_name))
-    if stat_name in boosts:
-        boost_stage = boosts[stat_name]
-        if boost_stage > 0:
-            stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))
-        elif boost_stage < 0:
-            stat_value = math.floor(stat_value * (1 + 0.5 * boost_stage))  # Negative boosts reduce the stat
-    return stat_value
+    return math.floor(((2 * base_hp + 31 + math.floor(ev_hp / 4)) * level) / 100) + level + 10
 
 def calculate_nature_modifiers(mon: Mon, stat_name: str) -> float:
-    """Calculates the nature modifiers for a specific stat of a Pokémon."""
     nature = mon.get_nature()
     if not nature:
         return 1.0
-
     modifiers = populateInfo.get_nature_modifiers(nature)
     return modifiers.get(stat_name, 1.0)
 
-def is_stab(move_type: str, mon_types: list[str]) -> int:
-    """Checks if a move gets STAB (Same Type Attack Bonus) based on the Pokémon's types."""
-    if move_type in mon_types:
-        return 1.5  # STAB multiplier
-    return 1.0  # No STAB
+def is_stab(move_type: str, mon_types: list[str]) -> float:
+    return 1.5 if move_type in mon_types else 1.0
 
 def get_type_effectiveness(move_type: str, target_types: list[str]) -> float:
-    """Calculates the type effectiveness multiplier based on the move's type and the target Pokémon's types."""
     type_chart = populateInfo.get_type_chart()
-    # print(f"Calculating type effectiveness for move type '{move_type}' against target types {target_types}")
     effectiveness = 1.0
-
     for target_type in target_types:
         if move_type in type_chart and target_type in type_chart[move_type]:
             effectiveness *= type_chart[move_type][target_type]
-
     return effectiveness
 
 def get_category(move_name: str) -> str:
-    """Returns the category of a move (Physical, Special, or Status)."""
     category = populateInfo.get_move_category(move_name)
-    if category == "Physical":
-        return "atk"
-    elif category == "Special":
-        return "spa"
+    return "atk" if category == "Physical" else "spa"
 
 def get_defense_category(move_name: str) -> str:
-    """Returns the defense category of a move (Physical or Special)."""
     category = populateInfo.get_move_category(move_name)
-    if category == "Physical":
-        return "def"
-    elif category == "Special":
-        return "spd"
+    return "def" if category == "Physical" else "spd"
+
+# --- Simulation & Set Optimization ---
+
+def simulate_hit(actor1: Mon, actor2: Mon, move: str, is_critical: bool = False) -> tuple[int, int]:
+    move_type = populateInfo.get_move_type(move)
+    base_power = populateInfo.get_move_base_power(move)
+    
+    modified_power = math.floor(base_power * get_item_power_multiplier(actor1.get_item(), move_type))
+    
+    attack_stat = calculate_stat(actor1, get_category(move), is_critical=is_critical, is_attacker=True)
+    defense_stat = calculate_stat(actor2, get_defense_category(move), is_critical=is_critical, is_attacker=False)
+
+    estimated = calculate_damage(
+        move_power=modified_power,
+        attack_stat=attack_stat,
+        defense_stat=defense_stat,
+        stab=is_stab(move_type, actor1.get_types()),
+        type_effectiveness=get_type_effectiveness(move_type, actor2.get_types()),
+        is_critical=is_critical
+    )
+    hp = calcuate_hp(actor2)
+    
+    min_percent = round((estimated[0] / hp) * 100)
+    max_percent = round((estimated[-1] / hp) * 100)
+    return min_percent, max_percent
+
+def get_set_species_name(mon: Mon) -> str:
+    """Returns the species name to look up in SETDEX, falling back to base species for Megas."""
+    if mon.name in populateInfo.sets:
+        return mon.name
+    base_name = populateInfo.get_base_species(mon.name)
+    return base_name if base_name in populateInfo.sets else mon.name
+
+def try_find_matching_sets(actor1: Mon, actor2: Mon, move: str, damage_taken: int, is_critical: bool = False):
+    """
+    Iterates through all available sets for non-extracted Pokemon while keeping 
+    extracted Pokemon static.
+    """
+    spec1 = get_set_species_name(actor1)
+    spec2 = get_set_species_name(actor2)
+
+    is_extracted1 = getattr(actor1, "is_extracted", False)
+    is_extracted2 = getattr(actor2, "is_extracted", False)
+
+    orig_state1 = (actor1.get_evs().copy(), actor1.get_nature(), actor1.get_item())
+    orig_state2 = (actor2.get_evs().copy(), actor2.get_nature(), actor2.get_item())
+
+    # Determine total sets available in SETDEX
+    total_sets1 = 1 if is_extracted1 else max(1, populateInfo.get_set_count(spec1))
+    total_sets2 = 1 if is_extracted2 else max(1, populateInfo.get_set_count(spec2))
+
+    for set1_idx in range(1, total_sets1 + 1):
+        if not is_extracted1:
+            evs1 = populateInfo.get_evs(spec1, set1_idx)
+            nature1 = populateInfo.get_nature(spec1, set1_idx)
+            item1 = populateInfo.get_item(spec1, set1_idx)
+            
+            if evs1: actor1.set_evs(evs1)
+            if nature1: actor1.set_nature(nature1)
+            if item1: actor1.set_item(item1)
+
+        for set2_idx in range(1, total_sets2 + 1):
+            if not is_extracted2:
+                evs2 = populateInfo.get_evs(spec2, set2_idx)
+                nature2 = populateInfo.get_nature(spec2, set2_idx)
+                item2 = populateInfo.get_item(spec2, set2_idx)
+                
+                if evs2: actor2.set_evs(evs2)
+                if nature2: actor2.set_nature(nature2)
+                if item2: actor2.set_item(item2)
+
+            min_p, max_p = simulate_hit(actor1, actor2, move, is_critical=is_critical)
+            
+            # Check if this combination produces the recorded damage roll
+            if min_p <= damage_taken <= max_p:
+                matched1 = "Static (Extracted)" if is_extracted1 else f"Set {set1_idx}"
+                matched2 = "Static (Extracted)" if is_extracted2 else f"Set {set2_idx}"
+                return min_p, max_p, matched1, matched2
+
+    # If no set matches, revert to original stats
+    actor1.set_evs(orig_state1[0])
+    actor1.set_nature(orig_state1[1])
+    actor1.set_item(orig_state1[2])
+
+    actor2.set_evs(orig_state2[0])
+    actor2.set_nature(orig_state2[1])
+    actor2.set_item(orig_state2[2])
+
+    min_p, max_p = simulate_hit(actor1, actor2, move, is_critical=is_critical)
+    return min_p, max_p, None, None
+
+def apply_mega_evolution(mon: Mon, raw_species: str, item: str = ""):
+    """Updates the Mon instance with Mega stats, types, ability, and name."""
+    mega_species = raw_species
+    if item.endswith("ite X") or item.endswith("ite Y"):
+        forme_suffix = item.split()[-1]
+        mega_species = f"{raw_species}-Mega-{forme_suffix}"
+    elif item.endswith("ite") or "Mega" not in mega_species:
+        if not mega_species.endswith("-Mega"):
+            mega_species = f"{raw_species}-Mega"
+
+    if not populateInfo.get_base_stats(mega_species):
+        if populateInfo.get_base_stats(raw_species):
+            mega_species = raw_species
+
+    mon.set_name(mega_species)
+    mon.set_base_stats(populateInfo.get_base_stats(mega_species))
+    mon.set_type(populateInfo.get_types(mega_species))
+    
+    mega_abilities = populateInfo.get_abilities(mega_species)
+    if mega_abilities:
+        mon.set_ability(" / ".join(mega_abilities))
 
 def damage(lines):
     actor1 = None
     actor2 = None
     move = None
+    is_critical = False
+    
     for line in lines:
         if line.startswith("|move|"):
-            actor1, actor2 = actors(line)
-            actor1 = _mon_for_nickname(actor1)
-            actor2 = _mon_for_nickname(actor2)
+            a1_nick, a2_nick = actors(line)
+            actor1 = _mon_for_nickname(a1_nick)
+            actor2 = _mon_for_nickname(a2_nick)
             move = line.split("|")[3]
-        if line.startswith("|-boost|"):
+            is_critical = False
+        elif line.startswith("|-mega|"):
             parts = line.split("|")
-            #print(f"Boost line: {line}, parts: {parts}")
-            nickname = parts[2]
-            boosts_str = parts[3]
-            boosts_value = parts[4]
-            boosts = _mon_for_nickname(nickname).get_boosts()
-            boosts[boosts_str] = int(boosts_value)
-        if line.startswith("|-unboost|"):
+            nickname_val = parts[2]
+            raw_species = parts[3].strip()
+            item = parts[4].strip() if len(parts) > 4 else ""
+            
+            mon = _mon_for_nickname(nickname_val)
+            if mon:
+                apply_mega_evolution(mon, raw_species, item)
+        elif line.startswith("|-boost|"):
             parts = line.split("|")
-            #print(f"Unboost line: {line}, parts: {parts}")
-            nickname = parts[2]
-            boosts_str = parts[3]
-            boosts_value = parts[4]
-            boosts = _mon_for_nickname(nickname).get_boosts()
-            boosts[boosts_str] = -int(boosts_value)
-        if line.startswith("|switch|"):
+            nickname_val = parts[2]
+            stat = parts[3]
+            val = int(parts[4])
+            _mon_for_nickname(nickname_val).get_boosts()[stat] = val
+        elif line.startswith("|-unboost|"):
             parts = line.split("|")
-            nickname = parts[2]
-            mon = _mon_for_nickname(nickname)
-            if mon is not None:
+            nickname_val = parts[2]
+            stat = parts[3]
+            val = int(parts[4])
+            _mon_for_nickname(nickname_val).get_boosts()[stat] = -val
+        elif line.startswith("|switch|"):
+            parts = line.split("|")
+            mon = _mon_for_nickname(parts[2])
+            if mon:
                 mon.set_boosts({
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 0,
-                    "accuracy": 0,
-                    "evasion": 0
+                    "atk": 0, "def": 0, "spa": 0,
+                    "spd": 0, "spe": 0, "accuracy": 0, "evasion": 0
                 })
-        if line.startswith("|-damage|"):
+        elif line.startswith("|-crit|"):
+            is_critical = True
+        elif line.startswith("|-damage|"):
             parts = line.split("|")
-            nickname = parts[2]
-            if "0 fnt" in parts:
-                current_hp = 0
-            else:
-                current_hp = int(parts[3].split("/")[0])
-            mon = _mon_for_nickname(nickname)
+            nickname_val = parts[2]
+            current_hp = 0 if "0 fnt" in parts else int(parts[3].split("/")[0])
+            
+            mon = _mon_for_nickname(nickname_val)
             actor2 = mon
-            if mon is not None:
-                damage = mon.get_current_hp() - current_hp
+            if mon is not None and move is not None and actor1 is not None:
+                damage_taken = mon.get_current_hp() - current_hp
                 mon.set_current_hp(current_hp)
-                if len(parts) == 4 and damage > 0:
-                    estimated = calculate_damage(
-                        move_power=populateInfo.get_move_base_power(move),
-                        attack_stat=calculate_stat(actor1, get_category(move)),
-                        defense_stat=calculate_stat(actor2, get_defense_category(move)),
-                        stab=is_stab(populateInfo.get_move_type(move), actor1.get_types()),
-                        type_effectiveness=get_type_effectiveness(populateInfo.get_move_type(move), actor2.get_types()),
-                    )
-                    hp = calcuate_hp(actor2)
-                    min_percent = 100 - ((hp - estimated[0]) / hp) * 100
-                    max_percent = 100 - ((hp - estimated[-1]) / hp) * 100
-                    if min_percent <= damage and max_percent >= damage or actor2.get_current_hp() == 0:
-                        print(f"{actor2.name} took valid {damage} percent from {move} from {actor1.name}. Current HP: {current_hp}. Estimated: {min_percent:.2f} to {max_percent:.2f} percent")
+                
+                if len(parts) == 4 and damage_taken > 0:
+                    crit_tag = " [CRIT]" if is_critical else ""
+                    min_percent, max_percent = simulate_hit(actor1, actor2, move, is_critical=is_critical)
+                    
+                    if min_percent <= damage_taken <= max_percent or actor2.get_current_hp() == 0:
+                        pass
+                        # print(f"{actor2.name} took valid {damage_taken}% from {move}{crit_tag} from {actor1.name}. Current HP: {current_hp}%. Estimated: {min_percent}% to {max_percent}%")
                     else:
-                        print(f"{actor2.name} took invalid {damage} percent from {move} from {actor1.name}. Current HP: {current_hp}. Estimated: {min_percent:.2f} to {max_percent:.2f} percent. (Mismatch!)")
+                        min_p, max_p, s1, s2 = try_find_matching_sets(actor1, actor2, move, damage_taken, is_critical=is_critical)
+                        if s1 is not None and s2 is not None:
+                            pass
+                            # print(f"{actor2.name} took valid {damage_taken}% from {move}{crit_tag} from {actor1.name} (Matched using Attacker: {s1}, Defender: {s2}). Estimated: {min_p}% to {max_p}%")
+                        else:
+                            print(f"{actor2.name} took invalid {damage_taken}% from {move}{crit_tag} from {actor1.name}. Current HP: {current_hp}%. Estimated: {min_percent}% to {max_percent}%. (Mismatch!)")
+                    
+                    is_critical = False
 
-
-def test():
-        m = Mon("Pikachu")
-        m.set_evs(populateInfo.get_evs("Pikachu"))
-    
-        m2 = Mon("Blastoise")
-        m2.set_evs(populateInfo.get_evs("Blastoise"))
-    
-        # Example Usage:
-        rolls = calculate_damage(
-            move_power=populateInfo.get_move_base_power("Thunderbolt"),          # e.g., Thunderbolt
-            attack_stat=calculate_stat(m, "spa"),        # Special Attack
-            defense_stat=calculate_stat(m2, "spd"),       # Special Defense
-            stab=is_stab(populateInfo.get_move_type("Thunderbolt"), m.get_types()),
-            type_effectiveness=get_type_effectiveness(populateInfo.get_move_type("Thunderbolt"), m2.get_types()),
-        )
-        print("Damage Rolls:", rolls)
-        calculated_hp = calcuate_hp(m2)
-        min_percent = ((calculated_hp - rolls[-1]) / calculated_hp) * 100
-        max_percent = ((calculated_hp - rolls[0]) / calculated_hp) * 100
-        print(f"{m2.name}, {calculated_hp}: {100 - max_percent:.2f} to {100 - min_percent:.2f} percent")
-    
 def main():
     url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2636733351.json"
     data = fetch_json(url)
@@ -338,8 +386,8 @@ def main():
     _rebuild_nickname_lookup()
     team = "https://pokepast.es/4840cb0f46311589"
     extract(team)
-    print_paste()
     damage(lines)
+    print_paste()
 
 if __name__ == "__main__":
     main()
