@@ -1,6 +1,5 @@
 import pathlib
 from mon import Mon
-from populateInfo import populate_abilities, populate_evs, populate_nature, populate_base_stats, populate_types
 from parser import fetch_json, teams, nickname, players
 
 DB_ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -89,7 +88,6 @@ def item(lines):
                 mon.set_item(item)
 
 def ability(lines):
-    populate_abilities(players["p1"], players["p2"])
     for line in lines:
         if line.startswith("|-ability|"):
             parts = line.split("|")

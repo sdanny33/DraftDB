@@ -1,8 +1,8 @@
 import re
 from pathlib import Path
 
-SRC = Path(__file__).with_name('types.ts')
-DST = Path(__file__).with_name('types.py')
+SRC = Path(__file__).with_name('moves_cleaned2.ts')
+DST = Path(__file__).with_name('moves2.py')
 
 def main():
     text = SRC.read_text(encoding='utf-8')

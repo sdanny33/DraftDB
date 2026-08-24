@@ -50,6 +50,7 @@ class Mon:
         self.set_evs(populateInfo.get_evs(name, 1))
         self.set_nature(populateInfo.get_nature(name, 1))
         self.set_item(populateInfo.get_item(name, 1))
+        self.add_moves(populateInfo.get_moves(name, 1))
 
     def increment_kills(self):
         self.kills += 1

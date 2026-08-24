@@ -53,17 +53,6 @@ def get_abilities(name):
 
     return []
 
-def populate_abilities(team1, team2):
-    for i in range(min(6, len(team1), len(team2))):
-        if team1[i].name:
-            abilities = get_abilities(team1[i].name)
-            if abilities:
-                team1[i].set_ability(" / ".join(abilities))
-        if team2[i].name:
-            abilities = get_abilities(team2[i].name)
-            if abilities:
-                team2[i].set_ability(" / ".join(abilities))
-
 def get_evs(name, set_number=1):
     normalized_name = name
 
@@ -85,17 +74,6 @@ def get_evs(name, set_number=1):
 
     return {}
 
-def populate_evs(team1, team2):
-    for i in range(min(6, len(team1), len(team2))):
-        if team1[i].name:
-            evs = get_evs(team1[i].name)
-            if any(evs.values()):
-                team1[i].set_evs(evs)
-        if team2[i].name:
-            evs = get_evs(team2[i].name)
-            if any(evs.values()):
-                team2[i].set_evs(evs)
-
 def get_nature(name, set_number=1):
     normalized_name = name
 
@@ -105,17 +83,6 @@ def get_nature(name, set_number=1):
             return items[set_number - 1].get("nature", "")
 
     return ""
-
-def populate_nature(team1, team2):
-    for i in range(min(6, len(team1), len(team2))):
-        if team1[i].name:
-            nature = get_nature(team1[i].name)
-            if nature:
-                team1[i].set_nature(nature)
-        if team2[i].name:
-            nature = get_nature(team2[i].name)
-            if nature:
-                team2[i].set_nature(nature)
 
 def get_item(name, set_number=1):
     normalized_name = name
@@ -127,6 +94,16 @@ def get_item(name, set_number=1):
 
     return ""
 
+def get_moves(name, set_number=1):
+    normalized_name = name
+
+    if normalized_name in sets:
+        items = list(sets[normalized_name].values())
+        if set_number <= len(items):
+            return items[set_number - 1].get("moves", [])
+
+    return []
+
 def get_base_stats(name):
     normalized_name = _normalize_name(name)
 
@@ -137,18 +114,6 @@ def get_base_stats(name):
 
     return {}
 
-def populate_base_stats(team1, team2):
-    for i in range(min(6, len(team1), len(team2))):
-        if team1[i].name:
-            base_stats = get_base_stats(team1[i].name)
-            if base_stats:
-                team1[i].set_base_stats(base_stats)
-        if team2[i].name:
-            base_stats = get_base_stats(team2[i].name)
-            if base_stats:
-                team2[i].set_base_stats(base_stats)
-
-
 def get_types(name):
     normalized_name = _normalize_name(name)
 
@@ -157,17 +122,6 @@ def get_types(name):
         return dex[normalized_name].get("types", [])
 
     return []
-
-def populate_types(team1, team2):
-    for i in range(min(6, len(team1), len(team2))):
-        if team1[i].name:
-            types = get_types(team1[i].name)
-            if types:
-                team1[i].set_type(types)
-        if team2[i].name:
-            types = get_types(team2[i].name)
-            if types:
-                team2[i].set_type(types)
 
 def get_move_base_power(name):
     normalized_name = _normalize_name(name)
