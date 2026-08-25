@@ -21,7 +21,7 @@ if moves_path.exists():
     moves = getattr(moves_mod, "moves", {})
 
 typeChart = {}
-type_chart_path = DB_ROOT / "dex" / "types.py"
+type_chart_path = DB_ROOT / "dex" / "mtypes.py"
 if type_chart_path.exists():
     spec = importlib.util.spec_from_file_location("types", str(type_chart_path))
     type_chart_mod = importlib.util.module_from_spec(spec)
