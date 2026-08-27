@@ -8,6 +8,7 @@ from paster import print_paste
 import populateInfo
 from items import get_item_stat_multiplier, get_item_power_multiplier
 from abilities import get_ability_stat_multiplier, get_ability_power_multiplier, get_ability_stab_multiplier, get_ability_damage_multiplier, get_effective_move_type
+
 def extract(url):
     response = requests.get(url)
 
