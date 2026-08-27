@@ -1,3 +1,4 @@
 *.pyc
 damage-calc/
 /dex/ts
+__pycache__
