@@ -1,6 +1,7 @@
 import pathlib
 from mon import Mon
 from parser import fetch_json, teams, nickname, players
+import populateInfo
 
 DB_ROOT = pathlib.Path(__file__).resolve().parent.parent
 nickname_lookup = {
@@ -43,6 +44,28 @@ def _mon_for_nickname(nickname):
         return mon
     return nickname_lookup["p2"].get(nickname)
 
+def apply_mega_evolution(mon: Mon, raw_species: str, item: str = ""):
+    """Updates the Mon instance with Mega stats, types, ability, and name."""
+    mega_species = raw_species
+    if item.endswith("ite X") or item.endswith("ite Y"):
+        forme_suffix = item.split()[-1]
+        mega_species = f"{raw_species}-Mega-{forme_suffix}"
+    elif item.endswith("ite") or "Mega" not in mega_species:
+        if not mega_species.endswith("-Mega"):
+            mega_species = f"{raw_species}-Mega"
+
+    if not populateInfo.get_base_stats(mega_species):
+        if populateInfo.get_base_stats(raw_species):
+            mega_species = raw_species
+
+    mon.set_name(mega_species)
+    mon.set_base_stats(populateInfo.get_base_stats(mega_species))
+    mon.set_type(populateInfo.get_types(mega_species))
+    
+    mega_abilities = populateInfo.get_abilities(mega_species)
+    if mega_abilities:
+        mon.set_ability(mega_abilities)
+
 def moves(lines):
     for line in lines:
         if line.startswith("|move|"):
@@ -80,12 +103,15 @@ def item(lines):
 
         elif line.startswith("|-mega|"):
             parts = line.split("|")
-            print(f"Mega line: {line}, parts: {parts}")
-            nickname = parts[2]
-            item = parts[4]
-            mon = _mon_for_nickname(nickname)
+            nickname_val = parts[2]
+            raw_species = parts[3].strip()
+            item = parts[4].strip() if len(parts) > 4 else ""
+            
+            mon = _mon_for_nickname(nickname_val)
             if mon is not None and item != "":
                 mon.set_item(item)
+            if mon:
+                apply_mega_evolution(mon, raw_species, item)
 
 def ability(lines):
     for line in lines:
@@ -125,7 +151,7 @@ def print_data(lines):
     print(lines)
 
 def main():
-    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2616414331.json"
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2644608154.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
 

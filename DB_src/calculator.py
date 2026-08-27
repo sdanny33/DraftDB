@@ -6,8 +6,8 @@ import math
 from parser import _mon_for_nickname, _rebuild_nickname_lookup, fetch_json, actors, teams, nickname, players
 from paster import print_paste
 import populateInfo
-from items import get_item_power_multiplier, get_item_stat_multiplier
-
+from items import get_item_stat_multiplier, get_item_power_multiplier
+from abilities import get_ability_stat_multiplier, get_ability_power_multiplier, get_ability_stab_multiplier, get_ability_damage_multiplier, get_effective_move_type
 def extract(url):
     response = requests.get(url)
 
@@ -96,7 +96,6 @@ def index_exists(mon_data, move_index):
 # --- Stat & Damage Calculations ---
 
 def calculate_stat(mon: Mon, stat_name: str, is_critical: bool = False, is_attacker: bool = True) -> int:
-    """Calculates stat of a Pokémon including nature, boosts, and items, respecting crit rules."""
     base_stat = mon.get_base_stats()[stat_name]
     ev_stat = mon.get_evs()[stat_name]
     level = mon.get_level()
@@ -119,7 +118,10 @@ def calculate_stat(mon: Mon, stat_name: str, is_critical: bool = False, is_attac
             elif boost_stage < 0:
                 stat_value = math.floor(stat_value * (2 / (2 - boost_stage)))
 
+    # Item & Ability Multipliers
     stat_value = math.floor(stat_value * get_item_stat_multiplier(mon.get_item(), stat_name))
+    stat_value = math.floor(stat_value * get_ability_stat_multiplier(mon.get_ability(), stat_name, mon.get_item(), mon.get_current_hp()))
+    
     return stat_value
 
 def calculate_damage(
@@ -174,9 +176,6 @@ def calculate_nature_modifiers(mon: Mon, stat_name: str) -> float:
     modifiers = populateInfo.get_nature_modifiers(nature)
     return modifiers.get(stat_name, 1.0)
 
-def is_stab(move_type: str, mon_types: list[str]) -> float:
-    return 1.5 if move_type in mon_types else 1.0
-
 def get_type_effectiveness(move_type: str, target_types: list[str]) -> float:
     type_chart = populateInfo.get_type_chart()
     effectiveness = 1.0
@@ -196,20 +195,33 @@ def get_defense_category(move_name: str) -> str:
 # --- Simulation & Set Optimization ---
 
 def simulate_hit(actor1: Mon, actor2: Mon, move: str, is_critical: bool = False) -> tuple[int, int]:
-    move_type = populateInfo.get_move_type(move)
+    raw_move_type = populateInfo.get_move_type(move)
+    move_type = get_effective_move_type(actor1.get_ability(), raw_move_type)
     base_power = populateInfo.get_move_base_power(move)
     
-    modified_power = math.floor(base_power * get_item_power_multiplier(actor1.get_item(), move_type))
+    # Offensive Base Power Modifiers (Item + Ability)
+    power_mult = get_item_power_multiplier(actor1.get_item(), move_type) * get_ability_power_multiplier(
+        actor1.get_ability(), move_type, base_power, actor1.get_current_hp()
+    )
+    modified_power = math.floor(base_power * power_mult)
     
     attack_stat = calculate_stat(actor1, get_category(move), is_critical=is_critical, is_attacker=True)
     defense_stat = calculate_stat(actor2, get_defense_category(move), is_critical=is_critical, is_attacker=False)
+
+    is_stab_move = move_type in actor1.get_types()
+    stab_mult = get_ability_stab_multiplier(actor1.get_ability(), is_stab_move)
+    type_eff = get_type_effectiveness(move_type, actor2.get_types())
+
+    # Damage-step abilities (e.g. Multiscale, Tinted Lens, Filter)
+    damage_mult = get_ability_damage_multiplier(actor1.get_ability(), type_eff, actor1.get_current_hp()) * \
+                  get_ability_damage_multiplier(actor2.get_ability(), type_eff, actor2.get_current_hp())
 
     estimated = calculate_damage(
         move_power=modified_power,
         attack_stat=attack_stat,
         defense_stat=defense_stat,
-        stab=is_stab(move_type, actor1.get_types()),
-        type_effectiveness=get_type_effectiveness(move_type, actor2.get_types()),
+        stab=stab_mult,
+        type_effectiveness=type_eff * damage_mult,
         is_critical=is_critical
     )
     hp = calcuate_hp(actor2)
@@ -303,7 +315,7 @@ def apply_mega_evolution(mon: Mon, raw_species: str, item: str = ""):
     
     mega_abilities = populateInfo.get_abilities(mega_species)
     if mega_abilities:
-        mon.set_ability(" / ".join(mega_abilities))
+        mon.set_ability(mega_abilities)
 
 def damage(lines):
     actor1 = None
@@ -327,6 +339,15 @@ def damage(lines):
             mon = _mon_for_nickname(nickname_val)
             if mon:
                 apply_mega_evolution(mon, raw_species, item)
+        elif line.startswith("|-terastallize|"):
+            parts = line.split("|")
+            nickname_val = parts[2]
+            tera_type = parts[3].strip() if len(parts) > 3 else ""
+            
+            mon = _mon_for_nickname(nickname_val)
+            if mon:
+                # need to set the type to the tera type, but also need to store the original types somewhere if we want to revert back
+                mon.set_type([tera_type])
         elif line.startswith("|-boost|"):
             parts = line.split("|")
             nickname_val = parts[2]
@@ -356,35 +377,48 @@ def damage(lines):
             
             mon = _mon_for_nickname(nickname_val)
             actor2 = mon
-            if mon is not None and move is not None and actor1 is not None:
+            
+            if mon is not None:
                 damage_taken = mon.get_current_hp() - current_hp
                 mon.set_current_hp(current_hp)
                 
-                if len(parts) == 4 and damage_taken > 0:
+                # Check if this damage came from a residual effect (e.g. [from] item: Life Orb, [from] psn)
+                is_residual = any("[from]" in p for p in parts[4:])
+                
+                # Only calculate combat damage if it was from a direct move hit
+                if not is_residual and move is not None and actor1 is not None and damage_taken > 0:
                     crit_tag = " [CRIT]" if is_critical else ""
                     min_percent, max_percent = simulate_hit(actor1, actor2, move, is_critical=is_critical)
                     
                     if min_percent <= damage_taken <= max_percent or actor2.get_current_hp() == 0:
-                        pass
-                        # print(f"{actor2.name} took valid {damage_taken}% from {move}{crit_tag} from {actor1.name}. Current HP: {current_hp}%. Estimated: {min_percent}% to {max_percent}%")
+                        print(f"{actor2.name} took valid {damage_taken}% from {move}{crit_tag} from {actor1.name}. Current HP: {current_hp}%. Estimated: {min_percent}% to {max_percent}%")
                     else:
                         min_p, max_p, s1, s2 = try_find_matching_sets(actor1, actor2, move, damage_taken, is_critical=is_critical)
                         if s1 is not None and s2 is not None:
-                            pass
-                            # print(f"{actor2.name} took valid {damage_taken}% from {move}{crit_tag} from {actor1.name} (Matched using Attacker: {s1}, Defender: {s2}). Estimated: {min_p}% to {max_p}%")
+                            print(f"{actor2.name} took valid {damage_taken}% from {move}{crit_tag} from {actor1.name} (Matched using Attacker: {s1}, Defender: {s2}). Estimated: {min_p}% to {max_p}%")
                         else:
                             print(f"{actor2.name} took invalid {damage_taken}% from {move}{crit_tag} from {actor1.name}. Current HP: {current_hp}%. Estimated: {min_percent}% to {max_percent}%. (Mismatch!)")
                     
                     is_critical = False
+        elif line.startswith("|-heal|") or line.startswith("|-sethp|"):
+            parts = line.split("|")
+            nickname_val = parts[2]
+            
+            # Showdown HP can be formatted as "75/100", "100/100", or "0 fnt"
+            if len(parts) > 3 and "/" in parts[3]:
+                healed_hp = int(parts[3].split("/")[0])
+                mon = _mon_for_nickname(nickname_val)
+                if mon:
+                    mon.set_current_hp(healed_hp)
 
 def main():
-    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2636733351.json"
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2644608154.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
     teams(lines)
     nickname(lines)
     _rebuild_nickname_lookup()
-    team = "https://pokepast.es/4840cb0f46311589"
+    team = "https://pokepast.es/6674218482c4cc60"
     extract(team)
     damage(lines)
     print_paste()

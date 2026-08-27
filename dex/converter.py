@@ -1,7 +1,7 @@
 import re
 from pathlib import Path
 
-SRC = Path(__file__).with_name('moves_cleaned2.ts')
+SRC = Path(__file__).with_name('moves_cleaned3.ts')
 DST = Path(__file__).with_name('moves_converted.py')
 
 def main():

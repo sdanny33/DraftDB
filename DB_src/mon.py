@@ -45,12 +45,12 @@ class Mon:
         self.damage = {}
         self.valid = True  # Default validity status
         self.set_base_stats(populateInfo.get_base_stats(name))
+        self.og_types = populateInfo.get_types(name)
         self.set_type(populateInfo.get_types(name))
         self.set_ability(populateInfo.get_abilities(name))
         self.set_evs(populateInfo.get_evs(name, 1))
         self.set_nature(populateInfo.get_nature(name, 1))
         self.set_item(populateInfo.get_item(name, 1))
-        self.add_moves(populateInfo.get_moves(name, 1))
 
     def increment_kills(self):
         self.kills += 1
@@ -125,6 +125,9 @@ class Mon:
 
     def get_types(self):
         return self.type
+
+    def get_og_types(self):
+        return self.og_types
 
     def get_level(self):
         return self.level
