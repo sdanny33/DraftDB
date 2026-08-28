@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 
 # Add DB_src directory to Python module search path
-SRC_DIR = Path(__file__).resolve().parent.parent / "dex"
+SRC_DIR = Path(__file__).resolve().parent.parent / "paste"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 from populateInfo import get_base_stats, get_types, get_abilities   

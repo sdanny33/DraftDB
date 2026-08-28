@@ -1,6 +1,5 @@
 *.pyc
-damage-calc/
 /dex/ts
 __pycache__
-DB_src/__pycache__
-paste/__pycache__
+/DB_src/__pycache__
+/paste/__pycache__
