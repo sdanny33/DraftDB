@@ -955,3 +955,6 @@ moves = {"voltthunderbolt": {"accuracy": True,"basePower": 195,"category": "Spec
 },"polarflare": {"accuracy": 100,"basePower": 75,"category": "Special","name": "Polar Flare","pp": 10,"priority": 0,"flags": {"protect": 1,"mirror": 1,"defrost": 1,"nosketch": 1 },"secondary": {},"target": "allAdjacentFoes","type": "Fire",
 },
 };
+
+def get_moves():
+    return moves

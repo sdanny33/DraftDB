@@ -1417,3 +1417,6 @@ dex = {"bulbasaur": {"num": 1,"name": "Bulbasaur","types": ["Grass", "Poison"],"
 	},"pecharunt": {"num": 1025,"name": "Pecharunt","types": ["Poison", "Ghost"],"gender": "N","baseStats": {"hp": 88,"atk": 88,"def": 160,"spa": 88,"spd": 88,"spe": 88 },"abilities": {"0": "Poison Puppeteer" },"heightm": 0.3,"weightkg": 0.3,"color": "Purple","tags": ["Mythical"],"eggGroups": ["Undiscovered"],
 	},
 };
+
+def get_dex():
+	return dex

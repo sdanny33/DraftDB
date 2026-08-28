@@ -1,4 +1,4 @@
-SETDEX_SV = {
+sets = {
   "Ivysaur": {
     "NFE Defensive": {"ability":"Overgrow","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Knock Off","Sludge Bomb","Giga Drain","Synthesis"]}
   },
@@ -5405,3 +5405,6 @@ SETDEX_SV = {
     "CAP Showdown Usage": {"ability":"Trace","item":"Heat Rock","nature":"Timid","teraType":"Fire","evs":{"sa":252,"sd":4,"sp":252},"moves":["Moonblast","Synthesis","Solar Beam","Wish"]}
   }
 };
+
+def get_sets():
+  return sets

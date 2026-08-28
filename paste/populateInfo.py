@@ -1,40 +1,14 @@
 from pathlib import Path
 import re
-import importlib.util
+from pokedex import get_dex
+from moves import get_moves
+from mtypes import get_type_chart
+from gen9 import get_sets
 
-DB_ROOT = Path(__file__).resolve().parent.parent
-
-dex = {}
-pokedex_path = DB_ROOT / "dex" / "pokedex.py"
-if pokedex_path.exists():
-    spec = importlib.util.spec_from_file_location("pokedex", str(pokedex_path))
-    pokedex_mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(pokedex_mod)
-    dex = getattr(pokedex_mod, "dex", {})
-
-moves = {}
-moves_path = DB_ROOT / "dex" / "moves.py"
-if moves_path.exists():
-    spec = importlib.util.spec_from_file_location("moves", str(moves_path))
-    moves_mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(moves_mod)
-    moves = getattr(moves_mod, "moves", {})
-
-typeChart = {}
-type_chart_path = DB_ROOT / "dex" / "mtypes.py"
-if type_chart_path.exists():
-    spec = importlib.util.spec_from_file_location("types", str(type_chart_path))
-    type_chart_mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(type_chart_mod)
-    typeChart = getattr(type_chart_mod, "typeChart", {})
-
-sets = {}
-sets_path = DB_ROOT / "dex" / "gen9.py"
-if sets_path.exists():
-    spec = importlib.util.spec_from_file_location("gen9", str(sets_path))
-    sets_mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(sets_mod)
-    sets = getattr(sets_mod, "SETDEX_SV", {})
+dex = get_dex()  # Retrieve the dex dictionary from pokedex.py
+moves = get_moves()  # Retrieve the moves dictionary from moves.py
+typeChart = get_type_chart()  # Retrieve the typeChart dictionary from mtypes.py
+sets = get_sets()  # Retrieve the sets dictionary from gen9.py
 
 def _normalize_name(name):
     new_name = re.sub(r"[^a-z0-9]", "", name.lower())
@@ -173,6 +147,7 @@ def get_move_base_power(name) -> int:
         move = moves[normalized_name].get("basePower", 0)
         # print(f"Found move for {name}: {move}")
         return move
+    return 0
 
 def get_move_type(name):
     normalized_name = _normalize_name(name)

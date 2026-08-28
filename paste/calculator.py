@@ -13,7 +13,7 @@ import re
 from bs4 import BeautifulSoup
 import requests
 import math
-import populateInfo
+from populateInfo import *
 from items import get_item_stat_multiplier, get_item_power_multiplier
 from abilities import get_ability_stat_multiplier, get_ability_power_multiplier, get_ability_stab_multiplier, get_ability_damage_multiplier, get_effective_move_type
 
@@ -57,7 +57,7 @@ def extract(url):
 def set_mon_data(info):
     mon_data = info.splitlines()
     name = mon_data[0].split(" @ ")[0]
-    formes = populateInfo.get_base_species(name)
+    formes = get_base_species(name)
     
     # Find the corresponding Mon object in players
     m = None
@@ -190,11 +190,11 @@ def calculate_nature_modifiers(mon: Mon, stat_name: str) -> float:
     nature = mon.get_nature()
     if not nature:
         return 1.0
-    modifiers = populateInfo.get_nature_modifiers(nature)
+    modifiers = get_nature_modifiers(nature)
     return modifiers.get(stat_name, 1.0)
 
 def get_type_effectiveness(move_type: str, target_types: list[str]) -> float:
-    type_chart = populateInfo.get_type_chart()
+    type_chart = get_type_chart()
     effectiveness = 1.0
     for target_type in target_types:
         if move_type in type_chart and target_type in type_chart[move_type]:
@@ -202,19 +202,19 @@ def get_type_effectiveness(move_type: str, target_types: list[str]) -> float:
     return effectiveness
 
 def get_category(move_name: str) -> str:
-    category = populateInfo.get_move_category(move_name)
+    category = get_move_category(move_name)
     return "atk" if category == "Physical" else "spa"
 
 def get_defense_category(move_name: str) -> str:
-    category = populateInfo.get_move_category(move_name)
+    category = get_move_category(move_name)
     return "def" if category == "Physical" else "spd"
 
 # --- Simulation & Set Optimization ---
 
 def simulate_hit(actor1: Mon, actor2: Mon, move: str, is_critical: bool = False) -> tuple[int, int]:
-    raw_move_type = populateInfo.get_move_type(move)
+    raw_move_type = get_move_type(move)
     move_type = get_effective_move_type(actor1.get_ability(), raw_move_type)
-    base_power = populateInfo.get_move_base_power(move)
+    base_power = get_move_base_power(move)
     
     # Offensive Base Power Modifiers (Item + Ability)
     power_mult = get_item_power_multiplier(actor1.get_item(), move_type) * get_ability_power_multiplier(
@@ -249,10 +249,10 @@ def simulate_hit(actor1: Mon, actor2: Mon, move: str, is_critical: bool = False)
 
 def get_set_species_name(mon: Mon) -> str:
     """Returns the species name to look up in SETDEX, falling back to base species for Megas."""
-    if mon.name in populateInfo.sets:
+    if mon.name in sets:
         return mon.name
-    base_name = populateInfo.get_base_species(mon.name)
-    return base_name if base_name in populateInfo.sets else mon.name
+    base_name = get_base_species(mon.name)
+    return base_name if base_name in sets else mon.name
 
 def try_find_matching_sets(actor1: Mon, actor2: Mon, move: str, damage_taken: int, is_critical: bool = False):
     """
@@ -269,14 +269,14 @@ def try_find_matching_sets(actor1: Mon, actor2: Mon, move: str, damage_taken: in
     orig_state2 = (actor2.get_evs().copy(), actor2.get_nature(), actor2.get_item())
 
     # Determine total sets available in SETDEX
-    total_sets1 = 1 if is_extracted1 else max(1, populateInfo.get_set_count(spec1))
-    total_sets2 = 1 if is_extracted2 else max(1, populateInfo.get_set_count(spec2))
+    total_sets1 = 1 if is_extracted1 else max(1, get_set_count(spec1))
+    total_sets2 = 1 if is_extracted2 else max(1, get_set_count(spec2))
 
     for set1_idx in range(1, total_sets1 + 1):
         if not is_extracted1:
-            evs1 = populateInfo.get_evs(spec1, set1_idx)
-            nature1 = populateInfo.get_nature(spec1, set1_idx)
-            item1 = populateInfo.get_item(spec1, set1_idx)
+            evs1 = get_evs(spec1, set1_idx)
+            nature1 = get_nature(spec1, set1_idx)
+            item1 = get_item(spec1, set1_idx)
             
             if evs1: actor1.set_evs(evs1)
             if nature1: actor1.set_nature(nature1)
@@ -284,9 +284,9 @@ def try_find_matching_sets(actor1: Mon, actor2: Mon, move: str, damage_taken: in
 
         for set2_idx in range(1, total_sets2 + 1):
             if not is_extracted2:
-                evs2 = populateInfo.get_evs(spec2, set2_idx)
-                nature2 = populateInfo.get_nature(spec2, set2_idx)
-                item2 = populateInfo.get_item(spec2, set2_idx)
+                evs2 = get_evs(spec2, set2_idx)
+                nature2 = get_nature(spec2, set2_idx)
+                item2 = get_item(spec2, set2_idx)
                 
                 if evs2: actor2.set_evs(evs2)
                 if nature2: actor2.set_nature(nature2)
@@ -322,15 +322,15 @@ def apply_mega_evolution(mon: Mon, raw_species: str, item: str = ""):
         if not mega_species.endswith("-Mega"):
             mega_species = f"{raw_species}-Mega"
 
-    if not populateInfo.get_base_stats(mega_species):
-        if populateInfo.get_base_stats(raw_species):
+    if not get_base_stats(mega_species):
+        if get_base_stats(raw_species):
             mega_species = raw_species
 
     mon.set_name(mega_species)
-    mon.set_base_stats(populateInfo.get_base_stats(mega_species))
-    mon.set_type(populateInfo.get_types(mega_species))
+    mon.set_base_stats(get_base_stats(mega_species))
+    mon.set_type(get_types(mega_species))
     
-    mega_abilities = populateInfo.get_abilities(mega_species)
+    mega_abilities = get_abilities(mega_species)
     if mega_abilities:
         mon.set_ability(mega_abilities)
 
