@@ -1,9 +1,17 @@
-import pathlib
+import sys
+from pathlib import Path
+
+# Add DB_src directory to Python module search path
+SRC_DIR = Path(__file__).resolve().parent.parent / "DB_src"
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+
 from mon import Mon
 from parser import fetch_json, teams, nickname, players
-import populateInfo
 
-DB_ROOT = pathlib.Path(__file__).resolve().parent.parent
+from populateInfo import get_base_stats, get_types, get_abilities
+
+DB_ROOT = Path(__file__).resolve().parent.parent
 nickname_lookup = {
     "p1": {},
     "p2": {}
@@ -54,15 +62,15 @@ def apply_mega_evolution(mon: Mon, raw_species: str, item: str = ""):
         if not mega_species.endswith("-Mega"):
             mega_species = f"{raw_species}-Mega"
 
-    if not populateInfo.get_base_stats(mega_species):
-        if populateInfo.get_base_stats(raw_species):
+    if not get_base_stats(mega_species):
+        if get_base_stats(raw_species):
             mega_species = raw_species
 
     mon.set_name(mega_species)
-    mon.set_base_stats(populateInfo.get_base_stats(mega_species))
-    mon.set_type(populateInfo.get_types(mega_species))
+    mon.set_base_stats(get_base_stats(mega_species))
+    mon.set_type(get_types(mega_species))
     
-    mega_abilities = populateInfo.get_abilities(mega_species)
+    mega_abilities = get_abilities(mega_species)
     if mega_abilities:
         mon.set_ability(mega_abilities)
 

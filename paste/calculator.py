@@ -1,10 +1,18 @@
+import sys
+from pathlib import Path
+
+# Add DB_src directory to Python module search path
+SRC_DIR = Path(__file__).resolve().parent.parent / "DB_src"
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+from mon import Mon
+from parser import _mon_for_nickname, _rebuild_nickname_lookup, fetch_json, actors, teams, nickname, players
+from paster import print_paste
+
 import re
 from bs4 import BeautifulSoup
 import requests
-from mon import Mon
 import math
-from parser import _mon_for_nickname, _rebuild_nickname_lookup, fetch_json, actors, teams, nickname, players
-from paster import print_paste
 import populateInfo
 from items import get_item_stat_multiplier, get_item_power_multiplier
 from abilities import get_ability_stat_multiplier, get_ability_power_multiplier, get_ability_stab_multiplier, get_ability_damage_multiplier, get_effective_move_type
@@ -47,43 +55,51 @@ def extract(url):
             set_mon_data(extract)
 
 def set_mon_data(info):
-    m = Mon("temp")
     mon_data = info.splitlines()
     name = mon_data[0].split(" @ ")[0]
     formes = populateInfo.get_base_species(name)
     
+    # Find the corresponding Mon object in players
+    m = None
     index = min(6, len(players["p1"]), len(players["p2"]))
     for i in range(index):
-        if (players["p1"][i].name == name or players["p1"][i].name == formes):
+        if players["p1"][i].name in (name, formes):
             players["p1"][i].set_name(name)
             m = players["p1"][i]
-        elif (players["p2"][i].name == name or players["p2"][i].name == formes):
+            break
+        elif players["p2"][i].name in (name, formes):
             players["p2"][i].set_name(name)
             m = players["p2"][i]
-    
-    # Mark as extracted so its set stays static
-    m.is_extracted = True
+            break
 
+    if m is None:
+        return
+
+    # Lock this Mon so try_find_matching_sets keeps it static
+    m.is_extracted = True
     m.set_item(mon_data[0].split(" @ ")[1])
-    m.set_ability(mon_data[1].strip("Ability: "))
-    m.set_nature(mon_data[find_index(mon_data, " Nature")].split(" Nature")[0])
-    m.reset_evs()
-    evs_line = mon_data[find_index(mon_data, "EVs: ")]
-    evs_values = evs_line.removeprefix("EVs: ").split("/")
-    evs_values = [ev.strip() for ev in evs_values]
-    for ev in evs_values:
-        ev_value = int(ev.split(" ")[0])
-        ev_stat = ev.split(" ")[1]
-        m.evs[ev_stat.lower()] = ev_value
+    m.set_ability(mon_data[1].removeprefix("Ability: "))
     
+    nature_idx = find_index(mon_data, " Nature")
+    if nature_idx != -1:
+        m.set_nature(mon_data[nature_idx].split(" Nature")[0])
+        
+    m.reset_evs()
+    evs_idx = find_index(mon_data, "EVs: ")
+    if evs_idx != -1:
+        evs_line = mon_data[evs_idx].removeprefix("EVs: ").split("/")
+        evs_values = [ev.strip() for ev in evs_line]
+        for ev in evs_values:
+            ev_value = int(ev.split(" ")[0])
+            ev_stat = ev.split(" ")[1]
+            m.evs[ev_stat.lower()] = ev_value
+            
+    # moves
     move_index = find_index(mon_data, "- ")
-    m.add_moves([mon_data[move_index].strip().removeprefix("- ").strip()])
-    if index_exists(mon_data, move_index + 1):
-        m.add_moves([mon_data[move_index + 1].strip().removeprefix("- ").strip()])
-    if index_exists(mon_data, move_index + 2):
-        m.add_moves([mon_data[move_index + 2].strip().removeprefix("- ").strip()])
-    if index_exists(mon_data, move_index + 3):
-        m.add_moves([mon_data[move_index + 3].strip().removeprefix("- ").strip()])
+    if move_index != -1:
+        for offset in range(4):
+            if index_exists(mon_data, move_index + offset) and mon_data[move_index + offset].startswith("- "):
+                m.add_moves([mon_data[move_index + offset].strip().removeprefix("- ").strip()])
 
 def find_index(mon_data, search_string):
     for i, line in enumerate(mon_data):

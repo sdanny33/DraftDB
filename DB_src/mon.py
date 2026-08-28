@@ -1,4 +1,11 @@
-import populateInfo
+import sys
+from pathlib import Path
+
+# Add DB_src directory to Python module search path
+SRC_DIR = Path(__file__).resolve().parent.parent / "dex"
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+from populateInfo import get_base_stats, get_types, get_abilities   
 
 class Mon:
     def __init__(self, name):
@@ -44,13 +51,10 @@ class Mon:
         self.boosts = self.base_boosts  # Initialize boosts to base boosts
         self.damage = {}
         self.valid = True  # Default validity status
-        self.set_base_stats(populateInfo.get_base_stats(name))
-        self.og_types = populateInfo.get_types(name)
-        self.set_type(populateInfo.get_types(name))
-        self.set_ability(populateInfo.get_abilities(name))
-        self.set_evs(populateInfo.get_evs(name, 1))
-        self.set_nature(populateInfo.get_nature(name, 1))
-        self.set_item(populateInfo.get_item(name, 1))
+        self.set_base_stats(get_base_stats(name))
+        self.og_types = get_types(name)
+        self.set_type(get_types(name))
+        self.set_ability(get_abilities(name))
 
     def increment_kills(self):
         self.kills += 1
