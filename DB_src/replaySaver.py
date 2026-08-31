@@ -3,7 +3,7 @@ import csv
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import zstandard as zstd
-from parser import fetch_json
+from parser import teams, print_stats, _rebuild_nickname_lookup, nickname, fetch_json, players
 
 DB_ROOT = Path(__file__).resolve().parent.parent
 
@@ -181,7 +181,7 @@ def save_replay_to_cache(db_dir: Path, file_name: Path, batch_size: int = 100, m
 
     print(f"\nCaching complete! Successfully saved {inserted_total} new replays across sharded databases.")
 
-def get_cached_log(db_dir: Path, replay_url_or_id: str) -> list[str]:
+def get_cached_log(db_dir: Path, replay_url_or_id: str) -> str:
     """Scans all shard files (replays_part*.sqlite) to find and decompress the battle log."""
     replay_id = _extract_replay_id(replay_url_or_id)
     decompressor = zstd.ZstdDecompressor()
@@ -197,12 +197,7 @@ def get_cached_log(db_dir: Path, replay_url_or_id: str) -> list[str]:
                 except zstd.ZstdError:
                     text = decompressor.stream_reader(row[0]).read().decode("utf-8")
                 return text.splitlines()
-    return []
-
-import sqlite3
-from pathlib import Path
-
-DB_ROOT = Path(__file__).resolve().parent.parent
+    return "Replay not found in cache."
 
 def split_database_by_rows(source_db_path: Path, max_rows: int = 50_000):
     if not source_db_path.exists():

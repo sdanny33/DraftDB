@@ -280,6 +280,7 @@ def test():
     url = "https://replay.pokemonshowdown.com/gen9draft-2326260502.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
+    print(lines)
     global player1, player2 
     player1, player2 = player(data)
 
@@ -292,7 +293,7 @@ def test():
 def main():
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
     archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysReDraft.csv'
-    reparse(replay_csv_path, archive_csv_path, 87611) 
+    test()
 
 if __name__ == "__main__":
     main()
