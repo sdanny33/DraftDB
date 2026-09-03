@@ -185,10 +185,46 @@ def battle_stats(lines):
                 for i in range(min(6, len(players["p2"]))):
                     players["p2"][i].increment_wins()
 
+def damage(lines):
+    actor1 = None
+    actor2 = None
+    move = None
+    for line in lines:
+        if line.startswith("|move|"):
+            actor1, actor2 = actors(line)
+            actor1 = _mon_for_nickname(actor1)
+            actor2 = _mon_for_nickname(actor2)
+            move = line.split("|")[3]
+        if line.startswith("|-damage|"):
+            parts = line.split("|")
+            nickname = parts[2]
+            if "0 fnt" in parts:
+                current_hp = 0
+            else:
+                current_hp = int(parts[3].split("/")[0])
+            mon = _mon_for_nickname(nickname)
+            actor2 = mon
+            if mon is not None:
+                damage = mon.get_current_hp() - current_hp
+                mon.set_current_hp(current_hp)
+                if len(parts) == 4 and damage > 0:
+                    print(f"{actor2.name} took {damage} percent from {move} from {actor1.name}. Current HP: {current_hp}")
+
 def games_played():
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
         players["p1"][i].increment_games()
         players["p2"][i].increment_games()
+
+def mega_evolutions(lines):
+    for line in lines:
+        if line.startswith("|detailschange|"):
+            parts = line.split("|")
+            nickname = parts[2]
+            new_species = parts[3].split(",")[0].strip("|")
+            mon = _mon_for_nickname(nickname)
+            original_species = mon.name if mon is not None else None
+            if mon is not None:
+                mon.set_name(new_species)
 
 def print_stats():
     print(f"Player 1: {player1}")
@@ -250,6 +286,7 @@ def parse(url, dbName=None, cursor=None):
         teams(lines)
         nickname(lines)
         _rebuild_nickname_lookup()
+        mega_evolutions(lines)
         battle_stats(lines)
         games_played()
         save_to_db(dbName=dbName, cursor=cursor)
@@ -321,4 +358,9 @@ if __name__ == "__main__":
     url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2644608154.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
-    print(player_lines(lines))
+
+    teams(lines)
+    nickname(lines)
+    _rebuild_nickname_lookup()
+    mega_evolutions(lines)
+    print_stats()
