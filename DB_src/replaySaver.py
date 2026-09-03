@@ -192,12 +192,17 @@ def get_cached_log(db_dir: Path, replay_url_or_id: str) -> str:
             cursor.execute("SELECT log_blob FROM replay_cache WHERE id = ?", (replay_id,))
             row = cursor.fetchone()
             if row and row[0]:
-                try:
-                    text = decompressor.decompress(row[0], max_output_size=1024 * 1024).decode("utf-8")
-                except zstd.ZstdError:
-                    text = decompressor.stream_reader(row[0]).read().decode("utf-8")
-                return text.splitlines()
+                return decompress_cached_log(row[0])
     return "Replay not found in cache."
+
+def decompress_cached_log(blob: bytes) -> list[str]:
+    """Decompress a replay cache blob into parser-ready log lines."""
+    decompressor = zstd.ZstdDecompressor()
+    try:
+        text = decompressor.decompress(blob, max_output_size=1024 * 1024).decode("utf-8")
+    except zstd.ZstdError:
+        text = decompressor.stream_reader(blob).read().decode("utf-8")
+    return text.splitlines()
 
 def split_database_by_rows(source_db_path: Path, max_rows: int = 50_000):
     if not source_db_path.exists():

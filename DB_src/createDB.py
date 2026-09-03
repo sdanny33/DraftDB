@@ -3,7 +3,8 @@ import csv
 import socket
 import urllib.error
 from pathlib import Path
-from parser import parse
+from parser import parse, parse_lines
+from replaySaver import decompress_cached_log
 import re
 
 DB_ROOT = Path(__file__).resolve().parent.parent
@@ -257,6 +258,21 @@ def add_row(source_db, target_db, mon_id):
     target_conn.commit()
     target_conn.close()
 
+def get_stats(replay_db, dbName):
+    conn = sqlite3.connect(replay_db)
+    cursor = conn.cursor()
+    conn2 = sqlite3.connect(dbName)
+    cursor2 = conn2.cursor()
+    cursor.execute('SELECT id, log_blob FROM replay_cache')
+
+    for row in cursor.fetchall():
+        lines = decompress_cached_log(row[1])
+        parse_lines(lines, cursor=cursor2)
+        conn2.commit()
+
+    conn.close()
+    conn2.close()
+
 def create_new_db(source_db, new_db):
     create_db(new_db)
     copy_stats(source_db, new_db)
@@ -273,4 +289,5 @@ def main():
     nothing()
 
 if __name__ == "__main__":
-    main()
+    db = DB_ROOT / 'database' / 'testDB.sqlite'
+    get_stats(DB_ROOT / 'database' / 'replays_part2.sqlite', db)

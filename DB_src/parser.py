@@ -225,6 +225,15 @@ def player(data):
     player2 = data["players"][1]
     return player1, player2
 
+def player_lines(lines):
+    player1, player2 = "", ""
+    for line in lines:
+        if line.startswith("|player|p1|"):
+            player1 = line.split("|player|p1|")[1].split("|")[0]
+        elif line.startswith("|player|p2|"):
+            player2 = line.split("|player|p2|")[1].split("|")[0]
+    return player1, player2
+
 def reset():
     global player1, player2 
     player1, player2 = "", ""
@@ -237,15 +246,28 @@ def parse(url, dbName=None, cursor=None):
     lines = data["log"].splitlines()
     global player1, player2 
     player1, player2 = player(data)
+    try:
+        teams(lines)
+        nickname(lines)
+        _rebuild_nickname_lookup()
+        battle_stats(lines)
+        games_played()
+        save_to_db(dbName=dbName, cursor=cursor)
+    finally:
+        reset()
 
-    teams(lines)
-    nickname(lines)
-    _rebuild_nickname_lookup()
-    battle_stats(lines)
-    games_played()
-    save_to_db(dbName=dbName, cursor=cursor)
-    # print_stats()
-    reset()
+def parse_lines(lines, dbName=None, cursor=None):
+    global player1, player2 
+    player1, player2 = player_lines(lines)
+    try:
+        teams(lines)
+        nickname(lines)
+        _rebuild_nickname_lookup()
+        battle_stats(lines)
+        games_played()
+        save_to_db(dbName=dbName, cursor=cursor)
+    finally:
+        reset()
 
 def edges(lines):
     list = ["Urshifu", "Greninja", "Dudunsparce", "Zacian", "Zamazenta", "Necrozma-Dusk-Mane", "Necrozma-Dawn-Wings", "Tauros-Paldea-Combat", "Tauros-Paldea-Blaze", "Tauros-Paldea-Aqua"]
@@ -296,4 +318,7 @@ def main():
     test()
 
 if __name__ == "__main__":
-    main()
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2644608154.json"
+    data = fetch_json(url)
+    lines = data["log"].splitlines()
+    print(player_lines(lines))
