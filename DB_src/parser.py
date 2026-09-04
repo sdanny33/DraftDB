@@ -209,6 +209,17 @@ def damage(lines):
                 mon.set_current_hp(current_hp)
                 if len(parts) == 4 and damage > 0:
                     print(f"{actor2.name} took {damage} percent from {move} from {actor1.name}. Current HP: {current_hp}")
+        if line.startswith("|-heal|") or line.startswith("|-sethp|"):
+            parts = line.split("|")
+            nickname_val = parts[2]
+            
+            # Showdown HP can be formatted as "75/100", "100/100", or "0 fnt"
+            if len(parts) > 3 and "/" in parts[3]:
+                healed_hp = int(parts[3].split("/")[0])
+                mon = _mon_for_nickname(nickname_val)
+                if mon:
+                    mon.set_current_hp(healed_hp)
+                    print(f"{mon.name} was healed to current HP: {healed_hp}.")
 
 def games_played():
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
@@ -355,12 +366,11 @@ def main():
     test()
 
 if __name__ == "__main__":
-    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2644608154.json"
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2675562822.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
 
     teams(lines)
     nickname(lines)
     _rebuild_nickname_lookup()
-    mega_evolutions(lines)
-    print_stats()
+    damage(lines)
