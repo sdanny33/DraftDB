@@ -1,3 +1,4 @@
 /paste/ts
-__pycache__/
+__pycache__
 /damage-calc
+/DB_src/__pycache__

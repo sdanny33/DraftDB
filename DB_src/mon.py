@@ -15,6 +15,9 @@ class Mon:
         self.games_played = 0
         self.wins = 0
         self.nickname = ""
+        self.damage = 0
+        self.damage_taken = 0
+        self.heal = 0
         self.moves = []
         self.item = ""
         self.ability = ""
@@ -49,7 +52,6 @@ class Mon:
             "evasion": 0
         }
         self.boosts = self.base_boosts  # Initialize boosts to base boosts
-        self.damage = {}
         self.valid = True  # Default validity status
         self.set_base_stats(get_base_stats(name))
         self.og_types = get_types(name)
@@ -67,7 +69,16 @@ class Mon:
 
     def increment_wins(self):
         self.wins += 1
-        
+
+    def increment_damage(self, damage):
+        self.damage += damage
+
+    def increment_damage_taken(self, damage):
+        self.damage_taken += damage
+
+    def increment_heal(self, heal):
+        self.heal += heal
+
     def set_name(self, name):
         self.name = name
 
@@ -166,7 +177,7 @@ class Mon:
         self.valid = valid
 
     def print_stats(self):
-        print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins")
+        print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins, {self.damage} damage dealt, {self.damage_taken} damage taken, {self.heal} healing done")
 
     def print_clear(self):
         print(f"{self.name}: {self.ability}, {self.item}, {self.moves}")

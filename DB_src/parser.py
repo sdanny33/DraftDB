@@ -107,56 +107,20 @@ def nickname(lines):
             if _nicknames_full():
                 break
 
-def faint(lines):
-    for line in lines:
-        if line.startswith("|faint|"):
-            parts = line.split("|")
-            nickname = parts[2]
-            mon = _mon_for_nickname(nickname)
-            if mon is not None:
-                mon.increment_deaths()
-
 def actors(line) -> tuple[str, str]:
     parts = line.split("|")
     nickname1 = parts[2]
     nickname2 = parts[4]
     return nickname1, nickname2
 
-def kd(lines):
-    actor1 = None
-    actor2 = None
-    for line in lines:
-        if line.startswith("|move|"):
-            actor1, actor2 = actors(line)
-        if line.startswith("|faint|"):
-            parts = line.split("|")
-            ky = None
-            if parts[2] == actor1:
-                ky = actor2
-            elif parts[2] == actor2:
-                ky = actor1
-            if ky is not None:
-                mon = _mon_for_nickname(ky)
-                if mon is not None:
-                    mon.increment_kills()
-
-def wins(lines):
-    for line in lines:
-        if line.startswith("|win|"):
-            winner = line.split("|win|")[1]
-            if winner == player1:
-                for i in range(min(6, len(players["p1"]))):
-                    players["p1"][i].increment_wins()
-            elif winner == player2:
-                for i in range(min(6, len(players["p2"]))):
-                    players["p2"][i].increment_wins()
-
 def battle_stats(lines):
     actor1 = None
     actor2 = None
+    move = None
     for line in lines:
         if line.startswith("|move|"):
             actor1, actor2 = actors(line)
+            move = line.split("|")[3]
 
         if line.startswith("|faint|"):
             parts = line.split("|")
@@ -176,6 +140,47 @@ def battle_stats(lines):
                 if mon is not None:
                     mon.increment_kills()
 
+        if line.startswith("|-damage|"):
+            parts = line.split("|")
+            nickname = parts[2]
+            hp_str = parts[3]
+
+            is_passive = any("[from]" in p for p in parts[4:])
+
+            mon1 = _mon_for_nickname(nickname) # The defender/victim
+            mon2 = None                         # The attacker
+            if actor1 is not None and not is_passive:
+                # actor1 is always the Pokemon that executed the move
+                mon2 = _mon_for_nickname(actor1)
+
+            if mon1 is not None:
+                current_hp = 0 if "fnt" in hp_str else int(hp_str.split("/")[0])
+                damage = mon1.get_current_hp() - current_hp
+                mon1.set_current_hp(current_hp)
+                
+                if damage > 0:
+                    mon1.increment_damage_taken(damage)
+                    if mon2 is not None and mon1 != mon2:
+                        mon2.increment_damage(damage)
+                        print(f"{mon2.name} dealt {damage} damage to {mon1.name} (current HP: {current_hp})")
+
+        if line.startswith("|-heal|") or line.startswith("|-sethp|"):
+            parts = line.split("|")
+            nickname_val = parts[2]
+            mon = _mon_for_nickname(nickname_val)
+
+            if mon is not None and len(parts) > 3 and "/" in parts[3]:
+                new_hp = int(parts[3].split("/")[0])
+                diff = new_hp - mon.get_current_hp()
+                mon.set_current_hp(new_hp)
+
+                if diff > 0:
+                    mon.increment_heal(diff)
+                    print(f"{mon.name} healed {diff} HP (current HP: {new_hp})")
+                elif diff < 0:
+                    # Handles HP drops caused by |-sethp| (e.g., Pain Split)
+                    mon.increment_damage_taken(-diff)
+
         if line.startswith("|win|"):
             winner = line.split("|win|")[1]
             if winner == player1:
@@ -184,42 +189,6 @@ def battle_stats(lines):
             elif winner == player2:
                 for i in range(min(6, len(players["p2"]))):
                     players["p2"][i].increment_wins()
-
-def damage(lines):
-    actor1 = None
-    actor2 = None
-    move = None
-    for line in lines:
-        if line.startswith("|move|"):
-            actor1, actor2 = actors(line)
-            actor1 = _mon_for_nickname(actor1)
-            actor2 = _mon_for_nickname(actor2)
-            move = line.split("|")[3]
-        if line.startswith("|-damage|"):
-            parts = line.split("|")
-            nickname = parts[2]
-            if "0 fnt" in parts:
-                current_hp = 0
-            else:
-                current_hp = int(parts[3].split("/")[0])
-            mon = _mon_for_nickname(nickname)
-            actor2 = mon
-            if mon is not None:
-                damage = mon.get_current_hp() - current_hp
-                mon.set_current_hp(current_hp)
-                if len(parts) == 4 and damage > 0:
-                    print(f"{actor2.name} took {damage} percent from {move} from {actor1.name}. Current HP: {current_hp}")
-        if line.startswith("|-heal|") or line.startswith("|-sethp|"):
-            parts = line.split("|")
-            nickname_val = parts[2]
-            
-            # Showdown HP can be formatted as "75/100", "100/100", or "0 fnt"
-            if len(parts) > 3 and "/" in parts[3]:
-                healed_hp = int(parts[3].split("/")[0])
-                mon = _mon_for_nickname(nickname_val)
-                if mon:
-                    mon.set_current_hp(healed_hp)
-                    print(f"{mon.name} was healed to current HP: {healed_hp}.")
 
 def games_played():
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
@@ -257,7 +226,7 @@ def save_to_db(dbName=None, cursor=None):
         own_connection = True
 
     def add_mon_stats(mon):
-        cursor.execute('''UPDATE mons SET kills = kills + ?, deaths = deaths + ?, games_played = games_played + ?, wins = wins + ? WHERE name = ?''', (mon.kills, mon.deaths, mon.games_played, mon.wins, mon.name))
+        cursor.execute('''UPDATE mons SET kills = kills + ?, deaths = deaths + ?, games_played = games_played + ?, wins = wins + ?, damage = damage + ?, healing = healing + ? WHERE name = ?''', (mon.kills, mon.deaths, mon.games_played, mon.wins, mon.damage, mon.healing, mon.name))
 
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
         add_mon_stats(players["p1"][i])
@@ -311,51 +280,24 @@ def parse_lines(lines, dbName=None, cursor=None):
         teams(lines)
         nickname(lines)
         _rebuild_nickname_lookup()
+        mega_evolutions(lines)
         battle_stats(lines)
         games_played()
         save_to_db(dbName=dbName, cursor=cursor)
     finally:
         reset()
 
-def edges(lines):
-    list = ["Urshifu", "Greninja", "Dudunsparce", "Zacian", "Zamazenta", "Necrozma-Dusk-Mane", "Necrozma-Dawn-Wings", "Tauros-Paldea-Combat", "Tauros-Paldea-Blaze", "Tauros-Paldea-Aqua"]
-    reset()
-    teams(lines)
-    for i in range(min(6, len(players["p1"]), len(players["p2"]))):
-        if players["p1"][i].name in list or players["p2"][i].name in list:
-            reset()
-            return True
-    reset()
-    return False
-
-def reparse(start, end, start_from):
-    # If start_from is an int, treat it as a 0-based line index to skip.
-    with open(start, 'r') as file:
-        for idx, raw in enumerate(file):
-            if idx < start_from:
-                continue
-            url = raw.strip()
-            if not url:
-                continue
-
-            data = fetch_json(url)
-            lines = data["log"].splitlines()
-            edge = edges(lines)
-            if edge:
-                with open(end, 'a') as edge_file:
-                    edge_file.write(url + "\n")
-                    print(f"Edge found and saved: {url}")
-
 def test():
-    url = "https://replay.pokemonshowdown.com/gen9draft-2326260502.json"
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2675562822.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
-    print(lines)
     global player1, player2 
     player1, player2 = player(data)
 
     teams(lines)
     nickname(lines)
+    _rebuild_nickname_lookup()
+    mega_evolutions(lines)
     battle_stats(lines)
     games_played()
     print_stats()
@@ -366,11 +308,4 @@ def main():
     test()
 
 if __name__ == "__main__":
-    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2675562822.json"
-    data = fetch_json(url)
-    lines = data["log"].splitlines()
-
-    teams(lines)
-    nickname(lines)
-    _rebuild_nickname_lookup()
-    damage(lines)
+    main()

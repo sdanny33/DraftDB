@@ -40,7 +40,7 @@ def create_db(dbName):
     cursor = conn.cursor()
     # Create a new table with `sprite` as a BLOB to store PNG bytes.
     cursor.execute('''CREATE TABLE IF NOT EXISTS mons
-                    (id DOUBLE, sprite BLOB, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0, KPG DOUBLE DEFAULT 0, path TEXT DEFAULT NULL)''')
+                    (id DOUBLE, sprite BLOB, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0, KPG DOUBLE DEFAULT 0, damage DOUBLE DEFAULT 0, healing DOUBLE DEFAULT 0, avg_damage DOUBLE DEFAULT 0, avg_healing DOUBLE DEFAULT 0, path TEXT DEFAULT NULL)''')
 
     mons_csv_path = DB_ROOT / 'DB_CSV' / 'mons.csv'
     with open(mons_csv_path, 'r') as file:
@@ -52,7 +52,6 @@ def create_db(dbName):
     # Commit the changes and close the connection
     conn.commit()
     conn.close()
-
 
 def _sprite_stem(mon_id):
     if bool(re.search(r'\.00\d$', str(mon_id))):
@@ -81,10 +80,10 @@ def add_sprites(dbName):
     conn.commit()
     conn.close()
 
-def add(dbName):
+def add_column(dbName, column_name, column_type, default_value):
     conn = sqlite3.connect(dbName)
     cursor = conn.cursor()
-    cursor.execute('ALTER TABLE mons ADD COLUMN KPG DOUBLE DEFAULT 0')
+    cursor.execute(f'ALTER TABLE mons ADD COLUMN {column_name} {column_type} DEFAULT {default_value}')
     conn.commit()
     conn.close()
 
@@ -156,6 +155,14 @@ def update_column(dbName):
         WHEN games_played = 0 THEN 0
         ELSE ROUND((kills) / games_played, 2)
     END''')
+    cursor.execute('''UPDATE mons set avg_damage = CASE
+        WHEN games_played = 0 THEN 0
+        ELSE ROUND((damage) / games_played, 2)
+    END''')
+    cursor.execute('''UPDATE mons set avg_healing = CASE
+        WHEN games_played = 0 THEN 0
+        ELSE ROUND((healing) / games_played, 2)
+    END''')
     conn.commit()
     conn.close()
 
@@ -177,87 +184,6 @@ def reset_db(dbName):
     conn.commit()
     conn.close()
 
-def copy_stats(source_db, target_db):
-    source_conn = sqlite3.connect(source_db)
-    source_cursor = source_conn.cursor()
-    source_cursor.execute('SELECT id, games_played, wins, kills, deaths FROM mons')
-    stats = {row[0]: row[1:] for row in source_cursor.fetchall()}
-    source_conn.close()
-
-    target_conn = sqlite3.connect(target_db)
-    target_cursor = target_conn.cursor()
-    for mon_id, (games_played, wins, kills, deaths) in stats.items():
-        target_cursor.execute('UPDATE mons SET games_played = ?, wins = ?, kills = ?, deaths = ? WHERE id = ?', (games_played, wins, kills, deaths, mon_id))
-    target_conn.commit()
-    target_conn.close()
-
-def subtract_stats(source_db, target_db):
-    source_conn = sqlite3.connect(source_db)
-    source_cursor = source_conn.cursor()
-    source_cursor.execute('SELECT id, games_played, wins, kills, deaths FROM mons')
-    stats = {row[0]: row[1:] for row in source_cursor.fetchall()}
-    source_conn.close()
-
-    target_conn = sqlite3.connect(target_db)
-    target_cursor = target_conn.cursor()
-    for mon_id, (games_played, wins, kills, deaths) in stats.items():
-        target_cursor.execute('SELECT games_played, wins, kills, deaths FROM mons WHERE id = ?', (mon_id,))
-        target_stats = target_cursor.fetchone()
-        if target_stats:
-            new_games_played = max(0, target_stats[0] - games_played)
-            new_wins = max(0, target_stats[1] - wins)
-            new_kills = max(0, target_stats[2] - kills)
-            new_deaths = max(0, target_stats[3] - deaths)
-            target_cursor.execute('UPDATE mons SET games_played = ?, wins = ?, kills = ?, deaths = ? WHERE id = ?', (new_games_played, new_wins, new_kills, new_deaths, mon_id))
-    target_conn.commit()
-    target_conn.close()
-
-def add_stats(source_db, target_db):
-    source_conn = sqlite3.connect(source_db)
-    source_cursor = source_conn.cursor()
-    source_cursor.execute('SELECT id, games_played, wins, kills, deaths FROM mons')
-    stats = {row[0]: row[1:] for row in source_cursor.fetchall()}
-    source_conn.close()
-
-    target_conn = sqlite3.connect(target_db)
-    target_cursor = target_conn.cursor()
-    for mon_id, (games_played, wins, kills, deaths) in stats.items():
-        target_cursor.execute('SELECT games_played, wins, kills, deaths FROM mons WHERE id = ?', (mon_id,))
-        target_stats = target_cursor.fetchone()
-        if target_stats:
-            new_games_played = target_stats[0] + games_played
-            new_wins = target_stats[1] + wins
-            new_kills = target_stats[2] + kills
-            new_deaths = target_stats[3] + deaths
-            target_cursor.execute('UPDATE mons SET games_played = ?, wins = ?, kills = ?, deaths = ? WHERE id = ?', (new_games_played, new_wins, new_kills, new_deaths, mon_id))
-    target_conn.commit()
-    target_conn.close()
-
-def add_row(source_db, target_db, mon_id):
-    source_conn = sqlite3.connect(source_db)
-    source_cursor = source_conn.cursor()
-    source_cursor.execute('SELECT games_played, wins, kills, deaths FROM mons WHERE id = ?', (mon_id,))
-    source_stats = source_cursor.fetchone()
-    source_conn.close()
-
-    if not source_stats:
-        return
-
-    target_conn = sqlite3.connect(target_db)
-    target_cursor = target_conn.cursor()
-    target_cursor.execute('SELECT games_played, wins, kills, deaths FROM mons WHERE id = ?', (mon_id,))
-    target_stats = target_cursor.fetchone()
-
-    if target_stats:
-        new_games_played = target_stats[0] + source_stats[0]
-        new_wins = target_stats[1] + source_stats[1]
-        new_kills = target_stats[2] + source_stats[2]
-        new_deaths = target_stats[3] + source_stats[3]
-        target_cursor.execute('UPDATE mons SET games_played = ?, wins = ?, kills = ?, deaths = ? WHERE id = ?', (new_games_played, new_wins, new_kills, new_deaths, mon_id))
-
-    target_conn.commit()
-    target_conn.close()
-
 def get_stats(replay_db, dbName):
     conn = sqlite3.connect(replay_db)
     cursor = conn.cursor()
@@ -273,21 +199,12 @@ def get_stats(replay_db, dbName):
     conn.close()
     conn2.close()
 
-def create_new_db(source_db, new_db):
-    create_db(new_db)
-    copy_stats(source_db, new_db)
-
-def nothing():
-    pass
-
 def main():
     dbName = DB_ROOT / 'database' / 'monDB.sqlite'
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
     archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
     update_db(replay_csv_path, dbName, archive_csv_path)
     update_column(dbName)
-    nothing()
 
 if __name__ == "__main__":
-    db = DB_ROOT / 'database' / 'testDB.sqlite'
-    get_stats(DB_ROOT / 'database' / 'replays_part2.sqlite', db)
+    main()

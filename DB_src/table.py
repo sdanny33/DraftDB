@@ -5,7 +5,6 @@ from pathlib import Path
 
 DB_ROOT = Path(__file__).resolve().parent.parent
 
-
 def _build_table_html(column_names, rows):
     parts = ["<table>"]
     header_cells = "".join(f"<th>{escape(str(name))}</th>" for name in column_names)
@@ -22,7 +21,6 @@ def _build_table_html(column_names, rows):
 
     parts.append("</table>")
     return "\n".join(parts)
-
 
 def print_table(dbName, tableName, fileName):
     conn = sqlite3.connect(dbName)
@@ -79,13 +77,11 @@ def print_table(dbName, tableName, fileName):
 """
     Path(fileName).write_text(page_html, encoding="utf-8")
 
-
 def main():
     dbName = DB_ROOT / 'database' / 'monDB.sqlite'
     tableName = 'mons'
     fileName = DB_ROOT / 'index.html'
     print_table(dbName, tableName, fileName)
-
 
 if __name__ == "__main__":
     main()
