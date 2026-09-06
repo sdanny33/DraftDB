@@ -72,14 +72,22 @@ def _fetch_and_compress(link: str) -> tuple[str, bytes | None, Exception | None]
 
 def save_replay_to_cache(db_dir: Path, file_name: Path, batch_size: int = 100, max_workers: int = 16, max_rows_per_db: int = 50_000):
     """Fetches, compresses, and saves replays directly into 50k-row sharded databases."""
+    db_dir = Path(db_dir)
+    file_name = Path(file_name)
+    if not file_name.is_file():
+        raise FileNotFoundError(f"Replay CSV not found: {file_name}")
+
     db_dir.mkdir(parents=True, exist_ok=True)
 
     links = []
     with open(file_name, "r") as file:
         reader = csv.reader(file)
         for row in reader:
-            if row and row[0].strip():
-                links.append(row[0].strip())
+            if not row:
+                continue
+            link = row[0].strip()
+            if link.startswith("http") and link.endswith(".json"):
+                links.append(link)
 
     if not links:
         print("No replay links found in CSV.")

@@ -140,6 +140,14 @@ def battle_stats(lines):
                 if mon is not None:
                     mon.increment_kills()
 
+        if line.startswith("|switch|"):
+            parts = line.split("|")
+            nickname = parts[2]
+            mon = _mon_for_nickname(nickname)
+            hp = int(parts[4].split("/")[0])
+            if mon is not None:
+                mon.set_current_hp(hp)
+
         if line.startswith("|-damage|"):
             parts = line.split("|")
             nickname = parts[2]
@@ -162,7 +170,7 @@ def battle_stats(lines):
                     mon1.increment_damage_taken(damage)
                     if mon2 is not None and mon1 != mon2:
                         mon2.increment_damage(damage)
-                        print(f"{mon2.name} dealt {damage} damage to {mon1.name} (current HP: {current_hp})")
+                        # print(f"{mon2.name} dealt {damage} damage to {mon1.name} (current HP: {current_hp})")
 
         if line.startswith("|-heal|") or line.startswith("|-sethp|"):
             parts = line.split("|")
@@ -176,10 +184,14 @@ def battle_stats(lines):
 
                 if diff > 0:
                     mon.increment_heal(diff)
-                    print(f"{mon.name} healed {diff} HP (current HP: {new_hp})")
+                    # print(f"{mon.name} healed {diff} HP (current HP: {new_hp})")
                 elif diff < 0:
                     # Handles HP drops caused by |-sethp| (e.g., Pain Split)
                     mon.increment_damage_taken(-diff)
+                    mon2 = _mon_for_nickname(actor1)
+                    if mon2 is not None and mon != mon2:
+                        mon2.increment_damage(-diff)
+                        # print(f"{mon2.name} dealt {-diff} damage to {mon.name} (current HP: {new_hp})")
 
         if line.startswith("|win|"):
             winner = line.split("|win|")[1]
@@ -226,7 +238,7 @@ def save_to_db(dbName=None, cursor=None):
         own_connection = True
 
     def add_mon_stats(mon):
-        cursor.execute('''UPDATE mons SET kills = kills + ?, deaths = deaths + ?, games_played = games_played + ?, wins = wins + ?, damage = damage + ?, healing = healing + ? WHERE name = ?''', (mon.kills, mon.deaths, mon.games_played, mon.wins, mon.damage, mon.healing, mon.name))
+        cursor.execute('''UPDATE mons SET kills = kills + ?, deaths = deaths + ?, games_played = games_played + ?, wins = wins + ?, damage = damage + ?, healing = healing + ? WHERE name = ?''', (mon.kills, mon.deaths, mon.games_played, mon.wins, mon.damage, mon.heal, mon.name))
 
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
         add_mon_stats(players["p1"][i])
@@ -288,7 +300,7 @@ def parse_lines(lines, dbName=None, cursor=None):
         reset()
 
 def test():
-    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2675562822.json"
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2636733351.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
     global player1, player2 

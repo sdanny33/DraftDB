@@ -7,7 +7,6 @@ def main():
     replay_scraper_main()
     create_db_main()
     table_main()
-    replay_saver_main()
 
 if __name__ == "__main__":
     main()

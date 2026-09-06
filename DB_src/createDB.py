@@ -4,7 +4,7 @@ import socket
 import urllib.error
 from pathlib import Path
 from parser import parse, parse_lines
-from replaySaver import decompress_cached_log
+from replaySaver import decompress_cached_log, save_replay_to_cache
 import re
 
 DB_ROOT = Path(__file__).resolve().parent.parent
@@ -87,7 +87,7 @@ def add_column(dbName, column_name, column_type, default_value):
     conn.commit()
     conn.close()
 
-def update_db(fileName, dbName, outName):
+def update_links(fileName, outName):
     links = []
     with open(fileName, 'r') as file:
         reader = csv.reader(file)
@@ -105,33 +105,9 @@ def update_db(fileName, dbName, outName):
     if not links_to_process:
         return
 
-    successful_links = []
-
-    with sqlite3.connect(dbName) as conn:
-        cursor = conn.cursor()
-        count = 0
-        for link in links_to_process:
-            count += 1
-
-            try:
-                parse(link, cursor=cursor)
-                successful_links.append(link)
-            except Exception as error:
-                error_type = type(error).__name__
-                error_message = str(error).strip() or "(no error message)"
-                timeout_tag = "timeout" if _is_timeout_exception(error) else "error"
-                print(f'Skipping replay ({timeout_tag}): {link} | {error_type}: {error_message}')
-                continue
-
-            if count % 100 == 0:
-                print(f'Parsing {link}...')
-                conn.commit()
-
-        conn.commit()
-
     with open(outName, 'a', newline='') as file:
         writer = csv.writer(file)
-        for link in successful_links:
+        for link in links_to_process:
             writer.writerow([link])
 
     # Keep the original second row as the new first row for the next run.
@@ -185,25 +161,32 @@ def reset_db(dbName):
     conn.close()
 
 def get_stats(replay_db, dbName):
-    conn = sqlite3.connect(replay_db)
-    cursor = conn.cursor()
+    replay_db = Path(replay_db)
+    replay_dbs = sorted(replay_db.glob('replays_part*.sqlite')) if replay_db.is_dir() else [replay_db]
     conn2 = sqlite3.connect(dbName)
     cursor2 = conn2.cursor()
-    cursor.execute('SELECT id, log_blob FROM replay_cache')
 
-    for row in cursor.fetchall():
-        lines = decompress_cached_log(row[1])
-        parse_lines(lines, cursor=cursor2)
-        conn2.commit()
+    try:
+        for replay_shard in replay_dbs:
+            with sqlite3.connect(replay_shard) as conn:
+                cursor = conn.cursor()
+                cursor.execute('SELECT id, log_blob FROM replay_cache')
+                for row in cursor.fetchall():
+                    lines = decompress_cached_log(row[1])
+                    parse_lines(lines, cursor=cursor2)
+            conn2.commit()
+    finally:
+        conn2.close()
 
-    conn.close()
-    conn2.close()
 
 def main():
+    db_dir = DB_ROOT / 'database'
     dbName = DB_ROOT / 'database' / 'monDB.sqlite'
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
     archive_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraft.csv'
-    update_db(replay_csv_path, dbName, archive_csv_path)
+    update_links(replay_csv_path, archive_csv_path)
+    save_replay_to_cache(db_dir=db_dir, file_name=archive_csv_path)
+    get_stats(db_dir, dbName)
     update_column(dbName)
 
 if __name__ == "__main__":
