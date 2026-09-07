@@ -15,7 +15,7 @@ def create_db(dbName):
     cursor = conn.cursor()
     # Create a new table with `sprite` as a BLOB to store PNG bytes.
     cursor.execute('''CREATE TABLE IF NOT EXISTS mons
-                    (id DOUBLE, sprite BLOB, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0, KPG DOUBLE DEFAULT 0, damage DOUBLE DEFAULT 0, healing DOUBLE DEFAULT 0, switches DOUBLE DEFAULT 0, avg_damage DOUBLE DEFAULT 0, avg_healing DOUBLE DEFAULT 0, avg_switches DOUBLE DEFAULT 0, path TEXT DEFAULT NULL)''')
+                    (id DOUBLE, sprite BLOB, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0, KPG DOUBLE DEFAULT 0, damage DOUBLE DEFAULT 0, damage_taken DOUBLE DEFAULT 0, healing DOUBLE DEFAULT 0, switches DOUBLE DEFAULT 0, tera DOUBLE DEFAULT 0, hit DOUBLE DEFAULT 0, miss DOUBLE DEFAULT 0, avg_damage DOUBLE DEFAULT 0, avg_damage_taken DOUBLE DEFAULT 0, avg_healing DOUBLE DEFAULT 0, avg_switches DOUBLE DEFAULT 0, tera_percent DOUBLE DEFAULT 0, hit_percent DOUBLE DEFAULT 0, path TEXT DEFAULT NULL)''')
 
     mons_csv_path = DB_ROOT / 'DB_CSV' / 'mons.csv'
     with open(mons_csv_path, 'r') as file:
@@ -110,6 +110,10 @@ def update_column(dbName):
         WHEN games_played = 0 THEN 0
         ELSE ROUND((damage) / games_played, 2)
     END''')
+    cursor.execute('''UPDATE mons set avg_damage_taken = CASE
+        WHEN games_played = 0 THEN 0
+        ELSE ROUND((damage_taken) / games_played, 2)
+    END''')
     cursor.execute('''UPDATE mons set avg_healing = CASE
         WHEN games_played = 0 THEN 0
         ELSE ROUND((healing) / games_played, 2)
@@ -117,6 +121,14 @@ def update_column(dbName):
     cursor.execute('''UPDATE mons set avg_switches = CASE
         WHEN games_played = 0 THEN 0
         ELSE ROUND((switches) / games_played, 2)
+    END''')
+    cursor.execute('''UPDATE mons set tera_percent = CASE
+        WHEN games_played = 0 THEN 0
+        ELSE ROUND((tera) / games_played, 2)
+    END''')
+    cursor.execute('''UPDATE mons set hit_percent = CASE
+        WHEN (hit + miss) = 0 THEN 0
+        ELSE ROUND((hit) / (hit + miss), 2)
     END''')
     conn.commit()
     conn.close()
@@ -127,6 +139,10 @@ def reset_db(dbName):
     cursor.execute('DELETE FROM mons')
     conn.commit()
     conn.close()
+
+def create_and_populate_db(dbName=DB_ROOT / 'database' / 'testDB.sqlite'):
+    create_db(dbName)
+    add_sprites(dbName)
 
 def get_stats(replay_db, dbName):
     replay_db = Path(replay_db)

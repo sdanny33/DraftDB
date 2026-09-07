@@ -20,6 +20,7 @@ class Mon:
         self.heal = 0
         self.switches = 0
         self.miss = 0
+        self.hit = 0
         self.tera = 0
         self.moves = []
         self.item = ""
@@ -87,6 +88,9 @@ class Mon:
 
     def increment_miss(self):
         self.miss += 1
+
+    def increment_hit(self):
+        self.hit += 1
 
     def increment_tera(self):
         self.tera += 1

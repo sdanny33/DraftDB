@@ -127,6 +127,10 @@ def battle_stats(lines):
                 mon = _mon_for_nickname(actor1)
                 if mon is not None:
                     mon.increment_miss()
+            else:
+                mon = _mon_for_nickname(actor1)
+                if mon is not None:
+                    mon.increment_hit()
 
         if line.startswith("|faint|"):
             parts = line.split("|")
@@ -255,9 +259,8 @@ def save_to_db(dbName=None, cursor=None):
         conn = sqlite3.connect(dbName)
         cursor = conn.cursor()
         own_connection = True
-
     def add_mon_stats(mon):
-        cursor.execute('''UPDATE mons SET kills = kills + ?, deaths = deaths + ?, games_played = games_played + ?, wins = wins + ?, damage = damage + ?, healing = healing + ? WHERE name = ?''', (mon.kills, mon.deaths, mon.games_played, mon.wins, mon.damage, mon.heal, mon.name))
+        cursor.execute('''UPDATE mons SET kills = kills + ?, deaths = deaths + ?, games_played = games_played + ?, wins = wins + ?, damage = damage + ?, damage_taken = damage_taken + ?, healing = healing + ?, switches = switches + ?, tera = tera + ?, hit = hit + ?, miss = miss + ? WHERE name = ?''', (mon.kills, mon.deaths, mon.games_played, mon.wins, mon.damage, mon.damage_taken, mon.heal, mon.switches, mon.tera, mon.hit, mon.miss, mon.name))
 
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
         add_mon_stats(players["p1"][i])
