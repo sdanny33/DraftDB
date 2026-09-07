@@ -9,38 +9,13 @@ import re
 
 DB_ROOT = Path(__file__).resolve().parent.parent
 
-def _is_timeout_exception(error):
-    current = error
-    seen = set()
-
-    while current is not None and id(current) not in seen:
-        seen.add(id(current))
-
-        if isinstance(current, (TimeoutError, socket.timeout)):
-            return True
-
-        if isinstance(current, urllib.error.URLError):
-            reason = current.reason
-            if isinstance(reason, (TimeoutError, socket.timeout)):
-                return True
-            if isinstance(reason, str) and "timed out" in reason.lower():
-                return True
-
-        message = str(current).lower()
-        if "timed out" in message or "timeout" in message:
-            return True
-
-        current = current.__cause__ or current.__context__
-
-    return False
-
 def create_db(dbName):
     # Connect to the database. If it doesn't exist, it will be created.
     conn = sqlite3.connect(dbName)
     cursor = conn.cursor()
     # Create a new table with `sprite` as a BLOB to store PNG bytes.
     cursor.execute('''CREATE TABLE IF NOT EXISTS mons
-                    (id DOUBLE, sprite BLOB, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0, KPG DOUBLE DEFAULT 0, damage DOUBLE DEFAULT 0, healing DOUBLE DEFAULT 0, avg_damage DOUBLE DEFAULT 0, avg_healing DOUBLE DEFAULT 0, path TEXT DEFAULT NULL)''')
+                    (id DOUBLE, sprite BLOB, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0, KPG DOUBLE DEFAULT 0, damage DOUBLE DEFAULT 0, healing DOUBLE DEFAULT 0, switches DOUBLE DEFAULT 0, avg_damage DOUBLE DEFAULT 0, avg_healing DOUBLE DEFAULT 0, avg_switches DOUBLE DEFAULT 0, path TEXT DEFAULT NULL)''')
 
     mons_csv_path = DB_ROOT / 'DB_CSV' / 'mons.csv'
     with open(mons_csv_path, 'r') as file:
@@ -139,17 +114,10 @@ def update_column(dbName):
         WHEN games_played = 0 THEN 0
         ELSE ROUND((healing) / games_played, 2)
     END''')
-    conn.commit()
-    conn.close()
-
-def refresh(dbName):
-    conn = sqlite3.connect(dbName)
-    cursor = conn.cursor()
-    cursor.execute('''CREATE TABLE IF NOT EXISTS mons_new
-                    (id DOUBLE, name TEXT PRIMARY KEY, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0)''')
-    cursor.execute('INSERT INTO mons_new (id, name, games_played, wins, kills, deaths) SELECT id, name, games_played, wins, kills, deaths FROM mons')
-    cursor.execute('DROP TABLE mons')
-    cursor.execute('ALTER TABLE mons_new RENAME TO mons')
+    cursor.execute('''UPDATE mons set avg_switches = CASE
+        WHEN games_played = 0 THEN 0
+        ELSE ROUND((switches) / games_played, 2)
+    END''')
     conn.commit()
     conn.close()
 

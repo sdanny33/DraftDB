@@ -120,7 +120,13 @@ def battle_stats(lines):
     for line in lines:
         if line.startswith("|move|"):
             actor1, actor2 = actors(line)
-            move = line.split("|")[3]
+            parts = line.split("|")
+            move = parts[3]
+            is_miss = any("[miss]" in p for p in parts[4:])
+            if is_miss:
+                mon = _mon_for_nickname(actor1)
+                if mon is not None:
+                    mon.increment_miss()
 
         if line.startswith("|faint|"):
             parts = line.split("|")
@@ -146,7 +152,13 @@ def battle_stats(lines):
             mon = _mon_for_nickname(nickname)
             hp = int(parts[4].split("/")[0])
             if mon is not None:
+                mon.increment_switches()
+                old_hp = mon.get_current_hp()
                 mon.set_current_hp(hp)
+
+                # Regenerator healing
+                if old_hp < hp:
+                    mon.increment_heal(hp - old_hp)
 
         if line.startswith("|-damage|"):
             parts = line.split("|")
@@ -193,6 +205,13 @@ def battle_stats(lines):
                         mon2.increment_damage(-diff)
                         # print(f"{mon2.name} dealt {-diff} damage to {mon.name} (current HP: {new_hp})")
 
+        if line.startswith("|-terastallize|"):
+            parts = line.split("|")
+            nickname = parts[2]
+            mon = _mon_for_nickname(nickname)
+            if mon is not None:
+                mon.increment_tera()
+        
         if line.startswith("|win|"):
             winner = line.split("|win|")[1]
             if winner == player1:
@@ -300,7 +319,7 @@ def parse_lines(lines, dbName=None, cursor=None):
         reset()
 
 def test():
-    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2636733351.json"
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2675562822.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
     global player1, player2 

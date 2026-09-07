@@ -113,3 +113,15 @@ def add_row(source_db, target_db, mon_id):
 
     target_conn.commit()
     target_conn.close()
+
+# db commands
+def refresh(dbName):
+    conn = sqlite3.connect(dbName)
+    cursor = conn.cursor()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS mons_new
+                    (id DOUBLE, name TEXT PRIMARY KEY, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0)''')
+    cursor.execute('INSERT INTO mons_new (id, name, games_played, wins, kills, deaths) SELECT id, name, games_played, wins, kills, deaths FROM mons')
+    cursor.execute('DROP TABLE mons')
+    cursor.execute('ALTER TABLE mons_new RENAME TO mons')
+    conn.commit()
+    conn.close()

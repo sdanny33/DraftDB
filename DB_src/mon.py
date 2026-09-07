@@ -18,6 +18,9 @@ class Mon:
         self.damage = 0
         self.damage_taken = 0
         self.heal = 0
+        self.switches = 0
+        self.miss = 0
+        self.tera = 0
         self.moves = []
         self.item = ""
         self.ability = ""
@@ -78,6 +81,15 @@ class Mon:
 
     def increment_heal(self, heal):
         self.heal += heal
+    
+    def increment_switches(self):
+        self.switches += 1
+
+    def increment_miss(self):
+        self.miss += 1
+
+    def increment_tera(self):
+        self.tera += 1
 
     def set_name(self, name):
         self.name = name
@@ -177,7 +189,7 @@ class Mon:
         self.valid = valid
 
     def print_stats(self):
-        print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins, {self.damage} damage dealt, {self.damage_taken} damage taken, {self.heal} healing done")
+        print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins, {self.damage} damage dealt, {self.damage_taken} damage taken, {self.heal} healing done, {self.switches} switches, {self.miss} misses")
 
     def print_clear(self):
         print(f"{self.name}: {self.ability}, {self.item}, {self.moves}")
