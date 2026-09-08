@@ -117,7 +117,13 @@ def battle_stats(lines):
     actor1 = None
     actor2 = None
     move = None
+    active_mon1 = None
+    active_mon2 = None
     for line in lines:
+        if line.startswith("|turn|"):
+            active_mon1.increment_active() if active_mon1 is not None else None
+            active_mon2.increment_active() if active_mon2 is not None else None
+            
         if line.startswith("|move|"):
             actor1, actor2 = actors(line)
             parts = line.split("|")
@@ -155,11 +161,15 @@ def battle_stats(lines):
             nickname = parts[2]
             mon = _mon_for_nickname(nickname)
             hp = int(parts[4].split("/")[0])
+            if "p1a" in nickname:
+                active_mon1 = mon
+            elif "p2a" in nickname:
+                active_mon2 = mon
+ 
             if mon is not None:
                 mon.increment_switches()
                 old_hp = mon.get_current_hp()
                 mon.set_current_hp(hp)
-
                 # Regenerator healing
                 if old_hp < hp:
                     mon.increment_heal(hp - old_hp)
@@ -205,6 +215,7 @@ def battle_stats(lines):
                     # Handles HP drops caused by |-sethp| (e.g., Pain Split)
                     mon.increment_damage_taken(-diff)
                     mon2 = _mon_for_nickname(actor1)
+
                     if mon2 is not None and mon != mon2:
                         mon2.increment_damage(-diff)
                         # print(f"{mon2.name} dealt {-diff} damage to {mon.name} (current HP: {new_hp})")

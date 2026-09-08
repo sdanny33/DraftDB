@@ -23,6 +23,7 @@ class Mon:
         self.hit = 0
         self.tera = 0
         self.moves = []
+        self.active = 0
         self.item = ""
         self.ability = ""
         self.evs = {
@@ -94,6 +95,9 @@ class Mon:
 
     def increment_tera(self):
         self.tera += 1
+
+    def increment_active(self):
+        self.active += 1
 
     def set_name(self, name):
         self.name = name

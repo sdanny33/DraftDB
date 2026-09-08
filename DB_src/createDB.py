@@ -137,6 +137,12 @@ def reset_db(dbName):
     conn = sqlite3.connect(dbName)
     cursor = conn.cursor()
     cursor.execute('DELETE FROM mons')
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS processed_replays (
+            id TEXT PRIMARY KEY
+        )
+    ''')
+    cursor.execute('DELETE FROM processed_replays')
     conn.commit()
     conn.close()
 
@@ -149,6 +155,13 @@ def get_stats(replay_db, dbName):
     replay_dbs = sorted(replay_db.glob('replays_part*.sqlite')) if replay_db.is_dir() else [replay_db]
     conn2 = sqlite3.connect(dbName)
     cursor2 = conn2.cursor()
+    cursor2.execute('''
+        CREATE TABLE IF NOT EXISTS processed_replays (
+            id TEXT PRIMARY KEY
+        )
+    ''')
+    cursor2.execute('SELECT id FROM processed_replays')
+    processed_ids = {row[0] for row in cursor2.fetchall()}
 
     try:
         for replay_shard in replay_dbs:
@@ -156,8 +169,13 @@ def get_stats(replay_db, dbName):
                 cursor = conn.cursor()
                 cursor.execute('SELECT id, log_blob FROM replay_cache')
                 for row in cursor.fetchall():
+                    replay_id = row[0]
+                    if replay_id in processed_ids:
+                        continue
                     lines = decompress_cached_log(row[1])
                     parse_lines(lines, cursor=cursor2)
+                    cursor2.execute('INSERT INTO processed_replays (id) VALUES (?)', (replay_id,))
+                    processed_ids.add(replay_id)
             conn2.commit()
     finally:
         conn2.close()
