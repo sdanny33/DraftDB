@@ -24,6 +24,10 @@ class Mon:
         self.tera = 0
         self.moves = []
         self.active = 0
+        self.super_effective = 0
+        self.resisted = 0
+        self.immune = 0
+        self.crit = 0
         self.item = ""
         self.ability = ""
         self.evs = {
@@ -92,6 +96,18 @@ class Mon:
 
     def increment_hit(self):
         self.hit += 1
+
+    def increment_super_effective(self):
+        self.super_effective += 1
+
+    def increment_resisted(self):
+        self.resisted += 1
+
+    def increment_immune(self):
+        self.immune += 1
+
+    def increment_crit(self):   
+        self.crit += 1
 
     def increment_tera(self):
         self.tera += 1
@@ -197,7 +213,7 @@ class Mon:
         self.valid = valid
 
     def print_stats(self):
-        print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins, {self.damage} damage dealt, {self.damage_taken} damage taken, {self.heal} healing done, {self.switches} switches, {self.miss} misses")
+        print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins, {self.damage} damage dealt, {self.damage_taken} damage taken, {self.heal} healing done, {self.switches} switches, {self.tera} tera, {self.hit} hits, {self.miss} misses, {self.super_effective} super effective hits, {self.resisted} resisted hits, {self.immune} immune hits, {self.crit} critical hits, {self.active} active turns")
 
     def print_clear(self):
         print(f"{self.name}: {self.ability}, {self.item}, {self.moves}")

@@ -138,6 +138,24 @@ def battle_stats(lines):
                 if mon is not None:
                     mon.increment_hit()
 
+        match line:
+            case _ if line.startswith("|-supereffective|"):
+                mon = _mon_for_nickname(actor1)
+                if mon is not None:
+                    mon.increment_super_effective()
+            case _ if line.startswith("|-resisted|"):
+                mon = _mon_for_nickname(actor1)
+                if mon is not None:
+                    mon.increment_resisted()
+            case _ if line.startswith("|-immune|"):
+                mon = _mon_for_nickname(actor1)
+                if mon is not None:
+                    mon.increment_immune()
+            case _ if line.startswith("|-crit|"):
+                mon = _mon_for_nickname(actor1)
+                if mon is not None:
+                    mon.increment_crit()
+
         if line.startswith("|faint|"):
             parts = line.split("|")
             nickname = parts[2]
