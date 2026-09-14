@@ -66,11 +66,11 @@ const renderMon = (mon) => {
         <div class="lookup-stat"><span class="lookup-stat-label">Deaths</span><span class="lookup-stat-value">${mon.deaths}</span></div>
         <div class="lookup-stat"><span class="lookup-stat-label">Diff</span><span class="lookup-stat-value">${mon.diff}</span></div>
         <div class="lookup-stat"><span class="lookup-stat-label">KPG</span><span class="lookup-stat-value">${mon.kpg}</span></div>
-        <div class="lookup-stat"><span class="lookup-stat-label">DPG</span><span class="lookup-stat-value">${mon.dpg}</span></div>
-        <div class="lookup-stat"><span class="lookup-stat-label">DTPG</span><span class="lookup-stat-value">${mon.dtp}</span></div>
-        <div class="lookup-stat"><span class="lookup-stat-label">HPG</span><span class="lookup-stat-value">${mon.hpg}</span></div>
-        <div class="lookup-stat"><span class="lookup-stat-label">SPG</span><span class="lookup-stat-value">${mon.spg}</span></div>
-        <div class="lookup-stat"><span class="lookup-stat-label">Tera %</span><span class="lookup-stat-value">${mon.teraPercent}%</span></div>
+        <div class="lookup-stat"><span class="lookup-stat-label">DPG</span><span class="lookup-stat-value">${mon.avg_damage}</span></div>
+        <div class="lookup-stat"><span class="lookup-stat-label">DTPG</span><span class="lookup-stat-value">${mon.avg_damage_taken}</span></div>
+        <div class="lookup-stat"><span class="lookup-stat-label">HPG</span><span class="lookup-stat-value">${mon.avg_healing}</span></div>
+        <div class="lookup-stat"><span class="lookup-stat-label">SPG</span><span class="lookup-stat-value">${mon.avg_switches}</span></div>
+        <div class="lookup-stat"><span class="lookup-stat-label">Tera %</span><span class="lookup-stat-value">${mon.tera_percent}%</span></div>
       </div>
     </article>
   `;
