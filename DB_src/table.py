@@ -27,13 +27,13 @@ def print_table(dbName, tableName, fileName):
     cursor = conn.cursor()
 
     rows = cursor.execute(
-        "SELECT name, points, games_played, winrate, kills, deaths, diff, KPG, avg_damage, avg_damage_taken, avg_healing, avg_switches, tera_percent, hit_percent, "
+        "SELECT name, points, games_played, winrate, kills, deaths, diff, KPG, avg_damage, avg_damage_taken, avg_healing, avg_switches, tera_percent, "
         "COALESCE(path, 'sprites/0.png') as path FROM mons WHERE games_played > 500.0"
     ).fetchall()
-    column_names = ["name", "points", "games_played", "winrate", "kills", "deaths", "diff", "KPG", "avg_d", "avg_dt", "avg_h", "avg_s", "tera%", "hit%"]
+    column_names = ["name", "points", "games_played", "winrate", "kills", "deaths", "diff", "KPG", "DPG", "DTPG", "HPG", "SPG", "tera%"]
 
     lookup_rows = cursor.execute(
-        "SELECT name, points, games_played, winrate, kills, deaths, diff, KPG, avg_damage, avg_damage_taken, avg_healing, avg_switches, tera_percent, hit_percent, "
+        "SELECT name, points, games_played, winrate, kills, deaths, diff, KPG, avg_damage, avg_damage_taken, avg_healing, avg_switches, tera_percent, "
         "COALESCE(path, 'sprites/0.png') as path FROM mons ORDER BY name"
     ).fetchall()
     conn.close()
@@ -54,8 +54,7 @@ def print_table(dbName, tableName, fileName):
             "avg_healing": row[10],
             "avg_switches": row[11],
             "tera_percent": row[12],
-            "hit_percent": row[13],
-            "sprite": row[14],
+            "sprite": row[13],
         }
         for row in lookup_rows
     ]
