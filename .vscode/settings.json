@@ -1,6 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "./DB_src",
-        "./paste"
+        "./DraftDB/DB_src",
+        "./DraftDB/paste"
     ]
 }
