@@ -80,10 +80,40 @@ function MonLookup() {
           <div className="search-section">
             <div className="h1">Search for a Pokémon</div>
             <div className="h2">Type a Pokémon name to filter stats for that specific mon.</div>
+            <div className="search-bar-container">
+              <div className="search-bar"><input className="text" placeholder="Enter a Pokémon name..." /></div>
+              <div className="search-button"><button><div className="h2">Search</div></button></div>
+            </div>
           </div>
           <div className="search-section">
             <div className="h1">Mon Name</div>
             <div className="h2">Single mon stat cards.</div>
+            <div className="card-grid">
+              <div className="stat-card">
+                <div className="text">Games_Played</div>
+                <div className="text">100</div>
+              </div>
+              <div className="stat-card">
+                <div className="text">Kills</div>
+                <div className="text">100</div>
+              </div>
+              <div className="stat-card">
+                <div className="text">Deaths</div>
+                <div className="text">100</div>
+              </div>
+              <div className="stat-card">
+                <div className="text">Diff</div>
+                <div className="text">0</div>
+              </div>
+              <div className="stat-card">
+                <div className="text">KPG</div>
+                <div className="text">1.0</div>
+            </div>
+              <div className="stat-card">
+                <div className="text">Winrate</div>
+                <div className="text">.50</div>
+            </div>
+            </div>
         </div>
       </div>
     </div>

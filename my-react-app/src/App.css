@@ -181,3 +181,83 @@ tr:nth-child(odd){
 table tr:first-child{
   background-color: var(--Dark-Green, #366546); 
 }
+
+.search-bar-container{
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+
+.search-bar{
+  display: flex;
+  width: 980px;
+  padding: 24px 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 25px;
+  border: 2px solid var(--Outline, #000);
+  background: var(--Secondary-Green, #CDE6BD);
+}
+
+.search-bar .text{
+  color: var(--Outline, #000);
+  text-align: left;
+  font-family: "Pixelify Sans";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.search-button{
+  display: flex;
+  padding: 24px 12px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  border-radius: 25px;
+  border: 2px solid var(--Secondary-Outline, #FFF);
+  background: var(--Dark-Green, #366546);
+}
+
+.search-button:hover{
+  background: var(--Secondary-Green, #CDE6BD);
+  border: 2px solid var(--Secondary-Outline, #000);
+}
+
+.card-grid{
+  display: inline-grid;
+  row-gap: 24px;
+  column-gap: 24px;
+  grid-template-rows: repeat(2,fit-content(100%));
+  grid-template-columns: repeat(5,fit-content(100%));
+  grid-auto-flow: row;
+}
+
+.stat-card{
+  display: flex;
+  width: 225px;
+  height: 125px;
+  padding: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  grid-row: span 1;
+  grid-column: span 1;
+  border-radius: 25px;
+  border: 2px solid var(--Outline, #000);
+  background: var(--Secondary-Green, #CDE6BD);
+}
+
+.stat-card .text{
+  color: var(--Outline, #000);
+  text-align: left;
+  font-family: "Pixelify Sans";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
