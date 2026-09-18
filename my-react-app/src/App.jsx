@@ -3,7 +3,7 @@ import logo from './assets/DDB_Logo.png'
 import './App.css'
 
 function getSprite(id) {
-  return `public/sprites/${id}.png`
+  return `/sprites/${id}.png`
 }
 
 function Home() {
@@ -77,6 +77,14 @@ function MonLookup() {
       </div>
       <div className="section-padding">
         <div className="title">Mon Lookup</div>
+          <div className="search-section">
+            <div className="h1">Search for a Pokémon</div>
+            <div className="h2">Type a Pokémon name to filter stats for that specific mon.</div>
+          </div>
+          <div className="search-section">
+            <div className="h1">Mon Name</div>
+            <div className="h2">Single mon stat cards.</div>
+        </div>
       </div>
     </div>
   )

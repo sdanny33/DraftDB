@@ -54,6 +54,9 @@
 }
 
 .section-padding{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   padding: 72px;
 }
 
@@ -63,7 +66,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 72px;
+  gap: 24px;
+  align-self: stretch;
+  border-radius: 25px;
+  border: 2px solid var(--Outline, #000);
+  background: var(--Primary-Green, #5AB47B);
+}
+
+.search-section{
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
   align-self: stretch;
   border-radius: 25px;
   border: 2px solid var(--Outline, #000);
@@ -75,7 +90,7 @@
   color: var(--Outline, #000);
   text-align: center;
   font-family: "Pixelify Sans";
-  font-size: 144px;
+  font-size: 100px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;  
@@ -86,7 +101,27 @@
   color: var(--Secondary-Outline, #FFF);
   text-align: center;
   font-family: "Pixelify Sans";
-  font-size: 72px;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.h1{
+  color: var(--Outline, #000);
+  text-align: left;
+  font-family: "Pixelify Sans";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.h2{
+  color: var(--Outline, #FFF);
+  text-align: left;
+  font-family: "Pixelify Sans";
+  font-size: 32px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
