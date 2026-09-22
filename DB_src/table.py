@@ -82,11 +82,49 @@ def print_table(dbName, tableName, fileName):
 """
     Path(fileName).write_text(page_html, encoding="utf-8")
 
+def print_lookup(dbName, tableName, fileName):
+    conn = sqlite3.connect(dbName)
+    cursor = conn.cursor()
+
+    lookup_rows = cursor.execute(
+        "SELECT name, points, games_played, winrate, kills, deaths, diff, KPG, avg_damage, avg_damage_taken, avg_healing, avg_switches, tera_percent, "
+        "COALESCE(path, 'sprites/0.png') as path FROM mons ORDER BY name"
+    ).fetchall()
+    conn.close()
+
+    lookup_data = [
+        {
+            "name": row[0],
+            "points": row[1],
+            "gamesPlayed": row[2],
+            "winrate": row[3],
+            "kills": row[4],
+            "deaths": row[5],
+            "diff": row[6],
+            "kpg": row[7],
+            "avg_damage": row[8],
+            "avg_damage_taken": row[9],
+            "avg_healing": row[10],
+            "avg_switches": row[11],
+            "tera_percent": row[12],
+            "sprite": row[13],
+        }
+        for row in lookup_rows
+    ]
+    lookup_data_by_name = {
+        "".join(character.lower() for character in mon["name"] if character.isalnum()): mon
+        for mon in lookup_data
+    }
+    lookup_data_js = "const monData = " + json.dumps(lookup_data_by_name, ensure_ascii=True) + ";\n\nexport { monData };\n"
+
+    lookup_data_path = Path(fileName).parent / 'my-react-app' / 'src' / 'js' / 'mon-data.js'
+    lookup_data_path.write_text(lookup_data_js, encoding="utf-8")
+
 def main():
     dbName = DB_ROOT / 'database' / 'monDB.sqlite'
     tableName = 'mons'
     fileName = DB_ROOT / 'index.html'
-    print_table(dbName, tableName, fileName)
+    print_lookup(dbName, tableName, fileName)
 
 if __name__ == "__main__":
     main()

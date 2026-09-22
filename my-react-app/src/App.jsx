@@ -1,10 +1,65 @@
+import { useEffect, useRef, useState } from 'react'
+import { Chart, registerables } from 'chart.js'
 import { Link, Route, Routes } from 'react-router-dom'
 import logo from './assets/DDB_Logo.png'
 import './App.css'
+import { dex } from './js/pokedex'
+import { monData } from './js/mon-data'
 
-function getSprite(id) {
-  return `/sprites/${id}.png`
+Chart.register(...registerables)
+
+function getSprite(name) {
+  const info = getInfo(name)
+  if (!info) {
+    return null
+  }
+  return `sprites/${info.dexNum}.png`
 }
+
+function getInfo(name) {
+  if (!name) {
+    return null
+  }
+
+  const key = name.toLowerCase().replace(/[^a-z0-9]/g, '')
+  const pokemon = dex[key]
+
+  if (!pokemon) {
+    return null
+  }
+
+  const info = {
+    name: pokemon.name,
+    dexNum: pokemon.num,
+    types: pokemon.types,
+    stats: pokemon.baseStats
+  }
+  return info
+}
+
+function getStats(name) {
+  if (!name) {
+    return null
+  }
+
+  const key = name.toLowerCase().replace(/[^a-z0-9]/g, '')
+  const pokemon = monData[key]
+
+  if (!pokemon) {
+    return null
+  }
+
+  const stats = {
+    gamesPlayed: pokemon.gamesPlayed,
+    kills: pokemon.kills,
+    deaths: pokemon.deaths,
+    diff: pokemon.diff,
+    kpg: pokemon.kpg,
+    winrate: pokemon.winrate
+  }
+  return stats
+}
+
 
 function Home() {
   return (
@@ -28,6 +83,8 @@ function Home() {
 }
 
 function BattleStats() {
+  const battleMons = Object.values(monData).filter((mon) => mon.gamesPlayed > 500)
+
   return (
     <div className="cover">
       <div className="nav-bar">
@@ -46,16 +103,30 @@ function BattleStats() {
         <div className="table-container">
           <table className="rounded-corners">
             <tbody className="text-body">
-              <tr className="text-header"><th>sprite</th><th>name</th><th>points</th><th>games_played</th><th>winrate</th><th>kills</th><th>deaths</th><th>diff</th></tr>
-              <tr><td><img src={getSprite(3)} height="40" width="40"/></td><td>Venusaur</td><td>7</td><td>2320.0</td><td>38.92</td><td>1785</td><td>1806</td><td>-21</td></tr>
-              <tr><td><img src={getSprite(6)} height="40" width="40"/></td><td>Charizard</td><td>1</td><td>1033.0</td><td>42.69</td><td>865</td><td>788</td><td>77</td></tr>
-              <tr><td><img src={getSprite(9)} height="40" width="40"/></td><td>Blastoise</td><td>8</td><td>4894.0</td><td>45.63</td><td>2538</td><td>3716</td><td>-1178</td></tr>
-              <tr><td><img src={getSprite(26)} height="40" width="40"/></td><td>Raichu</td><td>2</td><td>550.0</td><td>40.36</td><td>265</td><td>435</td><td>-170</td></tr>
-              <tr><td><img src={getSprite(26.001)} height="40" width="40"/></td><td>Raichu-Alola</td><td>2</td><td>679.0</td><td>36.82</td><td>462</td><td>536</td><td>-74</td></tr>
-              <tr><td><img src={getSprite(28)} height="40" width="40"/></td><td>Sandslash</td><td>1</td><td>828.0</td><td>44.81</td><td>351</td><td>677</td><td>-326</td></tr>
-              <tr><td><img src={getSprite(28.001)} height="40" width="40"/></td><td>Sandslash-Alola</td><td>2</td><td>1431.0</td><td>43.82</td><td>1124</td><td>1129</td><td>-5</td></tr>
-              <tr><td><img src={getSprite(36)} height="40" width="40"/></td><td>Clefable</td><td>10</td><td>6536.0</td><td>46.28</td><td>3268</td><td>4804</td><td>-1536</td></tr>
-              <tr><td><img src={getSprite(38)} height="40" width="40"/></td><td>Ninetales</td><td>8</td><td>2546.0</td><td>42.77</td><td>1092</td><td>2111</td><td>-1019</td></tr>
+              <tr className="text-header">
+                <th>sprite</th>
+                <th>name</th>
+                <th>points</th>
+                <th>games_played</th>
+                <th>winrate</th>
+                <th>kills</th>
+                <th>deaths</th>
+                <th>diff</th></tr>
+              {battleMons.map((mon) => {
+                const sprite = getSprite(mon.name)
+                return (
+                  <tr key={mon.name}>
+                    <td><img src={sprite} alt={mon.name} /></td>
+                    <td>{mon.name}</td>
+                    <td>{mon.points}</td>
+                    <td>{mon.gamesPlayed}</td>
+                    <td>{mon.winrate}</td>
+                    <td>{mon.kills}</td>
+                    <td>{mon.deaths}</td>
+                    <td>{mon.diff}</td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>
@@ -65,6 +136,60 @@ function BattleStats() {
 }
 
 function MonLookup() {
+  const [query, setQuery] = useState('')
+  const info = getInfo(query)
+  const stats = getStats(query)
+  const chartRef = useRef(null)
+
+  useEffect(() => {
+    if (!chartRef.current) {
+      return undefined
+    }
+
+    const chart = new Chart(chartRef.current, {
+      type: 'bar',
+      data: {
+        labels: ['HP', 'Atk', 'Def', 'Sp.Atk', 'Sp.Def', 'Speed'],
+        datasets: [{
+          label: 'Base Stats',
+          data: [
+            info?.stats?.hp || 0,
+            info?.stats?.atk || 0,
+            info?.stats?.def || 0,
+            info?.stats?.spa || 0,
+            info?.stats?.spd || 0,
+            info?.stats?.spe || 0
+          ],
+          backgroundColor: ['red', 'green', 'blue', 'orange', 'brown', 'purple'],
+          borderColor: '#000',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: `Base Stats for ${info?.name || 'Unknown Pokemon'}`,
+            font: { size: 16 }
+          }
+        },
+        scales: {
+          x: {
+            beginAtZero: true,
+            font: { family: "Pixelify Sans" },
+            max: 200
+          }
+        }
+      }
+    })
+
+    return () => chart.destroy()
+  }, [info])
+
   return (
     <div className="cover">
       <div className="nav-bar">
@@ -77,43 +202,55 @@ function MonLookup() {
       </div>
       <div className="section-padding">
         <div className="title">Mon Lookup</div>
-          <div className="search-section">
-            <div className="h1">Search for a Pokémon</div>
-            <div className="h2">Type a Pokémon name to filter stats for that specific mon.</div>
-            <div className="search-bar-container">
-              <div className="search-bar"><input className="text" placeholder="Enter a Pokémon name..." /></div>
-              <div className="search-button"><button><div className="h2">Search</div></button></div>
+        <div className="search-section">
+          <div className="h1">Search for a Pokemon</div>
+          <div className="h2">Type a Pokemon name to filter stats for that specific mon.</div>
+          <div className="search-bar-container">
+            <div className="search-bar">
+              <input
+                className="text"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="Enter a Pokemon name..."
+              />
             </div>
           </div>
-          <div className="search-section">
-            <div className="h1">Mon Name</div>
-            <div className="h2">Single mon stat cards.</div>
-            <div className="card-grid">
-              <div className="stat-card">
-                <div className="text">Games_Played</div>
-                <div className="text">100</div>
-              </div>
-              <div className="stat-card">
-                <div className="text">Kills</div>
-                <div className="text">100</div>
-              </div>
-              <div className="stat-card">
-                <div className="text">Deaths</div>
-                <div className="text">100</div>
-              </div>
-              <div className="stat-card">
-                <div className="text">Diff</div>
-                <div className="text">0</div>
-              </div>
-              <div className="stat-card">
-                <div className="text">KPG</div>
-                <div className="text">1.0</div>
+        </div>
+        <div className="search-section">
+          <div className="info-container">
+            <div className="table-container">
+              <table className="rounded-corners">
+                <tbody className="text-body">
+                  <tr><td>Name</td><td>{info?.name || '-'}</td></tr>
+                  <tr><td>Pokedex Number</td><td>{info?.dexNum || '-'}</td></tr>
+                  <tr><td>Type</td><td>{info?.types?.join(' / ') || '-'}</td></tr>
+                </tbody>
+              </table>
             </div>
-              <div className="stat-card">
-                <div className="text">Winrate</div>
-                <div className="text">.50</div>
+            <img src={getSprite(info?.name) || 'sprites/0.png'} className="sprite" alt={info?.name || 'Unknown Pokemon'} />
+            <div className="stats-chart">
+              <canvas ref={chartRef} aria-label={`${info?.name || 'Pokemon'} base stats`} />
             </div>
-            </div>
+          </div>
+        </div>
+        <div className="search-section">
+          <div className="h1">{info?.name || 'Mon Name'}</div>
+          <div className="h2">Single mon stat cards.</div>
+          <div className="card-grid">
+            {[
+              ['Matches', stats?.gamesPlayed],
+              ['Kills', stats?.kills],
+              ['Deaths', stats?.deaths],
+              ['Diff', stats?.diff],
+              ['KPG', stats?.kpg],
+              ['Winrate', stats?.winrate]
+            ].map(([label, value]) => (
+              <div className="stat-card" key={label}>
+                <div className="header-text">{label}</div>
+                <div className="stat-text">{value ?? '-'}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
