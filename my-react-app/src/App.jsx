@@ -5,6 +5,7 @@ import logo from './assets/DDB_Logo.png'
 import './App.css'
 import { dex } from './js/pokedex'
 import { monData } from './js/mon-data'
+import.meta.env.BASE_URL
 
 Chart.register(...registerables)
 
@@ -13,7 +14,7 @@ function getSprite(name) {
   if (!info) {
     return null
   }
-  return `sprites/${info.dexNum}.png`
+  return `${import.meta.env.BASE_URL}sprites/${name}.png`
 }
 
 function getInfo(name) {
@@ -227,7 +228,7 @@ function MonLookup() {
                 </tbody>
               </table>
             </div>
-            <img src={getSprite(info?.name) || 'sprites/0.png'} className="sprite" alt={info?.name || 'Unknown Pokemon'} />
+            <img src={getSprite(info?.name) || `${import.meta.env.BASE_URL}sprites/0.png`} className="sprite" alt={info?.name || 'Unknown Pokemon'} />
             <div className="stats-chart">
               <canvas ref={chartRef} aria-label={`${info?.name || 'Pokemon'} base stats`} />
             </div>
