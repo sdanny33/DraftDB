@@ -70,7 +70,6 @@ function getStats(name) {
   return stats
 }
 
-
 function Home() {
   return (
     <div className="cover">
@@ -94,6 +93,34 @@ function Home() {
 
 function BattleStats() {
   const battleMons = Object.values(monData).filter((mon) => mon.gamesPlayed > 500)
+  
+  const [selectedColumn, setSelectedColumn] = useState(null)
+  const [sortDirection, setSortDirection] = useState('ascending')
+  const headers = ['sprite','name','points','games','winrate','kills','deaths','diff','dpg','dtpg','switches',]
+  const columnValues = {sprite: 'name', name: 'name', points: 'points', games: 'gamesPlayed', winrate: 'winrate', kills: 'kills', deaths: 'deaths', diff: 'diff', dpg: 'avg_damage', dtpg: 'avg_damage_taken', switches: 'avg_switches', }
+
+  function handleSort(column) {
+    const nextDirection = selectedColumn === column && sortDirection === 'descending'
+      ? 'ascending'
+      : 'descending'
+    setSelectedColumn(column)
+    setSortDirection(nextDirection)
+  }
+
+  const sortedBattleMons = [...battleMons].sort((firstMon, secondMon) => {
+    if (!selectedColumn) {
+      return 0
+    }
+
+    const property = columnValues[selectedColumn]
+    const firstValue = firstMon[property]
+    const secondValue = secondMon[property]
+    const comparison = typeof firstValue === 'string'
+      ? firstValue.localeCompare(secondValue)
+      : firstValue - secondValue
+
+    return sortDirection === 'ascending' ? comparison : -comparison
+  })
 
   return (
     <div className="cover">
@@ -105,27 +132,23 @@ function BattleStats() {
           <Link className="link" to="/mon-lookup"><div className="text">Mon Lookup</div></Link>
         </div>
       </div>
-      <style>
-        
-      </style>
       <div className="section-padding">
         <div className="title">Battle Stats</div>
         <div className="table-container">
           <table className="rounded-corners">
             <tbody className="text-body">
               <tr className="text-header">
-                <th>sprite</th>
-                <th>name</th>
-                <th>points</th>
-                <th>games_played</th>
-                <th>winrate</th>
-                <th>kills</th>
-                <th>deaths</th>
-                <th>diff</th>
-                <th>dpg</th>
-                <th>dtpg</th>
+                {headers.map((header) => (
+                  <th
+                    className={selectedColumn === header ? 'selected-column' : ''}
+                    key={header}
+                    onClick={() => handleSort(header)}
+                  >
+                    {header}
+                  </th>
+                ))}
               </tr>
-              {battleMons.map((mon) => {
+              {sortedBattleMons.map((mon) => {
                 const sprite = getSprite(mon.name)
                 return (
                   <tr key={mon.name}>
@@ -139,6 +162,7 @@ function BattleStats() {
                     <td>{mon.diff}</td>
                     <td>{mon.avg_damage}</td>
                     <td>{mon.avg_damage_taken}</td>
+                    <td>{mon.avg_switches}</td>
                   </tr>
                 )
               })}
@@ -167,37 +191,19 @@ function MonLookup() {
         labels: ['HP', 'Atk', 'Def', 'Sp.Atk', 'Sp.Def', 'Speed'],
         datasets: [{
           label: 'Base Stats',
-          data: [
-            info?.stats?.hp || 0,
-            info?.stats?.atk || 0,
-            info?.stats?.def || 0,
-            info?.stats?.spa || 0,
-            info?.stats?.spd || 0,
-            info?.stats?.spe || 0
-          ],
+          data: [ info?.stats?.hp || 0, info?.stats?.atk || 0, info?.stats?.def || 0, info?.stats?.spa || 0, info?.stats?.spd || 0, info?.stats?.spe || 0 ],
           backgroundColor: ['red', 'green', 'blue', 'orange', 'brown', 'purple'],
           borderColor: '#000',
           borderWidth: 1
         }]
       },
-      options: {
-        indexAxis: 'y',
-        responsive: true,
-        maintainAspectRatio: false,
+      options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
         plugins: {
           legend: { display: false },
-          title: {
-            display: true,
-            text: `Base Stats for ${info?.name || 'Unknown Pokemon'}`,
-            font: { size: 16 }
-          }
+          title: { display: true, text: `Base Stats for ${info?.name || 'Unknown Pokemon'}`, font: { size: 16 } }
         },
         scales: {
-          x: {
-            beginAtZero: true,
-            font: { family: "Pixelify Sans" },
-            max: 200
-          }
+          x: { beginAtZero: true, font: { family: "Pixelify Sans" }, max: 200 }
         }
       }
     })
@@ -236,9 +242,9 @@ function MonLookup() {
             <div className="table-container">
               <table className="rounded-corners">
                 <tbody className="text-body">
-                  <tr><td>Name</td><td>{info?.name || '-'}</td></tr>
-                  <tr><td>Pokedex Number</td><td>{info?.dexNum || '-'}</td></tr>
-                  <tr><td>Type</td><td>{info?.types?.join(' / ') || '-'}</td></tr>
+                  <tr><td>Name</td><td>{info?.name || '--------'}</td></tr>
+                  <tr><td>Pokedex Number</td><td>{info?.dexNum || '--------'}</td></tr>
+                  <tr><td>Type</td><td>{info?.types?.join(' / ') || '--------'}</td></tr>
                 </tbody>
               </table>
             </div>
@@ -253,7 +259,7 @@ function MonLookup() {
           <div className="h2">Single mon stat cards.</div>
           <div className="card-grid">
             {[
-              ['Matches', stats?.gamesPlayed],
+              ['Games', stats?.gamesPlayed],
               ['Points', stats?.points],
               ['Winrate', stats?.winrate],
               ['Kills', stats?.kills],
@@ -262,9 +268,7 @@ function MonLookup() {
               ['KPG', stats?.kpg],
               ['DPG', stats?.dpg],
               ['DTPG', stats?.dtpg],
-              ['HPG', stats?.hpg],
               ['Switches', stats?.switches],
-              ['Tera', stats?.tera]
             ].map(([label, value]) => (
               <div className="stat-card" key={label}>
                 <div className="header-text">{label}</div>
