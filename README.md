@@ -1,21 +1,66 @@
 # DraftDB
 
-## Author
+DraftDB is a Pokémon Draft replay database and statistics website. It collects Pokémon Showdown Gen 9 Draft replays, parses battle events, and turns them into per-Pokémon performance statistics.
 
-Daniel Soares. Email me if you have any questions (dcs3personal@gmail.com).
-
-## Description
-
-Stat tracking database for Pokémon Draft. The database contains matches from my own draft league, Smogon tournaments, and saved replays from the Pokémon Showdown server dating as far back as I could access.
-
-## Database
-
-The replay scraper scrapes the saved draft replays from the Pokémon Showdown server. The create DB command initially creates the database and updates the statistics using the methods outlined in the parser. To update the database, simply run the main function. To create your own database, update the methods in createDB and replayScraper, respectively.
-
-## Teams
-
-The team’s portion of the project extracts given pokepastes to get the raw data for each mon. The data includes the mon's name, items, abilities, EVs, nature, and moves.
+The dataset combines replays from my own draft league, Smogon tournaments, and publicly available Pokémon Showdown replays. Statistics are currently shown for Pokémon with more than 500 recorded games on the main leaderboard.
 
 ## Website
 
-A GitHub page that displays the database in table form. Clicking the top of a column sorts that column. If a mon is not present, it's likely because they have fewer than 500 games logged in the database.
+The frontend is a React and Vite app deployed to GitHub Pages.
+
+- **Battle Stats**: sortable leaderboard with sprites, points, games played, win rate, kills, deaths, kill differential, damage, damage taken, and switches.
+- **Mon Lookup**: search for a Pokémon to view its Pokédex number, typing, sprite, base-stat chart, and draft performance cards.
+- **Home**: project landing page and navigation.
+
+Run the website locally:
+
+```powershell
+cd my-react-app
+npm install
+npm run dev
+```
+
+Create a production build with `npm run build`, or preview the build with `npm run preview`. GitHub Pages deployment is handled by `.github/workflows/deploy.yml`.
+
+## Database Pipeline
+
+The Python pipeline in `DB_src` updates the replay cache and statistics database:
+
+1. `replayScraper.py` finds recent Gen 9 Draft replay URLs from Pokémon Showdown.
+2. `replaySaver.py` downloads and caches replay logs in `database/`.
+3. `parser.py` extracts battle events and updates Pokémon statistics.
+4. `createDB.py` calculates derived values such as win rate, KPG, average damage, and average switches.
+5. `table.py` exports the database data used by the website.
+
+Run the full update from the database source directory:
+
+```powershell
+cd DB_src
+python main.py
+```
+
+The pipeline expects network access to Pokémon Showdown and writes to `DB_CSV/` and `database/`. Existing replay IDs are tracked so repeated runs process only new replays.
+
+## Supporting Tools
+
+- `paste/` parses Pokémon Showdown Poképastes, including items, abilities, EVs, natures, and moves.
+- `teams/` contains team scraping and formatting utilities.
+- `playoff_odds/` contains draft playoff odds calculations.
+- `sprites/` stores Pokémon sprite assets used by the database and website.
+
+## Project Layout
+
+```text
+DB_CSV/          Replay URL archives and source Pokémon data
+DB_src/          Scraping, replay caching, parsing, and database updates
+database/        SQLite databases and cached replay data
+my-react-app/    React/Vite website
+paste/           Poképaste parsing tools
+playoff_odds/    Playoff odds scripts and data
+sprites/         Pokémon sprite assets
+teams/           Team scraping and formatting tools
+```
+
+## Author
+
+Daniel Soares. Questions and feedback: dcs3personal@gmail.com.
