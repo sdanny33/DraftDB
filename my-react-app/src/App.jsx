@@ -1,20 +1,22 @@
 import { useEffect, useRef, useState } from 'react'
 import { Chart, registerables } from 'chart.js'
 import { Link, Route, Routes } from 'react-router-dom'
-import logo from './assets/DDB_Logo.png'
 import './App.css'
 import { dex } from './js/pokedex'
 import { monData } from './js/mon-data'
-import.meta.env.BASE_URL
-
 Chart.register(...registerables)
+
+const logo = `${import.meta.env.BASE_URL}DDB_Logo.png`
 
 function getSprite(name) {
   const info = getInfo(name)
   if (!info) {
     return null
   }
-  return `${import.meta.env.BASE_URL}sprites/${name}.png`
+
+  const key = name.toLowerCase().replace(/[^a-z0-9]/g, '')
+  const spritePath = monData[key]?.sprite || `sprites/${info.dexNum}.png`
+  return `${import.meta.env.BASE_URL}${spritePath}`
 }
 
 function getInfo(name) {
@@ -56,7 +58,14 @@ function getStats(name) {
     deaths: pokemon.deaths,
     diff: pokemon.diff,
     kpg: pokemon.kpg,
-    winrate: pokemon.winrate
+    winrate: pokemon.winrate,
+    points: pokemon.points,
+    dpg: pokemon.avg_damage,
+    dtpg: pokemon.avg_damage_taken,
+    hpg: pokemon.avg_healing,
+    hptpg: pokemon.avg_healing_taken,
+    switches: pokemon.avg_switches,
+    tera: pokemon.tera_percent,
   }
   return stats
 }
@@ -112,7 +121,10 @@ function BattleStats() {
                 <th>winrate</th>
                 <th>kills</th>
                 <th>deaths</th>
-                <th>diff</th></tr>
+                <th>diff</th>
+                <th>dpg</th>
+                <th>dtpg</th>
+              </tr>
               {battleMons.map((mon) => {
                 const sprite = getSprite(mon.name)
                 return (
@@ -125,6 +137,8 @@ function BattleStats() {
                     <td>{mon.kills}</td>
                     <td>{mon.deaths}</td>
                     <td>{mon.diff}</td>
+                    <td>{mon.avg_damage}</td>
+                    <td>{mon.avg_damage_taken}</td>
                   </tr>
                 )
               })}
@@ -240,11 +254,17 @@ function MonLookup() {
           <div className="card-grid">
             {[
               ['Matches', stats?.gamesPlayed],
+              ['Points', stats?.points],
+              ['Winrate', stats?.winrate],
               ['Kills', stats?.kills],
               ['Deaths', stats?.deaths],
               ['Diff', stats?.diff],
               ['KPG', stats?.kpg],
-              ['Winrate', stats?.winrate]
+              ['DPG', stats?.dpg],
+              ['DTPG', stats?.dtpg],
+              ['HPG', stats?.hpg],
+              ['Switches', stats?.switches],
+              ['Tera', stats?.tera]
             ].map(([label, value]) => (
               <div className="stat-card" key={label}>
                 <div className="header-text">{label}</div>
