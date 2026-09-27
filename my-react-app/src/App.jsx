@@ -6,7 +6,7 @@ import { dex } from './js/pokedex'
 import { monData } from './js/mon-data'
 Chart.register(...registerables)
 
-const logo = `${import.meta.env.BASE_URL}DDB_Logo.png`
+const logo = `${import.meta.env.BASE_URL}DDB_LogoFinal.png`
 
 function getSprite(name) {
   const info = getInfo(name)
@@ -228,12 +228,14 @@ function MonLookup() {
           <div className="h2">Type a Pokemon name to filter stats for that specific mon.</div>
           <div className="search-bar-container">
             <div className="search-bar">
-              <input
-                className="text"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Enter a Pokemon name..."
-              />
+              <select value={query} onChange={(e) => setQuery(e.target.value)} className="text">
+                <option value="">Select a Pokemon</option>
+                {Object.values(dex).map((pokemon) => (
+                  <option key={pokemon.name} value={pokemon.name}>
+                    {pokemon.name}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
         </div>
