@@ -7,6 +7,11 @@ import { monData } from './js/mon-data'
 Chart.register(...registerables)
 
 const logo = `${import.meta.env.BASE_URL}DDB_LogoFinal.png`
+const sortedMons = Object.values(monData).sort((a, b) => b.kills - a.kills).slice(0, 10).map((mon) => ({
+  name: mon.name,
+  sprite: getSprite(mon.name),
+  kills: mon.kills
+}))
 
 function getSprite(name) {
   const info = getInfo(name)
@@ -71,6 +76,27 @@ function getStats(name) {
 }
 
 function Home() {
+  function KillLeadersMarquee({ mons = [], speed = 30 }) {
+  // Duplicate the list so the CSS animation can loop seamlessly at -50%.
+  const looped = [...mons, ...mons];
+ 
+  return (
+    <div className="marquee" style={{ "--marquee-duration": `${speed}s` }}>
+      <div className="marquee__track">
+        {looped.map((mon, i) => (
+          <div className="scroll-card">
+            <img className="sprite" src={mon.sprite} alt={mon.name}/>
+            <div className="info-container">
+              <span className="header-text">{i % mons.length + 1}</span>
+              <span className="header-text">{mon.name}</span>
+              <span className="stat-text">{mon.kills} kills</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+  }
   return (
     <div className="cover">
       <div className="nav-bar">
@@ -86,8 +112,10 @@ function Home() {
           <div className="title">Welcome to DraftDB</div>
           <div className="subtitle">Your one-stop shop for all things Pokémon Draft</div>
         </div>
+          <div className="title">Kill Leaders</div>
+          <KillLeadersMarquee mons={sortedMons} speed={30}></KillLeadersMarquee>
+        </div>
       </div>
-    </div>
   )
 }
 

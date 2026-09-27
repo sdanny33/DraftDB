@@ -306,3 +306,76 @@ table tr:first-child{
   background: var(--Secondary-Green, #CDE6BD);
   font-family: var(--font-family, "Geist Pixel");
 }
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  animation: marquee-scroll var(--marquee-duration, 30s) linear infinite;
+}
+
+.scroll-card{
+  display: flex;
+  width: 550px;
+  height: 250px;
+  padding: 10px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.scroll-card .sprite{
+  width: 200px;
+  height: 200px;
+}
+
+.scroll-card .info-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.scroll-card .header-text{
+  color: var(--Outline, #000);
+  text-align: left;
+  font-family: var(--font-family, "Geist Pixel");
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.scroll-card .stat-text{
+  color: var(--Outline, #000);
+  text-align: left;
+  font-family: var(--font-family, "Geist Pixel");
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+  }
+  .marquee {
+    overflow-x: auto;
+  }
+}
