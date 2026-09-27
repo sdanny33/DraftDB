@@ -11,7 +11,7 @@
 .nav-bar{
   display: flex;
   width: 100%;
-  padding: 40px;
+  padding: 24px;
   justify-content: space-between;
   align-items: center;
   align-content: space-between;
@@ -23,7 +23,7 @@
 .nav-bar .links{
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 24px;
 }
 
 .nav-bar .link{
@@ -47,17 +47,27 @@
 .nav-bar .link .text{
   color: var(--Outline, #000);
   font-family: var(--font-family, "Geist Pixel");
-  font-size: 40px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
+.nav-bar .logo{
+  display: flex;
+  width: 72px;
+  height: 72px;
+}
+
 .section-padding{
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
   gap: 40px;
   padding: 72px;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .welcome-section{
@@ -131,8 +141,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   align-self: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .table-container .text-body{
@@ -165,7 +180,8 @@
 }
 
 table.rounded-corners{
-  width: 100%;
+  width: max-content;
+  min-width: 100%;
   border: 3px solid var(--Outline, #000);
   border-radius: 10px;
   border-collapse: separate;
@@ -240,17 +256,18 @@ table tr:first-child{
 }
 
 .card-grid{
-  display: inline-grid;
+  display: grid;
+  width: 100%;
   row-gap: 24px;
   column-gap: 24px;
-  grid-template-rows: repeat(2,fit-content(100%));
-  grid-template-columns: repeat(5,fit-content(100%));
+  grid-template-columns: repeat(auto-fit, minmax(min(225px, 100%), 1fr));
   grid-auto-flow: row;
 }
 
 .stat-card{
   display: flex;
-  width: 225px;
+  box-sizing: border-box;
+  width: 100%;
   height: 125px;
   padding: 10px;
   flex-direction: column;
@@ -309,6 +326,8 @@ table tr:first-child{
 
 .marquee {
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   overflow: hidden;
 }
 

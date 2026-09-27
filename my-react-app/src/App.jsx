@@ -100,7 +100,9 @@ function Home() {
   return (
     <div className="cover">
       <div className="nav-bar">
-        <img src={logo} alt="logo" />
+        <div className="logo">
+          <img src={logo} alt="logo" />
+        </div>
         <div className="links">
           <Link className="link" to="/"><div className="text">Home</div></Link>
           <Link className="link" to="/battle-stats"><div className="text">Battle Stats</div></Link>
@@ -109,13 +111,12 @@ function Home() {
       </div>
       <div className="section-padding">
         <div className="welcome-section">
-          <div className="title">Welcome to DraftDB</div>
-          <div className="subtitle">Your one-stop shop for all things Pokémon Draft</div>
-        </div>
-          <div className="title">Kill Leaders</div>
+          <div className="title">Welcome to DraftDB!</div>
+          <div className="subtitle">Gen 9 Draft Kill Leaders</div>
           <KillLeadersMarquee mons={sortedMons} speed={30}></KillLeadersMarquee>
         </div>
       </div>
+    </div>
   )
 }
 
