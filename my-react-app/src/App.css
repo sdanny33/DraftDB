@@ -54,7 +54,6 @@
 }
 
 .nav-bar .logo{
-  display: flex;
   width: 72px;
   height: 72px;
 }
@@ -64,7 +63,7 @@
   box-sizing: border-box;
   flex-direction: column;
   gap: 40px;
-  padding: 72px;
+  padding: 40px;
   min-width: 0;
   width: 100%;
   max-width: 100%;

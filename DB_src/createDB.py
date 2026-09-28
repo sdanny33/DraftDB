@@ -180,6 +180,17 @@ def get_stats(replay_db, dbName):
     finally:
         conn2.close()
 
+def refresh_column(dbName):
+    conn = sqlite3.connect(dbName)
+    cursor = conn.cursor()
+    mons_csv_path = DB_ROOT / 'DB_CSV' / 'mons.csv'
+    with open(mons_csv_path, 'r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            # Assuming the CSV has columns: id, name, points
+            cursor.execute('UPDATE mons SET points = ? WHERE id = ?', (row[2], row[0]))
+    conn.commit()
+    conn.close()
 
 def main():
     db_dir = DB_ROOT / 'database'
@@ -192,4 +203,4 @@ def main():
     update_column(dbName)
 
 if __name__ == "__main__":
-    main()
+    refresh_column(DB_ROOT / 'database' / 'monDB.sqlite')

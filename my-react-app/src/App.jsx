@@ -125,7 +125,7 @@ function BattleStats() {
   
   const [selectedColumn, setSelectedColumn] = useState(null)
   const [sortDirection, setSortDirection] = useState('ascending')
-  const headers = ['sprite','name','points','games','winrate','kills','deaths','diff','dpg','dtpg','switches',]
+  const headers = ['sprite','name','points','games','winrate','kills','deaths','diff','dpg','dtpg','switch',]
   const columnValues = {sprite: 'name', name: 'name', points: 'points', games: 'gamesPlayed', winrate: 'winrate', kills: 'kills', deaths: 'deaths', diff: 'diff', dpg: 'avg_damage', dtpg: 'avg_damage_taken', switches: 'avg_switches', }
 
   function handleSort(column) {
@@ -154,7 +154,9 @@ function BattleStats() {
   return (
     <div className="cover">
       <div className="nav-bar">
-        <img src={logo} alt="logo" />
+        <div className="logo">
+          <img src={logo} alt="logo" />
+        </div>
         <div className="links">
           <Link className="link" to="/"><div className="text">Home</div></Link>
           <Link className="link" to="/battle-stats"><div className="text">Battle Stats</div></Link>
@@ -243,7 +245,9 @@ function MonLookup() {
   return (
     <div className="cover">
       <div className="nav-bar">
-        <img src={logo} alt="logo" />
+        <div className="logo">
+          <img src={logo} alt="logo" />
+        </div>
         <div className="links">
           <Link className="link" to="/"><div className="text">Home</div></Link>
           <Link className="link" to="/battle-stats"><div className="text">Battle Stats</div></Link>
