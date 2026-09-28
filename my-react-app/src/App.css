@@ -333,7 +333,6 @@ table tr:first-child{
 .marquee__track {
   display: flex;
   width: max-content;
-  gap: 24px;
   animation: marquee-scroll var(--marquee-duration, 30s) linear infinite;
 }
 
@@ -344,7 +343,10 @@ table tr:first-child{
   padding: 10px;
   flex-direction: row;
   align-items: flex-start;
-  gap: 10px;
+  border-width: 2px 0px 2px 0px;
+  border-style: solid;
+  border-color: var(--Outline, #000);
+  background: var(--Secondary-Green, #CDE6BD);
 }
 
 .scroll-card .sprite{

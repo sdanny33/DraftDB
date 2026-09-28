@@ -188,7 +188,7 @@ def refresh_column(dbName):
         reader = csv.reader(file)
         for row in reader:
             # Assuming the CSV has columns: id, name, points
-            cursor.execute('UPDATE mons SET points = ? WHERE id = ?', (row[2], row[0]))
+            cursor.execute('UPDATE mons SET points = ? WHERE name = ?', (row[2], row[0]))
     conn.commit()
     conn.close()
 
@@ -203,4 +203,4 @@ def main():
     update_column(dbName)
 
 if __name__ == "__main__":
-    refresh_column(DB_ROOT / 'database' / 'monDB.sqlite')
+    main()
