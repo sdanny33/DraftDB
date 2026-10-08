@@ -17,13 +17,14 @@ class Mon:
         self.nickname = ""
         self.damage = 0
         self.damage_taken = 0
-        self.heal = 0
+        self.healing = 0
         self.switches = 0
         self.miss = 0
         self.hit = 0
         self.tera = 0
         self.moves = []
         self.active = 0
+        self.move = 0
         self.super_effective = 0
         self.resisted = 0
         self.immune = 0
@@ -86,7 +87,7 @@ class Mon:
         self.damage_taken += damage
 
     def increment_heal(self, heal):
-        self.heal += heal
+        self.healing += heal
     
     def increment_switches(self):
         self.switches += 1
@@ -96,6 +97,9 @@ class Mon:
 
     def increment_hit(self):
         self.hit += 1
+
+    def increment_move(self):
+        self.move += 1
 
     def increment_super_effective(self):
         self.super_effective += 1

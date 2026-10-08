@@ -128,6 +128,9 @@ def battle_stats(lines):
             actor1, actor2 = actors(line)
             parts = line.split("|")
             move = parts[3]
+            mon = _mon_for_nickname(actor1)
+            if mon is not None:
+                mon.increment_move()
             is_miss = any("[miss]" in p for p in parts[4:])
             if is_miss:
                 mon = _mon_for_nickname(actor1)
@@ -289,7 +292,7 @@ def save_to_db(dbName=None, cursor=None):
         cursor = conn.cursor()
         own_connection = True
     def add_mon_stats(mon):
-        cursor.execute('''UPDATE mons SET kills = kills + ?, deaths = deaths + ?, games_played = games_played + ?, wins = wins + ?, damage = damage + ?, damage_taken = damage_taken + ?, healing = healing + ?, switches = switches + ?, tera = tera + ?, hit = hit + ?, miss = miss + ? WHERE name = ?''', (mon.kills, mon.deaths, mon.games_played, mon.wins, mon.damage, mon.damage_taken, mon.heal, mon.switches, mon.tera, mon.hit, mon.miss, mon.name))
+        cursor.execute('''UPDATE mons SET kills = kills + ?, deaths = deaths + ?, games_played = games_played + ?, wins = wins + ?, damage = damage + ?, damage_taken = damage_taken + ?, healing = healing + ?, switches = switches + ?, tera = tera + ?, hit = hit + ?, miss = miss + ?, move = move + ?, super_effective = super_effective + ?, resisted = resisted + ?, immune = immune + ?, crit = crit + ? WHERE name = ?''', (mon.kills, mon.deaths, mon.games_played, mon.wins, mon.damage, mon.damage_taken, mon.healing, mon.switches, mon.tera, mon.hit, mon.miss, mon.move, mon.super_effective, mon.resisted, mon.immune, mon.crit, mon.name))
 
     for i in range(min(6, len(players["p1"]), len(players["p2"]))):
         add_mon_stats(players["p1"][i])

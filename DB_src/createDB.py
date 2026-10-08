@@ -15,7 +15,36 @@ def create_db(dbName):
     cursor = conn.cursor()
     # Create a new table with `sprite` as a BLOB to store PNG bytes.
     cursor.execute('''CREATE TABLE IF NOT EXISTS mons
-                    (id DOUBLE, sprite BLOB, name TEXT PRIMARY KEY, points INTEGER DEFAULT 0, games_played DOUBLE DEFAULT 0, wins DOUBLE DEFAULT 0, winrate DOUBLE DEFAULT 0, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, diff INTEGER DEFAULT 0, KPG DOUBLE DEFAULT 0, damage DOUBLE DEFAULT 0, damage_taken DOUBLE DEFAULT 0, healing DOUBLE DEFAULT 0, switches DOUBLE DEFAULT 0, tera DOUBLE DEFAULT 0, hit DOUBLE DEFAULT 0, miss DOUBLE DEFAULT 0, avg_damage DOUBLE DEFAULT 0, avg_damage_taken DOUBLE DEFAULT 0, avg_healing DOUBLE DEFAULT 0, avg_switches DOUBLE DEFAULT 0, tera_percent DOUBLE DEFAULT 0, hit_percent DOUBLE DEFAULT 0, path TEXT DEFAULT NULL)''')
+                    (id DOUBLE, 
+                    sprite BLOB, 
+                    name TEXT PRIMARY KEY, 
+                    points INTEGER DEFAULT 0, 
+                    games_played DOUBLE DEFAULT 0, 
+                    wins DOUBLE DEFAULT 0, 
+                    winrate DOUBLE DEFAULT 0, 
+                    kills INTEGER DEFAULT 0, 
+                    deaths INTEGER DEFAULT 0, 
+                    diff INTEGER DEFAULT 0, 
+                    KPG DOUBLE DEFAULT 0, 
+                    damage DOUBLE DEFAULT 0, 
+                    damage_taken DOUBLE DEFAULT 0, 
+                    healing DOUBLE DEFAULT 0, 
+                    switches DOUBLE DEFAULT 0, 
+                    tera DOUBLE DEFAULT 0, 
+                    hit DOUBLE DEFAULT 0, 
+                    miss DOUBLE DEFAULT 0, 
+                    move DOUBLE DEFAULT 0, 
+                    super_effective DOUBLE DEFAULT 0, 
+                    resisted DOUBLE DEFAULT 0, 
+                    immune DOUBLE DEFAULT 0, 
+                    crit DOUBLE DEFAULT 0, 
+                    avg_damage DOUBLE DEFAULT 0, 
+                    avg_damage_taken DOUBLE DEFAULT 0, 
+                    avg_healing DOUBLE DEFAULT 0, 
+                    avg_switches DOUBLE DEFAULT 0, 
+                    tera_percent DOUBLE DEFAULT 0, 
+                    hit_percent DOUBLE DEFAULT 0, 
+                    path TEXT DEFAULT NULL)''')
 
     mons_csv_path = DB_ROOT / 'DB_CSV' / 'mons.csv'
     with open(mons_csv_path, 'r') as file:
