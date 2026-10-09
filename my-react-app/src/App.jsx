@@ -5,7 +5,7 @@ import './App.css'
 import { dex } from './js/pokedex'
 import { monData } from './js/mon-data'
 Chart.register(...registerables)
-Chart.defaults.font.family = "'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+Chart.defaults.font.family = "'Geist Pixel', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
 Chart.defaults.color = 'rgba(0, 0, 0, 0.6)'
 
 const logo = `${import.meta.env.BASE_URL}DDB_LogoFinal.png`
@@ -76,11 +76,16 @@ function getStats(name) {
     kpg: pokemon.kpg,
     winrate: pokemon.winrate,
     points: pokemon.points,
+    move: pokemon.move,
+    super_effective: pokemon.super_effective,
+    resisted: pokemon.resisted,
+    immune: pokemon.immune,
+    crit: pokemon.crit,
     dpg: pokemon.avg_damage,
     dtpg: pokemon.avg_damage_taken,
     hpg: pokemon.avg_healing,
-    hptpg: pokemon.avg_healing_taken,
     switches: pokemon.avg_switches,
+    hit_percent: pokemon.hit_percent,
     tera: pokemon.tera_percent,
   }
   return stats
@@ -173,8 +178,8 @@ function BattleStats() {
 
   const [selectedColumn, setSelectedColumn] = useState(null)
   const [sortDirection, setSortDirection] = useState('ascending')
-  const headers = ['sprite', 'name', 'points', 'games', 'winrate', 'kills', 'deaths', 'diff', 'dpg', 'dtpg', 'switches']
-  const columnValues = { sprite: 'name', name: 'name', points: 'points', games: 'gamesPlayed', winrate: 'winrate', kills: 'kills', deaths: 'deaths', diff: 'diff', dpg: 'avg_damage', dtpg: 'avg_damage_taken', switches: 'avg_switches' }
+  const headers = ['sprite', 'name', 'points', 'games', 'winrate', 'kills', 'deaths', 'diff', 'kpg', 'move', 'crit', 'dpg', 'dtpg', 'hpg', 'hit','switches']
+  const columnValues = { sprite: 'name', name: 'name', points: 'points', games: 'gamesPlayed', winrate: 'winrate', kills: 'kills', deaths: 'deaths', diff: 'diff', kpg: 'kpg', move: 'move', crit: 'crit', dpg: 'avg_damage', dtpg: 'avg_damage_taken', hpg: 'avg_healing', hit: 'hit_percent', switches: 'avg_switches' }
 
   function handleSort(column) {
     const nextDirection = selectedColumn === column && sortDirection === 'descending'
@@ -210,7 +215,6 @@ function BattleStats() {
         <div className="surface">
           <div className="table-meta">
             <span>{sortedBattleMons.length} Pokémon</span>
-            <span>dpg / dtpg: damage dealt / taken per game</span>
           </div>
           <div className="table-container">
             <table className="rounded-corners">
@@ -249,8 +253,13 @@ function BattleStats() {
                       <td>{mon.kills}</td>
                       <td>{mon.deaths}</td>
                       <td>{mon.diff}</td>
+                      <td>{mon.kpg}</td>
+                      <td>{mon.move}</td>
+                      <td>{mon.crit}</td>
                       <td>{mon.avg_damage}</td>
                       <td>{mon.avg_damage_taken}</td>
+                      <td>{mon.avg_healing}</td>
+                      <td>{mon.hit_percent}</td>
                       <td>{mon.avg_switches}</td>
                     </tr>
                   )
@@ -386,8 +395,12 @@ function MonLookup() {
               ['Deaths', stats?.deaths],
               ['Diff', stats?.diff],
               ['KPG', stats?.kpg],
+              ['Move', stats?.move],
+              ['Crit', stats?.crit],
               ['DPG', stats?.dpg],
               ['DTPG', stats?.dtpg],
+              ['HPG', stats?.hpg],
+              ['Hit', stats?.hit_percent],
               ['Switches', stats?.switches],
             ].map(([label, value]) => (
               <div className="stat-card" key={label}>

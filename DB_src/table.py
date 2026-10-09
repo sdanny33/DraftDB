@@ -87,7 +87,7 @@ def print_lookup(dbName, tableName, fileName):
     cursor = conn.cursor()
 
     lookup_rows = cursor.execute(
-        "SELECT name, points, games_played, winrate, kills, deaths, diff, KPG, avg_damage, avg_damage_taken, avg_healing, avg_switches, tera_percent, "
+        "SELECT name, points, games_played, winrate, kills, deaths, diff, KPG, move, super_effective, resisted, immune, crit,  avg_damage, avg_damage_taken, avg_healing, avg_switches, hit_percent, "
         "COALESCE(path, 'sprites/0.png') as path FROM mons ORDER BY name"
     ).fetchall()
     conn.close()
@@ -102,12 +102,17 @@ def print_lookup(dbName, tableName, fileName):
             "deaths": row[5],
             "diff": row[6],
             "kpg": row[7],
-            "avg_damage": row[8],
-            "avg_damage_taken": row[9],
-            "avg_healing": row[10],
-            "avg_switches": row[11],
-            "tera_percent": row[12],
-            "sprite": row[13],
+            "move": row[8],
+            "super_effective": row[9],
+            "resisted": row[10],
+            "immune": row[11],
+            "crit": row[12],
+            "avg_damage": row[13],
+            "avg_damage_taken": row[14],
+            "avg_healing": row[15],
+            "avg_switches": row[16],
+            "hit_percent": row[17],
+            "sprite": row[18],
         }
         for row in lookup_rows
     ]
