@@ -273,14 +273,24 @@ def mega_evolutions(lines):
             if mon is not None:
                 mon.set_name(new_species)
 
-def print_stats():
+def print_stats(type):
     print(f"Player 1: {player1}")
     for i in range(min(6, len(players["p1"]))):
-        players["p1"][i].print_stats()
+        if type == "clear":
+            players["p1"][i].print_clear()
+        elif type == "paste":
+            players["p1"][i].print_paste()
+        else:
+            players["p1"][i].print_stats()
     print()
     print(f"Player 2: {player2}")
     for i in range(min(6, len(players["p2"]))):
-        players["p2"][i].print_stats()
+        if type == "clear":
+            players["p2"][i].print_clear()
+        elif type == "paste":
+            players["p2"][i].print_paste()
+        else:
+            players["p2"][i].print_stats()
     print()
 
 def save_to_db(dbName=None, cursor=None):
