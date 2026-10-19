@@ -1,0 +1,3345 @@
+id,move,usage,rank
+1.0,Giga Drain,9.0,1
+1.0,Leech Seed,6.0,2
+1.0,Synthesis,4.0,3
+1.0,Growth,3.0,4
+2.0,Leech Seed,20.0,1
+2.0,Giga Drain,18.0,2
+2.0,Knock Off,16.0,3
+2.0,Sludge Bomb,14.0,4
+3.0,Sludge Bomb,795.0,1
+3.0,Giga Drain,734.0,2
+3.0,Earth Power,596.0,3
+3.0,Growth,553.0,4
+4.0,Fire Blast,2.0,1
+4.0,Belly Drum,1.0,2
+4.0,Dragon Pulse,1.0,3
+4.0,Endure,1.0,4
+5.0,Dragon Dance,7.0,1
+5.0,Flamethrower,5.0,2
+5.0,Tera Blast,4.0,3
+5.0,Dragon Pulse,3.0,4
+6.0,Flamethrower,252.0,1
+6.0,Scorching Sands,118.0,2
+6.0,Air Slash,100.0,3
+6.0,Weather Ball,98.0,4
+7.0,Shell Smash,8.0,1
+7.0,Surf,7.0,2
+7.0,Flip Turn,6.0,3
+7.0,Rapid Spin,5.0,4
+8.0,Flip Turn,91.0,1
+8.0,Rapid Spin,67.0,2
+8.0,Shell Smash,50.0,3
+8.0,Surf,39.0,4
+9.0,Flip Turn,1777.0,1
+9.0,Surf,1263.0,2
+9.0,Rapid Spin,1229.0,3
+9.0,Shell Smash,1191.0,4
+15.0,Drill Run,2.0,1
+15.0,Poison Jab,2.0,2
+15.0,Swords Dance,2.0,3
+15.0,U-turn,1.0,4
+23.0,Coil,2.0,1
+23.0,Gunk Shot,2.0,2
+23.0,Earthquake,1.0,3
+23.0,Trailblaze,1.0,4
+24.0,Glare,112.0,1
+24.0,Gunk Shot,86.0,2
+24.0,Earthquake,83.0,3
+24.0,Knock Off,82.0,4
+25.0,Fake Out,66.0,1
+25.0,Volt Switch,51.0,2
+25.0,Thunderbolt,47.0,3
+25.0,Surf,43.0,4
+26.0,Volt Switch,206.0,1
+26.0,Thunderbolt,132.0,2
+26.0,Surf,90.0,3
+26.0,Knock Off,67.0,4
+26.001,Thunderbolt,203.0,1
+26.001,Volt Switch,146.0,2
+26.001,Psychic,110.0,3
+26.001,Nasty Plot,71.0,4
+27.0,Earthquake,28.0,1
+27.0,Knock Off,27.0,2
+27.0,Stealth Rock,15.0,3
+27.0,Rapid Spin,14.0,4
+27.001,Triple Axel,13.0,1
+27.001,Ice Shard,8.0,2
+27.001,Earthquake,6.0,3
+27.001,Stealth Rock,6.0,4
+28.0,Earthquake,338.0,1
+28.0,Knock Off,280.0,2
+28.0,Rapid Spin,252.0,3
+28.0,Stealth Rock,223.0,4
+28.001,Earthquake,396.0,1
+28.001,Rapid Spin,328.0,2
+28.001,Triple Axel,296.0,3
+28.001,Swords Dance,278.0,4
+34.0,Earth Power,3.0,1
+34.0,Sludge Wave,3.0,2
+34.0,Flamethrower,2.0,3
+34.0,Stealth Rock,2.0,4
+35.0,Stealth Rock,82.0,1
+35.0,Moonblast,71.0,2
+35.0,Thunder Wave,62.0,3
+35.0,Knock Off,61.0,4
+36.0,Moonblast,3408.0,1
+36.0,Moonlight,1611.0,2
+36.0,Stealth Rock,1316.0,3
+36.0,Thunder Wave,1190.0,4
+37.0,Healing Wish,37.0,1
+37.0,Will-O-Wisp,31.0,2
+37.0,Memento,23.0,3
+37.0,Baton Pass,19.0,4
+37.001,Aurora Veil,45.0,1
+37.001,Blizzard,19.0,2
+37.001,Baton Pass,14.0,3
+37.001,Encore,11.0,4
+38.0,Weather Ball,603.0,1
+38.0,Will-O-Wisp,588.0,2
+38.0,Baton Pass,455.0,3
+38.0,Encore,362.0,4
+38.001,Aurora Veil,2809.0,1
+38.001,Moonblast,1240.0,2
+38.001,Blizzard,1069.0,3
+38.001,Freeze-Dry,1026.0,4
+39.0,Wish,6.0,1
+39.0,Protect,4.0,2
+39.0,Knock Off,3.0,3
+39.0,Baton Pass,2.0,4
+40.0,Wish,183.0,1
+40.0,Alluring Voice,108.0,2
+40.0,Stealth Rock,98.0,3
+40.0,Protect,82.0,4
+43.0,Leech Seed,6.0,1
+43.0,Toxic,4.0,2
+43.0,Protect,3.0,3
+43.0,Strength Sap,3.0,4
+44.0,Strength Sap,43.0,1
+44.0,Leech Seed,24.0,2
+44.0,Sludge Bomb,24.0,3
+44.0,Toxic,20.0,4
+45.0,Strength Sap,381.0,1
+45.0,Leech Seed,325.0,2
+45.0,Sludge Bomb,271.0,3
+45.0,Giga Drain,239.0,4
+48.0,Sleep Powder,3.0,1
+48.0,Toxic Spikes,2.0,2
+48.0,Endeavor,1.0,3
+48.0,Rest,1.0,4
+49.0,Quiver Dance,130.0,1
+49.0,Bug Buzz,91.0,2
+49.0,Sleep Powder,60.0,3
+49.0,Sludge Wave,36.0,4
+50.0,Earthquake,42.0,1
+50.0,Endeavor,16.0,2
+50.0,Stealth Rock,12.0,3
+50.0,Sucker Punch,12.0,4
+50.001,Earthquake,8.0,1
+50.001,Stealth Rock,7.0,2
+50.001,Sucker Punch,7.0,3
+50.001,Rock Blast,6.0,4
+51.0,Earthquake,497.0,1
+51.0,Sucker Punch,142.0,2
+51.0,Stealth Rock,131.0,3
+51.0,Endeavor,96.0,4
+51.001,Earthquake,187.0,1
+51.001,Iron Head,121.0,2
+51.001,Stealth Rock,87.0,3
+51.001,Sucker Punch,50.0,4
+52.0,Fake Out,18.0,1
+52.0,U-turn,12.0,2
+52.0,Knock Off,8.0,3
+52.0,Covet,4.0,4
+52.001,Fake Out,3.0,1
+52.001,Chilling Water,2.0,2
+52.001,Icy Wind,2.0,3
+52.001,Endeavor,1.0,4
+52.002,U-turn,8.0,1
+52.002,Stealth Rock,5.0,2
+52.002,Fake Out,4.0,3
+52.002,Knock Off,4.0,4
+53.0,Fake Out,53.0,1
+53.0,U-turn,45.0,2
+53.0,Knock Off,38.0,3
+53.0,Double-Edge,13.0,4
+53.001,Parting Shot,325.0,1
+53.001,Knock Off,263.0,2
+53.001,Foul Play,132.0,3
+53.001,Taunt,129.0,4
+54.0,Endeavor,5.0,1
+54.0,Vacuum Wave,2.0,2
+54.0,Aqua Step,1.0,3
+54.0,Dazzling Gleam,1.0,4
+55.0,Surf,75.0,1
+55.0,Ice Beam,46.0,2
+55.0,Nasty Plot,30.0,3
+55.0,Hydro Pump,25.0,4
+56.0,Close Combat,16.0,1
+56.0,U-turn,8.0,2
+56.0,Earthquake,4.0,3
+56.0,Thunder Punch,3.0,4
+57.0,Rage Fist,187.0,1
+57.0,Drain Punch,174.0,2
+57.0,Bulk Up,173.0,3
+57.0,U-turn,101.0,4
+58.0,Will-O-Wisp,5.0,1
+58.0,Fire Spin,4.0,2
+58.0,Morning Sun,4.0,3
+58.0,Flame Charge,3.0,4
+58.001,Flare Blitz,19.0,1
+58.001,Head Smash,16.0,2
+58.001,Flame Charge,5.0,3
+58.001,Stealth Rock,4.0,4
+59.0,Flare Blitz,734.0,1
+59.0,Extreme Speed,651.0,2
+59.0,Morning Sun,528.0,3
+59.0,Will-O-Wisp,409.0,4
+59.001,Head Smash,1429.0,1
+59.001,Flare Blitz,1310.0,2
+59.001,Extreme Speed,815.0,3
+59.001,Stealth Rock,212.0,4
+60.0,Liquidation,2.0,1
+60.0,Bulldoze,1.0,2
+61.0,Liquidation,9.0,1
+61.0,Belly Drum,8.0,2
+61.0,Earthquake,4.0,3
+61.0,Encore,2.0,4
+62.0,Drain Punch,139.0,1
+62.0,Liquidation,111.0,2
+62.0,Knock Off,97.0,3
+62.0,Bulk Up,70.0,4
+65.0,Dazzling Gleam,1.0,1
+65.0,Psychic,1.0,2
+69.0,Energy Ball,1.0,1
+69.0,Power Whip,1.0,2
+69.0,Substitute,1.0,3
+70.0,Knock Off,12.0,1
+70.0,Strength Sap,9.0,2
+70.0,Sludge Bomb,8.0,3
+70.0,Weather Ball,6.0,4
+71.0,Growth,52.0,1
+71.0,Sludge Wave,52.0,2
+71.0,Weather Ball,50.0,3
+71.0,Strength Sap,41.0,4
+72.0,Knock Off,19.0,1
+72.0,Flip Turn,12.0,2
+72.0,Rapid Spin,8.0,3
+72.0,Giga Drain,7.0,4
+73.0,Flip Turn,2462.0,1
+73.0,Rapid Spin,1662.0,2
+73.0,Knock Off,1506.0,3
+73.0,Surf,862.0,4
+74.0,Explosion,2.0,1
+74.0,Stealth Rock,2.0,2
+74.0,Block,1.0,3
+74.0,Protect,1.0,4
+74.001,Earthquake,3.0,1
+74.001,Explosion,3.0,2
+74.001,Stealth Rock,3.0,3
+74.001,Rock Blast,2.0,4
+75.0,Earthquake,23.0,1
+75.0,Stealth Rock,21.0,2
+75.0,Explosion,11.0,3
+75.0,Rock Polish,3.0,4
+75.001,Stealth Rock,22.0,1
+75.001,Explosion,20.0,2
+75.001,Earthquake,18.0,3
+75.001,Volt Switch,11.0,4
+76.0,Earthquake,127.0,1
+76.0,Stealth Rock,81.0,2
+76.0,Explosion,71.0,3
+76.0,Stone Edge,45.0,4
+76.001,Explosion,144.0,1
+76.001,Stealth Rock,134.0,2
+76.001,Earthquake,117.0,3
+76.001,Body Slam,65.0,4
+77.0,Charm,1.0,1
+77.0,Flare Blitz,1.0,2
+77.0,High Horsepower,1.0,3
+79.0,Slack Off,9.0,1
+79.0,Yawn,7.0,2
+79.0,Liquidation,6.0,3
+79.0,Thunder Wave,6.0,4
+79.001,Chilling Water,3.0,1
+79.001,Thunder Wave,3.0,2
+79.001,Psychic,2.0,3
+79.001,Foul Play,1.0,4
+80.0,Scald,634.0,1
+80.0,Slack Off,382.0,2
+80.0,Future Sight,236.0,3
+80.0,Thunder Wave,234.0,4
+80.001,Shell Side Arm,395.0,1
+80.001,Psychic,227.0,2
+80.001,Slack Off,165.0,3
+80.001,Flamethrower,162.0,4
+81.0,Flash Cannon,22.0,1
+81.0,Volt Switch,17.0,2
+81.0,Thunderbolt,13.0,3
+81.0,Steel Beam,7.0,4
+82.0,Volt Switch,276.0,1
+82.0,Flash Cannon,250.0,2
+82.0,Thunderbolt,155.0,3
+82.0,Tera Blast,96.0,4
+84.0,Brave Bird,14.0,1
+84.0,Knock Off,10.0,2
+84.0,Quick Attack,6.0,3
+84.0,Drill Peck,5.0,4
+85.0,Brave Bird,121.0,1
+85.0,Swords Dance,49.0,2
+85.0,Knock Off,45.0,3
+85.0,Quick Attack,32.0,4
+86.0,Perish Song,2.0,1
+86.0,Protect,2.0,2
+86.0,Whirlpool,2.0,3
+86.0,Flip Turn,1.0,4
+87.0,Flip Turn,62.0,1
+87.0,Whirlpool,43.0,2
+87.0,Knock Off,35.0,3
+87.0,Perish Song,25.0,4
+88.0,Poison Jab,7.0,1
+88.0,Curse,6.0,2
+88.0,Drain Punch,6.0,3
+88.0,Gunk Shot,5.0,4
+88.001,Knock Off,53.0,1
+88.001,Poison Jab,12.0,2
+88.001,Drain Punch,9.0,3
+88.001,Shadow Sneak,9.0,4
+89.0,Knock Off,864.0,1
+89.0,Poison Jab,516.0,2
+89.0,Drain Punch,363.0,3
+89.0,Toxic Spikes,224.0,4
+89.001,Knock Off,2192.0,1
+89.001,Poison Jab,848.0,2
+89.001,Drain Punch,723.0,3
+89.001,Shadow Sneak,506.0,4
+90.0,Shell Smash,12.0,1
+90.0,Icicle Spear,9.0,2
+90.0,Rock Blast,9.0,3
+90.0,Ice Shard,5.0,4
+91.0,Shell Smash,441.0,1
+91.0,Icicle Spear,405.0,2
+91.0,Rock Blast,151.0,3
+91.0,Ice Shard,97.0,4
+92.0,Shadow Ball,18.0,1
+92.0,Sludge Wave,11.0,2
+92.0,Dazzling Gleam,10.0,3
+92.0,Destiny Bond,7.0,4
+93.0,Shadow Ball,210.0,1
+93.0,Sludge Wave,100.0,2
+93.0,Sludge Bomb,62.0,3
+93.0,Destiny Bond,47.0,4
+94.0,Shadow Ball,1093.0,1
+94.0,Sludge Wave,503.0,2
+94.0,Sludge Bomb,256.0,3
+94.0,Destiny Bond,204.0,4
+96.0,Psychic Noise,1.0,1
+97.0,Knock Off,8.0,1
+97.0,Calm Mind,7.0,2
+97.0,Encore,7.0,3
+97.0,Psychic Noise,7.0,4
+100.0,Thunderbolt,4.0,1
+100.0,Explosion,2.0,2
+100.0,Volt Switch,2.0,3
+100.0,Foul Play,1.0,4
+100.001,Volt Switch,33.0,1
+100.001,Giga Drain,11.0,2
+100.001,Leaf Storm,10.0,3
+100.001,Thunderbolt,5.0,4
+101.0,Volt Switch,220.0,1
+101.0,Thunderbolt,127.0,2
+101.0,Tera Blast,122.0,3
+101.0,Taunt,52.0,4
+101.001,Volt Switch,1370.0,1
+101.001,Thunderbolt,635.0,2
+101.001,Tera Blast,469.0,3
+101.001,Leaf Storm,434.0,4
+102.0,Ancient Power,1.0,1
+102.0,Moonlight,1.0,2
+102.0,Psychic Noise,1.0,3
+102.0,Substitute,1.0,4
+103.0,Giga Drain,54.0,1
+103.0,Tera Blast,45.0,2
+103.0,Psychic,36.0,3
+103.0,Calm Mind,28.0,4
+103.001,Giga Drain,118.0,1
+103.001,Draco Meteor,89.0,2
+103.001,Flamethrower,88.0,3
+103.001,Trick Room,81.0,4
+106.0,Close Combat,289.0,1
+106.0,Knock Off,252.0,2
+106.0,Swords Dance,169.0,3
+106.0,Fake Out,105.0,4
+107.0,Drain Punch,223.0,1
+107.0,Knock Off,223.0,2
+107.0,Rapid Spin,183.0,3
+107.0,Mach Punch,149.0,4
+109.0,Will-O-Wisp,49.0,1
+109.0,Pain Split,39.0,2
+109.0,Clear Smog,18.0,3
+109.0,Flamethrower,17.0,4
+110.0,Will-O-Wisp,581.0,1
+110.0,Sludge Bomb,507.0,2
+110.0,Pain Split,447.0,3
+110.0,Flamethrower,276.0,4
+110.001,Strange Steam,2681.0,1
+110.001,Will-O-Wisp,1809.0,2
+110.001,Defog,1275.0,3
+110.001,Pain Split,1196.0,4
+111.0,Earthquake,10.0,1
+111.0,Stealth Rock,6.0,2
+111.0,Swords Dance,4.0,3
+111.0,Curse,3.0,4
+112.0,Earthquake,550.0,1
+112.0,Stealth Rock,274.0,2
+112.0,Stone Edge,174.0,3
+112.0,Swords Dance,162.0,4
+113.0,Seismic Toss,528.0,1
+113.0,Soft-Boiled,414.0,2
+113.0,Thunder Wave,382.0,3
+113.0,Stealth Rock,324.0,4
+116.0,Dragon Pulse,1.0,1
+116.0,Surf,1.0,2
+116.0,Tera Blast,1.0,3
+117.0,Surf,14.0,1
+117.0,Flip Turn,10.0,2
+117.0,Ice Beam,8.0,3
+117.0,Focus Energy,7.0,4
+121.0,Flip Turn,14.0,1
+121.0,Liquidation,13.0,2
+121.0,Rapid Spin,12.0,3
+121.0,Thunderbolt,6.0,4
+123.0,Dual Wingbeat,524.0,1
+123.0,U-turn,286.0,2
+123.0,Swords Dance,251.0,3
+123.0,Close Combat,177.0,4
+125.0,Volt Switch,78.0,1
+125.0,Knock Off,62.0,2
+125.0,Ice Punch,39.0,3
+125.0,Thunderbolt,36.0,4
+126.0,Knock Off,48.0,1
+126.0,Flamethrower,42.0,2
+126.0,Will-O-Wisp,30.0,3
+126.0,Scorching Sands,22.0,4
+128.0,Body Slam,290.0,1
+128.0,Earthquake,144.0,2
+128.0,Close Combat,97.0,3
+128.0,Throat Chop,81.0,4
+128.001,Close Combat,160.0,1
+128.001,Earthquake,101.0,2
+128.001,Bulk Up,81.0,3
+128.001,Trailblaze,60.0,4
+128.002,Close Combat,364.0,1
+128.002,Raging Bull,341.0,2
+128.002,Flare Blitz,216.0,3
+128.002,Earthquake,189.0,4
+128.003,Close Combat,372.0,1
+128.003,Raging Bull,234.0,2
+128.003,Wave Crash,221.0,3
+128.003,Aqua Jet,194.0,4
+129.0,Flail,10.0,1
+129.0,Tackle,6.0,2
+129.0,Splash,3.0,3
+130.0,Dragon Dance,880.0,1
+130.0,Waterfall,799.0,2
+130.0,Earthquake,512.0,3
+130.0,Tera Blast,172.0,4
+131.0,Freeze-Dry,325.0,1
+131.0,Dragon Dance,228.0,2
+131.0,Earthquake,155.0,3
+131.0,Surf,149.0,4
+132.0,U-turn,206.0,1
+132.0,Earthquake,180.0,2
+132.0,Knock Off,152.0,3
+132.0,Close Combat,106.0,4
+133.0,Shadow Ball,3.0,1
+133.0,Trailblaze,3.0,2
+133.0,Baton Pass,2.0,3
+133.0,Quick Attack,2.0,4
+134.0,Wish,1365.0,1
+134.0,Scald,1185.0,2
+134.0,Flip Turn,916.0,3
+134.0,Protect,741.0,4
+135.0,Volt Switch,1553.0,1
+135.0,Thunderbolt,1423.0,2
+135.0,Tera Blast,854.0,3
+135.0,Alluring Voice,850.0,4
+136.0,Flare Blitz,80.0,1
+136.0,Facade,67.0,2
+136.0,Trailblaze,49.0,3
+136.0,Protect,37.0,4
+137.0,Ice Beam,24.0,1
+137.0,Recover,21.0,2
+137.0,Tri Attack,20.0,3
+137.0,Thunder Wave,17.0,4
+142.0,Dual Wingbeat,2.0,1
+142.0,Stone Edge,2.0,2
+142.0,Aqua Tail,1.0,3
+142.0,Crunch,1.0,4
+143.0,Body Slam,627.0,1
+143.0,Earthquake,423.0,2
+143.0,Curse,418.0,3
+143.0,Rest,249.0,4
+144.0,Freeze-Dry,467.0,1
+144.0,Roost,332.0,2
+144.0,U-turn,314.0,3
+144.0,Tera Blast,169.0,4
+144.001,Calm Mind,263.0,1
+144.001,Freezing Glare,239.0,2
+144.001,Tera Blast,222.0,3
+144.001,Hurricane,185.0,4
+145.0,Hurricane,3427.0,1
+145.0,Roost,2660.0,2
+145.0,Volt Switch,2102.0,3
+145.0,U-turn,2087.0,4
+145.001,Brave Bird,1151.0,1
+145.001,U-turn,874.0,2
+145.001,Close Combat,780.0,3
+145.001,Knock Off,587.0,4
+146.0,U-turn,1869.0,1
+146.0,Flamethrower,1609.0,2
+146.0,Roost,1410.0,3
+146.0,Will-O-Wisp,800.0,4
+146.001,Fiery Wrath,910.0,1
+146.001,Agility,465.0,2
+146.001,Nasty Plot,397.0,3
+146.001,Hurricane,356.0,4
+147.0,Dragon Dance,4.0,1
+147.0,Extreme Speed,2.0,2
+147.0,Outrage,2.0,3
+147.0,Draco Meteor,1.0,4
+148.0,Dragon Dance,51.0,1
+148.0,Extreme Speed,32.0,2
+148.0,Outrage,32.0,3
+148.0,Rest,20.0,4
+149.0,Dragon Dance,2033.0,1
+149.0,Extreme Speed,1535.0,2
+149.0,Earthquake,1514.0,3
+149.0,Roost,523.0,4
+150.0,Psystrike,239.0,1
+150.0,Aura Sphere,84.0,2
+150.0,Ice Beam,81.0,3
+150.0,Nasty Plot,68.0,4
+151.0,Stealth Rock,468.0,1
+151.0,Dragon Dance,457.0,2
+151.0,Psychic,328.0,3
+151.0,U-turn,316.0,4
+152.0,Leech Seed,5.0,1
+152.0,Leaf Storm,3.0,2
+152.0,Light Screen,3.0,3
+152.0,Counter,2.0,4
+153.0,Knock Off,18.0,1
+153.0,Leech Seed,18.0,2
+153.0,Tera Blast,18.0,3
+153.0,Synthesis,17.0,4
+154.0,Knock Off,95.0,1
+154.0,Leech Seed,80.0,2
+154.0,Synthesis,68.0,3
+154.0,Dragon Tail,56.0,4
+155.0,Eruption,3.0,1
+155.0,Extrasensory,1.0,2
+155.0,Fire Blast,1.0,3
+155.0,Lava Plume,1.0,4
+156.0,Eruption,17.0,1
+156.0,Extrasensory,4.0,2
+156.0,Fire Blast,2.0,3
+156.0,Overheat,2.0,4
+157.0,Eruption,388.0,1
+157.0,Scorching Sands,115.0,2
+157.0,Flamethrower,113.0,3
+157.0,Shadow Ball,75.0,4
+157.001,Eruption,727.0,1
+157.001,Shadow Ball,499.0,2
+157.001,Flamethrower,318.0,3
+157.001,Infernal Parade,229.0,4
+158.0,Aqua Jet,3.0,1
+158.0,Dragon Dance,3.0,2
+158.0,Swords Dance,2.0,3
+158.0,Ice Punch,1.0,4
+159.0,Liquidation,15.0,1
+159.0,Dragon Dance,12.0,2
+159.0,Ice Punch,9.0,3
+159.0,Aqua Jet,2.0,4
+160.0,Liquidation,486.0,1
+160.0,Dragon Dance,459.0,2
+160.0,Ice Punch,211.0,3
+160.0,Aqua Jet,146.0,4
+161.0,Endeavor,1.0,1
+162.0,Tidy Up,87.0,1
+162.0,Knock Off,48.0,2
+162.0,Double-Edge,34.0,3
+162.0,U-turn,17.0,4
+163.0,Brave Bird,3.0,1
+163.0,Hurricane,2.0,2
+163.0,Protect,2.0,3
+163.0,Defog,1.0,4
+164.0,Hurricane,67.0,1
+164.0,Roost,52.0,2
+164.0,Hyper Voice,31.0,3
+164.0,Tera Blast,30.0,4
+167.0,Knock Off,7.0,1
+167.0,Sticky Web,7.0,2
+167.0,Infestation,3.0,3
+167.0,Leech Life,2.0,4
+168.0,Sticky Web,184.0,1
+168.0,Knock Off,80.0,2
+168.0,Sucker Punch,61.0,3
+168.0,Toxic Spikes,46.0,4
+169.0,Brave Bird,1.0,1
+169.0,Roost,1.0,2
+169.0,U-turn,1.0,3
+170.0,Scald,19.0,1
+170.0,Volt Switch,17.0,2
+170.0,Ice Beam,13.0,3
+170.0,Thunderbolt,8.0,4
+171.0,Scald,395.0,1
+171.0,Volt Switch,381.0,2
+171.0,Flip Turn,191.0,3
+171.0,Ice Beam,163.0,4
+172.0,Thunderbolt,2.0,1
+172.0,Body Slam,1.0,2
+172.0,Encore,1.0,3
+172.0,Light Screen,1.0,4
+173.0,Draining Kiss,3.0,1
+173.0,Alluring Voice,2.0,2
+173.0,Thunder Wave,2.0,3
+173.0,Charm,1.0,4
+179.0,Cotton Guard,2.0,1
+179.0,Dazzling Gleam,2.0,2
+179.0,Discharge,1.0,3
+179.0,Thunder Wave,1.0,4
+180.0,Volt Switch,6.0,1
+180.0,Dazzling Gleam,3.0,2
+180.0,Light Screen,2.0,3
+180.0,Reflect,2.0,4
+181.0,Volt Switch,149.0,1
+181.0,Dazzling Gleam,71.0,2
+181.0,Thunderbolt,66.0,3
+181.0,Discharge,58.0,4
+182.0,Quiver Dance,161.0,1
+182.0,Strength Sap,113.0,2
+182.0,Giga Drain,103.0,3
+182.0,Tera Blast,49.0,4
+183.0,Aqua Jet,9.0,1
+183.0,Play Rough,9.0,2
+183.0,Knock Off,8.0,3
+183.0,Liquidation,7.0,4
+184.0,Aqua Jet,1604.0,1
+184.0,Play Rough,1362.0,2
+184.0,Liquidation,962.0,3
+184.0,Knock Off,859.0,4
+185.0,Head Smash,77.0,1
+185.0,Stealth Rock,52.0,2
+185.0,Sucker Punch,33.0,3
+185.0,Endeavor,32.0,4
+186.0,Weather Ball,388.0,1
+186.0,Ice Beam,318.0,2
+186.0,Encore,227.0,3
+186.0,Surf,207.0,4
+187.0,Leaf Storm,1.0,1
+188.0,Strength Sap,1.0,1
+189.0,Leech Seed,48.0,1
+189.0,Strength Sap,47.0,2
+189.0,U-turn,40.0,3
+189.0,Sleep Powder,28.0,4
+190.0,Fury Swipes,14.0,1
+190.0,Knock Off,11.0,2
+190.0,U-turn,11.0,3
+190.0,Fake Out,6.0,4
+192.0,Weather Ball,9.0,1
+192.0,Sludge Bomb,7.0,2
+192.0,Solar Beam,6.0,3
+192.0,Sunny Day,6.0,4
+193.0,Protect,13.0,1
+193.0,Bug Buzz,12.0,2
+193.0,Air Slash,10.0,3
+193.0,Giga Drain,7.0,4
+194.0,Recover,9.0,1
+194.0,Toxic,9.0,2
+194.0,Earthquake,7.0,3
+194.0,Stockpile,7.0,4
+194.001,Earthquake,7.0,1
+194.001,Recover,7.0,2
+194.001,Stealth Rock,7.0,3
+194.001,Counter,3.0,4
+195.0,Recover,960.0,1
+195.0,Earthquake,941.0,2
+195.0,Toxic,917.0,3
+195.0,Stealth Rock,756.0,4
+196.0,Psychic,395.0,1
+196.0,Alluring Voice,247.0,2
+196.0,Calm Mind,244.0,3
+196.0,Shadow Ball,208.0,4
+197.0,Wish,1260.0,1
+197.0,Foul Play,1114.0,2
+197.0,Toxic,886.0,3
+197.0,Protect,819.0,4
+198.0,Tailwind,139.0,1
+198.0,Thunder Wave,131.0,2
+198.0,U-turn,74.0,3
+198.0,Taunt,67.0,4
+199.0,Chilly Reception,2654.0,1
+199.0,Scald,1804.0,2
+199.0,Future Sight,981.0,3
+199.0,Thunder Wave,978.0,4
+199.001,Chilly Reception,4655.0,1
+199.001,Sludge Bomb,2537.0,2
+199.001,Future Sight,1760.0,3
+199.001,Thunder Wave,1298.0,4
+200.0,Will-O-Wisp,133.0,1
+200.0,Shadow Ball,110.0,2
+200.0,Calm Mind,93.0,3
+200.0,Pain Split,84.0,4
+203.0,Wish,26.0,1
+203.0,Psychic,24.0,2
+203.0,Calm Mind,23.0,3
+203.0,Dazzling Gleam,19.0,4
+204.0,Rapid Spin,11.0,1
+204.0,Explosion,10.0,2
+204.0,Spikes,10.0,3
+204.0,Lunge,9.0,4
+205.0,Volt Switch,1525.0,1
+205.0,Stealth Rock,1496.0,2
+205.0,Rapid Spin,1183.0,3
+205.0,Body Press,967.0,4
+206.0,Roost,164.0,1
+206.0,Glare,137.0,2
+206.0,Stealth Rock,109.0,3
+206.0,Body Slam,81.0,4
+207.0,U-turn,558.0,1
+207.0,Earthquake,495.0,2
+207.0,Stealth Rock,453.0,3
+207.0,Knock Off,387.0,4
+208.0,Dark Pulse,1.0,1
+208.0,Earth Power,1.0,2
+208.0,Stone Edge,1.0,3
+209.0,Play Rough,9.0,1
+209.0,Thunder Wave,4.0,2
+209.0,Bulk Up,3.0,3
+209.0,Earthquake,2.0,4
+210.0,Play Rough,292.0,1
+210.0,Earthquake,149.0,2
+210.0,Thunder Wave,128.0,3
+210.0,Super Fang,65.0,4
+211.0,Flip Turn,697.0,1
+211.0,Spikes,415.0,2
+211.0,Barb Barrage,231.0,3
+211.0,Thunder Wave,169.0,4
+211.001,Spikes,958.0,1
+211.001,Barb Barrage,814.0,2
+211.001,Crunch,710.0,3
+211.001,Pain Split,495.0,4
+212.0,Bullet Punch,4017.0,1
+212.0,U-turn,3084.0,2
+212.0,Knock Off,2070.0,3
+212.0,Swords Dance,1091.0,4
+214.0,Close Combat,416.0,1
+214.0,Trailblaze,268.0,2
+214.0,Knock Off,263.0,3
+214.0,Facade,147.0,4
+215.0,Knock Off,296.0,1
+215.0,Triple Axel,178.0,2
+215.0,Ice Shard,154.0,3
+215.0,Swords Dance,80.0,4
+215.001,Close Combat,206.0,1
+215.001,Gunk Shot,95.0,2
+215.001,Swords Dance,79.0,3
+215.001,Throat Chop,67.0,4
+216.0,Crunch,4.0,1
+216.0,Facade,3.0,2
+216.0,Swords Dance,3.0,3
+216.0,Counter,1.0,4
+217.0,Body Slam,184.0,1
+217.0,Facade,144.0,2
+217.0,Earthquake,125.0,3
+217.0,Rest,119.0,4
+218.0,Flamethrower,3.0,1
+218.0,Reflect,2.0,2
+218.0,Power Gem,1.0,3
+218.0,Stealth Rock,1.0,4
+219.0,Shell Smash,67.0,1
+219.0,Stealth Rock,56.0,2
+219.0,Recover,41.0,3
+219.0,Lava Plume,35.0,4
+220.0,Stone Edge,3.0,1
+220.0,Ancient Power,1.0,2
+220.0,Earthquake,1.0,3
+220.0,Ice Shard,1.0,4
+221.0,Earthquake,445.0,1
+221.0,Stealth Rock,381.0,2
+221.0,Ice Shard,373.0,3
+221.0,Icicle Crash,244.0,4
+225.0,Ice Shard,20.0,1
+225.0,Destiny Bond,15.0,2
+225.0,Rapid Spin,13.0,3
+225.0,Brave Bird,9.0,4
+227.0,Roost,1993.0,1
+227.0,Body Press,1728.0,2
+227.0,Spikes,1492.0,3
+227.0,Stealth Rock,1461.0,4
+228.0,Flamethrower,6.0,1
+228.0,Sucker Punch,5.0,2
+228.0,Dark Pulse,3.0,3
+228.0,Flame Charge,2.0,4
+229.0,Dark Pulse,138.0,1
+229.0,Flamethrower,114.0,2
+229.0,Sludge Bomb,47.0,3
+229.0,Nasty Plot,39.0,4
+230.0,Draco Meteor,263.0,1
+230.0,Flip Turn,144.0,2
+230.0,Surf,127.0,3
+230.0,Hurricane,108.0,4
+231.0,Earthquake,6.0,1
+231.0,Endeavor,4.0,2
+231.0,Ice Shard,4.0,3
+231.0,Stealth Rock,3.0,4
+232.0,Earthquake,2681.0,1
+232.0,Stealth Rock,1851.0,2
+232.0,Rapid Spin,1805.0,3
+232.0,Knock Off,1580.0,4
+233.0,Recover,1058.0,1
+233.0,Ice Beam,802.0,2
+233.0,Tri Attack,683.0,3
+233.0,Thunder Wave,584.0,4
+234.0,Body Slam,19.0,1
+234.0,Tera Blast,15.0,2
+234.0,Earthquake,13.0,3
+234.0,Psyshield Bash,12.0,4
+235.0,Sticky Web,374.0,1
+235.0,Spore,296.0,2
+235.0,Stone Axe,166.0,3
+235.0,Burning Bulwark,151.0,4
+236.0,High Jump Kick,1.0,1
+236.0,Rapid Spin,1.0,2
+237.0,Rapid Spin,802.0,1
+237.0,Triple Axel,768.0,2
+237.0,Close Combat,639.0,3
+237.0,Mach Punch,611.0,4
+239.0,Knock Off,9.0,1
+239.0,Volt Switch,9.0,2
+239.0,Ice Punch,7.0,3
+239.0,Thunderbolt,6.0,4
+240.0,Flare Blitz,6.0,1
+240.0,Mach Punch,4.0,2
+240.0,Belly Drum,2.0,3
+240.0,Psychic,2.0,4
+242.0,Seismic Toss,803.0,1
+242.0,Soft-Boiled,677.0,2
+242.0,Stealth Rock,584.0,3
+242.0,Thunder Wave,472.0,4
+243.0,Volt Switch,993.0,1
+243.0,Thunderbolt,946.0,2
+243.0,Scald,814.0,3
+243.0,Calm Mind,460.0,4
+244.0,Sacred Fire,1422.0,1
+244.0,Extreme Speed,984.0,2
+244.0,Stomping Tantrum,303.0,3
+244.0,Stone Edge,276.0,4
+245.0,Scald,865.0,1
+245.0,Calm Mind,600.0,2
+245.0,Ice Beam,335.0,3
+245.0,Substitute,249.0,4
+247.0,Earthquake,48.0,1
+247.0,Dragon Dance,45.0,2
+247.0,Tera Blast,17.0,3
+247.0,Stone Edge,11.0,4
+248.0,Knock Off,1680.0,1
+248.0,Stealth Rock,879.0,2
+248.0,Stone Edge,623.0,3
+248.0,Earthquake,548.0,4
+249.0,Recover,140.0,1
+249.0,Calm Mind,134.0,2
+249.0,Aeroblast,133.0,3
+249.0,Earth Power,76.0,4
+250.0,Sacred Fire,245.0,1
+250.0,Brave Bird,176.0,2
+250.0,Recover,98.0,3
+250.0,Earthquake,94.0,4
+251.0,Calm Mind,1.0,1
+251.0,Psychic,1.0,2
+251.0,Synthesis,1.0,3
+252.0,Detect,2.0,1
+252.0,Endeavor,2.0,2
+252.0,Quick Attack,2.0,3
+252.0,Swords Dance,2.0,4
+253.0,Acrobatics,4.0,1
+253.0,Leaf Blade,3.0,2
+253.0,Swords Dance,3.0,3
+253.0,Crunch,2.0,4
+254.0,Swords Dance,153.0,1
+254.0,Leaf Blade,130.0,2
+254.0,Earthquake,108.0,3
+254.0,Leaf Storm,92.0,4
+256.0,Close Combat,34.0,1
+256.0,Swords Dance,30.0,2
+256.0,Protect,29.0,3
+256.0,Flare Blitz,16.0,4
+257.0,Protect,1108.0,1
+257.0,Close Combat,1106.0,2
+257.0,Swords Dance,916.0,3
+257.0,Flare Blitz,858.0,4
+258.0,Ice Beam,2.0,1
+258.0,Whirlpool,2.0,2
+258.0,Avalanche,1.0,3
+258.0,Blizzard,1.0,4
+259.0,Stealth Rock,23.0,1
+259.0,Earthquake,19.0,2
+259.0,Liquidation,8.0,3
+259.0,Ice Punch,7.0,4
+260.0,Flip Turn,2467.0,1
+260.0,Earthquake,1727.0,2
+260.0,Stealth Rock,1723.0,3
+260.0,Knock Off,1224.0,4
+261.0,Crunch,1.0,1
+261.0,Sucker Punch,1.0,2
+262.0,Sucker Punch,17.0,1
+262.0,Crunch,13.0,2
+262.0,Play Rough,11.0,3
+262.0,Ice Fang,7.0,4
+271.0,Knock Off,5.0,1
+271.0,Leech Seed,5.0,2
+271.0,Giga Drain,2.0,3
+271.0,Protect,2.0,4
+272.0,Ice Beam,159.0,1
+272.0,Giga Drain,147.0,2
+272.0,Weather Ball,80.0,3
+272.0,Hydro Pump,79.0,4
+273.0,Explosion,1.0,1
+273.0,Solar Beam,1.0,2
+274.0,Sucker Punch,3.0,1
+274.0,Knock Off,2.0,2
+274.0,Fake Out,1.0,3
+274.0,Giga Drain,1.0,4
+275.0,Knock Off,162.0,1
+275.0,Tailwind,87.0,2
+275.0,Sucker Punch,52.0,3
+275.0,Leaf Blade,50.0,4
+278.0,Surf,16.0,1
+278.0,Air Slash,5.0,2
+278.0,Hurricane,5.0,3
+278.0,U-turn,4.0,4
+279.0,U-turn,2426.0,1
+279.0,Hurricane,1708.0,2
+279.0,Weather Ball,717.0,3
+279.0,Roost,613.0,4
+280.0,Destiny Bond,2.0,1
+280.0,Heavy Slam,1.0,2
+280.0,Leech Seed,1.0,3
+280.0,Memento,1.0,4
+281.0,Mystical Fire,2.0,1
+281.0,Psychic,2.0,2
+281.0,Trick,2.0,3
+281.0,Psyshock,1.0,4
+282.0,Moonblast,1414.0,1
+282.0,Psychic,349.0,2
+282.0,Mystical Fire,255.0,3
+282.0,Psyshock,189.0,4
+283.0,Sticky Web,16.0,1
+283.0,Rain Dance,5.0,2
+283.0,Hydro Pump,3.0,3
+283.0,Aqua Jet,2.0,4
+284.0,Sticky Web,276.0,1
+284.0,Quiver Dance,107.0,2
+284.0,Bug Buzz,72.0,3
+284.0,U-turn,66.0,4
+285.0,Toxic,2.0,1
+285.0,Facade,1.0,2
+285.0,Giga Drain,1.0,3
+285.0,Leech Seed,1.0,4
+286.0,Mach Punch,535.0,1
+286.0,Bullet Seed,358.0,2
+286.0,Spore,321.0,3
+286.0,Rock Tomb,129.0,4
+287.0,Counter,1.0,1
+287.0,Yawn,1.0,2
+288.0,Knock Off,35.0,1
+288.0,Bulk Up,32.0,2
+288.0,Slack Off,31.0,3
+288.0,Body Slam,25.0,4
+289.0,Giga Impact,120.0,1
+289.0,Earthquake,101.0,2
+289.0,Knock Off,97.0,3
+289.0,Double-Edge,89.0,4
+296.0,Drain Punch,4.0,1
+296.0,Earthquake,2.0,2
+296.0,Bulk Up,1.0,3
+296.0,Bullet Punch,1.0,4
+297.0,Knock Off,402.0,1
+297.0,Drain Punch,373.0,2
+297.0,Bullet Punch,251.0,3
+297.0,Close Combat,133.0,4
+298.0,Alluring Voice,1.0,1
+298.0,Perish Song,1.0,2
+298.0,Rest,1.0,3
+298.0,Sing,1.0,4
+299.0,Body Press,23.0,1
+299.0,Stealth Rock,11.0,2
+299.0,Pain Split,9.0,3
+299.0,Iron Defense,8.0,4
+302.0,Recover,553.0,1
+302.0,Knock Off,534.0,2
+302.0,Will-O-Wisp,532.0,3
+302.0,Encore,450.0,4
+303.0,Play Rough,4.0,1
+303.0,Sucker Punch,4.0,2
+303.0,Swords Dance,3.0,3
+303.0,Fire Fang,1.0,4
+307.0,Close Combat,10.0,1
+307.0,Zen Headbutt,4.0,2
+307.0,Bullet Punch,2.0,3
+307.0,Bulk Up,1.0,4
+308.0,Close Combat,173.0,1
+308.0,Zen Headbutt,86.0,2
+308.0,Bullet Punch,66.0,3
+308.0,Psycho Cut,55.0,4
+310.0,Overheat,1.0,1
+310.0,Snarl,1.0,2
+310.0,Thunderbolt,1.0,3
+311.0,Thunderbolt,18.0,1
+311.0,Volt Switch,11.0,2
+311.0,Alluring Voice,9.0,3
+311.0,Nasty Plot,7.0,4
+312.0,Nuzzle,9.0,1
+312.0,Volt Switch,9.0,2
+312.0,Alluring Voice,6.0,3
+312.0,Nasty Plot,4.0,4
+313.0,Thunder Wave,187.0,1
+313.0,U-turn,187.0,2
+313.0,Encore,156.0,3
+313.0,Roost,113.0,4
+314.0,Thunder Wave,165.0,1
+314.0,U-turn,140.0,2
+314.0,Encore,123.0,3
+314.0,Roost,62.0,4
+316.0,Destiny Bond,1.0,1
+316.0,Endure,1.0,2
+316.0,Pain Split,1.0,3
+316.0,Sludge Wave,1.0,4
+317.0,Knock Off,175.0,1
+317.0,Earthquake,98.0,2
+317.0,Toxic Spikes,83.0,3
+317.0,Toxic,80.0,4
+319.0,Ice Beam,1.0,1
+319.0,Protect,1.0,2
+319.0,Surf,1.0,3
+322.0,Stockpile,4.0,1
+322.0,Body Press,3.0,2
+322.0,Rest,3.0,3
+322.0,Curse,2.0,4
+323.0,Stealth Rock,76.0,1
+323.0,Earth Power,52.0,2
+323.0,Will-O-Wisp,38.0,3
+323.0,Lava Plume,30.0,4
+324.0,Stealth Rock,1921.0,1
+324.0,Lava Plume,1267.0,2
+324.0,Rapid Spin,1187.0,3
+324.0,Will-O-Wisp,740.0,4
+325.0,Power Gem,3.0,1
+325.0,Shadow Ball,2.0,2
+325.0,Trick,2.0,3
+325.0,Calm Mind,1.0,4
+326.0,Psychic,29.0,1
+326.0,Earth Power,15.0,2
+326.0,Nasty Plot,14.0,3
+326.0,Shadow Ball,13.0,4
+328.0,First Impression,157.0,1
+328.0,Earthquake,111.0,2
+328.0,Quick Attack,29.0,3
+328.0,Stealth Rock,24.0,4
+329.0,U-turn,5.0,1
+329.0,Earthquake,4.0,2
+329.0,First Impression,2.0,3
+329.0,Stealth Rock,2.0,4
+330.0,Earthquake,1151.0,1
+330.0,U-turn,670.0,2
+330.0,Dragon Dance,610.0,3
+330.0,Stealth Rock,287.0,4
+331.0,Sucker Punch,3.0,1
+331.0,Swords Dance,3.0,2
+331.0,Drain Punch,2.0,3
+331.0,Dark Pulse,1.0,4
+332.0,Sucker Punch,84.0,1
+332.0,Knock Off,71.0,2
+332.0,Spiky Shield,30.0,3
+332.0,Tera Blast,27.0,4
+333.0,Tera Blast,1.0,1
+334.0,Roost,426.0,1
+334.0,Will-O-Wisp,218.0,2
+334.0,Brave Bird,176.0,3
+334.0,Defog,155.0,4
+335.0,Facade,144.0,1
+335.0,Quick Attack,88.0,2
+335.0,Knock Off,72.0,3
+335.0,Close Combat,32.0,4
+336.0,Glare,10.0,1
+336.0,Earthquake,9.0,2
+336.0,Gunk Shot,9.0,3
+336.0,Trailblaze,8.0,4
+339.0,Dragon Dance,2.0,1
+339.0,Earthquake,2.0,2
+339.0,Icy Wind,2.0,3
+339.0,Stealth Rock,2.0,4
+340.0,Stealth Rock,102.0,1
+340.0,Earthquake,84.0,2
+340.0,Spikes,69.0,3
+340.0,Dragon Dance,56.0,4
+341.0,Aqua Jet,14.0,1
+341.0,Dragon Dance,9.0,2
+341.0,Knock Off,6.0,3
+341.0,Crabhammer,5.0,4
+342.0,Aqua Jet,382.0,1
+342.0,Knock Off,365.0,2
+342.0,Crabhammer,203.0,3
+342.0,Dragon Dance,86.0,4
+345.0,Meteor Beam,1.0,1
+345.0,Pain Split,1.0,2
+345.0,Stockpile,1.0,3
+349.0,Hypnosis,2.0,1
+349.0,Ice Beam,2.0,2
+349.0,Mirror Coat,2.0,3
+349.0,Rain Dance,2.0,4
+350.0,Scald,1560.0,1
+350.0,Recover,1404.0,2
+350.0,Flip Turn,1156.0,3
+350.0,Ice Beam,549.0,4
+351.0,Weather Ball,7.0,1
+351.0,Blizzard,3.0,2
+351.0,Tailwind,2.0,3
+351.0,Thunder,2.0,4
+354.0,Poltergeist,36.0,1
+354.0,Shadow Sneak,24.0,2
+354.0,Knock Off,10.0,3
+354.0,Swords Dance,10.0,4
+355.0,Will-O-Wisp,7.0,1
+355.0,Night Shade,5.0,2
+355.0,Trick Room,4.0,3
+355.0,Shadow Sneak,3.0,4
+356.0,Will-O-Wisp,381.0,1
+356.0,Pain Split,305.0,2
+356.0,Night Shade,301.0,3
+356.0,Trick Room,98.0,4
+357.0,Leech Seed,58.0,1
+357.0,Protect,53.0,2
+357.0,Substitute,43.0,3
+357.0,Air Slash,34.0,4
+358.0,Recover,65.0,1
+358.0,Cosmic Power,51.0,2
+358.0,Wish,43.0,3
+358.0,Stored Power,40.0,4
+359.0,Knock Off,9.0,1
+359.0,Close Combat,6.0,2
+359.0,Shadow Claw,4.0,3
+359.0,Night Slash,3.0,4
+361.0,Spikes,2.0,1
+361.0,Switcheroo,2.0,2
+362.0,Freeze-Dry,22.0,1
+362.0,Spikes,13.0,2
+362.0,Protect,12.0,3
+362.0,Earthquake,10.0,4
+370.0,Hydro Pump,3.0,1
+370.0,Ice Beam,2.0,2
+370.0,Surf,2.0,3
+370.0,Endeavor,1.0,4
+371.0,Dragon Dance,5.0,1
+371.0,Iron Head,3.0,2
+371.0,Crunch,1.0,3
+371.0,Dragon Claw,1.0,4
+372.0,Dragon Claw,20.0,1
+372.0,Dragon Dance,14.0,2
+372.0,Double-Edge,6.0,3
+372.0,Crunch,5.0,4
+373.0,Dragon Dance,1105.0,1
+373.0,Earthquake,841.0,2
+373.0,Dual Wingbeat,638.0,3
+373.0,Dragon Claw,398.0,4
+374.0,Iron Head,1.0,1
+374.0,Steel Beam,1.0,2
+374.0,Zen Headbutt,1.0,3
+375.0,Stealth Rock,42.0,1
+375.0,Bullet Punch,36.0,2
+375.0,Earthquake,28.0,3
+375.0,Meteor Mash,23.0,4
+376.0,Bullet Punch,1619.0,1
+376.0,Heavy Slam,1387.0,2
+376.0,Knock Off,1344.0,3
+376.0,Psychic Fangs,1211.0,4
+377.0,Body Press,427.0,1
+377.0,Stealth Rock,246.0,2
+377.0,Iron Defense,172.0,3
+377.0,Stone Edge,141.0,4
+378.0,Ice Beam,317.0,1
+378.0,Thunderbolt,132.0,2
+378.0,Thunder Wave,103.0,3
+378.0,Rest,69.0,4
+379.0,Body Press,920.0,1
+379.0,Stealth Rock,734.0,2
+379.0,Thunder Wave,516.0,3
+379.0,Iron Defense,503.0,4
+380.0,Calm Mind,1146.0,1
+380.0,Draco Meteor,935.0,2
+380.0,Mist Ball,793.0,3
+380.0,Recover,671.0,4
+381.0,Luster Purge,2219.0,1
+381.0,Draco Meteor,2062.0,2
+381.0,Flip Turn,1325.0,3
+381.0,Aura Sphere,527.0,4
+382.0,Ice Beam,23.0,1
+382.0,Water Spout,22.0,2
+382.0,Origin Pulse,17.0,3
+382.0,Surf,16.0,4
+383.0,Stealth Rock,116.0,1
+383.0,Earthquake,99.0,2
+383.0,Precipice Blades,95.0,3
+383.0,Heat Crash,93.0,4
+384.0,Dragon Ascent,155.0,1
+384.0,Earthquake,84.0,2
+384.0,Extreme Speed,83.0,3
+384.0,Dragon Dance,68.0,4
+385.0,U-turn,2108.0,1
+385.0,Iron Head,1820.0,2
+385.0,Stealth Rock,1397.0,3
+385.0,Wish,949.0,4
+386.0,Psycho Boost,49.0,1
+386.0,Extreme Speed,26.0,2
+386.0,Superpower,22.0,3
+386.0,Ice Beam,19.0,4
+386.001,Psycho Boost,70.0,1
+386.001,Extreme Speed,49.0,2
+386.001,Ice Beam,48.0,3
+386.001,Superpower,47.0,4
+386.002,Recover,712.0,1
+386.002,Teleport,478.0,2
+386.002,Stealth Rock,429.0,3
+386.002,Night Shade,371.0,4
+386.003,Psycho Boost,1732.0,1
+386.003,Ice Beam,1011.0,2
+386.003,Stealth Rock,801.0,3
+386.003,Knock Off,739.0,4
+387.0,Shell Smash,3.0,1
+387.0,Earth Power,2.0,2
+387.0,Leech Seed,2.0,3
+387.0,Superpower,2.0,4
+388.0,Stealth Rock,24.0,1
+388.0,Leech Seed,20.0,2
+388.0,Seed Bomb,19.0,3
+388.0,Synthesis,15.0,4
+389.0,Shell Smash,646.0,1
+389.0,Earthquake,290.0,2
+389.0,Bullet Seed,265.0,3
+389.0,Headlong Rush,245.0,4
+390.0,Knock Off,9.0,1
+390.0,U-turn,5.0,2
+390.0,Flare Blitz,4.0,3
+390.0,Fake Out,2.0,4
+391.0,U-turn,28.0,1
+391.0,Close Combat,27.0,2
+391.0,Knock Off,19.0,3
+391.0,Mach Punch,16.0,4
+392.0,U-turn,687.0,1
+392.0,Close Combat,599.0,2
+392.0,Flare Blitz,507.0,3
+392.0,Mach Punch,340.0,4
+393.0,Flip Turn,11.0,1
+393.0,Surf,6.0,2
+393.0,Yawn,6.0,3
+393.0,Ice Beam,4.0,4
+394.0,Flip Turn,49.0,1
+394.0,Surf,37.0,2
+394.0,Roost,33.0,3
+394.0,Ice Beam,24.0,4
+395.0,Flip Turn,1586.0,1
+395.0,Surf,1328.0,2
+395.0,Stealth Rock,1223.0,3
+395.0,Roost,1073.0,4
+396.0,Endeavor,7.0,1
+396.0,Quick Attack,4.0,2
+396.0,Brave Bird,3.0,3
+396.0,Dual Wingbeat,2.0,4
+397.0,Brave Bird,25.0,1
+397.0,U-turn,25.0,2
+397.0,Tera Blast,8.0,3
+397.0,Double-Edge,6.0,4
+398.0,Brave Bird,741.0,1
+398.0,U-turn,488.0,2
+398.0,Close Combat,265.0,3
+398.0,Double-Edge,172.0,4
+402.0,Sticky Web,88.0,1
+402.0,Knock Off,40.0,2
+402.0,Endeavor,32.0,3
+402.0,Taunt,19.0,4
+403.0,Crunch,1.0,1
+404.0,Trailblaze,6.0,1
+404.0,Volt Switch,6.0,2
+404.0,Roar,5.0,3
+404.0,Crunch,2.0,4
+405.0,Supercell Slam,64.0,1
+405.0,Facade,51.0,2
+405.0,Trailblaze,48.0,3
+405.0,Volt Switch,31.0,4
+408.0,Head Smash,7.0,1
+408.0,Earthquake,6.0,2
+408.0,Rock Slide,5.0,3
+408.0,Trailblaze,4.0,4
+409.0,Head Smash,90.0,1
+409.0,Rock Slide,77.0,2
+409.0,Earthquake,56.0,3
+409.0,Fire Punch,22.0,4
+410.0,Stealth Rock,7.0,1
+410.0,Power Gem,4.0,2
+410.0,Earth Power,3.0,3
+410.0,Metal Burst,3.0,4
+411.0,Body Press,262.0,1
+411.0,Iron Defense,170.0,2
+411.0,Stealth Rock,157.0,3
+411.0,Roar,64.0,4
+415.0,Endeavor,2.0,1
+415.0,Baton Pass,1.0,2
+415.0,Helping Hand,1.0,3
+416.0,U-turn,57.0,1
+416.0,Spikes,53.0,2
+416.0,Roost,44.0,3
+416.0,Toxic Spikes,33.0,4
+417.0,Nuzzle,51.0,1
+417.0,U-turn,43.0,2
+417.0,Super Fang,39.0,3
+417.0,Encore,11.0,4
+418.0,Wave Crash,9.0,1
+418.0,Flip Turn,7.0,2
+418.0,Aqua Jet,4.0,3
+418.0,Crunch,3.0,4
+419.0,Wave Crash,355.0,1
+419.0,Flip Turn,277.0,2
+419.0,Aqua Jet,130.0,3
+419.0,Ice Spinner,127.0,4
+422.0,Stealth Rock,8.0,1
+422.0,Recover,6.0,2
+422.0,Clear Smog,4.0,3
+422.0,Earth Power,4.0,4
+423.0,Earth Power,788.0,1
+423.0,Recover,653.0,2
+423.0,Stealth Rock,585.0,3
+423.0,Ice Beam,475.0,4
+424.0,Fake Out,654.0,1
+424.0,U-turn,412.0,2
+424.0,Triple Axel,309.0,3
+424.0,Knock Off,302.0,4
+425.0,Shadow Ball,14.0,1
+425.0,Destiny Bond,11.0,2
+425.0,Will-O-Wisp,9.0,3
+425.0,Acrobatics,5.0,4
+426.0,Strength Sap,622.0,1
+426.0,Shadow Ball,472.0,2
+426.0,Calm Mind,386.0,3
+426.0,Will-O-Wisp,267.0,4
+428.0,Fake Out,16.0,1
+428.0,Close Combat,13.0,2
+428.0,Return,8.0,3
+428.0,Triple Axel,5.0,4
+429.0,Shadow Ball,828.0,1
+429.0,Dazzling Gleam,246.0,2
+429.0,Will-O-Wisp,238.0,3
+429.0,Nasty Plot,195.0,4
+430.0,Brave Bird,130.0,1
+430.0,Sucker Punch,90.0,2
+430.0,U-turn,87.0,3
+430.0,Night Slash,51.0,4
+432.0,Fake Out,1.0,1
+433.0,Cosmic Power,2.0,1
+433.0,Recover,2.0,2
+433.0,Baton Pass,1.0,3
+433.0,Dazzling Gleam,1.0,4
+434.0,Knock Off,18.0,1
+434.0,Sucker Punch,6.0,2
+434.0,Poison Jab,4.0,3
+434.0,Taunt,2.0,4
+435.0,Knock Off,458.0,1
+435.0,Sucker Punch,210.0,2
+435.0,Toxic Spikes,136.0,3
+435.0,Gunk Shot,129.0,4
+436.0,Stealth Rock,17.0,1
+436.0,Psychic,9.0,2
+436.0,Light Screen,8.0,3
+436.0,Reflect,8.0,4
+437.0,Stealth Rock,1317.0,1
+437.0,Body Press,1007.0,2
+437.0,Iron Defense,643.0,3
+437.0,Gyro Ball,445.0,4
+438.0,Stealth Rock,5.0,1
+438.0,Sucker Punch,3.0,2
+438.0,Spikes,2.0,3
+438.0,Trailblaze,2.0,4
+440.0,Dark Pulse,1.0,1
+440.0,Dream Eater,1.0,2
+440.0,Fire Fang,1.0,3
+440.0,Metal Sound,1.0,4
+442.0,Will-O-Wisp,211.0,1
+442.0,Pain Split,123.0,2
+442.0,Foul Play,115.0,3
+442.0,Toxic,105.0,4
+443.0,Earthquake,10.0,1
+443.0,Stealth Rock,6.0,2
+443.0,Swords Dance,5.0,3
+443.0,Protect,4.0,4
+444.0,Earthquake,80.0,1
+444.0,Stealth Rock,44.0,2
+444.0,Swords Dance,39.0,3
+444.0,Scale Shot,33.0,4
+445.0,Earthquake,4683.0,1
+445.0,Stealth Rock,2487.0,2
+445.0,Scale Shot,2353.0,3
+445.0,Swords Dance,1819.0,4
+446.0,Body Slam,99.0,1
+446.0,Rest,62.0,2
+446.0,Curse,56.0,3
+446.0,Sleep Talk,43.0,4
+447.0,Copycat,12.0,1
+447.0,Bullet Punch,7.0,2
+447.0,Drain Punch,5.0,3
+447.0,Close Combat,4.0,4
+448.0,Extreme Speed,452.0,1
+448.0,Close Combat,374.0,2
+448.0,Swords Dance,321.0,3
+448.0,Meteor Mash,206.0,4
+449.0,Stealth Rock,60.0,1
+449.0,Slack Off,33.0,2
+449.0,Earthquake,31.0,3
+449.0,Whirlwind,20.0,4
+450.0,Stealth Rock,926.0,1
+450.0,Earthquake,828.0,2
+450.0,Slack Off,617.0,3
+450.0,Whirlwind,375.0,4
+453.0,Knock Off,5.0,1
+453.0,Drain Punch,4.0,2
+453.0,Focus Blast,4.0,3
+453.0,Vacuum Wave,4.0,4
+454.0,Close Combat,157.0,1
+454.0,Sucker Punch,149.0,2
+454.0,Knock Off,131.0,3
+454.0,Gunk Shot,114.0,4
+456.0,Alluring Voice,2.0,1
+456.0,Surf,2.0,2
+457.0,Surf,15.0,1
+457.0,Alluring Voice,10.0,2
+457.0,U-turn,10.0,3
+457.0,Encore,6.0,4
+459.0,Blizzard,2.0,1
+459.0,Chilling Water,1.0,2
+459.0,Ice Shard,1.0,3
+459.0,Leech Seed,1.0,4
+460.0,Aurora Veil,463.0,1
+460.0,Blizzard,302.0,2
+460.0,Giga Drain,125.0,3
+460.0,Ice Shard,120.0,4
+461.0,Knock Off,2551.0,1
+461.0,Triple Axel,1722.0,2
+461.0,Ice Shard,1144.0,3
+461.0,Swords Dance,687.0,4
+462.0,Volt Switch,713.0,1
+462.0,Flash Cannon,657.0,2
+462.0,Thunderbolt,449.0,3
+462.0,Body Press,202.0,4
+464.0,Earthquake,1059.0,1
+464.0,Stealth Rock,412.0,2
+464.0,Stone Edge,358.0,3
+464.0,Rock Polish,237.0,4
+466.0,Earthquake,163.0,1
+466.0,Ice Punch,158.0,2
+466.0,Supercell Slam,157.0,3
+466.0,Knock Off,154.0,4
+467.0,Flamethrower,158.0,1
+467.0,Thunderbolt,104.0,2
+467.0,Scorching Sands,90.0,3
+467.0,Fire Blast,64.0,4
+469.0,Bug Buzz,355.0,1
+469.0,Air Slash,221.0,2
+469.0,Protect,190.0,3
+469.0,Tera Blast,102.0,4
+470.0,Knock Off,147.0,1
+470.0,Leaf Blade,119.0,2
+470.0,Swords Dance,111.0,3
+470.0,Tera Blast,82.0,4
+471.0,Freeze-Dry,320.0,1
+471.0,Ice Beam,184.0,2
+471.0,Tera Blast,113.0,3
+471.0,Calm Mind,99.0,4
+472.0,Earthquake,4420.0,1
+472.0,Protect,4137.0,2
+472.0,Toxic,2163.0,3
+472.0,Knock Off,1879.0,4
+473.0,Earthquake,1636.0,1
+473.0,Ice Shard,1261.0,2
+473.0,Icicle Crash,1003.0,3
+473.0,Stealth Rock,478.0,4
+474.0,Tri Attack,539.0,1
+474.0,Ice Beam,268.0,2
+474.0,Shadow Ball,222.0,3
+474.0,Thunderbolt,193.0,4
+475.0,Sacred Sword,744.0,1
+475.0,Psycho Cut,545.0,2
+475.0,Agility,201.0,3
+475.0,Leaf Blade,162.0,4
+476.0,Body Press,162.0,1
+476.0,Stealth Rock,136.0,2
+476.0,Volt Switch,105.0,3
+476.0,Iron Defense,79.0,4
+477.0,Poltergeist,305.0,1
+477.0,Shadow Sneak,195.0,2
+477.0,Will-O-Wisp,194.0,3
+477.0,Pain Split,136.0,4
+478.0,Spikes,330.0,1
+478.0,Destiny Bond,260.0,2
+478.0,Ice Beam,195.0,3
+478.0,Triple Axel,167.0,4
+479.0,Volt Switch,537.0,1
+479.0,Will-O-Wisp,438.0,2
+479.0,Shadow Ball,230.0,3
+479.0,Pain Split,226.0,4
+479.001,Volt Switch,2776.0,1
+479.001,Overheat,2193.0,2
+479.001,Will-O-Wisp,1388.0,3
+479.001,Pain Split,815.0,4
+479.002,Volt Switch,4122.0,1
+479.002,Hydro Pump,3168.0,2
+479.002,Will-O-Wisp,2009.0,3
+479.002,Pain Split,1233.0,4
+479.003,Volt Switch,502.0,1
+479.003,Blizzard,453.0,2
+479.003,Will-O-Wisp,201.0,3
+479.003,Thunderbolt,190.0,4
+479.004,Volt Switch,453.0,1
+479.004,Air Slash,302.0,2
+479.004,Will-O-Wisp,281.0,3
+479.004,Thunderbolt,149.0,4
+479.005,Volt Switch,870.0,1
+479.005,Leaf Storm,536.0,2
+479.005,Will-O-Wisp,309.0,3
+479.005,Thunderbolt,229.0,4
+480.0,U-turn,1443.0,1
+480.0,Stealth Rock,1110.0,2
+480.0,Thunder Wave,584.0,3
+480.0,Knock Off,562.0,4
+481.0,U-turn,1091.0,1
+481.0,Stealth Rock,903.0,2
+481.0,Healing Wish,395.0,3
+481.0,Thunder Wave,353.0,4
+482.0,U-turn,587.0,1
+482.0,Psychic,453.0,2
+482.0,Stealth Rock,376.0,3
+482.0,Flamethrower,223.0,4
+483.0,Draco Meteor,105.0,1
+483.0,Flash Cannon,64.0,2
+483.0,Earth Power,57.0,3
+483.0,Stealth Rock,52.0,4
+483.001,Draco Meteor,125.0,1
+483.001,Flash Cannon,104.0,2
+483.001,Stealth Rock,79.0,3
+483.001,Earth Power,67.0,4
+484.0,Spacial Rend,90.0,1
+484.0,Surf,65.0,2
+484.0,Hydro Pump,41.0,3
+484.0,Earth Power,36.0,4
+484.001,Spacial Rend,114.0,1
+484.001,Surf,82.0,2
+484.001,Hydro Pump,58.0,3
+484.001,Substitute,42.0,4
+485.0,Magma Storm,2671.0,1
+485.0,Stealth Rock,1986.0,2
+485.0,Earth Power,1692.0,3
+485.0,Flash Cannon,1000.0,4
+486.0,Knock Off,129.0,1
+486.0,Protect,105.0,2
+486.0,Body Slam,84.0,3
+486.0,Thunder Wave,57.0,4
+487.0,Will-O-Wisp,62.0,1
+487.0,Hex,47.0,2
+487.0,Shadow Ball,30.0,3
+487.0,Calm Mind,28.0,4
+487.001,Will-O-Wisp,89.0,1
+487.001,Draco Meteor,77.0,2
+487.001,Shadow Sneak,75.0,3
+487.001,Hex,73.0,4
+488.0,Moonlight,832.0,1
+488.0,Calm Mind,757.0,2
+488.0,Moonblast,692.0,3
+488.0,Thunder Wave,464.0,4
+489.0,Take Heart,45.0,1
+489.0,Scald,43.0,2
+489.0,Rest,17.0,3
+489.0,Acid Armor,12.0,4
+490.0,Tail Glow,773.0,1
+490.0,Scald,759.0,2
+490.0,Surf,655.0,3
+490.0,Ice Beam,509.0,4
+491.0,Dark Pulse,4722.0,1
+491.0,Ice Beam,2109.0,2
+491.0,Sludge Bomb,1424.0,3
+491.0,Nasty Plot,1240.0,4
+492.0,Seed Flare,733.0,1
+492.0,Earth Power,475.0,2
+492.0,Leech Seed,359.0,3
+492.0,Synthesis,282.0,4
+492.001,Air Slash,521.0,1
+492.001,Seed Flare,327.0,2
+492.001,Earth Power,196.0,3
+492.001,Substitute,143.0,4
+493.0,Extreme Speed,23.0,1
+493.0,Swords Dance,15.0,2
+493.0,Earthquake,10.0,3
+493.0,Recover,7.0,4
+493.001,Calm Mind,11.0,1
+493.001,Earth Power,8.0,2
+493.001,Ice Beam,5.0,3
+493.001,Judgment,5.0,4
+493.002,Judgment,20.0,1
+493.002,Recover,14.0,2
+493.002,Calm Mind,8.0,3
+493.002,Taunt,7.0,4
+493.003,Judgment,2.0,1
+493.003,Calm Mind,1.0,2
+493.003,Flash Cannon,1.0,3
+493.003,Giga Drain,1.0,4
+493.004,Judgment,7.0,1
+493.004,Calm Mind,5.0,2
+493.004,Ice Beam,4.0,3
+493.004,Recover,1.0,4
+493.005,Judgment,32.0,1
+493.005,Calm Mind,22.0,2
+493.005,Recover,19.0,3
+493.005,Earth Power,10.0,4
+493.006,Body Press,2.0,1
+493.006,Cosmic Power,2.0,2
+493.006,Judgment,2.0,3
+493.006,Stored Power,2.0,4
+493.007,Judgment,9.0,1
+493.007,Flare Blitz,6.0,2
+493.007,Dragon Dance,4.0,3
+493.007,Stone Edge,4.0,4
+493.008,Judgment,16.0,1
+493.008,Recover,12.0,2
+493.008,Calm Mind,11.0,3
+493.008,Earth Power,3.0,4
+493.009,Judgment,20.0,1
+493.009,Calm Mind,14.0,2
+493.009,Recover,14.0,3
+493.009,Body Press,3.0,4
+493.01,Judgment,7.0,1
+493.01,Recover,6.0,2
+493.01,Calm Mind,3.0,3
+493.01,Earth Power,2.0,4
+493.011,Earthquake,19.0,1
+493.011,Dragon Dance,16.0,2
+493.011,Recover,15.0,3
+493.011,Judgment,14.0,4
+493.012,Judgment,6.0,1
+493.012,Calm Mind,4.0,2
+493.012,Earth Power,3.0,3
+493.012,Recover,3.0,4
+493.013,Recover,8.0,1
+493.013,Gunk Shot,6.0,2
+493.013,Judgment,6.0,3
+493.013,Calm Mind,4.0,4
+493.014,Future Sight,18.0,1
+493.014,Body Press,5.0,2
+493.014,Recover,5.0,3
+493.014,Cosmic Power,4.0,4
+493.015,Judgment,8.0,1
+493.015,Taunt,4.0,2
+493.015,Will-O-Wisp,4.0,3
+493.015,Calm Mind,2.0,4
+493.016,Earthquake,8.0,1
+493.016,Judgment,6.0,2
+493.016,Calm Mind,5.0,3
+493.016,Dragon Dance,4.0,4
+493.017,Judgment,35.0,1
+493.017,Recover,33.0,2
+493.017,Calm Mind,24.0,3
+493.017,Ice Beam,10.0,4
+494.0,Bolt Strike,2.0,1
+494.0,Future Sight,2.0,2
+494.0,U-turn,2.0,3
+494.0,V-create,2.0,4
+495.0,Leaf Storm,15.0,1
+495.0,Knock Off,5.0,2
+495.0,Synthesis,5.0,3
+495.0,Glare,4.0,4
+496.0,Leaf Storm,57.0,1
+496.0,Glare,36.0,2
+496.0,Synthesis,22.0,3
+496.0,Tera Blast,17.0,4
+497.0,Leaf Storm,1885.0,1
+497.0,Glare,922.0,2
+497.0,Substitute,698.0,3
+497.0,Tera Blast,372.0,4
+499.0,Drain Punch,18.0,1
+499.0,Bulk Up,14.0,2
+499.0,Flare Blitz,13.0,3
+499.0,Knock Off,11.0,4
+500.0,Flare Blitz,296.0,1
+500.0,Close Combat,146.0,2
+500.0,Knock Off,67.0,3
+500.0,Head Smash,55.0,4
+501.0,Flip Turn,2.0,1
+501.0,Encore,1.0,2
+501.0,Hydro Pump,1.0,3
+501.0,Knock Off,1.0,4
+502.0,Surf,21.0,1
+502.0,Flip Turn,20.0,2
+502.0,Ice Beam,19.0,3
+502.0,Knock Off,12.0,4
+503.0,Flip Turn,85.0,1
+503.0,Aqua Jet,46.0,2
+503.0,Knock Off,46.0,3
+503.0,Surf,44.0,4
+503.001,Ceaseless Edge,4433.0,1
+503.001,Flip Turn,1392.0,2
+503.001,Razor Shell,1017.0,3
+503.001,Aqua Cutter,888.0,4
+522.0,Thunderbolt,3.0,1
+522.0,Volt Switch,3.0,2
+522.0,Flame Charge,1.0,3
+522.0,Thunder Wave,1.0,4
+523.0,Volt Switch,207.0,1
+523.0,High Horsepower,125.0,2
+523.0,Supercell Slam,104.0,3
+523.0,Overheat,98.0,4
+529.0,Earthquake,38.0,1
+529.0,Rapid Spin,14.0,2
+529.0,Rock Slide,11.0,3
+529.0,Stealth Rock,9.0,4
+530.0,Earthquake,3139.0,1
+530.0,Iron Head,1921.0,2
+530.0,Rapid Spin,1802.0,3
+530.0,Swords Dance,931.0,4
+531.0,Confide,1.0,1
+532.0,Mach Punch,14.0,1
+532.0,Knock Off,10.0,2
+532.0,Drain Punch,7.0,3
+532.0,Ice Punch,5.0,4
+533.0,Drain Punch,271.0,1
+533.0,Knock Off,261.0,2
+533.0,Mach Punch,175.0,3
+533.0,Bulk Up,93.0,4
+534.0,Mach Punch,950.0,1
+534.0,Knock Off,751.0,2
+534.0,Drain Punch,664.0,3
+534.0,Ice Punch,261.0,4
+537.0,Scald,3.0,1
+537.0,Earth Power,2.0,2
+537.0,Stealth Rock,2.0,3
+537.0,Toxic,2.0,4
+540.0,Lunge,3.0,1
+540.0,Sticky Web,3.0,2
+540.0,Synthesis,2.0,3
+540.0,Baton Pass,1.0,4
+541.0,Sticky Web,27.0,1
+541.0,Synthesis,11.0,2
+541.0,Lunge,10.0,3
+541.0,Baton Pass,9.0,4
+542.0,Sticky Web,292.0,1
+542.0,Knock Off,169.0,2
+542.0,Leaf Blade,122.0,3
+542.0,Triple Axel,104.0,4
+545.0,Toxic Spikes,4.0,1
+545.0,Protect,1.0,2
+545.0,Spikes,1.0,3
+545.0,X-Scissor,1.0,4
+546.0,Leech Seed,18.0,1
+546.0,Encore,17.0,2
+546.0,Dazzling Gleam,11.0,3
+546.0,Memento,9.0,4
+547.0,Moonblast,1136.0,1
+547.0,U-turn,661.0,2
+547.0,Encore,521.0,3
+547.0,Leech Seed,506.0,4
+548.0,Giga Drain,1.0,1
+548.0,Healing Wish,1.0,2
+548.0,Sunny Day,1.0,3
+549.0,Quiver Dance,234.0,1
+549.0,Giga Drain,148.0,2
+549.0,Tera Blast,134.0,3
+549.0,Sleep Powder,66.0,4
+549.001,Close Combat,701.0,1
+549.001,Victory Dance,559.0,2
+549.001,Triple Axel,415.0,3
+549.001,Leaf Blade,389.0,4
+550.0,Flip Turn,78.0,1
+550.0,Wave Crash,64.0,2
+550.0,Aqua Jet,29.0,3
+550.0,Head Smash,25.0,4
+550.001,Wave Crash,37.0,1
+550.001,Flip Turn,35.0,2
+550.001,Aqua Jet,15.0,3
+550.001,Head Smash,11.0,4
+550.002,Flip Turn,63.0,1
+550.002,Wave Crash,48.0,2
+550.002,Aqua Jet,32.0,3
+550.002,Liquidation,16.0,4
+551.0,Earthquake,4.0,1
+551.0,Stealth Rock,4.0,2
+551.0,Crunch,2.0,3
+551.0,Rock Slide,2.0,4
+552.0,Knock Off,65.0,1
+552.0,Earthquake,57.0,2
+552.0,Stealth Rock,33.0,3
+552.0,Scale Shot,13.0,4
+553.0,Knock Off,1901.0,1
+553.0,Earthquake,1613.0,2
+553.0,Stealth Rock,785.0,3
+553.0,Gunk Shot,295.0,4
+555.002,Ice Punch,5.0,1
+555.002,Substitute,5.0,2
+555.002,Earthquake,4.0,3
+555.002,Fire Punch,3.0,4
+559.0,Knock Off,39.0,1
+559.0,Drain Punch,26.0,2
+559.0,Dragon Dance,22.0,3
+559.0,Bulk Up,15.0,4
+560.0,Knock Off,470.0,1
+560.0,Drain Punch,312.0,2
+560.0,Dragon Dance,166.0,3
+560.0,Bulk Up,137.0,4
+570.0,Knock Off,2.0,1
+570.0,Dark Pulse,1.0,2
+570.0,Dig,1.0,3
+570.0,Sucker Punch,1.0,4
+570.001,Shadow Ball,3.0,1
+570.001,Agility,1.0,2
+570.001,Comeuppance,1.0,3
+570.001,Endure,1.0,4
+571.0,Dark Pulse,23.0,1
+571.0,Flamethrower,10.0,2
+571.0,Knock Off,9.0,3
+571.0,Sludge Bomb,6.0,4
+571.001,Shadow Ball,72.0,1
+571.001,Hyper Voice,49.0,2
+571.001,Bitter Malice,23.0,3
+571.001,Flamethrower,18.0,4
+572.0,Tidy Up,12.0,1
+572.0,Bullet Seed,8.0,2
+572.0,Triple Axel,5.0,3
+572.0,Tail Slap,4.0,4
+573.0,Tidy Up,808.0,1
+573.0,Tail Slap,567.0,2
+573.0,Triple Axel,413.0,3
+573.0,Rock Blast,404.0,4
+574.0,Psychic,4.0,1
+574.0,Dark Pulse,1.0,2
+574.0,Energy Ball,1.0,3
+575.0,Psychic,30.0,1
+575.0,Calm Mind,24.0,2
+575.0,Rest,21.0,3
+575.0,Trick,11.0,4
+576.0,Psychic,103.0,1
+576.0,Trick,84.0,2
+576.0,Calm Mind,74.0,3
+576.0,Thunderbolt,57.0,4
+577.0,Psychic,11.0,1
+577.0,Trick Room,5.0,2
+577.0,Tera Blast,4.0,3
+577.0,Calm Mind,3.0,4
+578.0,Psychic,37.0,1
+578.0,Recover,37.0,2
+578.0,Calm Mind,27.0,3
+578.0,Future Sight,21.0,4
+579.0,Recover,217.0,1
+579.0,Calm Mind,206.0,2
+579.0,Psychic,189.0,3
+579.0,Focus Blast,175.0,4
+580.0,Aqua Jet,2.0,1
+580.0,Air Slash,1.0,2
+580.0,Liquidation,1.0,3
+580.0,Whirlpool,1.0,4
+581.0,Flip Turn,23.0,1
+581.0,Defog,22.0,2
+581.0,Knock Off,19.0,3
+581.0,Roost,16.0,4
+584.0,Aurora Veil,2.0,1
+584.0,Freeze-Dry,1.0,2
+584.0,Mirror Coat,1.0,3
+585.0,Body Slam,1.0,1
+585.0,Endeavor,1.0,2
+585.0,Headbutt,1.0,3
+585.0,Trailblaze,1.0,4
+586.0,Horn Leech,23.0,1
+586.0,Body Slam,14.0,2
+586.0,Swords Dance,13.0,3
+586.0,Double-Edge,8.0,4
+590.0,Spore,21.0,1
+590.0,Giga Drain,13.0,2
+590.0,Foul Play,8.0,3
+590.0,Synthesis,8.0,4
+591.0,Spore,1239.0,1
+591.0,Sludge Bomb,822.0,2
+591.0,Giga Drain,821.0,3
+591.0,Toxic,469.0,4
+594.0,Flip Turn,5372.0,1
+594.0,Wish,3242.0,2
+594.0,Scald,1911.0,3
+594.0,Protect,1506.0,4
+595.0,Thunder,12.0,1
+595.0,Bug Buzz,6.0,2
+595.0,Volt Switch,6.0,3
+595.0,Giga Drain,4.0,4
+596.0,Sticky Web,1545.0,1
+596.0,Thunder,996.0,2
+596.0,Volt Switch,762.0,3
+596.0,Bug Buzz,744.0,4
+598.0,Stealth Rock,2.0,1
+598.0,Gyro Ball,1.0,2
+602.0,Knock Off,2.0,1
+602.0,Spark,1.0,2
+602.0,Thunder Wave,1.0,3
+603.0,Knock Off,72.0,1
+603.0,U-turn,47.0,2
+603.0,Super Fang,35.0,3
+603.0,Volt Switch,32.0,4
+604.0,Knock Off,624.0,1
+604.0,U-turn,476.0,2
+604.0,Volt Switch,295.0,3
+604.0,Drain Punch,255.0,4
+607.0,Memento,1.0,1
+607.0,Trick Room,1.0,2
+608.0,Shadow Ball,13.0,1
+608.0,Flamethrower,7.0,2
+608.0,Fire Blast,5.0,3
+608.0,Energy Ball,3.0,4
+609.0,Shadow Ball,693.0,1
+609.0,Flamethrower,499.0,2
+609.0,Energy Ball,222.0,3
+609.0,Fire Blast,174.0,4
+610.0,Dragon Claw,7.0,1
+610.0,Dragon Dance,5.0,2
+610.0,First Impression,4.0,3
+610.0,Outrage,3.0,4
+611.0,Dragon Dance,36.0,1
+611.0,Dragon Claw,26.0,2
+611.0,Outrage,26.0,3
+611.0,Stomping Tantrum,21.0,4
+612.0,Earthquake,404.0,1
+612.0,Dragon Dance,391.0,2
+612.0,Dragon Claw,192.0,3
+612.0,Outrage,190.0,4
+613.0,Snowscape,1.0,1
+613.0,Tera Blast,1.0,2
+614.0,Icicle Crash,199.0,1
+614.0,Swords Dance,189.0,2
+614.0,Earthquake,181.0,3
+614.0,Close Combat,113.0,4
+615.0,Freeze-Dry,1043.0,1
+615.0,Rapid Spin,681.0,2
+615.0,Recover,557.0,3
+615.0,Ice Beam,337.0,4
+618.0,Discharge,1.0,1
+618.0,Stealth Rock,1.0,2
+618.0,Thunder Wave,1.0,3
+619.0,Fake Out,17.0,1
+619.0,Knock Off,17.0,2
+619.0,U-turn,17.0,3
+619.0,Close Combat,15.0,4
+620.0,U-turn,873.0,1
+620.0,Close Combat,774.0,2
+620.0,Knock Off,584.0,3
+620.0,Triple Axel,308.0,4
+622.0,Earthquake,7.0,1
+622.0,Poltergeist,3.0,2
+622.0,Drain Punch,2.0,3
+622.0,Dynamic Punch,1.0,4
+623.0,Poltergeist,417.0,1
+623.0,Earthquake,365.0,2
+623.0,Dynamic Punch,248.0,3
+623.0,Stealth Rock,156.0,4
+624.0,Sucker Punch,42.0,1
+624.0,Iron Head,27.0,2
+624.0,Night Slash,20.0,3
+624.0,Stealth Rock,19.0,4
+625.0,Sucker Punch,939.0,1
+625.0,Iron Head,720.0,2
+625.0,Swords Dance,656.0,3
+625.0,Throat Chop,427.0,4
+627.0,Brave Bird,7.0,1
+627.0,Agility,6.0,2
+627.0,U-turn,4.0,3
+627.0,Close Combat,3.0,4
+628.0,Brave Bird,413.0,1
+628.0,U-turn,237.0,2
+628.0,Roost,164.0,3
+628.0,Close Combat,146.0,4
+628.001,Esper Wing,278.0,1
+628.001,Hurricane,265.0,2
+628.001,Psychic,225.0,3
+628.001,Roost,151.0,4
+629.0,Roost,85.0,1
+629.0,Knock Off,74.0,2
+629.0,U-turn,64.0,3
+629.0,Defog,52.0,4
+630.0,U-turn,2111.0,1
+630.0,Roost,2006.0,2
+630.0,Foul Play,1537.0,3
+630.0,Defog,1109.0,4
+632.0,First Impression,1.0,1
+632.0,Hone Claws,1.0,2
+632.0,Iron Head,1.0,3
+632.0,Rock Slide,1.0,4
+634.0,Crunch,16.0,1
+634.0,Outrage,7.0,2
+634.0,Thunder Wave,6.0,3
+634.0,Dragon Tail,4.0,4
+635.0,Dark Pulse,1066.0,1
+635.0,Draco Meteor,1002.0,2
+635.0,U-turn,703.0,3
+635.0,Flash Cannon,332.0,4
+636.0,Flare Blitz,6.0,1
+636.0,Flame Charge,4.0,2
+636.0,U-turn,4.0,3
+636.0,Flamethrower,2.0,4
+637.0,Quiver Dance,1463.0,1
+637.0,Fiery Dance,1022.0,2
+637.0,Bug Buzz,617.0,3
+637.0,Giga Drain,476.0,4
+638.0,Volt Switch,646.0,1
+638.0,Stealth Rock,645.0,2
+638.0,Body Press,595.0,3
+638.0,Iron Head,328.0,4
+639.0,Close Combat,429.0,1
+639.0,Stone Edge,332.0,2
+639.0,Earthquake,255.0,3
+639.0,Swords Dance,103.0,4
+640.0,Leaf Blade,129.0,1
+640.0,Close Combat,128.0,2
+640.0,Swords Dance,97.0,3
+640.0,Stone Edge,71.0,4
+641.0,Bleakwind Storm,496.0,1
+641.0,U-turn,387.0,2
+641.0,Tailwind,245.0,3
+641.0,Knock Off,231.0,4
+641.001,U-turn,4502.0,1
+641.001,Bleakwind Storm,3917.0,2
+641.001,Knock Off,2445.0,3
+641.001,Heat Wave,1412.0,4
+642.0,Thunderbolt,930.0,1
+642.0,Thunder Wave,912.0,2
+642.0,Volt Switch,659.0,3
+642.0,U-turn,618.0,4
+642.001,Thunderbolt,1632.0,1
+642.001,Volt Switch,1300.0,2
+642.001,Nasty Plot,576.0,3
+642.001,Focus Blast,560.0,4
+643.0,Blue Flare,122.0,1
+643.0,Draco Meteor,67.0,2
+643.0,Earth Power,46.0,3
+643.0,Dragon Dance,33.0,4
+644.0,Dragon Dance,83.0,1
+644.0,Bolt Strike,81.0,2
+644.0,Dragon Claw,58.0,3
+644.0,Fusion Bolt,27.0,4
+645.0,Earth Power,2841.0,1
+645.0,U-turn,1330.0,2
+645.0,Sludge Wave,1323.0,3
+645.0,Psychic,819.0,4
+645.001,U-turn,5191.0,1
+645.001,Earthquake,4457.0,2
+645.001,Stealth Rock,3150.0,3
+645.001,Stone Edge,1072.0,4
+646.0,Freeze-Dry,1923.0,1
+646.0,Earth Power,1573.0,2
+646.0,Ice Beam,1247.0,3
+646.0,Dragon Dance,952.0,4
+646.001,Icicle Spear,179.0,1
+646.001,Fusion Bolt,124.0,2
+646.001,Scale Shot,119.0,3
+646.001,Dragon Dance,110.0,4
+646.002,Freeze-Dry,146.0,1
+646.002,Ice Beam,86.0,2
+646.002,Draco Meteor,74.0,3
+646.002,Fusion Flare,68.0,4
+647.0,Surf,796.0,1
+647.0,Vacuum Wave,448.0,2
+647.0,Calm Mind,415.0,3
+647.0,Tera Blast,306.0,4
+647.001,Secret Sword,1406.0,1
+647.001,Surf,1397.0,2
+647.001,Flip Turn,685.0,3
+647.001,Vacuum Wave,635.0,4
+648.0,U-turn,341.0,1
+648.0,Psychic,328.0,2
+648.0,Relic Song,317.0,3
+648.0,Hyper Voice,280.0,4
+650.0,Spikes,6.0,1
+650.0,Leech Seed,5.0,2
+650.0,Synthesis,3.0,3
+650.0,Brick Break,2.0,4
+651.0,Spikes,52.0,1
+651.0,Synthesis,43.0,2
+651.0,Super Fang,32.0,3
+651.0,Leech Seed,27.0,4
+652.0,Body Press,425.0,1
+652.0,Knock Off,393.0,2
+652.0,Spikes,335.0,3
+652.0,Leech Seed,320.0,4
+653.0,Flamethrower,8.0,1
+653.0,Calm Mind,3.0,2
+653.0,Flame Charge,2.0,3
+653.0,Solar Beam,2.0,4
+654.0,Flamethrower,18.0,1
+654.0,Tera Blast,11.0,2
+654.0,Psyshock,5.0,3
+654.0,Encore,4.0,4
+655.0,Flamethrower,393.0,1
+655.0,Psyshock,242.0,2
+655.0,Psychic,208.0,3
+655.0,Fire Blast,165.0,4
+656.0,Hydro Pump,5.0,1
+656.0,Surf,5.0,2
+656.0,Ice Beam,4.0,3
+656.0,Grass Knot,3.0,4
+657.0,U-turn,44.0,1
+657.0,Surf,38.0,2
+657.0,Spikes,30.0,3
+657.0,Ice Beam,26.0,4
+658.0,Dark Pulse,2463.0,1
+658.0,Ice Beam,1859.0,2
+658.0,Surf,1824.0,3
+658.0,U-turn,1663.0,4
+661.0,Tailwind,4.0,1
+661.0,Acrobatics,3.0,2
+661.0,Defog,2.0,3
+661.0,Flame Charge,2.0,4
+662.0,Brave Bird,35.0,1
+662.0,U-turn,26.0,2
+662.0,Will-O-Wisp,24.0,3
+662.0,Roost,18.0,4
+663.0,U-turn,1495.0,1
+663.0,Brave Bird,1228.0,2
+663.0,Roost,986.0,3
+663.0,Will-O-Wisp,789.0,4
+665.0,Poison Powder,1.0,1
+666.0,Quiver Dance,56.0,1
+666.0,Sleep Powder,56.0,2
+666.0,Hurricane,54.0,3
+666.0,Bug Buzz,16.0,4
+666.001,Sleep Powder,13.0,1
+666.001,Hurricane,9.0,2
+666.001,Quiver Dance,8.0,3
+666.001,Giga Drain,2.0,4
+666.002,Sleep Powder,7.0,1
+666.002,Quiver Dance,6.0,2
+666.002,Hurricane,4.0,3
+666.002,Bug Buzz,3.0,4
+667.0,Hyper Voice,7.0,1
+667.0,Flamethrower,5.0,2
+667.0,Trailblaze,3.0,3
+667.0,Overheat,2.0,4
+668.0,Hyper Voice,108.0,1
+668.0,Flamethrower,104.0,2
+668.0,Fire Blast,37.0,3
+668.0,Overheat,37.0,4
+670.0,Moonblast,18.0,1
+670.0,Calm Mind,11.0,2
+670.0,Psychic,8.0,3
+670.0,Synthesis,7.0,4
+670.001,Moonblast,5.0,1
+670.001,Giga Drain,1.0,2
+670.001,Trailblaze,1.0,3
+671.0,Moonblast,1223.0,1
+671.0,Wish,638.0,2
+671.0,Calm Mind,426.0,3
+671.0,Protect,384.0,4
+672.0,Horn Leech,5.0,1
+672.0,Bulk Up,2.0,2
+672.0,Rock Slide,2.0,3
+672.0,Milk Drink,1.0,4
+673.0,Horn Leech,117.0,1
+673.0,Bulk Up,86.0,2
+673.0,Earthquake,80.0,3
+673.0,Leech Seed,49.0,4
+677.0,Fake Out,5.0,1
+677.0,Trick,4.0,2
+677.0,Trick Room,4.0,3
+677.0,Psychic,3.0,4
+678.0,Reflect,239.0,1
+678.0,Light Screen,207.0,2
+678.0,Thunder Wave,162.0,3
+678.0,Alluring Voice,49.0,4
+678.002,Psychic,19.0,1
+678.002,Alluring Voice,13.0,2
+678.002,Dark Pulse,9.0,3
+678.002,Psyshock,8.0,4
+681.0,Iron Head,1.0,1
+681.0,King's Shield,1.0,2
+681.0,Shadow Claw,1.0,3
+685.0,Endeavor,1.0,1
+685.0,Yawn,1.0,2
+686.0,Trick Room,3.0,1
+686.0,Knock Off,2.0,2
+686.0,Destiny Bond,1.0,3
+686.0,Superpower,1.0,4
+687.0,Superpower,277.0,1
+687.0,Knock Off,181.0,2
+687.0,Psycho Cut,76.0,3
+687.0,Rest,43.0,4
+690.0,Flip Turn,10.0,1
+690.0,Sludge Wave,4.0,2
+690.0,Toxic Spikes,3.0,3
+690.0,Gunk Shot,2.0,4
+691.0,Flip Turn,809.0,1
+691.0,Draco Meteor,714.0,2
+691.0,Sludge Bomb,344.0,3
+691.0,Sludge Wave,323.0,4
+692.0,Water Pulse,7.0,1
+692.0,Aqua Jet,3.0,2
+692.0,Flip Turn,3.0,3
+692.0,U-turn,2.0,4
+693.0,Water Pulse,186.0,1
+693.0,Aura Sphere,101.0,2
+693.0,Dragon Pulse,101.0,3
+693.0,Dark Pulse,89.0,4
+699.0,Ancient Power,1.0,1
+699.0,Stealth Rock,1.0,2
+700.0,Hyper Voice,2770.0,1
+700.0,Wish,1828.0,2
+700.0,Protect,1226.0,3
+700.0,Calm Mind,673.0,4
+701.0,Acrobatics,918.0,1
+701.0,Swords Dance,892.0,2
+701.0,Close Combat,849.0,3
+701.0,Brave Bird,195.0,4
+702.0,Nuzzle,55.0,1
+702.0,Volt Switch,39.0,2
+702.0,Dazzling Gleam,36.0,3
+702.0,Super Fang,31.0,4
+703.0,Stealth Rock,214.0,1
+703.0,Body Press,168.0,2
+703.0,Spikes,125.0,3
+703.0,Moonblast,100.0,4
+704.0,Draco Meteor,2.0,1
+704.0,Protect,2.0,2
+704.0,Dragon Breath,1.0,3
+704.0,Thunderbolt,1.0,4
+705.0,Toxic,16.0,1
+705.0,Dragon Pulse,10.0,2
+705.0,Rest,10.0,3
+705.0,Sludge Bomb,7.0,4
+705.001,Draco Meteor,68.0,1
+705.001,Rest,55.0,2
+705.001,Flash Cannon,52.0,3
+705.001,Ice Beam,44.0,4
+706.0,Draco Meteor,446.0,1
+706.0,Knock Off,332.0,2
+706.0,Ice Beam,234.0,3
+706.0,Flamethrower,204.0,4
+706.001,Draco Meteor,1099.0,1
+706.001,Knock Off,750.0,2
+706.001,Flash Cannon,694.0,3
+706.001,Dragon Tail,644.0,4
+707.0,Thunder Wave,1581.0,1
+707.0,Spikes,1493.0,2
+707.0,Reflect,1441.0,3
+707.0,Light Screen,1331.0,4
+708.0,Leech Seed,2.0,1
+708.0,Pain Split,2.0,2
+708.0,Protect,2.0,3
+708.0,Giga Drain,1.0,4
+709.0,Poltergeist,136.0,1
+709.0,Leech Seed,133.0,2
+709.0,Horn Leech,115.0,3
+709.0,Will-O-Wisp,78.0,4
+712.0,Avalanche,8.0,1
+712.0,Rapid Spin,5.0,2
+712.0,Recover,5.0,3
+712.0,Rock Slide,2.0,4
+713.0,Body Press,612.0,1
+713.0,Recover,507.0,2
+713.0,Rapid Spin,410.0,3
+713.0,Avalanche,267.0,4
+713.001,Body Press,467.0,1
+713.001,Recover,407.0,2
+713.001,Rapid Spin,393.0,3
+713.001,Stealth Rock,312.0,4
+714.0,Hurricane,3.0,1
+714.0,Draco Meteor,1.0,2
+714.0,Dragon Pulse,1.0,3
+714.0,Heat Wave,1.0,4
+715.0,U-turn,1100.0,1
+715.0,Draco Meteor,975.0,2
+715.0,Hurricane,647.0,3
+715.0,Boomburst,486.0,4
+718.0,Thousand Arrows,10.0,1
+718.0,Dragon Dance,8.0,2
+718.0,Substitute,7.0,3
+718.0,Glare,6.0,4
+719.0,Moonblast,1069.0,1
+719.0,Diamond Storm,1030.0,2
+719.0,Stealth Rock,609.0,3
+719.0,Earth Power,469.0,4
+720.0,Shadow Ball,438.0,1
+720.0,Psychic,144.0,2
+720.0,Psyshock,117.0,3
+720.0,Tera Blast,111.0,4
+720.001,Knock Off,509.0,1
+720.001,Hyperspace Fury,460.0,2
+720.001,Drain Punch,389.0,3
+720.001,Dark Pulse,360.0,4
+721.0,Steam Eruption,2100.0,1
+721.0,Flamethrower,1026.0,2
+721.0,Earth Power,704.0,3
+721.0,Sludge Bomb,388.0,4
+722.0,Brave Bird,1.0,1
+722.0,Energy Ball,1.0,2
+722.0,Leaf Blade,1.0,3
+722.0,Roost,1.0,4
+723.0,Knock Off,12.0,1
+723.0,Roost,12.0,2
+723.0,Baton Pass,10.0,3
+723.0,Brave Bird,7.0,4
+724.0,U-turn,557.0,1
+724.0,Roost,331.0,2
+724.0,Leaf Blade,316.0,3
+724.0,Spirit Shackle,307.0,4
+724.001,Triple Arrows,528.0,1
+724.001,U-turn,289.0,2
+724.001,Knock Off,197.0,3
+724.001,Leaf Blade,171.0,4
+725.0,Parting Shot,10.0,1
+725.0,Fake Out,8.0,2
+725.0,Flare Blitz,4.0,3
+725.0,Will-O-Wisp,3.0,4
+726.0,Parting Shot,78.0,1
+726.0,Will-O-Wisp,47.0,2
+726.0,Flare Blitz,28.0,3
+726.0,Fake Out,27.0,4
+727.0,Knock Off,1810.0,1
+727.0,Parting Shot,1135.0,2
+727.0,Flare Blitz,891.0,3
+727.0,U-turn,569.0,4
+728.0,Hyper Voice,1.0,1
+729.0,Flip Turn,20.0,1
+729.0,Surf,9.0,2
+729.0,Ice Beam,8.0,3
+729.0,Hyper Voice,6.0,4
+730.0,Moonblast,3595.0,1
+730.0,Flip Turn,2376.0,2
+730.0,Surf,1864.0,3
+730.0,Psychic Noise,1066.0,4
+731.0,Brave Bird,9.0,1
+731.0,Bullet Seed,6.0,2
+731.0,U-turn,5.0,3
+731.0,Dual Wingbeat,2.0,4
+732.0,Brave Bird,27.0,1
+732.0,U-turn,21.0,2
+732.0,Knock Off,12.0,3
+732.0,Bullet Seed,11.0,4
+733.0,Beak Blast,41.0,1
+733.0,Rock Blast,38.0,2
+733.0,Bullet Seed,28.0,3
+733.0,Knock Off,23.0,4
+734.0,Seed Bomb,1.0,1
+735.0,Double-Edge,22.0,1
+735.0,Knock Off,13.0,2
+735.0,Earthquake,11.0,3
+735.0,U-turn,10.0,4
+736.0,Sticky Web,8.0,1
+736.0,Thunder Wave,4.0,2
+736.0,Volt Switch,4.0,3
+736.0,Lunge,2.0,4
+737.0,Sticky Web,178.0,1
+737.0,Volt Switch,94.0,2
+737.0,Thunder Wave,88.0,3
+737.0,Lunge,70.0,4
+738.0,Sticky Web,1220.0,1
+738.0,Volt Switch,1161.0,2
+738.0,Bug Buzz,913.0,3
+738.0,Thunderbolt,490.0,4
+739.0,Drain Punch,14.0,1
+739.0,Knock Off,7.0,2
+739.0,Bulk Up,6.0,3
+739.0,Ice Punch,5.0,4
+740.0,Ice Hammer,64.0,1
+740.0,Drain Punch,53.0,2
+740.0,Knock Off,28.0,3
+740.0,Close Combat,20.0,4
+741.0,Quiver Dance,236.0,1
+741.0,Revelation Dance,224.0,2
+741.0,Hurricane,95.0,3
+741.0,Air Slash,92.0,4
+741.001,Quiver Dance,279.0,1
+741.001,Revelation Dance,214.0,2
+741.001,Hurricane,116.0,3
+741.001,Roost,112.0,4
+741.003,Revelation Dance,185.0,1
+741.003,Quiver Dance,177.0,2
+741.003,Roost,69.0,3
+741.003,Air Slash,66.0,4
+742.0,Sticky Web,153.0,1
+742.0,Stun Spore,61.0,2
+742.0,Moonblast,55.0,3
+742.0,U-turn,50.0,4
+743.0,Moonblast,1635.0,1
+743.0,Sticky Web,1550.0,2
+743.0,U-turn,583.0,3
+743.0,Stun Spore,519.0,4
+744.0,Stealth Rock,2.0,1
+744.0,Endeavor,1.0,2
+745.0,Accelerock,303.0,1
+745.0,Close Combat,226.0,2
+745.0,Stone Edge,185.0,3
+745.0,Stealth Rock,128.0,4
+745.001,Stone Edge,134.0,1
+745.001,Close Combat,40.0,2
+745.001,Stealth Rock,35.0,3
+745.001,Knock Off,30.0,4
+745.002,Accelerock,851.0,1
+745.002,Close Combat,568.0,2
+745.002,Stone Edge,279.0,3
+745.002,Swords Dance,184.0,4
+747.0,Toxic,45.0,1
+747.0,Recover,41.0,2
+747.0,Toxic Spikes,31.0,3
+747.0,Surf,29.0,4
+748.0,Toxic,1401.0,1
+748.0,Recover,1328.0,2
+748.0,Baneful Bunker,900.0,3
+748.0,Toxic Spikes,792.0,4
+749.0,Earthquake,53.0,1
+749.0,Stealth Rock,47.0,2
+749.0,Roar,15.0,3
+749.0,Stone Edge,12.0,4
+750.0,Earthquake,733.0,1
+750.0,Stealth Rock,643.0,2
+750.0,Body Press,483.0,3
+750.0,Roar,201.0,4
+751.0,Sticky Web,51.0,1
+751.0,Surf,23.0,2
+751.0,Endeavor,19.0,3
+751.0,Infestation,8.0,4
+752.0,Liquidation,1878.0,1
+752.0,Sticky Web,1837.0,2
+752.0,Leech Life,787.0,3
+752.0,Surf,452.0,4
+753.0,Superpower,2.0,1
+753.0,Leaf Blade,1.0,2
+753.0,Leaf Storm,1.0,3
+754.0,Superpower,287.0,1
+754.0,Leaf Storm,179.0,2
+754.0,Knock Off,103.0,3
+754.0,Synthesis,86.0,4
+757.0,Flamethrower,10.0,1
+757.0,Toxic,6.0,2
+757.0,Flame Charge,3.0,3
+757.0,Knock Off,3.0,4
+758.0,Toxic,585.0,1
+758.0,Flamethrower,466.0,2
+758.0,Sludge Wave,306.0,3
+758.0,Substitute,279.0,4
+761.0,Endure,1.0,1
+761.0,Light Screen,1.0,2
+762.0,Grass Knot,1.0,1
+762.0,Healing Wish,1.0,2
+762.0,Rapid Spin,1.0,3
+762.0,Reflect,1.0,4
+763.0,U-turn,1217.0,1
+763.0,Knock Off,1150.0,2
+763.0,Rapid Spin,1127.0,3
+763.0,Power Whip,888.0,4
+764.0,Draining Kiss,1780.0,1
+764.0,Calm Mind,1243.0,2
+764.0,Giga Drain,505.0,3
+764.0,Tera Blast,331.0,4
+765.0,Trick Room,15.0,1
+765.0,Shadow Ball,14.0,2
+765.0,Psychic,13.0,3
+765.0,Psyshock,9.0,4
+766.0,Close Combat,129.0,1
+766.0,U-turn,112.0,2
+766.0,Knock Off,101.0,3
+766.0,Earthquake,43.0,4
+769.0,Stealth Rock,18.0,1
+769.0,Earth Power,17.0,2
+769.0,Shore Up,17.0,3
+769.0,Shadow Ball,5.0,4
+770.0,Stealth Rock,374.0,1
+770.0,Shore Up,305.0,2
+770.0,Shadow Ball,290.0,3
+770.0,Earth Power,267.0,4
+774.0,Shell Smash,253.0,1
+774.0,Acrobatics,136.0,2
+774.0,Earthquake,87.0,3
+774.0,Stone Edge,42.0,4
+775.0,Knock Off,433.0,1
+775.0,Rapid Spin,380.0,2
+775.0,U-turn,352.0,3
+775.0,Earthquake,152.0,4
+778.0,Play Rough,1262.0,1
+778.0,Swords Dance,1062.0,2
+778.0,Shadow Sneak,1006.0,3
+778.0,Shadow Claw,686.0,4
+779.0,Flip Turn,110.0,1
+779.0,Psychic Fangs,108.0,2
+779.0,Wave Crash,70.0,3
+779.0,Aqua Jet,43.0,4
+782.0,Dragon Claw,1.0,1
+782.0,Dragon Dance,1.0,2
+783.0,Drain Punch,17.0,1
+783.0,Dragon Dance,16.0,2
+783.0,Earthquake,9.0,3
+783.0,Dragon Claw,7.0,4
+784.0,Clangorous Soul,602.0,1
+784.0,Clanging Scales,337.0,2
+784.0,Drain Punch,294.0,3
+784.0,Boomburst,215.0,4
+785.0,Dazzling Gleam,13.0,1
+785.0,Thunderbolt,11.0,2
+785.0,U-turn,7.0,3
+785.0,Roost,6.0,4
+786.0,Moonblast,11.0,1
+786.0,Psychic,8.0,2
+786.0,Psyshock,3.0,3
+787.0,High Horsepower,6.0,1
+787.0,Horn Leech,6.0,2
+787.0,Dazzling Gleam,5.0,3
+787.0,Synthesis,3.0,4
+788.0,Moonblast,7.0,1
+788.0,Ice Beam,3.0,2
+788.0,Knock Off,3.0,3
+788.0,Blizzard,2.0,4
+789.0,Teleport,5.0,1
+790.0,Teleport,24.0,1
+790.0,Cosmic Power,6.0,2
+790.0,Splash,2.0,3
+791.0,Sunsteel Strike,200.0,1
+791.0,Knock Off,100.0,2
+791.0,Earthquake,94.0,3
+791.0,Psychic Fangs,87.0,4
+792.0,Moongeist Beam,227.0,1
+792.0,Moonblast,93.0,2
+792.0,Agility,67.0,3
+792.0,Moonlight,63.0,4
+793.0,Meteor Beam,11.0,1
+793.0,Power Gem,10.0,2
+793.0,Sludge Bomb,5.0,3
+793.0,Sludge Wave,3.0,4
+794.0,Bulk Up,3.0,1
+794.0,Drain Punch,2.0,2
+794.0,Poison Jab,2.0,3
+794.0,Roost,2.0,4
+796.0,Dazzling Gleam,2.0,1
+796.0,Volt Switch,1.0,2
+797.0,Heavy Slam,1.0,1
+797.0,Leech Seed,1.0,2
+797.0,Protect,1.0,3
+798.0,Leaf Blade,2.0,1
+798.0,Smart Strike,1.0,2
+800.0,Photon Geyser,1331.0,1
+800.0,Dragon Dance,743.0,2
+800.0,Calm Mind,399.0,3
+800.0,Moonlight,343.0,4
+800.001,Sunsteel Strike,61.0,1
+800.001,Dragon Dance,54.0,2
+800.001,Photon Geyser,41.0,3
+800.001,Earthquake,38.0,4
+800.002,Moongeist Beam,126.0,1
+800.002,Photon Geyser,66.0,2
+800.002,Trick Room,42.0,3
+800.002,Earth Power,28.0,4
+801.0,Volt Switch,180.0,1
+801.0,Fleur Cannon,173.0,2
+801.0,Draining Kiss,123.0,3
+801.0,Calm Mind,115.0,4
+801.001,Shift Gear,4.0,1
+801.001,Draining Kiss,3.0,2
+801.001,Calm Mind,2.0,3
+801.001,Stored Power,2.0,4
+804.0,Fire Blast,1.0,1
+804.0,U-turn,1.0,2
+805.0,Body Press,1.0,1
+805.0,Gyro Ball,1.0,2
+807.0,Plasma Fists,6.0,1
+807.0,Close Combat,5.0,2
+807.0,Power-Up Punch,5.0,3
+807.0,Bulk Up,2.0,4
+810.0,U-turn,23.0,1
+810.0,Grassy Glide,20.0,2
+810.0,Knock Off,19.0,3
+810.0,Wood Hammer,12.0,4
+811.0,U-turn,357.0,1
+811.0,Grassy Glide,302.0,2
+811.0,Knock Off,283.0,3
+811.0,Wood Hammer,118.0,4
+812.0,Grassy Glide,3169.0,1
+812.0,U-turn,2795.0,2
+812.0,Knock Off,2189.0,3
+812.0,Wood Hammer,1476.0,4
+813.0,U-turn,4.0,1
+813.0,Flare Blitz,2.0,2
+813.0,High Jump Kick,2.0,3
+813.0,Shadow Ball,1.0,4
+814.0,U-turn,43.0,1
+814.0,Flare Blitz,40.0,2
+814.0,High Jump Kick,23.0,3
+814.0,Sucker Punch,21.0,4
+815.0,Pyro Ball,4036.0,1
+815.0,U-turn,3926.0,2
+815.0,Sucker Punch,955.0,3
+815.0,Court Change,883.0,4
+816.0,U-turn,4.0,1
+816.0,Light Screen,2.0,2
+816.0,Chilling Water,1.0,3
+816.0,Reflect,1.0,4
+817.0,Surf,25.0,1
+817.0,U-turn,25.0,2
+817.0,Tera Blast,17.0,3
+817.0,Hydro Pump,3.0,4
+818.0,Snipe Shot,439.0,1
+818.0,Ice Beam,365.0,2
+818.0,U-turn,298.0,3
+818.0,Surf,210.0,4
+820.0,Body Slam,47.0,1
+820.0,Knock Off,45.0,2
+820.0,Earthquake,40.0,3
+820.0,Swords Dance,36.0,4
+821.0,Defog,4.0,1
+821.0,Taunt,2.0,2
+821.0,U-turn,2.0,3
+821.0,Hone Claws,1.0,4
+822.0,U-turn,15.0,1
+822.0,Brave Bird,14.0,2
+822.0,Roost,9.0,3
+822.0,Defog,7.0,4
+823.0,U-turn,5110.0,1
+823.0,Roost,3943.0,2
+823.0,Brave Bird,2632.0,3
+823.0,Body Press,2431.0,4
+830.0,Leaf Storm,1.0,1
+830.0,Leech Seed,1.0,2
+830.0,Light Screen,1.0,3
+833.0,Shell Smash,7.0,1
+833.0,Liquidation,6.0,2
+833.0,Crunch,4.0,3
+833.0,Poison Jab,2.0,4
+834.0,Shell Smash,189.0,1
+834.0,Liquidation,171.0,2
+834.0,Earthquake,60.0,3
+834.0,Crunch,52.0,4
+838.0,Stealth Rock,95.0,1
+838.0,Will-O-Wisp,57.0,2
+838.0,Rapid Spin,51.0,3
+838.0,Spikes,41.0,4
+839.0,Stealth Rock,683.0,1
+839.0,Rapid Spin,640.0,2
+839.0,Flamethrower,402.0,3
+839.0,Will-O-Wisp,320.0,4
+840.0,Defense Curl,1.0,1
+840.0,Pounce,1.0,2
+840.0,Sucker Punch,1.0,3
+841.0,Dragon Dance,85.0,1
+841.0,Grav Apple,85.0,2
+841.0,Outrage,56.0,3
+841.0,Tera Blast,44.0,4
+842.0,Apple Acid,428.0,1
+842.0,Recover,309.0,2
+842.0,Leech Seed,292.0,3
+842.0,Dragon Tail,126.0,4
+843.0,Coil,3.0,1
+843.0,Glare,3.0,2
+843.0,Stealth Rock,3.0,3
+843.0,Earthquake,1.0,4
+844.0,Earthquake,573.0,1
+844.0,Glare,466.0,2
+844.0,Stealth Rock,425.0,3
+844.0,Coil,212.0,4
+845.0,Surf,304.0,1
+845.0,Roost,99.0,2
+845.0,Defog,60.0,3
+845.0,Hurricane,54.0,4
+846.0,Aqua Jet,2.0,1
+846.0,Liquidation,2.0,2
+846.0,Drill Run,1.0,3
+846.0,Flip Turn,1.0,4
+847.0,Flip Turn,902.0,1
+847.0,Liquidation,886.0,2
+847.0,Close Combat,468.0,3
+847.0,Aqua Jet,162.0,4
+849.0,Boomburst,552.0,1
+849.0,Overdrive,334.0,2
+849.0,Shift Gear,243.0,3
+849.0,Volt Switch,192.0,4
+849.001,Boomburst,30.0,1
+849.001,Volt Switch,16.0,2
+849.001,Overdrive,14.0,3
+849.001,Sludge Wave,7.0,4
+854.0,Shadow Ball,2.0,1
+854.0,Dark Pulse,1.0,2
+854.0,Endure,1.0,3
+854.0,Nasty Plot,1.0,4
+855.0,Shell Smash,392.0,1
+855.0,Shadow Ball,335.0,2
+855.0,Stored Power,162.0,3
+855.0,Strength Sap,90.0,4
+856.0,Metronome,2.0,1
+856.0,Nuzzle,2.0,2
+856.0,Psychic,2.0,3
+856.0,Attract,1.0,4
+857.0,Nuzzle,90.0,1
+857.0,Healing Wish,41.0,2
+857.0,Psychic,41.0,3
+857.0,Mystical Fire,31.0,4
+858.0,Draining Kiss,1552.0,1
+858.0,Nuzzle,1195.0,2
+858.0,Calm Mind,944.0,3
+858.0,Mystical Fire,816.0,4
+859.0,Reflect,48.0,1
+859.0,Parting Shot,39.0,2
+859.0,Light Screen,37.0,3
+859.0,Thunder Wave,23.0,4
+860.0,Parting Shot,304.0,1
+860.0,Reflect,293.0,2
+860.0,Light Screen,263.0,3
+860.0,Thunder Wave,180.0,4
+861.0,Parting Shot,2228.0,1
+861.0,Reflect,2147.0,2
+861.0,Light Screen,1980.0,3
+861.0,Spirit Break,1196.0,4
+863.0,Knock Off,175.0,1
+863.0,Iron Head,162.0,2
+863.0,U-turn,157.0,3
+863.0,Stealth Rock,94.0,4
+869.0,Calm Mind,232.0,1
+869.0,Draining Kiss,173.0,2
+869.0,Acid Armor,141.0,3
+869.0,Recover,80.0,4
+870.0,No Retreat,189.0,1
+870.0,Close Combat,154.0,2
+870.0,Knock Off,111.0,3
+870.0,Iron Head,40.0,4
+871.0,Spikes,252.0,1
+871.0,Scald,164.0,2
+871.0,Discharge,146.0,3
+871.0,Memento,144.0,4
+872.0,Protect,4.0,1
+872.0,Mirror Coat,3.0,2
+872.0,Icy Wind,1.0,3
+872.0,Lunge,1.0,4
+873.0,Quiver Dance,493.0,1
+873.0,Ice Beam,402.0,2
+873.0,Tera Blast,208.0,3
+873.0,Giga Drain,169.0,4
+874.0,Stone Edge,15.0,1
+874.0,Heat Crash,13.0,2
+874.0,Earthquake,11.0,3
+874.0,Rock Polish,10.0,4
+875.0,Belly Drum,137.0,1
+875.0,Ice Spinner,81.0,2
+875.0,Liquidation,53.0,3
+875.0,Flip Turn,33.0,4
+876.0,Expanding Force,829.0,1
+876.0,Dazzling Gleam,236.0,2
+876.0,Healing Wish,143.0,3
+876.0,Encore,116.0,4
+876.002,Psychic,157.0,1
+876.002,Reflect,125.0,2
+876.002,Healing Wish,121.0,3
+876.002,Light Screen,116.0,4
+877.0,Aura Wheel,260.0,1
+877.0,Knock Off,167.0,2
+877.0,Parting Shot,146.0,3
+877.0,Rapid Spin,97.0,4
+878.0,Iron Head,11.0,1
+878.0,Earthquake,9.0,2
+878.0,Stealth Rock,5.0,3
+878.0,Heavy Slam,4.0,4
+879.0,Knock Off,232.0,1
+879.0,Stealth Rock,204.0,2
+879.0,Heavy Slam,194.0,3
+879.0,Iron Head,177.0,4
+881.0,Bolt Beak,1.0,1
+882.0,Fishious Rend,19.0,1
+882.0,Crunch,4.0,2
+882.0,Outrage,3.0,3
+884.0,Stealth Rock,429.0,1
+884.0,Draco Meteor,407.0,2
+884.0,Body Press,314.0,3
+884.0,Flash Cannon,300.0,4
+885.0,Draco Meteor,2.0,1
+885.0,Baton Pass,1.0,2
+885.0,Sucker Punch,1.0,3
+885.0,Tera Blast,1.0,4
+886.0,U-turn,44.0,1
+886.0,Draco Meteor,36.0,2
+886.0,Will-O-Wisp,36.0,3
+886.0,Thunder Wave,26.0,4
+887.0,U-turn,2900.0,1
+887.0,Shadow Ball,1857.0,2
+887.0,Dragon Darts,1798.0,3
+887.0,Draco Meteor,1689.0,4
+888.0,Play Rough,227.0,1
+888.0,Swords Dance,88.0,2
+888.0,Close Combat,74.0,3
+888.0,Crunch,71.0,4
+889.0,Close Combat,326.0,1
+889.0,Body Press,289.0,2
+889.0,Crunch,270.0,3
+889.0,Iron Defense,214.0,4
+890.0,Dynamax Cannon,106.0,1
+890.0,Flamethrower,40.0,2
+890.0,Meteor Beam,30.0,3
+890.0,Recover,30.0,4
+890.001,Dynamax Cannon,1.0,1
+890.001,Flamethrower,1.0,2
+891.0,U-turn,17.0,1
+891.0,Close Combat,15.0,2
+891.0,Ice Punch,6.0,3
+891.0,Iron Head,3.0,4
+892.0,Wicked Blow,2665.0,1
+892.0,Close Combat,1299.0,2
+892.0,U-turn,1109.0,3
+892.0,Sucker Punch,850.0,4
+892.001,Surging Strikes,3174.0,1
+892.001,Close Combat,1336.0,2
+892.001,U-turn,1273.0,3
+892.001,Aqua Jet,718.0,4
+893.0,Knock Off,2385.0,1
+893.0,Bulk Up,900.0,2
+893.0,Tera Blast,815.0,3
+893.0,Power Whip,782.0,4
+893.001,Knock Off,468.0,1
+893.001,Power Whip,167.0,2
+893.001,Bulk Up,165.0,3
+893.001,Tera Blast,163.0,4
+894.0,Volt Switch,1618.0,1
+894.0,Thunderbolt,983.0,2
+894.0,Rapid Spin,915.0,3
+894.0,Reflect,715.0,4
+895.0,Dragon Energy,338.0,1
+895.0,Dragon Dance,209.0,2
+895.0,Draco Meteor,164.0,3
+895.0,Earth Power,150.0,4
+896.0,Icicle Crash,783.0,1
+896.0,High Horsepower,521.0,2
+896.0,Tera Blast,295.0,3
+896.0,Close Combat,286.0,4
+897.0,Shadow Ball,1917.0,1
+897.0,Draining Kiss,1013.0,2
+897.0,Substitute,566.0,3
+897.0,Nasty Plot,516.0,4
+898.0,Leech Seed,17.0,1
+898.0,Calm Mind,13.0,2
+898.0,Giga Drain,13.0,3
+898.0,Psychic,9.0,4
+898.001,Glacial Lance,221.0,1
+898.001,Trick Room,136.0,2
+898.001,High Horsepower,70.0,3
+898.001,Close Combat,43.0,4
+898.002,Astral Barrage,11.0,1
+898.002,Nasty Plot,6.0,2
+898.002,Psyshock,5.0,3
+898.002,Substitute,5.0,4
+899.0,Calm Mind,52.0,1
+899.0,Psyshield Bash,51.0,2
+899.0,Earthquake,40.0,3
+899.0,Tera Blast,38.0,4
+900.0,Stone Axe,2082.0,1
+900.0,U-turn,913.0,2
+900.0,X-Scissor,519.0,3
+900.0,Close Combat,361.0,4
+901.0,Facade,1469.0,1
+901.0,Earthquake,773.0,2
+901.0,Headlong Rush,748.0,3
+901.0,Drain Punch,374.0,4
+901.001,Blood Moon,3308.0,1
+901.001,Earth Power,2030.0,2
+901.001,Vacuum Wave,1173.0,3
+901.001,Calm Mind,1056.0,4
+902.0,Wave Crash,447.0,1
+902.0,Flip Turn,385.0,2
+902.0,Aqua Jet,207.0,3
+902.0,Liquidation,109.0,4
+902.001,Shadow Ball,416.0,1
+902.001,Surf,297.0,2
+902.001,Flip Turn,190.0,3
+902.001,Ice Beam,127.0,4
+903.0,Close Combat,3457.0,1
+903.0,Dire Claw,3024.0,2
+903.0,U-turn,1903.0,3
+903.0,Swords Dance,1676.0,4
+904.0,Crunch,1449.0,1
+904.0,Spikes,979.0,2
+904.0,Barb Barrage,911.0,3
+904.0,Gunk Shot,627.0,4
+905.0,Moonblast,3359.0,1
+905.0,Earth Power,1530.0,2
+905.0,Superpower,849.0,3
+905.0,Mystical Fire,610.0,4
+905.001,Moonblast,948.0,1
+905.001,Earth Power,709.0,2
+905.001,Calm Mind,570.0,3
+905.001,Draining Kiss,550.0,4
+906.0,U-turn,4.0,1
+906.0,Petal Blizzard,2.0,2
+906.0,Acrobatics,1.0,3
+906.0,Bite,1.0,4
+907.0,U-turn,24.0,1
+907.0,Sucker Punch,11.0,2
+907.0,Petal Blizzard,10.0,3
+907.0,Play Rough,8.0,4
+908.0,U-turn,5065.0,1
+908.0,Knock Off,4178.0,2
+908.0,Flower Trick,3397.0,3
+908.0,Triple Axel,2703.0,4
+909.0,Slack Off,10.0,1
+909.0,Will-O-Wisp,7.0,2
+909.0,Fire Spin,5.0,3
+909.0,Fire Blast,4.0,4
+910.0,Slack Off,280.0,1
+910.0,Will-O-Wisp,244.0,2
+910.0,Flamethrower,221.0,3
+910.0,Roar,123.0,4
+911.0,Torch Song,2674.0,1
+911.0,Slack Off,1565.0,2
+911.0,Will-O-Wisp,1257.0,3
+911.0,Shadow Ball,721.0,4
+912.0,Liquidation,8.0,1
+912.0,Rapid Spin,8.0,2
+912.0,Brave Bird,7.0,3
+912.0,Roost,7.0,4
+913.0,Flip Turn,111.0,1
+913.0,Roost,79.0,2
+913.0,Rapid Spin,76.0,3
+913.0,Liquidation,23.0,4
+914.0,Aqua Step,3107.0,1
+914.0,Close Combat,1773.0,2
+914.0,Knock Off,800.0,3
+914.0,Rapid Spin,781.0,4
+915.0,Yawn,2.0,1
+915.0,Body Slam,1.0,2
+915.0,Endeavor,1.0,3
+915.0,Protect,1.0,4
+916.0,Body Slam,13.0,1
+916.0,High Horsepower,13.0,2
+916.0,Body Press,9.0,3
+916.0,Stuff Cheeks,8.0,4
+916.001,Body Slam,12.0,1
+916.001,Body Press,7.0,2
+916.001,Yawn,6.0,3
+916.001,Curse,5.0,4
+917.0,Sticky Web,23.0,1
+917.0,First Impression,5.0,2
+917.0,Knock Off,5.0,3
+917.0,Spikes,5.0,4
+918.0,Sticky Web,459.0,1
+918.0,First Impression,189.0,2
+918.0,Knock Off,158.0,3
+918.0,Spikes,147.0,4
+919.0,First Impression,15.0,1
+919.0,U-turn,7.0,2
+919.0,Leech Life,3.0,3
+919.0,Sucker Punch,2.0,4
+920.0,First Impression,1887.0,1
+920.0,U-turn,1462.0,2
+920.0,Knock Off,1299.0,3
+920.0,Sucker Punch,684.0,4
+921.0,Fake Out,1.0,1
+922.0,Mach Punch,11.0,1
+922.0,Knock Off,9.0,2
+922.0,Thunder Punch,8.0,3
+922.0,Volt Switch,7.0,4
+923.0,Close Combat,440.0,1
+923.0,Double Shock,339.0,2
+923.0,Mach Punch,253.0,3
+923.0,Ice Punch,231.0,4
+924.0,Population Bomb,5.0,1
+924.0,U-turn,4.0,2
+924.0,Switcheroo,2.0,3
+924.0,Crunch,1.0,4
+925.0,Population Bomb,645.0,1
+925.0,Tidy Up,433.0,2
+925.0,Bite,136.0,3
+925.0,Encore,96.0,4
+926.0,Play Rough,4.0,1
+926.0,Wish,2.0,2
+926.0,Baton Pass,1.0,3
+926.0,Howl,1.0,4
+927.0,Wish,620.0,1
+927.0,Play Rough,432.0,2
+927.0,Protect,330.0,3
+927.0,Body Press,308.0,4
+929.0,Giga Drain,3.0,1
+929.0,Earth Power,2.0,2
+929.0,Leech Seed,2.0,3
+929.0,Strength Sap,2.0,4
+930.0,Giga Drain,865.0,1
+930.0,Earth Power,765.0,2
+930.0,Strength Sap,697.0,3
+930.0,Leech Seed,583.0,4
+931.0,Brave Bird,67.0,1
+931.0,Facade,41.0,2
+931.0,Parting Shot,39.0,3
+931.0,U-turn,37.0,4
+932.0,Recover,4.0,1
+932.0,Stone Edge,3.0,2
+932.0,Earthquake,2.0,3
+932.0,Stealth Rock,2.0,4
+933.0,Salt Cure,679.0,1
+933.0,Recover,413.0,2
+933.0,Stealth Rock,276.0,3
+933.0,Iron Defense,190.0,4
+934.0,Salt Cure,2297.0,1
+934.0,Recover,1295.0,2
+934.0,Stealth Rock,841.0,3
+934.0,Protect,592.0,4
+935.0,Will-O-Wisp,2.0,1
+935.0,Clear Smog,1.0,2
+935.0,Overheat,1.0,3
+936.0,Armor Cannon,620.0,1
+936.0,Calm Mind,193.0,2
+936.0,Psychic,189.0,3
+936.0,Energy Ball,155.0,4
+937.0,Bitter Blade,1793.0,1
+937.0,Swords Dance,1100.0,2
+937.0,Poltergeist,980.0,3
+937.0,Shadow Sneak,954.0,4
+938.0,Acid Spray,1.0,1
+938.0,Mud Shot,1.0,2
+938.0,Volt Switch,1.0,3
+939.0,Volt Switch,1326.0,1
+939.0,Slack Off,1026.0,2
+939.0,Toxic,875.0,3
+939.0,Muddy Water,375.0,4
+940.0,Hurricane,10.0,1
+940.0,Thunderbolt,6.0,2
+940.0,Volt Switch,5.0,3
+940.0,U-turn,3.0,4
+941.0,Hurricane,1306.0,1
+941.0,Volt Switch,1225.0,2
+941.0,Thunderbolt,1148.0,3
+941.0,U-turn,868.0,4
+942.0,Crunch,4.0,1
+942.0,Trailblaze,2.0,2
+942.0,Destiny Bond,1.0,3
+942.0,Fire Fang,1.0,4
+943.0,Crunch,370.0,1
+943.0,Play Rough,155.0,2
+943.0,Psychic Fangs,70.0,3
+943.0,Destiny Bond,49.0,4
+944.0,Parting Shot,21.0,1
+944.0,Knock Off,14.0,2
+944.0,Encore,8.0,3
+944.0,Endeavor,8.0,4
+945.0,Parting Shot,557.0,1
+945.0,Knock Off,454.0,2
+945.0,Encore,270.0,3
+945.0,Toxic,220.0,4
+946.0,Spikes,6.0,1
+946.0,Strength Sap,4.0,2
+946.0,Poltergeist,2.0,3
+946.0,Rapid Spin,2.0,4
+947.0,Poltergeist,817.0,1
+947.0,Rapid Spin,679.0,2
+947.0,Strength Sap,568.0,3
+947.0,Power Whip,526.0,4
+948.0,Spore,18.0,1
+948.0,Earth Power,14.0,2
+948.0,Spikes,14.0,3
+948.0,Rapid Spin,12.0,4
+949.0,Earth Power,566.0,1
+949.0,Rapid Spin,508.0,2
+949.0,Spore,333.0,3
+949.0,Knock Off,305.0,4
+950.0,Knock Off,119.0,1
+950.0,Stone Edge,101.0,2
+950.0,Stealth Rock,76.0,3
+950.0,Swords Dance,62.0,4
+952.0,Flamethrower,101.0,1
+952.0,Solar Beam,43.0,2
+952.0,Overheat,39.0,3
+952.0,Growth,37.0,4
+954.0,Trick Room,51.0,1
+954.0,Revival Blessing,46.0,2
+954.0,Psychic,41.0,3
+954.0,Bug Buzz,33.0,4
+955.0,Stored Power,10.0,1
+955.0,Calm Mind,9.0,2
+955.0,Protect,9.0,3
+955.0,Substitute,3.0,4
+956.0,Calm Mind,723.0,1
+956.0,Stored Power,499.0,2
+956.0,Protect,377.0,3
+956.0,Dazzling Gleam,321.0,4
+957.0,Stealth Rock,17.0,1
+957.0,Knock Off,11.0,2
+957.0,Thunder Wave,8.0,3
+957.0,Draining Kiss,5.0,4
+958.0,Stealth Rock,105.0,1
+958.0,Knock Off,101.0,2
+958.0,Thunder Wave,72.0,3
+958.0,Encore,37.0,4
+959.0,Stealth Rock,3580.0,1
+959.0,Gigaton Hammer,3396.0,2
+959.0,Knock Off,3114.0,3
+959.0,Thunder Wave,2008.0,4
+961.0,Liquidation,39.0,1
+961.0,Triple Dive,29.0,2
+961.0,Aqua Jet,15.0,3
+961.0,Sucker Punch,14.0,4
+962.0,Knock Off,216.0,1
+962.0,Brave Bird,123.0,2
+962.0,U-turn,97.0,3
+962.0,Stealth Rock,88.0,4
+963.0,Aqua Jet,1.0,1
+963.0,Body Slam,1.0,2
+963.0,Liquidation,1.0,3
+964.0,Jet Punch,3165.0,1
+964.0,Flip Turn,2477.0,2
+964.0,Wave Crash,1315.0,3
+964.0,Bulk Up,1101.0,4
+965.0,Gunk Shot,11.0,1
+965.0,Parting Shot,11.0,2
+965.0,Toxic Spikes,6.0,3
+965.0,Bulldoze,4.0,4
+966.0,Shift Gear,1109.0,1
+966.0,High Horsepower,690.0,2
+966.0,Iron Head,627.0,3
+966.0,Gunk Shot,564.0,4
+967.0,U-turn,2364.0,1
+967.0,Knock Off,1829.0,2
+967.0,Rapid Spin,1573.0,3
+967.0,Draco Meteor,918.0,4
+968.0,Body Press,910.0,1
+968.0,Stealth Rock,809.0,2
+968.0,Spikes,412.0,3
+968.0,Heavy Slam,392.0,4
+969.0,Stealth Rock,142.0,1
+969.0,Spikes,60.0,2
+969.0,Power Gem,54.0,3
+969.0,Toxic,33.0,4
+970.0,Stealth Rock,1881.0,1
+970.0,Earth Power,1559.0,2
+970.0,Power Gem,1502.0,3
+970.0,Mortal Spin,1189.0,4
+971.0,Pain Split,8.0,1
+971.0,Psychic Fangs,8.0,2
+971.0,Poltergeist,7.0,3
+971.0,Shadow Sneak,7.0,4
+972.0,Poltergeist,400.0,1
+972.0,Will-O-Wisp,319.0,2
+972.0,Shadow Sneak,257.0,3
+972.0,Body Press,242.0,4
+973.0,Close Combat,399.0,1
+973.0,Brave Bird,367.0,2
+973.0,U-turn,301.0,3
+973.0,Swords Dance,32.0,4
+974.0,Ice Shard,11.0,1
+974.0,Earthquake,8.0,2
+974.0,Belly Drum,4.0,3
+974.0,Knock Off,3.0,4
+975.0,Earthquake,359.0,1
+975.0,Belly Drum,322.0,2
+975.0,Ice Shard,321.0,3
+975.0,Ice Spinner,216.0,4
+976.0,Fillet Away,85.0,1
+976.0,Aqua Cutter,59.0,2
+976.0,Psycho Cut,40.0,3
+976.0,Flip Turn,25.0,4
+977.0,Rest,762.0,1
+977.0,Curse,748.0,2
+977.0,Sleep Talk,548.0,3
+977.0,Body Press,496.0,4
+978.0,Draco Meteor,264.0,1
+978.0,Rapid Spin,245.0,2
+978.0,Surf,223.0,3
+978.0,Nasty Plot,118.0,4
+979.0,Rage Fist,3662.0,1
+979.0,Drain Punch,2862.0,2
+979.0,Bulk Up,2222.0,3
+979.0,U-turn,1166.0,4
+980.0,Earthquake,2820.0,1
+980.0,Recover,2286.0,2
+980.0,Toxic,1966.0,3
+980.0,Stealth Rock,1808.0,4
+981.0,Wish,349.0,1
+981.0,Trick Room,161.0,2
+981.0,Protect,148.0,3
+981.0,Psychic Noise,141.0,4
+982.0,Roost,345.0,1
+982.0,Boomburst,341.0,2
+982.0,Glare,246.0,3
+982.0,Calm Mind,176.0,4
+983.0,Sucker Punch,2978.0,1
+983.0,Kowtow Cleave,2322.0,2
+983.0,Iron Head,1593.0,3
+983.0,Swords Dance,1443.0,4
+984.0,Rapid Spin,3938.0,1
+984.0,Headlong Rush,3648.0,2
+984.0,Ice Spinner,2556.0,3
+984.0,Close Combat,2485.0,4
+985.0,Wish,2725.0,1
+985.0,Dazzling Gleam,1587.0,2
+985.0,Thunder Wave,1526.0,3
+985.0,Stealth Rock,1249.0,4
+986.0,Sucker Punch,391.0,1
+986.0,Spore,278.0,2
+986.0,Seed Bomb,257.0,3
+986.0,Crunch,234.0,4
+987.0,Moonblast,350.0,1
+987.0,Shadow Ball,268.0,2
+987.0,Calm Mind,71.0,3
+987.0,Mystical Fire,60.0,4
+988.0,U-turn,1032.0,1
+988.0,First Impression,1029.0,2
+988.0,Close Combat,693.0,3
+988.0,Earthquake,379.0,4
+989.0,Earth Power,2048.0,1
+989.0,Volt Switch,1722.0,2
+989.0,Stealth Rock,1042.0,3
+989.0,Thunderbolt,855.0,4
+990.0,Earthquake,4659.0,1
+990.0,Rapid Spin,3497.0,2
+990.0,Stealth Rock,2766.0,3
+990.0,Knock Off,2137.0,4
+991.0,Freeze-Dry,3368.0,1
+991.0,Hydro Pump,3280.0,2
+991.0,Ice Beam,2498.0,3
+991.0,Flip Turn,2107.0,4
+992.0,Drain Punch,2382.0,1
+992.0,Ice Punch,1303.0,2
+992.0,Thunder Punch,1166.0,3
+992.0,Earthquake,890.0,4
+993.0,Dark Pulse,612.0,1
+993.0,Hurricane,375.0,2
+993.0,Earth Power,331.0,3
+993.0,U-turn,188.0,4
+994.0,Fiery Dance,3497.0,1
+994.0,Sludge Wave,2087.0,2
+994.0,Energy Ball,839.0,3
+994.0,Dazzling Gleam,830.0,4
+995.0,Dragon Dance,404.0,1
+995.0,Earthquake,239.0,2
+995.0,Supercell Slam,135.0,3
+995.0,Ice Punch,132.0,4
+996.0,Icicle Crash,1.0,1
+997.0,Dragon Claw,11.0,1
+997.0,Swords Dance,11.0,2
+997.0,Icicle Crash,8.0,3
+997.0,Dragon Tail,4.0,4
+998.0,Dragon Dance,1443.0,1
+998.0,Earthquake,1344.0,2
+998.0,Glaive Rush,1270.0,3
+998.0,Icicle Spear,1054.0,4
+999.0,Shadow Ball,3.0,1
+999.0,Light Screen,2.0,2
+999.0,Reflect,2.0,3
+999.0,Thief,2.0,4
+1000.0,Shadow Ball,4465.0,1
+1000.0,Make It Rain,3869.0,2
+1000.0,Recover,1940.0,3
+1000.0,Nasty Plot,1899.0,4
+1001.0,Leech Seed,697.0,1
+1001.0,Knock Off,610.0,2
+1001.0,Protect,360.0,3
+1001.0,Ruination,316.0,4
+1002.0,Crunch,873.0,1
+1002.0,Icicle Crash,582.0,2
+1002.0,Sacred Sword,489.0,3
+1002.0,Ice Shard,429.0,4
+1003.0,Earthquake,4216.0,1
+1003.0,Stealth Rock,3725.0,2
+1003.0,Ruination,3144.0,3
+1003.0,Whirlwind,2757.0,4
+1004.0,Dark Pulse,2717.0,1
+1004.0,Flamethrower,1852.0,2
+1004.0,Overheat,1370.0,3
+1004.0,Psychic,488.0,4
+1005.0,Knock Off,3716.0,1
+1005.0,Dragon Dance,1993.0,2
+1005.0,U-turn,1940.0,3
+1005.0,Earthquake,1690.0,4
+1006.0,Moonblast,4201.0,1
+1006.0,Close Combat,2161.0,2
+1006.0,Knock Off,1241.0,3
+1006.0,Spirit Break,1082.0,4
+1007.0,Collision Course,31.0,1
+1007.0,Flare Blitz,31.0,2
+1007.0,Scale Shot,23.0,3
+1007.0,U-turn,23.0,4
+1008.0,Electro Drift,21.0,1
+1008.0,Draco Meteor,12.0,2
+1008.0,Volt Switch,10.0,3
+1008.0,U-turn,8.0,4
+1009.0,Hydro Steam,2964.0,1
+1009.0,Draco Meteor,2006.0,2
+1009.0,Flip Turn,1326.0,3
+1009.0,Flamethrower,932.0,4
+1010.0,Psyblade,394.0,1
+1010.0,Swords Dance,315.0,2
+1010.0,Leaf Blade,310.0,3
+1010.0,Close Combat,179.0,4
+1011.0,Recover,361.0,1
+1011.0,Dragon Tail,290.0,2
+1011.0,Giga Drain,277.0,3
+1011.0,Infestation,122.0,4
+1012.0,Trick Room,7.0,1
+1012.0,Giga Drain,6.0,2
+1012.0,Shadow Ball,6.0,3
+1012.0,Memento,2.0,4
+1013.0,Matcha Gotcha,1846.0,1
+1013.0,Shadow Ball,1613.0,2
+1013.0,Strength Sap,1573.0,3
+1013.0,Calm Mind,1371.0,4
+1014.0,Drain Punch,1122.0,1
+1014.0,Knock Off,1032.0,2
+1014.0,Bulk Up,543.0,3
+1014.0,Gunk Shot,472.0,4
+1015.0,U-turn,372.0,1
+1015.0,Sludge Wave,354.0,2
+1015.0,Psychic,330.0,3
+1015.0,Focus Blast,159.0,4
+1016.0,U-turn,2689.0,1
+1016.0,Roost,1648.0,2
+1016.0,Moonblast,1151.0,3
+1016.0,Play Rough,878.0,4
+1017.0,Ivy Cudgel,2243.0,1
+1017.0,U-turn,1435.0,2
+1017.0,Knock Off,1245.0,3
+1017.0,Swords Dance,436.0,4
+1017.001,Ivy Cudgel,5505.0,1
+1017.001,U-turn,1953.0,2
+1017.001,Swords Dance,1731.0,3
+1017.001,Horn Leech,1409.0,4
+1017.002,Ivy Cudgel,3645.0,1
+1017.002,Swords Dance,1224.0,2
+1017.002,Trailblaze,1098.0,3
+1017.002,Horn Leech,937.0,4
+1017.003,Ivy Cudgel,3368.0,1
+1017.003,Swords Dance,988.0,2
+1017.003,Horn Leech,927.0,3
+1017.003,Knock Off,735.0,4
+1018.0,Draco Meteor,1956.0,1
+1018.0,Body Press,1835.0,2
+1018.0,Electro Shot,1658.0,3
+1018.0,Flash Cannon,1617.0,4
+1019.0,Fickle Beam,1702.0,1
+1019.0,Giga Drain,1470.0,2
+1019.0,Earth Power,1333.0,3
+1019.0,Nasty Plot,883.0,4
+1020.0,Dragon Dance,3676.0,1
+1020.0,Heat Crash,2301.0,2
+1020.0,Earthquake,1654.0,3
+1020.0,Flare Blitz,1545.0,4
+1021.0,Thunderclap,3279.0,1
+1021.0,Draco Meteor,2674.0,2
+1021.0,Thunderbolt,2598.0,3
+1021.0,Dragon Pulse,2281.0,4
+1022.0,Mighty Cleave,2387.0,1
+1022.0,Swords Dance,1251.0,2
+1022.0,Earthquake,802.0,3
+1022.0,Close Combat,657.0,4
+1023.0,Tachyon Cutter,2931.0,1
+1023.0,Volt Switch,1569.0,2
+1023.0,Calm Mind,1159.0,3
+1023.0,Focus Blast,748.0,4
+1024.0,Tera Starstorm,5234.0,1
+1024.0,Rapid Spin,3243.0,2
+1024.0,Calm Mind,2082.0,3
+1024.0,Earth Power,1964.0,4
+1025.0,Malignant Chain,3647.0,1
+1025.0,Parting Shot,3019.0,2
+1025.0,Recover,2846.0,3
+1025.0,Shadow Ball,1921.0,4

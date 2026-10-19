@@ -1,3 +1,4 @@
+import json
 import sqlite3
 import csv
 import os
@@ -85,6 +86,31 @@ def parse_replay(data):
 def process_replay(url):
     return replay_id(url), parse_replay(fetch_json(url))
 
+def print_top(dbName, fileName):
+    conn = sqlite3.connect(dbName)
+    cursor = conn.cursor()
+    cursor.execute('''WITH ranked AS (SELECT id, move, usage, ROW_NUMBER() OVER (PARTITION BY id ORDER BY usage DESC) AS rank FROM moves) SELECT * FROM ranked WHERE rank <= 4''')
+
+    lookup_data = []
+    with open(fileName, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["id", "move", "usage", "rank"])
+    for row in cursor.fetchall():   
+        with open(fileName, "a", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(row)
+        lookup_data.append({
+            "id": row[0],
+            "move": row[1],
+            "usage": row[2],
+        })
+    lookup_data_js = "const moveData = " + json.dumps(lookup_data, ensure_ascii=True) + ";\n\nexport { moveData };\n"
+
+    lookup_data_path = DB_ROOT / 'my-react-app' / 'src' / 'js' / 'move-data.js'
+    lookup_data_path.write_text(lookup_data_js, encoding="utf-8")
+
+    conn.close()
+
 def main():
     fileName = DB_ROOT / "DB_CSV" / "replaysDraft.csv"
     dbName = DB_ROOT / "database" / "moveDB.sqlite"
@@ -129,6 +155,7 @@ def main():
             conn.commit()
     conn.commit()
     conn.close()
+    print_top(dbName, DB_ROOT / "DB_CSV" / "top_moves.csv")
 
 if __name__ == "__main__":
-    main()
+    print_top(DB_ROOT / "database" / "moveDB.sqlite", DB_ROOT / "DB_CSV" / "moves.csv")
