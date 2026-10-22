@@ -1,0 +1,4371 @@
+id,partner,usage,rank
+1.0,Quaxly,7.0,1
+1.0,Litten,5.0,2
+1.0,Rufflet,5.0,3
+1.0,Vulpix,5.0,4
+1.0,Flittle,4.0,5
+2.0,Prinplup,11.0,1
+2.0,Jolteon,8.0,2
+2.0,Hitmontop,7.0,3
+2.0,Magmar,7.0,4
+2.0,Sandslash,7.0,5
+3.0,Torkoal,1190.0,1
+3.0,Walking Wake,991.0,2
+3.0,Ninetales,447.0,3
+3.0,Great Tusk,395.0,4
+3.0,Gouging Fire,371.0,5
+4.0,Blitzle,3.0,1
+4.0,Mareanie,3.0,2
+4.0,Cufant,2.0,3
+4.0,Phantump,2.0,4
+4.0,Bulbasaur,1.0,5
+5.0,Stantler,8.0,1
+5.0,Duosion,6.0,2
+5.0,Gurdurr,6.0,3
+5.0,Qwilfish-Hisui,6.0,4
+5.0,Sandshrew,6.0,5
+6.0,Torkoal,272.0,1
+6.0,Walking Wake,194.0,2
+6.0,Venusaur,118.0,3
+6.0,Great Tusk,92.0,4
+6.0,Lilligant-Hisui,70.0,5
+7.0,Foongus,11.0,1
+7.0,Scraggy,10.0,2
+7.0,Growlithe-Hisui,7.0,3
+7.0,Magby,7.0,4
+7.0,Varoom,7.0,5
+8.0,Trumbeak,12.0,1
+8.0,Dragapult,11.0,2
+8.0,Eelektrik,11.0,3
+8.0,Ogerpon-Wellspring,11.0,4
+8.0,Piloswine,11.0,5
+9.0,Garchomp,502.0,1
+9.0,Meowscarada,463.0,2
+9.0,Iron Valiant,457.0,3
+9.0,Sneasler,379.0,4
+9.0,Landorus-Therian,352.0,5
+15.0,Ceruledge,3.0,1
+15.0,Meowscarada,3.0,2
+15.0,Ribombee,2.0,3
+15.0,Roaring Moon,2.0,4
+15.0,Ting-Lu,2.0,5
+23.0,Drilbur,2.0,1
+23.0,Magnemite,2.0,2
+23.0,Chingling,1.0,3
+23.0,Fidough,1.0,4
+23.0,Goomy,1.0,5
+24.0,Great Tusk,26.0,1
+24.0,Iron Valiant,25.0,2
+24.0,Greninja,21.0,3
+24.0,Meowscarada,21.0,4
+24.0,Tornadus-Therian,21.0,5
+25.0,Iron Bundle,33.0,1
+25.0,Meowscarada,26.0,2
+25.0,Cinderace,24.0,3
+25.0,Mew,23.0,4
+25.0,Garchomp,19.0,5
+26.0,Blastoise,32.0,1
+26.0,Weezing-Galar,31.0,2
+26.0,Bronzong,30.0,3
+26.0,Landorus-Therian,29.0,4
+26.0,Primarina,29.0,5
+26.001,Pincurchin,173.0,1
+26.001,Iron Valiant,66.0,2
+26.001,Iron Hands,57.0,3
+26.001,Iron Treads,49.0,4
+26.001,Iron Bundle,43.0,5
+27.0,Dewott,15.0,1
+27.0,Drakloak,11.0,2
+27.0,Raboot,11.0,3
+27.0,Gurdurr,9.0,4
+27.0,Meowth,9.0,5
+27.001,Yanma,8.0,1
+27.001,Mienfoo,7.0,2
+27.001,Clauncher,6.0,3
+27.001,Drifloon,6.0,4
+27.001,Krokorok,6.0,5
+28.0,Tinkaton,55.0,1
+28.0,Tyranitar,35.0,2
+28.0,Gengar,33.0,3
+28.0,Urshifu,33.0,4
+28.0,Goodra,32.0,5
+28.001,Slowking-Galar,334.0,1
+28.001,Ninetales-Alola,309.0,2
+28.001,Slowking,252.0,3
+28.001,Baxcalibur,107.0,4
+28.001,Kyurem,102.0,5
+34.0,Alomomola,7.0,1
+34.0,Iron Treads,7.0,2
+34.0,Urshifu,7.0,3
+34.0,Gyarados,5.0,4
+34.0,Meowstic,5.0,5
+35.0,Greninja,18.0,1
+35.0,Ninetales,16.0,2
+35.0,Iron Valiant,15.0,3
+35.0,Weezing,15.0,4
+35.0,Gastrodon,14.0,5
+36.0,Dragapult,581.0,1
+36.0,Iron Treads,539.0,2
+36.0,Corviknight,524.0,3
+36.0,Garchomp,471.0,4
+36.0,Gholdengo,454.0,5
+37.0,Roaring Moon,42.0,1
+37.0,Great Tusk,33.0,2
+37.0,Scream Tail,28.0,3
+37.0,Venusaur,27.0,4
+37.0,Gouging Fire,25.0,5
+37.001,Kyurem,14.0,1
+37.001,Kingambit,10.0,2
+37.001,Baxcalibur,8.0,3
+37.001,Great Tusk,8.0,4
+37.001,Mareanie,8.0,5
+38.0,Walking Wake,1058.0,1
+38.0,Great Tusk,649.0,2
+38.0,Gouging Fire,498.0,3
+38.0,Roaring Moon,474.0,4
+38.0,Venusaur,447.0,5
+38.001,Baxcalibur,817.0,1
+38.001,Iron Bundle,413.0,2
+38.001,Kyurem,368.0,3
+38.001,Sandslash-Alola,309.0,4
+38.001,Cetitan,271.0,5
+39.0,Arceus-Water,3.0,1
+39.0,Crocalor,3.0,2
+39.0,Dialga,3.0,3
+39.0,Electabuzz,3.0,4
+39.0,Lugia,3.0,5
+40.0,Iron Treads,25.0,1
+40.0,Iron Valiant,25.0,2
+40.0,Meowscarada,24.0,3
+40.0,Tornadus-Therian,21.0,4
+40.0,Dragapult,20.0,5
+43.0,Breloom,4.0,1
+43.0,Golem,3.0,2
+43.0,Skeledirge,3.0,3
+43.0,Slowbro,3.0,4
+43.0,Thundurus,3.0,5
+44.0,Fraxure,11.0,1
+44.0,Staravia,11.0,2
+44.0,Frogadier,8.0,3
+44.0,Magmar,8.0,4
+44.0,Mareanie,7.0,5
+45.0,Great Tusk,72.0,1
+45.0,Sandy Shocks,61.0,2
+45.0,Torkoal,61.0,3
+45.0,Scream Tail,60.0,4
+45.0,Urshifu,57.0,5
+48.0,Clefable,3.0,1
+48.0,Conkeldurr,3.0,2
+48.0,Iron Bundle,3.0,3
+48.0,Swampert,3.0,4
+48.0,Tentacruel,3.0,5
+49.0,Araquanid,16.0,1
+49.0,Forretress,16.0,2
+49.0,Flygon,15.0,3
+49.0,Iron Hands,15.0,4
+49.0,Primarina,15.0,5
+50.0,Kingambit,10.0,1
+50.0,Greninja,9.0,2
+50.0,Meowscarada,8.0,3
+50.0,Chinchou,7.0,4
+50.0,Eiscue,7.0,5
+50.001,Growlithe-Hisui,10.0,1
+50.001,Cutiefly,7.0,2
+50.001,Cacnea,5.0,3
+50.001,Hatenna,5.0,4
+50.001,Squirtle,5.0,5
+51.0,Chi-Yu,61.0,1
+51.0,Terapagos,51.0,2
+51.0,Primarina,46.0,3
+51.0,Scream Tail,45.0,4
+51.0,Urshifu,44.0,5
+51.001,Iron Valiant,29.0,1
+51.001,Gouging Fire,25.0,2
+51.001,Talonflame,24.0,3
+51.001,Weezing-Galar,22.0,4
+51.001,Chesnaught,19.0,5
+52.0,Cutiefly,9.0,1
+52.0,Drifloon,9.0,2
+52.0,Sandshrew,9.0,3
+52.0,Doduo,8.0,4
+52.0,Chinchou,7.0,5
+52.001,Chinchou,6.0,1
+52.001,Drilbur,5.0,2
+52.001,Chewtle,4.0,3
+52.001,Drifloon,4.0,4
+52.001,Grookey,4.0,5
+52.002,Drifloon,5.0,1
+52.002,Grookey,5.0,2
+52.002,Stunky,5.0,3
+52.002,Chimchar,4.0,4
+52.002,Koffing,3.0,5
+53.0,Sandaconda,13.0,1
+53.0,Electivire,11.0,2
+53.0,Emboar,8.0,3
+53.0,Fraxure,8.0,4
+53.0,Probopass,8.0,5
+53.001,Bronzong,43.0,1
+53.001,Golurk,35.0,2
+53.001,Annihilape,31.0,3
+53.001,Komala,30.0,4
+53.001,Snorlax,30.0,5
+54.0,Piloswine,5.0,1
+54.0,Miasmaw,3.0,2
+54.0,Rotom-Wash,3.0,3
+54.0,Brambleghast,2.0,4
+54.0,Cleffa,2.0,5
+55.0,Pelipper,42.0,1
+55.0,Politoed,28.0,2
+55.0,Overqwil,19.0,3
+55.0,Archaludon,17.0,4
+55.0,Bronzong,17.0,5
+56.0,Koffing,12.0,1
+56.0,Aipom,6.0,2
+56.0,Chimchar,6.0,3
+56.0,Elekid,6.0,4
+56.0,Drilbur,5.0,5
+57.0,Rotom-Heat,44.0,1
+57.0,Arboliva,35.0,2
+57.0,Tentacruel,33.0,3
+57.0,Donphan,30.0,4
+57.0,Blastoise,27.0,5
+58.0,Grookey,5.0,1
+58.0,Sandile,5.0,2
+58.0,Shroodle,5.0,3
+58.0,Toedscool,4.0,4
+58.0,Arbok,3.0,5
+58.001,Diglett-Alola,10.0,1
+58.001,Cutiefly,7.0,2
+58.001,Riolu,7.0,3
+58.001,Smeargle,7.0,4
+58.001,Squirtle,7.0,5
+59.0,Iron Treads,160.0,1
+59.0,Meowscarada,140.0,2
+59.0,Iron Valiant,128.0,3
+59.0,Dragapult,121.0,4
+59.0,Cyclizar,118.0,5
+59.001,Meowscarada,279.0,1
+59.001,Iron Treads,240.0,2
+59.001,Iron Valiant,228.0,3
+59.001,Corviknight,215.0,4
+59.001,Garchomp,210.0,5
+60.0,Basculegion-F,1.0,1
+60.0,Baxcalibur,1.0,2
+60.0,Chimchar,1.0,3
+60.0,Eelektrik,1.0,4
+60.0,Lycanroc,1.0,5
+61.0,Murkrow,4.0,1
+61.0,Shroodle,4.0,2
+61.0,Frogadier,3.0,3
+61.0,Monferno,3.0,4
+61.0,Azumarill,2.0,5
+62.0,Pelipper,62.0,1
+62.0,Archaludon,51.0,2
+62.0,Politoed,35.0,3
+62.0,Thundurus-Therian,31.0,4
+62.0,Overqwil,30.0,5
+65.0,Dragapult,1.0,1
+65.0,Lokix,1.0,2
+65.0,Ogerpon,1.0,3
+65.0,Tyranitar,1.0,4
+65.0,Weezing-Galar,1.0,5
+69.0,Arrokuda,1.0,1
+69.0,Combee,1.0,2
+69.0,Cottonee,1.0,3
+69.0,Doduo,1.0,4
+69.0,Feebas,1.0,5
+70.0,Trumbeak,13.0,1
+70.0,Gurdurr,8.0,2
+70.0,Piloswine,8.0,3
+70.0,Dunsparce,7.0,4
+70.0,Misdreavus,7.0,5
+71.0,Torkoal,102.0,1
+71.0,Walking Wake,86.0,2
+71.0,Ninetales,65.0,3
+71.0,Gouging Fire,41.0,4
+71.0,Slither Wing,23.0,5
+72.0,Scraggy,9.0,1
+72.0,Bronzor,8.0,2
+72.0,Glimmet,7.0,3
+72.0,Snivy,7.0,4
+72.0,Cutiefly,6.0,5
+73.0,Iron Valiant,718.0,1
+73.0,Landorus-Therian,580.0,2
+73.0,Gholdengo,503.0,3
+73.0,Ting-Lu,481.0,4
+73.0,Meowscarada,444.0,5
+74.0,Camerupt,1.0,1
+74.0,Chingling,1.0,2
+74.0,Glimmora,1.0,3
+74.0,Gouging Fire,1.0,4
+74.0,Kilowattrel,1.0,5
+74.001,Corphish,4.0,1
+74.001,Doduo,4.0,2
+74.001,Shellder,4.0,3
+74.001,Wooper,4.0,4
+74.001,Yanma,4.0,5
+75.0,Heatran,11.0,1
+75.0,Roaring Moon,11.0,2
+75.0,Cresselia,10.0,3
+75.0,Palafin,10.0,4
+75.0,Rotom-Mow,10.0,5
+75.001,Gholdengo,9.0,1
+75.001,Great Tusk,9.0,2
+75.001,Quagsire,8.0,3
+75.001,Goodra,7.0,4
+75.001,Inteleon,7.0,5
+76.0,Mandibuzz,18.0,1
+76.0,Electivire,15.0,2
+76.0,Iron Treads,14.0,3
+76.0,Palossand,14.0,4
+76.0,Raging Bolt,14.0,5
+76.001,Scream Tail,52.0,1
+76.001,Ogerpon-Cornerstone,45.0,2
+76.001,Armarouge,40.0,3
+76.001,Iron Valiant,37.0,4
+76.001,Lokix,36.0,5
+77.0,Darkrai,3.0,1
+77.0,Metagross,3.0,2
+77.0,Vikavolt,3.0,3
+77.0,Enamorus,2.0,4
+77.0,Glimmet,2.0,5
+79.0,Piloswine,6.0,1
+79.0,Raboot,6.0,2
+79.0,Aipom,5.0,3
+79.0,Chimchar,5.0,4
+79.0,Mankey,5.0,5
+79.001,Grotle,2.0,1
+79.001,Klawf,2.0,2
+79.001,Luxio,2.0,3
+79.001,Manaphy,2.0,4
+79.001,Pignite,2.0,5
+80.0,Meowscarada,100.0,1
+80.0,Iron Valiant,86.0,2
+80.0,Tornadus-Therian,82.0,3
+80.0,Terapagos,80.0,4
+80.0,Excadrill,76.0,5
+80.001,Alomomola,77.0,1
+80.001,Urshifu,75.0,2
+80.001,Ting-Lu,74.0,3
+80.001,Iron Valiant,69.0,4
+80.001,Primarina,66.0,5
+81.0,Jirachi,9.0,1
+81.0,Drilbur,7.0,2
+81.0,Heatran,7.0,3
+81.0,Scizor,7.0,4
+81.0,Skarmory,7.0,5
+82.0,Noivern,36.0,1
+82.0,Dragapult,33.0,2
+82.0,Ursaluna,33.0,3
+82.0,Talonflame,32.0,4
+82.0,Clefable,31.0,5
+84.0,Cutiefly,12.0,1
+84.0,Meowth,8.0,2
+84.0,Sandshrew,8.0,3
+84.0,Chinchou,6.0,4
+84.0,Maschiff,5.0,5
+85.0,Tinkaton,23.0,1
+85.0,Blastoise,20.0,2
+85.0,Sandaconda,17.0,3
+85.0,Dragapult,15.0,4
+85.0,Entei,15.0,5
+86.0,Growlithe-Hisui,2.0,1
+86.0,Koffing,2.0,2
+86.0,Pawniard,2.0,3
+86.0,Goodra-Hisui,1.0,4
+86.0,Greavard,1.0,5
+87.0,Archaludon,15.0,1
+87.0,Slowbro,15.0,2
+87.0,Ting-Lu,15.0,3
+87.0,Eiscue,14.0,4
+87.0,Gouging Fire,14.0,5
+88.0,Vullaby,5.0,1
+88.0,Gumshoos,4.0,2
+88.0,Gurdurr,4.0,3
+88.0,Combusken,3.0,4
+88.0,Crocalor,3.0,5
+88.001,Hippopotas,9.0,1
+88.001,Seadra,8.0,2
+88.001,Gallade,7.0,3
+88.001,Combusken,6.0,4
+88.001,Haunter,6.0,5
+89.0,Iron Treads,124.0,1
+89.0,Iron Valiant,122.0,2
+89.0,Greninja,99.0,3
+89.0,Great Tusk,95.0,4
+89.0,Darkrai,92.0,5
+89.001,Iron Valiant,284.0,1
+89.001,Great Tusk,228.0,2
+89.001,Iron Treads,208.0,3
+89.001,Garchomp,192.0,4
+89.001,Landorus-Therian,180.0,5
+90.0,Cottonee,7.0,1
+90.0,Fennekin,6.0,2
+90.0,Golett,6.0,3
+90.0,Crabrawler,4.0,4
+90.0,Doduo,4.0,5
+91.0,Ninetales-Alola,75.0,1
+91.0,Raging Bolt,56.0,2
+91.0,Dragapult,49.0,3
+91.0,Grimmsnarl,48.0,4
+91.0,Roaring Moon,44.0,5
+92.0,Quaxwell,11.0,1
+92.0,Camerupt,8.0,2
+92.0,Floragato,8.0,3
+92.0,Monferno,8.0,4
+92.0,Clodsire,7.0,5
+93.0,Primarina,30.0,1
+93.0,Klefki,28.0,2
+93.0,Flygon,23.0,3
+93.0,Krokorok,23.0,4
+93.0,Orthworm,23.0,5
+94.0,Garchomp,217.0,1
+94.0,Urshifu,215.0,2
+94.0,Great Tusk,199.0,3
+94.0,Cinderace,189.0,4
+94.0,Corviknight,189.0,5
+96.0,Floragato,1.0,1
+96.0,Frogadier,1.0,2
+96.0,Pikachu,1.0,3
+96.0,Primeape,1.0,4
+96.0,Rhydon,1.0,5
+97.0,Decidueye,8.0,1
+97.0,Yanmega,7.0,2
+97.0,Kleavor,5.0,3
+97.0,Magneton,5.0,4
+97.0,Sandaconda,5.0,5
+100.0,Pikipek,3.0,1
+100.0,Toedscool,3.0,2
+100.0,Bonsly,2.0,3
+100.0,Bronzor,2.0,4
+100.0,Buizel,2.0,5
+100.001,Sandygast,18.0,1
+100.001,Pawniard,16.0,2
+100.001,Wingull,16.0,3
+100.001,Timburr,12.0,4
+100.001,Koffing,11.0,5
+101.0,Garchomp,31.0,1
+101.0,Gholdengo,31.0,2
+101.0,Ting-Lu,28.0,3
+101.0,Weezing-Galar,25.0,4
+101.0,Kyurem,24.0,5
+101.001,Iron Valiant,171.0,1
+101.001,Garchomp,158.0,2
+101.001,Corviknight,139.0,3
+101.001,Samurott-Hisui,135.0,4
+101.001,Enamorus,132.0,5
+102.0,Axew,1.0,1
+102.0,Bergmite,1.0,2
+102.0,Clefairy,1.0,3
+102.0,Electabuzz,1.0,4
+102.0,Gabite,1.0,5
+103.0,Torkoal,37.0,1
+103.0,Walking Wake,24.0,2
+103.0,Ninetales,23.0,3
+103.0,Bronzong,20.0,4
+103.0,Great Tusk,18.0,5
+103.001,Excadrill,30.0,1
+103.001,Kleavor,29.0,2
+103.001,Overqwil,27.0,3
+103.001,Krookodile,26.0,4
+103.001,Urshifu,26.0,5
+106.0,Rillaboom,91.0,1
+106.0,Indeedee,79.0,2
+106.0,Weezing-Galar,46.0,3
+106.0,Skarmory,44.0,4
+106.0,Overqwil,39.0,5
+107.0,Iron Bundle,53.0,1
+107.0,Landorus-Therian,50.0,2
+107.0,Ogerpon-Wellspring,38.0,3
+107.0,Clefable,37.0,4
+107.0,Gholdengo,32.0,5
+109.0,Electabuzz,19.0,1
+109.0,Pawniard,13.0,2
+109.0,Mankey,12.0,3
+109.0,Voltorb-Hisui,11.0,4
+109.0,Krokorok,9.0,5
+110.0,Primarina,128.0,1
+110.0,Darkrai,100.0,2
+110.0,Great Tusk,92.0,3
+110.0,Meowscarada,92.0,4
+110.0,Heatran,89.0,5
+110.001,Meowscarada,493.0,1
+110.001,Ogerpon-Wellspring,418.0,2
+110.001,Raging Bolt,409.0,3
+110.001,Gholdengo,397.0,4
+110.001,Urshifu,393.0,5
+111.0,Flamigo,10.0,1
+111.0,Typhlosion,8.0,2
+111.0,Araquanid,7.0,3
+111.0,Decidueye,6.0,4
+111.0,Wigglytuff,6.0,5
+112.0,Terapagos,58.0,1
+112.0,Dragapult,54.0,2
+112.0,Noivern,46.0,3
+112.0,Fezandipiti,45.0,4
+112.0,Corviknight,42.0,5
+113.0,Pecharunt,68.0,1
+113.0,Skeledirge,60.0,2
+113.0,Dondozo,59.0,3
+113.0,Alomomola,53.0,4
+113.0,Kingambit,52.0,5
+114.0,Gholdengo,1.0,1
+114.0,Landorus-Therian,1.0,2
+114.0,Meowscarada,1.0,3
+114.0,Tauros,1.0,4
+114.0,Urshifu,1.0,5
+116.0,Applin,1.0,1
+116.0,Bronzor,1.0,2
+116.0,Espurr,1.0,3
+116.0,Fuecoco,1.0,4
+116.0,Joltik,1.0,5
+117.0,Grimer-Alola,8.0,1
+117.0,Morpeko,7.0,2
+117.0,Noctowl,7.0,3
+117.0,Pupitar,7.0,4
+117.0,Charjabug,6.0,5
+121.0,Zygarde,20.0,1
+121.0,Tapu Koko,19.0,2
+121.0,Terapagos,16.0,3
+121.0,Latias,15.0,4
+121.0,Corviknight,10.0,5
+123.0,Incineroar,58.0,1
+123.0,Great Tusk,47.0,2
+123.0,Heatran,47.0,3
+123.0,Landorus-Therian,47.0,4
+123.0,Blastoise,45.0,5
+125.0,Bayleef,23.0,1
+125.0,Koffing,19.0,2
+125.0,Quaxwell,18.0,3
+125.0,Sandslash,17.0,4
+125.0,Monferno,15.0,5
+126.0,Tatsugiri,15.0,1
+126.0,Tentacruel,11.0,2
+126.0,Dragalge,10.0,3
+126.0,Electivire,10.0,4
+126.0,Gabite,10.0,5
+128.0,Empoleon,40.0,1
+128.0,Weezing-Galar,36.0,2
+128.0,Great Tusk,35.0,3
+128.0,Fezandipiti,33.0,4
+128.0,Krookodile,30.0,5
+128.001,Cyclizar,29.0,1
+128.001,Empoleon,29.0,2
+128.001,Tentacruel,28.0,3
+128.001,Gliscor,21.0,4
+128.001,Galvantula,19.0,5
+128.002,Gholdengo,77.0,1
+128.002,Iron Bundle,60.0,2
+128.002,Weezing-Galar,60.0,3
+128.002,Empoleon,55.0,4
+128.002,Jolteon,55.0,5
+128.003,Meowscarada,68.0,1
+128.003,Dragapult,64.0,2
+128.003,Slowking-Galar,59.0,3
+128.003,Rotom-Heat,54.0,4
+128.003,Iron Bundle,52.0,5
+129.0,Gholdengo,5.0,1
+129.0,Great Tusk,5.0,2
+129.0,Growlithe-Hisui,5.0,3
+129.0,Murkrow,5.0,4
+129.0,Riolu,5.0,5
+130.0,Iron Valiant,193.0,1
+130.0,Great Tusk,133.0,2
+130.0,Excadrill,103.0,3
+130.0,Darkrai,101.0,4
+130.0,Kingambit,94.0,5
+131.0,Terapagos,65.0,1
+131.0,Iron Valiant,61.0,2
+131.0,Krookodile,56.0,3
+131.0,Iron Treads,54.0,4
+131.0,Gholdengo,50.0,5
+132.0,Iron Valiant,172.0,1
+132.0,Landorus-Therian,137.0,2
+132.0,Meowscarada,132.0,3
+132.0,Urshifu,130.0,4
+132.0,Ogerpon-Wellspring,121.0,5
+133.0,Nymble,3.0,1
+133.0,Tinkatink,3.0,2
+133.0,Toedscool,3.0,3
+133.0,Trapinch,3.0,4
+133.0,Bramblin,2.0,5
+134.0,Iron Valiant,206.0,1
+134.0,Weezing-Galar,185.0,2
+134.0,Gliscor,158.0,3
+134.0,Terapagos,150.0,4
+134.0,Sneasler,142.0,5
+135.0,Corviknight,329.0,1
+135.0,Urshifu,239.0,2
+135.0,Iron Valiant,231.0,3
+135.0,Gouging Fire,217.0,4
+135.0,Slowking-Galar,211.0,5
+136.0,Umbreon,34.0,1
+136.0,Jolteon,26.0,2
+136.0,Vaporeon,25.0,3
+136.0,Sylveon,22.0,4
+136.0,Espeon,21.0,5
+137.0,Ogerpon-Wellspring,9.0,1
+137.0,Swampert,8.0,2
+137.0,Brionne,7.0,3
+137.0,Haxorus,7.0,4
+137.0,Pupitar,7.0,5
+139.0,Aegislash,1.0,1
+139.0,Diancie,1.0,2
+139.0,Emboar,1.0,3
+139.0,Gothitelle,1.0,4
+139.0,Stakataka,1.0,5
+142.0,Terapagos,3.0,1
+142.0,Corviknight,2.0,2
+142.0,Emboar,2.0,3
+142.0,Great Tusk,2.0,4
+142.0,Keldeo-Resolute,2.0,5
+143.0,Iron Treads,96.0,1
+143.0,Mew,86.0,2
+143.0,Garchomp,79.0,3
+143.0,Roaring Moon,75.0,4
+143.0,Zapdos,73.0,5
+144.0,Excadrill,79.0,1
+144.0,Iron Treads,56.0,2
+144.0,Ting-Lu,53.0,3
+144.0,Ursaluna-Bloodmoon,53.0,4
+144.0,Azumarill,52.0,5
+144.001,Meowscarada,62.0,1
+144.001,Dragapult,58.0,2
+144.001,Quagsire,57.0,3
+144.001,Cyclizar,54.0,4
+144.001,Clodsire,49.0,5
+145.0,Great Tusk,991.0,1
+145.0,Iron Treads,678.0,2
+145.0,Urshifu,639.0,3
+145.0,Ogerpon-Wellspring,614.0,4
+145.0,Meowscarada,600.0,5
+145.001,Iron Treads,301.0,1
+145.001,Gholdengo,232.0,2
+145.001,Ting-Lu,224.0,3
+145.001,Iron Bundle,186.0,4
+145.001,Iron Moth,184.0,5
+146.0,Iron Treads,508.0,1
+146.0,Great Tusk,422.0,2
+146.0,Iron Valiant,370.0,3
+146.0,Ogerpon-Wellspring,347.0,4
+146.0,Garchomp,309.0,5
+146.001,Ogerpon-Wellspring,136.0,1
+146.001,Garchomp,114.0,2
+146.001,Iron Treads,114.0,3
+146.001,Great Tusk,106.0,4
+146.001,Iron Valiant,105.0,5
+147.0,Cutiefly,4.0,1
+147.0,Doduo,3.0,2
+147.0,Elekid,3.0,3
+147.0,Mankey,3.0,4
+147.0,Cacnea,2.0,5
+148.0,Alcremie,10.0,1
+148.0,Perrserker,10.0,2
+148.0,Primeape,10.0,3
+148.0,Electrode-Hisui,9.0,4
+148.0,Sandslash,9.0,5
+149.0,Iron Treads,547.0,1
+149.0,Greninja,486.0,2
+149.0,Great Tusk,477.0,3
+149.0,Ting-Lu,445.0,4
+149.0,Meowscarada,408.0,5
+150.0,Urshifu,79.0,1
+150.0,Ting-Lu,64.0,2
+150.0,Scizor,51.0,3
+150.0,Raging Bolt,47.0,4
+150.0,Garchomp,43.0,5
+151.0,Meowscarada,289.0,1
+151.0,Dragapult,263.0,2
+151.0,Iron Valiant,263.0,3
+151.0,Corviknight,261.0,4
+151.0,Great Tusk,256.0,5
+152.0,Azumarill,5.0,1
+152.0,Cyclizar,5.0,2
+152.0,Gholdengo,5.0,3
+152.0,Roaring Moon,5.0,4
+152.0,Galvantula,4.0,5
+153.0,Electabuzz,23.0,1
+153.0,Metang,15.0,2
+153.0,Quaxwell,13.0,3
+153.0,Tinkatuff,9.0,4
+153.0,Carkol,8.0,5
+154.0,Meowscarada,25.0,1
+154.0,Samurott-Hisui,25.0,2
+154.0,Greninja,22.0,3
+154.0,Iron Treads,22.0,4
+154.0,Roaring Moon,22.0,5
+155.0,Azumarill,2.0,1
+155.0,Elekid,2.0,2
+155.0,Iron Bundle,2.0,3
+155.0,Jirachi,2.0,4
+155.0,Meowscarada,2.0,5
+156.0,Haunter,5.0,1
+156.0,Thwackey,5.0,2
+156.0,Decidueye-Hisui,4.0,3
+156.0,Espeon,4.0,4
+156.0,Forretress,4.0,5
+157.0,Iron Treads,48.0,1
+157.0,Alomomola,40.0,2
+157.0,Latias,39.0,3
+157.0,Iron Valiant,38.0,4
+157.0,Scizor,36.0,5
+157.001,Great Tusk,158.0,1
+157.001,Torkoal,117.0,2
+157.001,Slowking-Galar,111.0,3
+157.001,Meowscarada,104.0,4
+157.001,Ogerpon-Wellspring,96.0,5
+158.0,Aipom,4.0,1
+158.0,Chimchar,4.0,2
+158.0,Mankey,4.0,3
+158.0,Slowpoke,4.0,4
+158.0,Drilbur,3.0,5
+159.0,Murkrow,7.0,1
+159.0,Lycanroc-Midnight,6.0,2
+159.0,Morpeko,6.0,3
+159.0,Orthworm,6.0,4
+159.0,Rabsca,6.0,5
+160.0,Donphan,67.0,1
+160.0,Ribombee,53.0,2
+160.0,Sandy Shocks,49.0,3
+160.0,Weezing-Galar,47.0,4
+160.0,Clodsire,45.0,5
+161.0,Crabrawler,1.0,1
+161.0,Falinks,1.0,2
+161.0,Galvantula,1.0,3
+161.0,Incineroar,1.0,4
+161.0,Pineco,1.0,5
+162.0,Meowscarada,18.0,1
+162.0,Gholdengo,17.0,2
+162.0,Pelipper,14.0,3
+162.0,Alomomola,13.0,4
+162.0,Garchomp,12.0,5
+163.0,Gliscor,4.0,1
+163.0,Drilbur,3.0,2
+163.0,Feraligatr,3.0,3
+163.0,Gengar,3.0,4
+163.0,Heatran,3.0,5
+164.0,Morpeko,18.0,1
+164.0,Gouging Fire,15.0,2
+164.0,Piloswine,13.0,3
+164.0,Klawf,12.0,4
+164.0,Rotom-Frost,12.0,5
+167.0,Growlithe-Hisui,5.0,1
+167.0,Magikarp,5.0,2
+167.0,Murkrow,5.0,3
+167.0,Riolu,5.0,4
+167.0,Blastoise,4.0,5
+168.0,Great Tusk,21.0,1
+168.0,Tinkaton,18.0,2
+168.0,Urshifu,18.0,3
+168.0,Iron Treads,17.0,4
+168.0,Gouging Fire,16.0,5
+169.0,Palafin,2.0,1
+169.0,Terapagos,2.0,2
+169.0,Manectric,1.0,3
+169.0,Serperior,1.0,4
+169.0,Tinkaton,1.0,5
+170.0,Larvesta,10.0,1
+170.0,Cutiefly,8.0,2
+170.0,Diglett,7.0,3
+170.0,Drifloon,7.0,4
+170.0,Grookey,7.0,5
+171.0,Corviknight,60.0,1
+171.0,Pelipper,56.0,2
+171.0,Great Tusk,48.0,3
+171.0,Meowscarada,45.0,4
+171.0,Sneasler,44.0,5
+172.0,Dragonite,3.0,1
+172.0,Empoleon,3.0,2
+172.0,Bruxish,2.0,3
+172.0,Cobalion,2.0,4
+172.0,Mimikyu,2.0,5
+173.0,Braixen,4.0,1
+173.0,Vespiquen,4.0,2
+173.0,Croagunk,3.0,3
+173.0,Munchlax,3.0,4
+173.0,Sandslash-Alola,3.0,5
+179.0,Chespin,2.0,1
+179.0,Drakloak,2.0,2
+179.0,Vullaby,2.0,3
+179.0,Blissey,1.0,4
+179.0,Bronzor,1.0,5
+180.0,Dewott,3.0,1
+180.0,Gabite,3.0,2
+180.0,Magmar,3.0,3
+180.0,Qwilfish-Hisui,3.0,4
+180.0,Trumbeak,3.0,5
+181.0,Garchomp,30.0,1
+181.0,Darkrai,29.0,2
+181.0,Iron Bundle,25.0,3
+181.0,Terapagos,25.0,4
+181.0,Gliscor,23.0,5
+182.0,Torkoal,29.0,1
+182.0,Walking Wake,24.0,2
+182.0,Hitmontop,21.0,3
+182.0,Goodra-Hisui,20.0,4
+182.0,Drifblim,19.0,5
+183.0,Electabuzz,5.0,1
+183.0,Haunter,5.0,2
+183.0,Sliggoo-Hisui,5.0,3
+183.0,Staravia,5.0,4
+183.0,Torkoal,5.0,5
+184.0,Terapagos,257.0,1
+184.0,Iron Treads,255.0,2
+184.0,Garchomp,250.0,3
+184.0,Gholdengo,240.0,4
+184.0,Great Tusk,234.0,5
+185.0,Cinderace,18.0,1
+185.0,Iron Valiant,17.0,2
+185.0,Barraskewda,14.0,3
+185.0,Baxcalibur,12.0,4
+185.0,Dragapult,12.0,5
+186.0,Archaludon,444.0,1
+186.0,Zapdos,220.0,2
+186.0,Overqwil,204.0,3
+186.0,Barraskewda,147.0,4
+186.0,Urshifu,146.0,5
+187.0,Shaymin,2.0,1
+187.0,Vileplume,2.0,2
+187.0,Zarude,2.0,3
+187.0,Hydrapple,1.0,4
+187.0,Iron Leaves,1.0,5
+188.0,Armarouge,1.0,1
+188.0,Cloyster,1.0,2
+188.0,Flygon,1.0,3
+188.0,Gallade,1.0,4
+188.0,Sneasel,1.0,5
+189.0,Chi-Yu,16.0,1
+189.0,Forretress,14.0,2
+189.0,Landorus-Therian,14.0,3
+189.0,Great Tusk,12.0,4
+189.0,Glimmora,11.0,5
+190.0,Quaxly,7.0,1
+190.0,Shieldon,7.0,2
+190.0,Vulpix,7.0,3
+190.0,Chimchar,6.0,4
+190.0,Crabrawler,6.0,5
+192.0,Clodsire,10.0,1
+192.0,Ninetales,8.0,2
+192.0,Gouging Fire,6.0,3
+192.0,Samurott-Hisui,6.0,4
+192.0,Lapras,5.0,5
+193.0,Sandshrew-Alola,8.0,1
+193.0,Mienfoo,7.0,2
+193.0,Clauncher,6.0,3
+193.0,Corphish,6.0,4
+193.0,Gurdurr,6.0,5
+194.0,Landorus,10.0,1
+194.0,Cinderace,7.0,2
+194.0,Tyranitar,7.0,3
+194.0,Archaludon,5.0,4
+194.0,Bronzor,5.0,5
+194.001,Maushold,5.0,1
+194.001,Delphox,3.0,2
+194.001,Smeargle,3.0,3
+194.001,Swampert,3.0,4
+194.001,Thundurus-Therian,3.0,5
+195.0,Corviknight,187.0,1
+195.0,Scizor,137.0,2
+195.0,Iron Valiant,136.0,3
+195.0,Sneasler,132.0,4
+195.0,Urshifu,122.0,5
+196.0,Dragapult,90.0,1
+196.0,Urshifu,80.0,2
+196.0,Great Tusk,75.0,3
+196.0,Raging Bolt,72.0,4
+196.0,Corviknight,70.0,5
+197.0,Iron Valiant,166.0,1
+197.0,Iron Treads,152.0,2
+197.0,Great Tusk,151.0,3
+197.0,Landorus-Therian,127.0,4
+197.0,Weezing-Galar,125.0,5
+198.0,Great Tusk,32.0,1
+198.0,Regieleki,22.0,2
+198.0,Walking Wake,21.0,3
+198.0,Tyranitar,18.0,4
+198.0,Gallade,17.0,5
+199.0,Kyurem,580.0,1
+199.0,Baxcalibur,569.0,2
+199.0,Iron Treads,440.0,3
+199.0,Iron Valiant,415.0,4
+199.0,Gliscor,333.0,5
+199.001,Kyurem,1152.0,1
+199.001,Baxcalibur,1090.0,2
+199.001,Iron Bundle,1004.0,3
+199.001,Great Tusk,926.0,4
+199.001,Tornadus-Therian,828.0,5
+200.0,Iron Valiant,27.0,1
+200.0,Cinderace,24.0,2
+200.0,Darkrai,24.0,3
+200.0,Terapagos,24.0,4
+200.0,Meowscarada,23.0,5
+203.0,Golem-Alola,10.0,1
+203.0,Qwilfish-Hisui,10.0,2
+203.0,Pignite,9.0,3
+203.0,Quagsire,9.0,4
+203.0,Zapdos-Galar,9.0,5
+204.0,Zorua-Hisui,10.0,1
+204.0,Piloswine,7.0,2
+204.0,Scorbunny,7.0,3
+204.0,Scraggy,7.0,4
+204.0,Axew,6.0,5
+205.0,Primarina,273.0,1
+205.0,Sneasler,259.0,2
+205.0,Iron Valiant,253.0,3
+205.0,Dragapult,238.0,4
+205.0,Meowscarada,238.0,5
+206.0,Primarina,30.0,1
+206.0,Latios,25.0,2
+206.0,Iron Treads,23.0,3
+206.0,Corviknight,20.0,4
+206.0,Dragapult,18.0,5
+207.0,Empoleon,77.0,1
+207.0,Cyclizar,63.0,2
+207.0,Darkrai,59.0,3
+207.0,Meowscarada,57.0,4
+207.0,Tinkaton,57.0,5
+208.0,Garchomp,1.0,1
+208.0,Iron Thorns,1.0,2
+208.0,Lokix,1.0,3
+208.0,Manaphy,1.0,4
+208.0,Slowking,1.0,5
+209.0,Vullaby,6.0,1
+209.0,Crabrawler,4.0,2
+209.0,Elekid,4.0,3
+209.0,Pineco,4.0,4
+209.0,Tentacool,4.0,5
+210.0,Terapagos,40.0,1
+210.0,Slowking-Galar,34.0,2
+210.0,Urshifu,33.0,3
+210.0,Meowscarada,31.0,4
+210.0,Iron Treads,30.0,5
+211.0,Terapagos,168.0,1
+211.0,Great Tusk,144.0,2
+211.0,Iron Treads,130.0,3
+211.0,Meowscarada,112.0,4
+211.0,Zapdos,98.0,5
+211.001,Iron Treads,224.0,1
+211.001,Great Tusk,172.0,2
+211.001,Cinderace,157.0,3
+211.001,Iron Valiant,155.0,4
+211.001,Donphan,142.0,5
+212.0,Garchomp,696.0,1
+212.0,Iron Valiant,524.0,2
+212.0,Ting-Lu,491.0,3
+212.0,Great Tusk,489.0,4
+212.0,Greninja,489.0,5
+214.0,Swampert,68.0,1
+214.0,Cyclizar,64.0,2
+214.0,Gastrodon,62.0,3
+214.0,Tinkaton,61.0,4
+214.0,Incineroar,57.0,5
+215.0,Empoleon,38.0,1
+215.0,Fezandipiti,32.0,2
+215.0,Altaria,30.0,3
+215.0,Glimmora,29.0,4
+215.0,Tentacruel,29.0,5
+215.001,Sylveon,26.0,1
+215.001,Samurott-Hisui,25.0,2
+215.001,Scizor,24.0,3
+215.001,Tsareena,23.0,4
+215.001,Tentacruel,21.0,5
+216.0,Gimmighoul,3.0,1
+216.0,Axew,2.0,2
+216.0,Chinchou,2.0,3
+216.0,Corphish,2.0,4
+216.0,Cosmoem,2.0,5
+217.0,Meowscarada,46.0,1
+217.0,Iron Treads,40.0,2
+217.0,Great Tusk,37.0,3
+217.0,Iron Valiant,37.0,4
+217.0,Rotom-Wash,35.0,5
+218.0,Scraggy,7.0,1
+218.0,Slowbro,7.0,2
+218.0,Swalot,7.0,3
+218.0,Vaporeon,7.0,4
+218.0,Eiscue,6.0,5
+219.0,Annihilape,18.0,1
+219.0,Iron Boulder,15.0,2
+219.0,Sneasler,13.0,3
+219.0,Weezing-Galar,13.0,4
+219.0,Goodra-Hisui,11.0,5
+220.0,Chinchou,1.0,1
+220.0,Diglett,1.0,2
+220.0,Duosion,1.0,3
+220.0,Hoothoot,1.0,4
+220.0,Joltik,1.0,5
+221.0,Meowscarada,54.0,1
+221.0,Cyclizar,52.0,2
+221.0,Quaquaval,50.0,3
+221.0,Terapagos,45.0,4
+221.0,Primarina,43.0,5
+225.0,Iron Valiant,7.0,1
+225.0,Umbreon,7.0,2
+225.0,Iron Bundle,6.0,3
+225.0,Necrozma,6.0,4
+225.0,Annihilape,5.0,5
+227.0,Slowking-Galar,431.0,1
+227.0,Great Tusk,353.0,2
+227.0,Iron Valiant,351.0,3
+227.0,Raging Bolt,348.0,4
+227.0,Garchomp,312.0,5
+228.0,Elekid,6.0,1
+228.0,Koffing,6.0,2
+228.0,Mankey,5.0,3
+228.0,Sprigatito,5.0,4
+228.0,Corphish,4.0,5
+229.0,Mudsdale,29.0,1
+229.0,Forretress,24.0,2
+229.0,Cyclizar,23.0,3
+229.0,Munkidori,21.0,4
+229.0,Raging Bolt,20.0,5
+230.0,Pelipper,366.0,1
+230.0,Archaludon,188.0,2
+230.0,Politoed,135.0,3
+230.0,Zapdos,98.0,4
+230.0,Palafin,79.0,5
+231.0,Bonsly,4.0,1
+231.0,Scraggy,4.0,2
+231.0,Elekid,3.0,3
+231.0,Koffing,3.0,4
+231.0,Squirtle,3.0,5
+232.0,Urshifu,475.0,1
+232.0,Samurott-Hisui,386.0,2
+232.0,Ogerpon-Wellspring,372.0,3
+232.0,Zapdos,366.0,4
+232.0,Slowking-Galar,358.0,5
+233.0,Urshifu,141.0,1
+233.0,Iron Valiant,109.0,2
+233.0,Gholdengo,102.0,3
+233.0,Iron Treads,101.0,4
+233.0,Meowscarada,100.0,5
+234.0,Dipplin,12.0,1
+234.0,Prinplup,11.0,2
+234.0,Charmeleon,8.0,3
+234.0,Drizzile,8.0,4
+234.0,Mudbray,8.0,5
+235.0,Gholdengo,119.0,1
+235.0,Urshifu,78.0,2
+235.0,Iron Bundle,76.0,3
+235.0,Roaring Moon,67.0,4
+235.0,Gliscor,65.0,5
+236.0,Beldum,1.0,1
+236.0,Cacnea,1.0,2
+236.0,Geodude-Alola,1.0,3
+236.0,Nymble,1.0,4
+236.0,Wooper,1.0,5
+237.0,Garchomp,174.0,1
+237.0,Meowscarada,161.0,2
+237.0,Landorus-Therian,143.0,3
+237.0,Gliscor,127.0,4
+237.0,Gholdengo,126.0,5
+239.0,Koffing,7.0,1
+239.0,Sprigatito,7.0,2
+239.0,Houndour,6.0,3
+239.0,Mankey,6.0,4
+239.0,Vullaby,6.0,5
+240.0,Scraggy,11.0,1
+240.0,Dewpider,7.0,2
+240.0,Foongus,7.0,3
+240.0,Squirtle,7.0,4
+240.0,Diglett,6.0,5
+242.0,Gliscor,205.0,1
+242.0,Corviknight,192.0,2
+242.0,Dondozo,165.0,3
+242.0,Alomomola,148.0,4
+242.0,Clefable,111.0,5
+243.0,Urshifu,180.0,1
+243.0,Garchomp,173.0,2
+243.0,Landorus-Therian,166.0,3
+243.0,Corviknight,163.0,4
+243.0,Great Tusk,157.0,5
+244.0,Great Tusk,157.0,1
+244.0,Iron Valiant,153.0,2
+244.0,Gholdengo,134.0,3
+244.0,Meowscarada,130.0,4
+244.0,Roaring Moon,129.0,5
+245.0,Iron Valiant,89.0,1
+245.0,Dragapult,80.0,2
+245.0,Galvantula,77.0,3
+245.0,Iron Treads,72.0,4
+245.0,Weezing-Galar,71.0,5
+247.0,Haunter,20.0,1
+247.0,Grotle,16.0,2
+247.0,Eelektrik,15.0,3
+247.0,Crocalor,12.0,4
+247.0,Charjabug,10.0,5
+248.0,Excadrill,2139.0,1
+248.0,Houndstone,295.0,2
+248.0,Latios,279.0,3
+248.0,Garchomp,263.0,4
+248.0,Tornadus-Therian,249.0,5
+249.0,Urshifu,38.0,1
+249.0,Garchomp,26.0,2
+249.0,Iron Bundle,26.0,3
+249.0,Ting-Lu,25.0,4
+249.0,Cinderace,22.0,5
+250.0,Ogerpon-Wellspring,69.0,1
+250.0,Great Tusk,59.0,2
+250.0,Dragapult,52.0,3
+250.0,Iron Treads,47.0,4
+250.0,Kingambit,43.0,5
+251.0,Diancie,1.0,1
+251.0,Iron Hands,1.0,2
+251.0,Iron Treads,1.0,3
+251.0,Overqwil,1.0,4
+251.0,Spectrier,1.0,5
+252.0,Espurr,2.0,1
+252.0,Fletchling,2.0,2
+252.0,Glimmet,2.0,3
+252.0,Hatterene,2.0,4
+252.0,Minior-Blue,2.0,5
+253.0,Ampharos,4.0,1
+253.0,Gastrodon,4.0,2
+253.0,Kingambit,4.0,3
+253.0,Kyurem,4.0,4
+253.0,Qwilfish,4.0,5
+254.0,Dragapult,47.0,1
+254.0,Iron Treads,42.0,2
+254.0,Gholdengo,40.0,3
+254.0,Iron Valiant,36.0,4
+254.0,Weezing-Galar,35.0,5
+256.0,Haunter,18.0,1
+256.0,Charjabug,11.0,2
+256.0,Dipplin,8.0,3
+256.0,Pupitar,8.0,4
+256.0,Arctibax,7.0,5
+257.0,Garchomp,277.0,1
+257.0,Greninja,274.0,2
+257.0,Darkrai,237.0,3
+257.0,Landorus-Therian,231.0,4
+257.0,Corviknight,223.0,5
+258.0,Annihilape,4.0,1
+258.0,Azumarill,4.0,2
+258.0,Gliscor,4.0,3
+258.0,Heatran,3.0,4
+258.0,Slowking,3.0,5
+259.0,Dunsparce,7.0,1
+259.0,Alcremie-Rainbow-Swirl,6.0,2
+259.0,Drakloak,6.0,3
+259.0,Misdreavus,6.0,4
+259.0,Ninetales,6.0,5
+260.0,Corviknight,481.0,1
+260.0,Terapagos,373.0,2
+260.0,Iron Valiant,365.0,3
+260.0,Urshifu,342.0,4
+260.0,Dragapult,305.0,5
+261.0,Cleffa,1.0,1
+261.0,Meowth-Galar,1.0,2
+261.0,Mudkip,1.0,3
+261.0,Pawniard,1.0,4
+261.0,Voltorb-Hisui,1.0,5
+262.0,Rotom-Fan,8.0,1
+262.0,Hitmontop,6.0,2
+262.0,Blastoise,5.0,3
+262.0,Electivire,5.0,4
+262.0,Greninja,5.0,5
+271.0,Quagsire,4.0,1
+271.0,Camerupt,3.0,2
+271.0,Enamorus-Therian,3.0,3
+271.0,Gallade,3.0,4
+271.0,Infernape,3.0,5
+272.0,Pelipper,195.0,1
+272.0,Archaludon,113.0,2
+272.0,Politoed,105.0,3
+272.0,Barraskewda,72.0,4
+272.0,Zapdos,57.0,5
+273.0,Cinderace,1.0,1
+273.0,Ho-Oh,1.0,2
+273.0,Hydreigon,1.0,3
+273.0,Jirachi,1.0,4
+273.0,Lapras,1.0,5
+274.0,Monferno,3.0,1
+274.0,Murkrow,3.0,2
+274.0,Shroodle,3.0,3
+274.0,Electabuzz,2.0,4
+274.0,Enamorus-Therian,2.0,5
+275.0,Torkoal,56.0,1
+275.0,Walking Wake,49.0,2
+275.0,Ninetales,45.0,3
+275.0,Gouging Fire,32.0,4
+275.0,Ogerpon-Hearthflame,29.0,5
+278.0,Voltorb-Hisui,16.0,1
+278.0,Pawniard,10.0,2
+278.0,Sandygast,10.0,3
+278.0,Timburr,10.0,4
+278.0,Koffing,8.0,5
+279.0,Archaludon,2445.0,1
+279.0,Barraskewda,1226.0,2
+279.0,Overqwil,746.0,3
+279.0,Palafin,699.0,4
+279.0,Zapdos,554.0,5
+280.0,Cinccino,3.0,1
+280.0,Copperajah,3.0,2
+280.0,Spiritomb,3.0,3
+280.0,Ursaring,3.0,4
+280.0,Articuno-Galar,2.0,5
+281.0,Crocalor,5.0,1
+281.0,Morgrem,5.0,2
+281.0,Pawmo,5.0,3
+281.0,Dugtrio-Alola,4.0,4
+281.0,Cacturne,3.0,5
+282.0,Greninja,172.0,1
+282.0,Swampert,147.0,2
+282.0,Garchomp,143.0,3
+282.0,Corviknight,140.0,4
+282.0,Cinderace,132.0,5
+283.0,Politoed,9.0,1
+283.0,Quaquaval,7.0,2
+283.0,Archaludon,6.0,3
+283.0,Palafin,6.0,4
+283.0,Overqwil,5.0,5
+284.0,Gholdengo,49.0,1
+284.0,Grimmsnarl,37.0,2
+284.0,Meowscarada,34.0,3
+284.0,Iron Treads,33.0,4
+284.0,Primarina,27.0,5
+285.0,Charizard,2.0,1
+285.0,Gligar,2.0,2
+285.0,Maushold,2.0,3
+285.0,Tatsugiri,2.0,4
+285.0,Braviary-Hisui,1.0,5
+286.0,Gholdengo,92.0,1
+286.0,Glimmora,78.0,2
+286.0,Cinderace,75.0,3
+286.0,Latios,71.0,4
+286.0,Excadrill,68.0,5
+287.0,Clodsire,2.0,1
+287.0,Dusknoir,2.0,2
+287.0,Hitmonlee,2.0,3
+287.0,Lycanroc,2.0,4
+287.0,Virizion,2.0,5
+288.0,Quaxwell,14.0,1
+288.0,Qwilfish-Hisui,11.0,2
+288.0,Bayleef,8.0,3
+288.0,Piloswine,8.0,4
+288.0,Blaziken,7.0,5
+289.0,Annihilape,28.0,1
+289.0,Iron Valiant,27.0,2
+289.0,Ninetales-Alola,27.0,3
+289.0,Gliscor,24.0,4
+289.0,Quagsire,24.0,5
+296.0,Golett,5.0,1
+296.0,Cottonee,4.0,2
+296.0,Elekid,4.0,3
+296.0,Fennekin,4.0,4
+296.0,Chimchar,3.0,5
+297.0,Iron Treads,95.0,1
+297.0,Meowscarada,88.0,2
+297.0,Raging Bolt,65.0,3
+297.0,Ogerpon-Wellspring,63.0,4
+297.0,Gouging Fire,59.0,5
+298.0,Conkeldurr,1.0,1
+298.0,Kyurem,1.0,2
+298.0,Palossand,1.0,3
+298.0,Ribombee,1.0,4
+298.0,Weezing,1.0,5
+299.0,Sandslash-Alola,6.0,1
+299.0,Sandslash,5.0,2
+299.0,Deoxys-Defense,4.0,3
+299.0,Dewgong,4.0,4
+299.0,Electabuzz,4.0,5
+302.0,Meowscarada,126.0,1
+302.0,Iron Valiant,115.0,2
+302.0,Ting-Lu,115.0,3
+302.0,Garchomp,89.0,4
+302.0,Great Tusk,87.0,5
+303.0,Annihilape,2.0,1
+303.0,Tentacruel,2.0,2
+303.0,Aerodactyl,1.0,3
+303.0,Baxcalibur,1.0,4
+303.0,Darkrai,1.0,5
+307.0,Fraxure,4.0,1
+307.0,Staravia,4.0,2
+307.0,Vigoroth,4.0,3
+307.0,Zweilous,4.0,4
+307.0,Corviknight,3.0,5
+308.0,Gardevoir,35.0,1
+308.0,Skeledirge,35.0,2
+308.0,Rotom-Wash,33.0,3
+308.0,Chansey,29.0,4
+308.0,Great Tusk,27.0,5
+310.0,Crobat,1.0,1
+310.0,Gouging Fire,1.0,2
+310.0,Palafin,1.0,3
+310.0,Persian-Alola,1.0,4
+310.0,Terapagos,1.0,5
+311.0,Clodsire,9.0,1
+311.0,Blastoise,6.0,2
+311.0,Metagross,6.0,3
+311.0,Sableye,6.0,4
+311.0,Wigglytuff,5.0,5
+312.0,Baxcalibur,5.0,1
+312.0,Dachsbun,5.0,2
+312.0,Annihilape,4.0,3
+312.0,Sandaconda,4.0,4
+312.0,Serperior,4.0,5
+313.0,Gouging Fire,35.0,1
+313.0,Great Tusk,31.0,2
+313.0,Palafin,25.0,3
+313.0,Volcanion,25.0,4
+313.0,Metagross,23.0,5
+314.0,Great Tusk,37.0,1
+314.0,Walking Wake,36.0,2
+314.0,Iron Valiant,28.0,3
+314.0,Rillaboom,25.0,4
+314.0,Ninetales,24.0,5
+316.0,Bellsprout,1.0,1
+316.0,Combee,1.0,2
+316.0,Corviknight,1.0,3
+316.0,Cresselia,1.0,4
+316.0,Eelektrik,1.0,5
+317.0,Terapagos,62.0,1
+317.0,Garchomp,49.0,2
+317.0,Great Tusk,49.0,3
+317.0,Jirachi,46.0,4
+317.0,Iron Treads,43.0,5
+319.0,Dragonite,2.0,1
+319.0,Iron Treads,2.0,2
+319.0,Sinistcha,2.0,3
+319.0,Tapu Koko,2.0,4
+319.0,Terapagos,2.0,5
+321.0,Annihilape,1.0,1
+321.0,Garchomp,1.0,2
+321.0,Pelipper,1.0,3
+321.0,Scizor,1.0,4
+321.0,Typhlosion-Hisui,1.0,5
+322.0,Dusclops,5.0,1
+322.0,Grimmsnarl,5.0,2
+322.0,Iron Moth,5.0,3
+322.0,Corphish,4.0,4
+322.0,Meloetta,4.0,5
+323.0,Gallade,16.0,1
+323.0,Raichu,16.0,2
+323.0,Weezing,15.0,3
+323.0,Inteleon,13.0,4
+323.0,Mabosstiff,13.0,5
+324.0,Walking Wake,2806.0,1
+324.0,Venusaur,1190.0,2
+324.0,Gouging Fire,1006.0,3
+324.0,Roaring Moon,832.0,4
+324.0,Lilligant-Hisui,807.0,5
+325.0,Bulbasaur,2.0,1
+325.0,Diglett,2.0,2
+325.0,Joltik,2.0,3
+325.0,Munchlax,2.0,4
+325.0,Vulpix,2.0,5
+326.0,Flamigo,17.0,1
+326.0,Glimmora,16.0,2
+326.0,Forretress,10.0,3
+326.0,Garchomp,10.0,4
+326.0,Gyarados,9.0,5
+328.0,Iron Valiant,29.0,1
+328.0,Ting-Lu,26.0,2
+328.0,Raging Bolt,19.0,3
+328.0,Alomomola,17.0,4
+328.0,Cinderace,16.0,5
+329.0,Dewpider,5.0,1
+329.0,Carkol,4.0,2
+329.0,Electabuzz,4.0,3
+329.0,Monferno,4.0,4
+329.0,Haunter,3.0,5
+330.0,Meowscarada,168.0,1
+330.0,Annihilape,155.0,2
+330.0,Tinkaton,151.0,3
+330.0,Gholdengo,134.0,4
+330.0,Corviknight,124.0,5
+331.0,Cutiefly,5.0,1
+331.0,Diglett-Alola,5.0,2
+331.0,Growlithe-Hisui,4.0,3
+331.0,Doduo,3.0,4
+331.0,Tentacool,3.0,5
+332.0,Regirock,28.0,1
+332.0,Scream Tail,26.0,2
+332.0,Drifblim,23.0,3
+332.0,Lucario,23.0,4
+332.0,Regidrago,21.0,5
+333.0,Chikorita,1.0,1
+333.0,Cutiefly,1.0,2
+333.0,Electivire,1.0,3
+333.0,Gastly,1.0,4
+333.0,Haunter,1.0,5
+334.0,Alomomola,49.0,1
+334.0,Jolteon,42.0,2
+334.0,Darkrai,41.0,3
+334.0,Garchomp,40.0,4
+334.0,Iron Bundle,40.0,5
+335.0,Coalossal,24.0,1
+335.0,Grimmsnarl,23.0,2
+335.0,Ting-Lu,21.0,3
+335.0,Chi-Yu,19.0,4
+335.0,Forretress,19.0,5
+336.0,Charizard,6.0,1
+336.0,Eelektross,5.0,2
+336.0,Alomomola,4.0,3
+336.0,Altaria,4.0,4
+336.0,Forretress,4.0,5
+339.0,Terapagos,4.0,1
+339.0,Volcarona,3.0,2
+339.0,Zapdos-Galar,3.0,3
+339.0,Latios,2.0,4
+339.0,Samurott-Hisui,2.0,5
+340.0,Incineroar,23.0,1
+340.0,Weezing-Galar,23.0,2
+340.0,Grimmsnarl,19.0,3
+340.0,Scrafty,19.0,4
+340.0,Kleavor,18.0,5
+341.0,Salandit,8.0,1
+341.0,Yanma,6.0,2
+341.0,Elekid,5.0,3
+341.0,Koffing,5.0,4
+341.0,Sprigatito,5.0,5
+342.0,Clodsire,64.0,1
+342.0,Great Tusk,56.0,2
+342.0,Gholdengo,53.0,3
+342.0,Weezing-Galar,52.0,4
+342.0,Slowking-Galar,46.0,5
+345.0,Heatran,1.0,1
+345.0,Hitmonlee,1.0,2
+345.0,Kyurem,1.0,3
+345.0,Landorus-Therian,1.0,4
+345.0,Slowking,1.0,5
+349.0,Dragalge,9.0,1
+349.0,Iron Treads,9.0,2
+349.0,Brambleghast,8.0,3
+349.0,Typhlosion-Hisui,7.0,4
+349.0,Dugtrio,5.0,5
+350.0,Great Tusk,314.0,1
+350.0,Iron Treads,197.0,2
+350.0,Iron Valiant,189.0,3
+350.0,Garchomp,166.0,4
+350.0,Gliscor,166.0,5
+351.0,Hippowdon,14.0,1
+351.0,Froslass,13.0,2
+351.0,Pelipper,13.0,3
+351.0,Tapu Bulu,12.0,4
+351.0,Weezing-Galar,10.0,5
+353.0,Barraskewda,1.0,1
+353.0,Florges,1.0,2
+353.0,Mandibuzz,1.0,3
+353.0,Tsareena,1.0,4
+353.0,Uxie,1.0,5
+354.0,Bronzong,9.0,1
+354.0,Alomomola,8.0,2
+354.0,Muk,8.0,3
+354.0,Mudsdale,7.0,4
+354.0,Sceptile,7.0,5
+355.0,Gurdurr,3.0,1
+355.0,Pawniard,3.0,2
+355.0,Sliggoo-Hisui,3.0,3
+355.0,Arcanine-Hisui,2.0,4
+355.0,Buizel,2.0,5
+356.0,Urshifu,49.0,1
+356.0,Iron Treads,39.0,2
+356.0,Meowscarada,39.0,3
+356.0,Gouging Fire,34.0,4
+356.0,Gliscor,31.0,5
+357.0,Urshifu,16.0,1
+357.0,Walking Wake,11.0,2
+357.0,Skeledirge,10.0,3
+357.0,Torkoal,10.0,4
+357.0,Great Tusk,8.0,5
+358.0,Great Tusk,18.0,1
+358.0,Tornadus-Therian,18.0,2
+358.0,Clodsire,16.0,3
+358.0,Iron Treads,16.0,4
+358.0,Primarina,16.0,5
+359.0,Swampert,12.0,1
+359.0,Iron Crown,10.0,2
+359.0,Sneasler,10.0,3
+359.0,Magearna,9.0,4
+359.0,Mewtwo,9.0,5
+361.0,Kilowattrel,2.0,1
+361.0,Quaquaval,2.0,2
+361.0,Tinkaton,2.0,3
+361.0,Hatterene,1.0,4
+361.0,Quagsire,1.0,5
+362.0,Duraludon,9.0,1
+362.0,Excadrill,8.0,2
+362.0,Rhyperior,8.0,3
+362.0,Galvantula,7.0,4
+362.0,Arboliva,6.0,5
+370.0,Moltres,3.0,1
+370.0,Ribombee,3.0,2
+370.0,Scizor,3.0,3
+370.0,Gholdengo,2.0,4
+370.0,Inteleon,2.0,5
+371.0,Cetoddle,6.0,1
+371.0,Cutiefly,6.0,2
+371.0,Froakie,6.0,3
+371.0,Koffing,6.0,4
+371.0,Mudbray,4.0,5
+372.0,Girafarig,8.0,1
+372.0,Quaxwell,8.0,2
+372.0,Qwilfish-Hisui,8.0,3
+372.0,Drilbur,7.0,4
+372.0,Stantler,7.0,5
+373.0,Iron Valiant,399.0,1
+373.0,Gholdengo,376.0,2
+373.0,Ting-Lu,293.0,3
+373.0,Meowscarada,289.0,4
+373.0,Great Tusk,265.0,5
+374.0,Altaria,1.0,1
+374.0,Cacnea,1.0,2
+374.0,Calyrex,1.0,3
+374.0,Dewpider,1.0,4
+374.0,Flamigo,1.0,5
+375.0,Bayleef,15.0,1
+375.0,Primeape,14.0,2
+375.0,Electabuzz,13.0,3
+375.0,Rotom-Heat,10.0,4
+375.0,Bombirdier,9.0,5
+376.0,Garchomp,540.0,1
+376.0,Iron Valiant,528.0,2
+376.0,Meowscarada,515.0,3
+376.0,Great Tusk,490.0,4
+376.0,Darkrai,452.0,5
+377.0,Excadrill,110.0,1
+377.0,Tyranitar,82.0,2
+377.0,Jirachi,79.0,3
+377.0,Salamence,55.0,4
+377.0,Registeel,51.0,5
+378.0,Urshifu,47.0,1
+378.0,Iron Treads,45.0,2
+378.0,Regirock,44.0,3
+378.0,Meowscarada,43.0,4
+378.0,Registeel,36.0,5
+379.0,Great Tusk,121.0,1
+379.0,Weezing-Galar,109.0,2
+379.0,Dragapult,98.0,3
+379.0,Meowscarada,89.0,4
+379.0,Alomomola,84.0,5
+380.0,Meowscarada,488.0,1
+380.0,Iron Valiant,417.0,2
+380.0,Iron Treads,413.0,3
+380.0,Urshifu,387.0,4
+380.0,Great Tusk,358.0,5
+381.0,Iron Treads,537.0,1
+381.0,Urshifu,530.0,2
+381.0,Meowscarada,493.0,3
+381.0,Excadrill,456.0,4
+381.0,Clefable,443.0,5
+382.0,Archaludon,28.0,1
+382.0,Basculegion,28.0,2
+382.0,Overqwil,17.0,3
+382.0,Gliscor,12.0,4
+382.0,Meowscarada,12.0,5
+383.0,Walking Wake,179.0,1
+383.0,Gouging Fire,71.0,2
+383.0,Roaring Moon,65.0,3
+383.0,Venusaur,64.0,4
+383.0,Chi-Yu,58.0,5
+384.0,Zamazenta,64.0,1
+384.0,Iron Treads,60.0,2
+384.0,Terapagos,51.0,3
+384.0,Pecharunt,50.0,4
+384.0,Iron Valiant,49.0,5
+385.0,Great Tusk,718.0,1
+385.0,Terapagos,628.0,2
+385.0,Darkrai,532.0,3
+385.0,Garchomp,521.0,4
+385.0,Roaring Moon,508.0,5
+386.0,Muk-Alola,18.0,1
+386.0,Primarina,18.0,2
+386.0,Dialga,17.0,3
+386.0,Blastoise,16.0,4
+386.0,Magearna,16.0,5
+386.001,Sneasler,37.0,1
+386.001,Samurott-Hisui,33.0,2
+386.001,Dialga-Origin,32.0,3
+386.001,Indeedee,29.0,4
+386.001,Indeedee-F,28.0,5
+386.002,Gholdengo,183.0,1
+386.002,Iron Valiant,148.0,2
+386.002,Palafin,137.0,3
+386.002,Iron Treads,129.0,4
+386.002,Ursaluna,128.0,5
+386.003,Great Tusk,505.0,1
+386.003,Zarude,460.0,2
+386.003,Tinkaton,444.0,3
+386.003,Urshifu,422.0,4
+386.003,Gholdengo,403.0,5
+387.0,Growlithe-Hisui,5.0,1
+387.0,Timburr,4.0,2
+387.0,Dewpider,3.0,3
+387.0,Shieldon,3.0,4
+387.0,Varoom,3.0,5
+388.0,Pupitar,16.0,1
+388.0,Kyurem,11.0,2
+388.0,Gurdurr,9.0,3
+388.0,Gliscor,8.0,4
+388.0,Kingambit,8.0,5
+389.0,Primarina,80.0,1
+389.0,Glimmora,75.0,2
+389.0,Urshifu,75.0,3
+389.0,Greninja,74.0,4
+389.0,Empoleon,71.0,5
+390.0,Aipom,6.0,1
+390.0,Mankey,6.0,2
+390.0,Drifloon,5.0,3
+390.0,Grookey,5.0,4
+390.0,Koffing,5.0,5
+391.0,Electabuzz,15.0,1
+391.0,Drizzile,12.0,2
+391.0,Drakloak,8.0,3
+391.0,Gastly,8.0,4
+391.0,Corvisquire,7.0,5
+392.0,Garchomp,228.0,1
+392.0,Greninja,228.0,2
+392.0,Slowking-Galar,210.0,3
+392.0,Tornadus-Therian,203.0,4
+392.0,Corviknight,174.0,5
+393.0,Sylveon,5.0,1
+393.0,Gengar,4.0,2
+393.0,Torkoal,4.0,3
+393.0,Amoonguss,3.0,4
+393.0,Ditto,3.0,5
+394.0,Ivysaur,11.0,1
+394.0,Stantler,11.0,2
+394.0,Floette,10.0,3
+394.0,Magmar,9.0,4
+394.0,Primeape,9.0,5
+395.0,Great Tusk,483.0,1
+395.0,Gliscor,358.0,2
+395.0,Iron Valiant,310.0,3
+395.0,Sneasler,280.0,4
+395.0,Urshifu,258.0,5
+396.0,Diglett,5.0,1
+396.0,Tentacool,5.0,2
+396.0,Clodsire,4.0,3
+396.0,Cufant,4.0,4
+396.0,Greavard,4.0,5
+397.0,Haunter,18.0,1
+397.0,Fraxure,12.0,2
+397.0,Gloom,11.0,3
+397.0,Krokorok,11.0,4
+397.0,Mareanie,9.0,5
+398.0,Iron Treads,77.0,1
+398.0,Tinkaton,77.0,2
+398.0,Alomomola,76.0,3
+398.0,Gholdengo,70.0,4
+398.0,Darkrai,68.0,5
+401.0,Cinderace,1.0,1
+401.0,Morgrem,1.0,2
+401.0,Nosepass,1.0,3
+401.0,Spectrier,1.0,4
+401.0,Urshifu,1.0,5
+402.0,Iron Moth,20.0,1
+402.0,Jirachi,17.0,2
+402.0,Weavile,17.0,3
+402.0,Dragonite,16.0,4
+402.0,Quagsire,16.0,5
+403.0,Cranidos,1.0,1
+403.0,Dewpider,1.0,2
+403.0,Magby,1.0,3
+403.0,Nosepass,1.0,4
+403.0,Riolu,1.0,5
+404.0,Haunter,6.0,1
+404.0,Staravia,6.0,2
+404.0,Hattrem,4.0,3
+404.0,Swadloon,4.0,4
+404.0,Thwackey,4.0,5
+405.0,Landorus-Therian,15.0,1
+405.0,Latios,14.0,2
+405.0,Donphan,12.0,3
+405.0,Copperajah,11.0,4
+405.0,Goodra-Hisui,11.0,5
+408.0,Malamar,7.0,1
+408.0,Glaceon,4.0,2
+408.0,Smeargle,4.0,3
+408.0,Solosis,4.0,4
+408.0,Braixen,3.0,5
+409.0,Magnezone,18.0,1
+409.0,Uxie,18.0,2
+409.0,Great Tusk,17.0,3
+409.0,Primarina,17.0,4
+409.0,Vikavolt,16.0,5
+410.0,Aipom,7.0,1
+410.0,Quaxly,7.0,2
+410.0,Crabrawler,6.0,3
+410.0,Vulpix,6.0,4
+410.0,Wattrel,5.0,5
+411.0,Primarina,33.0,1
+411.0,Meowscarada,31.0,2
+411.0,Feraligatr,28.0,3
+411.0,Raging Bolt,24.0,4
+411.0,Sylveon,23.0,5
+415.0,Glimmora,3.0,1
+415.0,Mimikyu,2.0,2
+415.0,Skarmory,2.0,3
+415.0,Ting-Lu,2.0,4
+415.0,Urshifu,2.0,5
+416.0,Clodsire,15.0,1
+416.0,Whimsicott,14.0,2
+416.0,Wo-Chien,14.0,3
+416.0,Enamorus,13.0,4
+416.0,Vaporeon,13.0,5
+417.0,Maushold-Four,13.0,1
+417.0,Gliscor,11.0,2
+417.0,Tauros-Paldea-Blaze,10.0,3
+417.0,Brionne,9.0,4
+417.0,Donphan,9.0,5
+418.0,Stunky,6.0,1
+418.0,Toedscool,6.0,2
+418.0,Chi-Yu,5.0,3
+418.0,Archaludon,3.0,4
+418.0,Drifloon,3.0,5
+419.0,Pelipper,347.0,1
+419.0,Archaludon,217.0,2
+419.0,Clodsire,95.0,3
+419.0,Politoed,93.0,4
+419.0,Kilowattrel,80.0,5
+422.0,Dedenne,6.0,1
+422.0,Fraxure,5.0,2
+422.0,Vivillon,5.0,3
+422.0,Metang,4.0,4
+422.0,Persian,4.0,5
+423.0,Corviknight,158.0,1
+423.0,Urshifu,123.0,2
+423.0,Meowscarada,113.0,3
+423.0,Tyranitar,113.0,4
+423.0,Gholdengo,111.0,5
+424.0,Dragapult,55.0,1
+424.0,Donphan,52.0,2
+424.0,Goodra-Hisui,52.0,3
+424.0,Glimmora,50.0,4
+424.0,Great Tusk,50.0,5
+425.0,Grookey,17.0,1
+425.0,Meowth,9.0,2
+425.0,Gible,8.0,3
+425.0,Stunky,8.0,4
+425.0,Chinchou,7.0,5
+426.0,Rillaboom,199.0,1
+426.0,Sneasler,133.0,2
+426.0,Primarina,112.0,3
+426.0,Iron Valiant,97.0,4
+426.0,Gouging Fire,93.0,5
+428.0,Sinistcha,21.0,1
+428.0,Garchomp,17.0,2
+428.0,Roaring Moon,15.0,3
+428.0,Slowking-Galar,15.0,4
+428.0,Tapu Lele,15.0,5
+429.0,Meowscarada,126.0,1
+429.0,Terapagos,121.0,2
+429.0,Great Tusk,119.0,3
+429.0,Iron Treads,114.0,4
+429.0,Metagross,107.0,5
+430.0,Lapras,19.0,1
+430.0,Inteleon,18.0,2
+430.0,Cryogonal,17.0,3
+430.0,Espeon,17.0,4
+430.0,Dragalge,16.0,5
+432.0,Diancie,1.0,1
+432.0,Grimmsnarl,1.0,2
+432.0,Skeledirge,1.0,3
+432.0,Starmie,1.0,4
+432.0,Zygarde,1.0,5
+433.0,Iron Boulder,2.0,1
+433.0,Ambipom,1.0,2
+433.0,Drilbur,1.0,3
+433.0,Ekans,1.0,4
+433.0,Geodude,1.0,5
+434.0,Drifloon,8.0,1
+434.0,Grookey,8.0,2
+434.0,Buizel,6.0,3
+434.0,Toedscool,6.0,4
+434.0,Chimchar,5.0,5
+435.0,Raging Bolt,63.0,1
+435.0,Garchomp,50.0,2
+435.0,Great Tusk,47.0,3
+435.0,Tornadus-Therian,46.0,4
+435.0,Forretress,45.0,5
+436.0,Glimmet,9.0,1
+436.0,Pikipek,8.0,2
+436.0,Tentacool,8.0,3
+436.0,Kingambit,7.0,4
+436.0,Scraggy,7.0,5
+437.0,Great Tusk,246.0,1
+437.0,Meowscarada,191.0,2
+437.0,Ogerpon-Wellspring,181.0,3
+437.0,Primarina,180.0,4
+437.0,Raging Bolt,179.0,5
+438.0,Scraggy,5.0,1
+438.0,Houndstone,4.0,2
+438.0,Palafin,4.0,3
+438.0,Phanpy,4.0,4
+438.0,Squirtle,4.0,5
+440.0,Cleffa,2.0,1
+440.0,Marill,2.0,2
+440.0,Psyduck,2.0,3
+440.0,Ralts,2.0,4
+440.0,Tinkatink,2.0,5
+442.0,Swampert,46.0,1
+442.0,Corviknight,42.0,2
+442.0,Iron Moth,40.0,3
+442.0,Tinkaton,33.0,4
+442.0,Iron Valiant,32.0,5
+443.0,Drifloon,8.0,1
+443.0,Meowth,6.0,2
+443.0,Archaludon,5.0,3
+443.0,Dragapult,5.0,4
+443.0,Duraludon,5.0,5
+444.0,Vullaby,18.0,1
+444.0,Braixen,14.0,2
+444.0,Frogadier,11.0,3
+444.0,Clefairy,10.0,4
+444.0,Dachsbun,10.0,5
+445.0,Corviknight,901.0,1
+445.0,Gholdengo,886.0,2
+445.0,Iron Valiant,869.0,3
+445.0,Greninja,836.0,4
+445.0,Tornadus-Therian,816.0,5
+446.0,Iron Bundle,24.0,1
+446.0,Ogerpon-Hearthflame,21.0,2
+446.0,Great Tusk,19.0,3
+446.0,Sneasler,14.0,4
+446.0,Chi-Yu,13.0,5
+447.0,Growlithe-Hisui,7.0,1
+447.0,Hitmontop,6.0,2
+447.0,Iron Valiant,6.0,3
+447.0,Kommo-o,6.0,4
+447.0,Lucario,6.0,5
+448.0,Meowscarada,104.0,1
+448.0,Greninja,101.0,2
+448.0,Primarina,91.0,3
+448.0,Garchomp,89.0,4
+448.0,Scream Tail,80.0,5
+449.0,Excadrill,42.0,1
+449.0,Sandslash,10.0,2
+449.0,Drilbur,9.0,3
+449.0,Grimer-Alola,9.0,4
+449.0,Dragapult,8.0,5
+450.0,Excadrill,604.0,1
+450.0,Houndstone,157.0,2
+450.0,Heatran,107.0,3
+450.0,Mandibuzz,103.0,4
+450.0,Ogerpon-Cornerstone,99.0,5
+453.0,Sandslash-Alola,6.0,1
+453.0,Braixen,5.0,2
+453.0,Chinchou,5.0,3
+453.0,Hippopotas,5.0,4
+453.0,Scorbunny,5.0,5
+454.0,Pelipper,91.0,1
+454.0,Zapdos,76.0,2
+454.0,Iron Treads,58.0,3
+454.0,Archaludon,57.0,4
+454.0,Barraskewda,52.0,5
+456.0,Carkol,2.0,1
+456.0,Fletchinder,2.0,2
+456.0,Magmar,2.0,3
+456.0,Metang,2.0,4
+456.0,Primeape,2.0,5
+457.0,Iron Jugulis,9.0,1
+457.0,Bronzong,7.0,2
+457.0,Dugtrio-Alola,5.0,3
+457.0,Tornadus,5.0,4
+457.0,Zamazenta,5.0,5
+459.0,Sandshrew-Alola,5.0,1
+459.0,Drifloon,4.0,2
+459.0,Meowth,4.0,3
+459.0,Gible,3.0,4
+459.0,Munchlax,3.0,5
+460.0,Baxcalibur,71.0,1
+460.0,Cetitan,71.0,2
+460.0,Garchomp,67.0,3
+460.0,Kyurem,57.0,4
+460.0,Iron Valiant,56.0,5
+461.0,Terapagos,562.0,1
+461.0,Great Tusk,536.0,2
+461.0,Garchomp,489.0,3
+461.0,Raging Bolt,461.0,4
+461.0,Gliscor,440.0,5
+462.0,Garchomp,132.0,1
+462.0,Landorus-Therian,107.0,2
+462.0,Swampert,95.0,3
+462.0,Iron Valiant,90.0,4
+462.0,Enamorus,89.0,5
+464.0,Darkrai,137.0,1
+464.0,Terapagos,121.0,2
+464.0,Urshifu,115.0,3
+464.0,Tentacruel,114.0,4
+464.0,Meowscarada,110.0,5
+466.0,Gardevoir,47.0,1
+466.0,Latios,46.0,2
+466.0,Skeledirge,36.0,3
+466.0,Urshifu,35.0,4
+466.0,Weezing-Galar,35.0,5
+467.0,Tinkaton,27.0,1
+467.0,Mew,26.0,2
+467.0,Dragapult,25.0,3
+467.0,Bronzong,24.0,4
+467.0,Donphan,24.0,5
+468.0,Arcanine-Hisui,1.0,1
+468.0,Cobalion,1.0,2
+468.0,Meganium,1.0,3
+468.0,Scizor,1.0,4
+468.0,Ting-Lu,1.0,5
+469.0,Araquanid,40.0,1
+469.0,Goodra-Hisui,39.0,2
+469.0,Ogerpon-Wellspring,39.0,3
+469.0,Brambleghast,38.0,4
+469.0,Kleavor,38.0,5
+470.0,Torkoal,80.0,1
+470.0,Walking Wake,78.0,2
+470.0,Ninetales,77.0,3
+470.0,Gouging Fire,38.0,4
+470.0,Raging Bolt,37.0,5
+471.0,Jolteon,50.0,1
+471.0,Sylveon,45.0,2
+471.0,Dragapult,42.0,3
+471.0,Garchomp,42.0,4
+471.0,Slowking-Galar,42.0,5
+472.0,Gholdengo,1018.0,1
+472.0,Terapagos,932.0,2
+472.0,Iron Valiant,822.0,3
+472.0,Roaring Moon,748.0,4
+472.0,Meowscarada,736.0,5
+473.0,Gholdengo,294.0,1
+473.0,Meowscarada,262.0,2
+473.0,Corviknight,258.0,3
+473.0,Iron Valiant,250.0,4
+473.0,Dragapult,217.0,5
+474.0,Iron Treads,114.0,1
+474.0,Gliscor,94.0,2
+474.0,Rillaboom,89.0,3
+474.0,Urshifu,85.0,4
+474.0,Slowking-Galar,80.0,5
+475.0,Tinkaton,97.0,1
+475.0,Kilowattrel,90.0,2
+475.0,Weezing-Galar,85.0,3
+475.0,Darkrai,84.0,4
+475.0,Empoleon,82.0,5
+476.0,Sneasler,30.0,1
+476.0,Rillaboom,28.0,2
+476.0,Talonflame,28.0,3
+476.0,Weezing-Galar,28.0,4
+476.0,Clefable,22.0,5
+477.0,Iron Moth,48.0,1
+477.0,Iron Valiant,48.0,2
+477.0,Meowscarada,47.0,3
+477.0,Great Tusk,45.0,4
+477.0,Roaring Moon,45.0,5
+478.0,Iron Valiant,73.0,1
+478.0,Sneasler,60.0,2
+478.0,Cyclizar,50.0,3
+478.0,Weezing-Galar,50.0,4
+478.0,Heatran,47.0,5
+479.0,Tornadus-Therian,159.0,1
+479.0,Garchomp,136.0,2
+479.0,Ting-Lu,133.0,3
+479.0,Meowscarada,125.0,4
+479.0,Terapagos,110.0,5
+479.001,Iron Treads,368.0,1
+479.001,Iron Valiant,364.0,2
+479.001,Ogerpon-Wellspring,346.0,3
+479.001,Great Tusk,331.0,4
+479.001,Primarina,330.0,5
+479.002,Garchomp,609.0,1
+479.002,Meowscarada,604.0,2
+479.002,Great Tusk,596.0,3
+479.002,Iron Valiant,539.0,4
+479.002,Iron Treads,500.0,5
+479.003,Great Tusk,76.0,1
+479.003,Slowking-Galar,68.0,2
+479.003,Dragapult,67.0,3
+479.003,Corviknight,49.0,4
+479.003,Tentacruel,49.0,5
+479.004,Meowscarada,75.0,1
+479.004,Dragapult,74.0,2
+479.004,Donphan,68.0,3
+479.004,Urshifu,58.0,4
+479.004,Iron Treads,56.0,5
+479.005,Iron Valiant,112.0,1
+479.005,Dragapult,104.0,2
+479.005,Great Tusk,93.0,3
+479.005,Greninja,93.0,4
+479.005,Roaring Moon,89.0,5
+480.0,Iron Treads,395.0,1
+480.0,Raging Bolt,292.0,2
+480.0,Iron Valiant,253.0,3
+480.0,Meowscarada,215.0,4
+480.0,Greninja,203.0,5
+481.0,Iron Treads,429.0,1
+481.0,Raging Bolt,303.0,2
+481.0,Meowscarada,277.0,3
+481.0,Darkrai,258.0,4
+481.0,Terapagos,220.0,5
+482.0,Meowscarada,168.0,1
+482.0,Raging Bolt,161.0,2
+482.0,Landorus-Therian,151.0,3
+482.0,Primarina,148.0,4
+482.0,Zapdos,133.0,5
+483.0,Ogerpon-Hearthflame,33.0,1
+483.0,Urshifu,27.0,2
+483.0,Fezandipiti,23.0,3
+483.0,Terapagos,23.0,4
+483.0,Iron Valiant,22.0,5
+483.001,Gliscor,45.0,1
+483.001,Deoxys-Attack,32.0,2
+483.001,Landorus-Therian,32.0,3
+483.001,Ho-Oh,29.0,4
+483.001,Ogerpon,29.0,5
+484.0,Magearna,38.0,1
+484.0,Metagross,33.0,2
+484.0,Muk-Alola,26.0,3
+484.0,Ogerpon-Hearthflame,24.0,4
+484.0,Annihilape,20.0,5
+484.001,Chien-Pao,43.0,1
+484.001,Zamazenta,36.0,2
+484.001,Slowking-Galar,28.0,3
+484.001,Urshifu,28.0,4
+484.001,Tornadus-Therian,27.0,5
+485.0,Great Tusk,620.0,1
+485.0,Urshifu,620.0,2
+485.0,Iron Valiant,583.0,3
+485.0,Landorus-Therian,578.0,4
+485.0,Rillaboom,563.0,5
+486.0,Regice,30.0,1
+486.0,Registeel,27.0,2
+486.0,Regidrago,26.0,3
+486.0,Regirock,25.0,4
+486.0,Greninja,21.0,5
+487.0,Greninja,24.0,1
+487.0,Muk-Alola,19.0,2
+487.0,Clodsire,18.0,3
+487.0,Hoopa-Unbound,18.0,4
+487.0,Ogerpon-Cornerstone,17.0,5
+487.001,Zamazenta,75.0,1
+487.001,Magearna,39.0,2
+487.001,Samurott-Hisui,39.0,3
+487.001,Urshifu,36.0,4
+487.001,Iron Moth,32.0,5
+488.0,Garchomp,190.0,1
+488.0,Roaring Moon,185.0,2
+488.0,Walking Wake,172.0,3
+488.0,Torkoal,159.0,4
+488.0,Gouging Fire,153.0,5
+489.0,Ting-Lu,9.0,1
+489.0,Darkrai,8.0,2
+489.0,Noivern,8.0,3
+489.0,Articuno,7.0,4
+489.0,Jirachi,7.0,5
+490.0,Great Tusk,230.0,1
+490.0,Iron Valiant,187.0,2
+490.0,Cinderace,182.0,3
+490.0,Meowscarada,171.0,4
+490.0,Corviknight,164.0,5
+491.0,Garchomp,814.0,1
+491.0,Landorus-Therian,752.0,2
+491.0,Ogerpon-Wellspring,726.0,3
+491.0,Iron Treads,677.0,4
+491.0,Great Tusk,665.0,5
+492.0,Urshifu,113.0,1
+492.0,Dragapult,110.0,2
+492.0,Iron Treads,92.0,3
+492.0,Cyclizar,91.0,4
+492.0,Great Tusk,88.0,5
+492.001,Urshifu,92.0,1
+492.001,Heatran,77.0,2
+492.001,Ting-Lu,74.0,3
+492.001,Terapagos,67.0,4
+492.001,Iron Treads,59.0,5
+493.0,Keldeo-Resolute,8.0,1
+493.0,Landorus-Therian,7.0,2
+493.0,Ditto,6.0,3
+493.0,Flutter Mane,6.0,4
+493.0,Clefable,5.0,5
+493.001,Clodsire,10.0,1
+493.001,Flutter Mane,10.0,2
+493.001,Giratina,10.0,3
+493.001,Araquanid,9.0,4
+493.001,Scream Tail,9.0,5
+493.002,Landorus-Therian,11.0,1
+493.002,Weezing-Galar,10.0,2
+493.002,Necrozma-Dusk-Mane,9.0,3
+493.002,Dragapult,8.0,4
+493.002,Terapagos,8.0,5
+493.003,Donphan,3.0,1
+493.003,Hoopa-Unbound,3.0,2
+493.003,Houndstone,3.0,3
+493.003,Gyarados,2.0,4
+493.003,Bronzong,1.0,5
+493.004,Calyrex-Ice,9.0,1
+493.004,Giratina-Origin,9.0,2
+493.004,Zamazenta,9.0,3
+493.004,Magearna,8.0,4
+493.004,Golem,4.0,5
+493.005,Zamazenta,16.0,1
+493.005,Iron Treads,9.0,2
+493.005,Palkia-Origin,8.0,3
+493.005,Quagsire,8.0,4
+493.005,Arcanine-Hisui,7.0,5
+493.006,Reshiram,6.0,1
+493.006,Dragapult,5.0,2
+493.006,Weezing-Galar,5.0,3
+493.006,Hattrem,4.0,4
+493.006,Suicune,3.0,5
+493.007,Calyrex-Ice,11.0,1
+493.007,Great Tusk,11.0,2
+493.007,Eternatus,7.0,3
+493.007,Giratina,7.0,4
+493.007,Necrozma-Dusk-Mane,7.0,5
+493.008,Iron Valiant,8.0,1
+493.008,Ditto,7.0,2
+493.008,Garchomp,7.0,3
+493.008,Jirachi,7.0,4
+493.008,Kyogre,6.0,5
+493.009,Iron Valiant,12.0,1
+493.009,Necrozma-Dusk-Mane,12.0,2
+493.009,Zamazenta,11.0,3
+493.009,Jolteon,10.0,4
+493.009,Samurott-Hisui,10.0,5
+493.01,Zamazenta,7.0,1
+493.01,Hydrapple,6.0,2
+493.01,Ursaluna-Bloodmoon,6.0,3
+493.01,Gholdengo,5.0,4
+493.01,Iron Valiant,5.0,5
+493.011,Ditto,21.0,1
+493.011,Heatran,13.0,2
+493.011,Zekrom,12.0,3
+493.011,Araquanid,11.0,4
+493.011,Kyurem-White,11.0,5
+493.012,Mewtwo,6.0,1
+493.012,Skeledirge,6.0,2
+493.012,Zamazenta,6.0,3
+493.012,Ting-Lu,5.0,4
+493.012,Klefki,4.0,5
+493.013,Iron Treads,8.0,1
+493.013,Palkia-Origin,8.0,2
+493.013,Comfey,6.0,3
+493.013,Greninja,6.0,4
+493.013,Landorus-Therian,6.0,5
+493.014,Terapagos,16.0,1
+493.014,Dragapult,13.0,2
+493.014,Torterra,13.0,3
+493.014,Urshifu,11.0,4
+493.014,Walking Wake,9.0,5
+493.015,Lugia,12.0,1
+493.015,Rayquaza,7.0,2
+493.015,Clefable,6.0,3
+493.015,Tauros-Paldea-Blaze,6.0,4
+493.015,Chien-Pao,5.0,5
+493.016,Ho-Oh,8.0,1
+493.016,Ogerpon-Wellspring,8.0,2
+493.016,Annihilape,7.0,3
+493.016,Chien-Pao,7.0,4
+493.016,Deoxys-Speed,7.0,5
+493.017,Iron Valiant,17.0,1
+493.017,Ho-Oh,15.0,2
+493.017,Dialga,14.0,3
+493.017,Lugia,13.0,4
+493.017,Ogerpon-Cornerstone,12.0,5
+494.0,Nihilego,4.0,1
+494.0,Excadrill,3.0,2
+494.0,Lopunny,3.0,3
+494.0,Vaporeon,3.0,4
+494.0,Sinistcha,2.0,5
+495.0,Tentacool,7.0,1
+495.0,Cufant,6.0,2
+495.0,Diglett,5.0,3
+495.0,Basculin-White-Striped,4.0,4
+495.0,Drakloak,4.0,5
+496.0,Drakloak,12.0,1
+496.0,Forretress,10.0,2
+496.0,Samurott-Hisui,10.0,3
+496.0,Greninja,9.0,4
+496.0,Noivern,9.0,5
+497.0,Garchomp,253.0,1
+497.0,Urshifu,213.0,2
+497.0,Dragapult,184.0,3
+497.0,Annihilape,168.0,4
+497.0,Darkrai,164.0,5
+499.0,Girafarig,9.0,1
+499.0,Pupitar,7.0,2
+499.0,Gligar,6.0,3
+499.0,Staravia,6.0,4
+499.0,Basculin-White-Striped,5.0,5
+500.0,Raging Bolt,49.0,1
+500.0,Slowking-Galar,43.0,2
+500.0,Ribombee,40.0,3
+500.0,Hatterene,39.0,4
+500.0,Cyclizar,34.0,5
+501.0,Entei,1.0,1
+501.0,Flygon,1.0,2
+501.0,Forretress,1.0,3
+501.0,Garganacl,1.0,4
+501.0,Golurk,1.0,5
+502.0,Gurdurr,17.0,1
+502.0,Sandshrew,15.0,2
+502.0,Trumbeak,15.0,3
+502.0,Qwilfish-Hisui,11.0,4
+502.0,Hattrem,10.0,5
+503.0,Qwilfish-Hisui,20.0,1
+503.0,Donphan,17.0,2
+503.0,Mesprit,17.0,3
+503.0,Weezing-Galar,17.0,4
+503.0,Mudsdale,16.0,5
+503.001,Gholdengo,964.0,1
+503.001,Iron Valiant,726.0,2
+503.001,Tornadus-Therian,701.0,3
+503.001,Great Tusk,588.0,4
+503.001,Dragapult,513.0,5
+508.0,Darkrai,1.0,1
+508.0,Dracovish,1.0,2
+508.0,Hippowdon,1.0,3
+508.0,Magnezone,1.0,4
+508.0,Slither Wing,1.0,5
+522.0,Mareanie,4.0,1
+522.0,Charmander,3.0,2
+522.0,Cufant,2.0,3
+522.0,Grubbin,2.0,4
+522.0,Phantump,2.0,5
+523.0,Greninja,32.0,1
+523.0,Blastoise,26.0,2
+523.0,Gardevoir,26.0,3
+523.0,Kleavor,26.0,4
+523.0,Quaquaval,26.0,5
+529.0,Qwilfish-Hisui,17.0,1
+529.0,Pawniard,10.0,2
+529.0,Hippopotas,9.0,3
+529.0,Prinplup,8.0,4
+529.0,Chewtle,7.0,5
+530.0,Tyranitar,2139.0,1
+530.0,Hippowdon,604.0,2
+530.0,Latios,456.0,3
+530.0,Iron Valiant,443.0,4
+530.0,Tornadus-Therian,433.0,5
+531.0,Flutter Mane,1.0,1
+531.0,Glimmora,1.0,2
+531.0,Great Tusk,1.0,3
+531.0,Roaring Moon,1.0,4
+531.0,Zapdos,1.0,5
+532.0,Pawniard,14.0,1
+532.0,Voltorb-Hisui,12.0,2
+532.0,Sandygast,11.0,3
+532.0,Wingull,10.0,4
+532.0,Koffing,9.0,5
+533.0,Donphan,30.0,1
+533.0,Garchomp,30.0,2
+533.0,Meowscarada,29.0,3
+533.0,Swampert,27.0,4
+533.0,Overqwil,26.0,5
+534.0,Iron Bundle,221.0,1
+534.0,Landorus-Therian,159.0,2
+534.0,Iron Treads,149.0,3
+534.0,Landorus,149.0,4
+534.0,Meowscarada,142.0,5
+537.0,Altaria,5.0,1
+537.0,Chien-Pao,5.0,2
+537.0,Iron Moth,5.0,3
+537.0,Pecharunt,5.0,4
+537.0,Type: Null,3.0,5
+540.0,Wigglytuff,3.0,1
+540.0,Charmeleon,2.0,2
+540.0,Dugtrio,2.0,3
+540.0,Piplup,2.0,4
+540.0,Sliggoo-Hisui,2.0,5
+541.0,Dewott,7.0,1
+541.0,Haunter,6.0,2
+541.0,Hattrem,5.0,3
+541.0,Torkoal,5.0,4
+541.0,Darkrai,4.0,5
+542.0,Ninetales,71.0,1
+542.0,Walking Wake,63.0,2
+542.0,Torkoal,60.0,3
+542.0,Great Tusk,52.0,4
+542.0,Iron Valiant,34.0,5
+545.0,Starmie,4.0,1
+545.0,Tapu Koko,4.0,2
+545.0,Terapagos,4.0,3
+545.0,Zygarde,4.0,4
+545.0,Buzzwole,2.0,5
+546.0,Golett,7.0,1
+546.0,Shellder,7.0,2
+546.0,Fennekin,6.0,3
+546.0,Elekid,5.0,4
+546.0,Jolteon,5.0,5
+547.0,Great Tusk,197.0,1
+547.0,Raging Bolt,176.0,2
+547.0,Gholdengo,166.0,3
+547.0,Walking Wake,135.0,4
+547.0,Heatran,130.0,5
+548.0,Blitzle,1.0,1
+548.0,Charmander,1.0,2
+548.0,Chewtle,1.0,3
+548.0,Mareanie,1.0,4
+548.0,Quaxly,1.0,5
+549.0,Torkoal,73.0,1
+549.0,Walking Wake,63.0,2
+549.0,Ninetales,62.0,3
+549.0,Gouging Fire,40.0,4
+549.0,Iron Valiant,27.0,5
+549.001,Torkoal,807.0,1
+549.001,Walking Wake,776.0,2
+549.001,Ninetales,358.0,3
+549.001,Gouging Fire,305.0,4
+549.001,Roaring Moon,246.0,5
+550.0,Iron Valiant,19.0,1
+550.0,Cryogonal,14.0,2
+550.0,Slowking-Galar,13.0,3
+550.0,Breloom,11.0,4
+550.0,Garchomp,11.0,5
+550.001,Cinderace,14.0,1
+550.001,Iron Valiant,11.0,2
+550.001,Sandslash,9.0,3
+550.001,Bronzong,8.0,4
+550.001,Great Tusk,8.0,5
+550.002,Vullaby,19.0,1
+550.002,Dodrio,11.0,2
+550.002,Sandaconda,11.0,3
+550.002,Dragonite,10.0,4
+550.002,Gholdengo,10.0,5
+551.0,Foongus,6.0,1
+551.0,Grookey,5.0,2
+551.0,Growlithe,5.0,3
+551.0,Shroodle,5.0,4
+551.0,Solosis,5.0,5
+552.0,Haunter,23.0,1
+552.0,Eelektrik,14.0,2
+552.0,Duosion,13.0,3
+552.0,Qwilfish,11.0,4
+552.0,Staravia,11.0,5
+553.0,Iron Valiant,327.0,1
+553.0,Corviknight,289.0,2
+553.0,Terapagos,256.0,3
+553.0,Tentacruel,242.0,4
+553.0,Raging Bolt,241.0,5
+555.002,Charizard,14.0,1
+555.002,Great Tusk,14.0,2
+555.002,Raging Bolt,13.0,3
+555.002,Empoleon,7.0,4
+555.002,Ceruledge,6.0,5
+559.0,Slowbro,17.0,1
+559.0,Swalot,17.0,2
+559.0,Eiscue,16.0,3
+559.0,Flareon,16.0,4
+559.0,Glimmet,12.0,5
+560.0,Dragapult,56.0,1
+560.0,Rotom-Wash,53.0,2
+560.0,Kleavor,45.0,3
+560.0,Ogerpon-Wellspring,45.0,4
+560.0,Gholdengo,41.0,5
+570.0,Cetitan,6.0,1
+570.0,Greninja,5.0,2
+570.0,Weezing,4.0,3
+570.0,Zorua-Hisui,4.0,4
+570.0,Blissey,3.0,5
+570.001,Pineco,10.0,1
+570.001,Electabuzz,8.0,2
+570.001,Blissey,7.0,3
+570.001,Mareanie,7.0,4
+570.001,Scraggy,7.0,5
+571.0,Sneasler,58.0,1
+571.0,Tinkaton,50.0,2
+571.0,Clodsire,47.0,3
+571.0,Rillaboom,43.0,4
+571.0,Kleavor,41.0,5
+571.001,Sneasler,288.0,1
+571.001,Iron Valiant,252.0,2
+571.001,Meowscarada,244.0,3
+571.001,Gouging Fire,231.0,4
+571.001,Iron Treads,209.0,5
+572.0,Dewpider,5.0,1
+572.0,Mienfoo,5.0,2
+572.0,Scraggy,5.0,3
+572.0,Froakie,4.0,4
+572.0,Haunter,4.0,5
+573.0,Garchomp,139.0,1
+573.0,Iron Valiant,115.0,2
+573.0,Primarina,101.0,3
+573.0,Scream Tail,96.0,4
+573.0,Heatran,91.0,5
+574.0,Wingull,5.0,1
+574.0,Vulpix-Alola,4.0,2
+574.0,Corphish,3.0,3
+574.0,Glimmet,3.0,4
+574.0,Mudbray,3.0,5
+575.0,Donphan,10.0,1
+575.0,Glaceon,9.0,2
+575.0,Charizard,8.0,3
+575.0,Jolteon,8.0,4
+575.0,Torterra,8.0,5
+576.0,Urshifu,42.0,1
+576.0,Meowscarada,38.0,2
+576.0,Gholdengo,32.0,3
+576.0,Garchomp,30.0,4
+576.0,Roaring Moon,30.0,5
+577.0,Sandile,5.0,1
+577.0,Sandshrew-Alola,5.0,2
+577.0,Scraggy,5.0,3
+577.0,Yanma,5.0,4
+577.0,Clauncher,4.0,5
+578.0,Incineroar,13.0,1
+578.0,Krokorok,13.0,2
+578.0,Gurdurr,11.0,3
+578.0,Bellibolt,10.0,4
+578.0,Cryogonal,10.0,5
+579.0,Tornadus-Therian,73.0,1
+579.0,Tyranitar,70.0,2
+579.0,Meowscarada,68.0,3
+579.0,Heatran,66.0,4
+579.0,Landorus-Therian,60.0,5
+580.0,Ambipom,2.0,1
+580.0,Arboliva,2.0,2
+580.0,Darkrai,2.0,3
+580.0,Donphan,2.0,4
+580.0,Elekid,1.0,5
+581.0,Sandy Shocks,13.0,1
+581.0,Maushold-Four,11.0,2
+581.0,Mimikyu,11.0,3
+581.0,Sandslash-Alola,11.0,4
+581.0,Tauros-Paldea-Combat,9.0,5
+584.0,Lopunny,2.0,1
+584.0,Nihilego,2.0,2
+584.0,Victini,2.0,3
+584.0,Avalugg,1.0,4
+584.0,Excadrill,1.0,5
+585.0,Blastoise,2.0,1
+585.0,Cresselia,2.0,2
+585.0,Gliscor,1.0,3
+585.0,Grimmsnarl,1.0,4
+585.0,Lucario,1.0,5
+586.0,Sandy Shocks,10.0,1
+586.0,Espeon,9.0,2
+586.0,Hitmonchan,7.0,3
+586.0,Cinderace,6.0,4
+586.0,Kingdra,6.0,5
+590.0,Squirtle,11.0,1
+590.0,Magby,7.0,2
+590.0,Diglett,6.0,3
+590.0,Sandile,6.0,4
+590.0,Scraggy,6.0,5
+591.0,Great Tusk,199.0,1
+591.0,Excadrill,193.0,2
+591.0,Gholdengo,179.0,3
+591.0,Pelipper,168.0,4
+591.0,Urshifu,166.0,5
+594.0,Ting-Lu,655.0,1
+594.0,Meowscarada,598.0,2
+594.0,Terapagos,589.0,3
+594.0,Iron Treads,580.0,4
+594.0,Iron Valiant,573.0,5
+595.0,Greninja,5.0,1
+595.0,Growlithe-Hisui,5.0,2
+595.0,Ogerpon-Hearthflame,5.0,3
+595.0,Ogerpon-Wellspring,5.0,4
+595.0,Raging Bolt,5.0,5
+596.0,Gholdengo,196.0,1
+596.0,Urshifu,189.0,2
+596.0,Excadrill,147.0,3
+596.0,Iron Valiant,141.0,4
+596.0,Annihilape,132.0,5
+598.0,Clefable,2.0,1
+598.0,Greninja,2.0,2
+598.0,Rotom-Wash,2.0,3
+598.0,Thundurus-Therian,2.0,4
+598.0,Weezing,2.0,5
+602.0,Chikorita,1.0,1
+602.0,Clauncher,1.0,2
+602.0,Cutiefly,1.0,3
+602.0,Gastly,1.0,4
+602.0,Mienfoo,1.0,5
+603.0,Haunter,19.0,1
+603.0,Pupitar,15.0,2
+603.0,Krokorok,14.0,3
+603.0,Wartortle,11.0,4
+603.0,Torracat,10.0,5
+604.0,Iron Valiant,146.0,1
+604.0,Garchomp,133.0,2
+604.0,Iron Treads,112.0,3
+604.0,Tinkaton,111.0,4
+604.0,Great Tusk,110.0,5
+607.0,Cranidos,2.0,1
+607.0,Solosis,2.0,2
+607.0,Tarountula,2.0,3
+607.0,Arrokuda,1.0,4
+607.0,Bellsprout,1.0,5
+608.0,Bayleef,7.0,1
+608.0,Staravia,5.0,2
+608.0,Duosion,4.0,3
+608.0,Hakamo-o,4.0,4
+608.0,Krokorok,4.0,5
+609.0,Great Tusk,142.0,1
+609.0,Iron Valiant,118.0,2
+609.0,Garchomp,115.0,3
+609.0,Kingambit,108.0,4
+609.0,Sneasler,102.0,5
+610.0,Pineco,6.0,1
+610.0,Scraggy,6.0,2
+610.0,Zorua-Hisui,5.0,3
+610.0,Chespin,4.0,4
+610.0,Duraludon,4.0,5
+611.0,Frogadier,12.0,1
+611.0,Staravia,12.0,2
+611.0,Glastrier,11.0,3
+611.0,Gloom,11.0,4
+611.0,Kilowattrel,11.0,5
+612.0,Great Tusk,90.0,1
+612.0,Meowscarada,89.0,2
+612.0,Darkrai,82.0,3
+612.0,Greninja,77.0,4
+612.0,Gholdengo,74.0,5
+613.0,Arboliva,1.0,1
+613.0,Bastiodon,1.0,2
+613.0,Clodsire,1.0,3
+613.0,Porygon2,1.0,4
+613.0,Regieleki,1.0,5
+614.0,Slowking-Galar,171.0,1
+614.0,Pelipper,155.0,2
+614.0,Archaludon,106.0,3
+614.0,Ninetales-Alola,96.0,4
+614.0,Slowking,88.0,5
+615.0,Gliscor,142.0,1
+615.0,Sneasler,138.0,2
+615.0,Garchomp,135.0,3
+615.0,Iron Valiant,128.0,4
+615.0,Gholdengo,122.0,5
+618.0,Aerodactyl,1.0,1
+618.0,Corviknight,1.0,2
+618.0,Keldeo-Resolute,1.0,3
+618.0,Roaring Moon,1.0,4
+618.0,Terapagos,1.0,5
+619.0,Naclstack,7.0,1
+619.0,Sandshrew-Alola,7.0,2
+619.0,Yanma,7.0,3
+619.0,Poltchageist,6.0,4
+619.0,Bronzor,5.0,5
+620.0,Tornadus-Therian,170.0,1
+620.0,Alomomola,123.0,2
+620.0,Primarina,112.0,3
+620.0,Slowking-Galar,111.0,4
+620.0,Iron Treads,110.0,5
+622.0,Cottonee,7.0,1
+622.0,Fennekin,7.0,2
+622.0,Vullaby,7.0,3
+622.0,Shellder,6.0,4
+622.0,Elekid,5.0,5
+623.0,Weezing-Galar,68.0,1
+623.0,Ogerpon-Hearthflame,54.0,2
+623.0,Klefki,51.0,3
+623.0,Cyclizar,49.0,4
+623.0,Diancie,48.0,5
+624.0,Voltorb-Hisui,16.0,1
+624.0,Timburr,14.0,2
+624.0,Koffing,13.0,3
+624.0,Sandygast,13.0,4
+624.0,Drilbur,10.0,5
+625.0,Garchomp,117.0,1
+625.0,Great Tusk,116.0,2
+625.0,Iron Valiant,98.0,3
+625.0,Primarina,88.0,4
+625.0,Landorus-Therian,85.0,5
+627.0,Pupitar,9.0,1
+627.0,Grimer-Alola,6.0,2
+627.0,Bulbasaur,5.0,3
+627.0,Litten,5.0,4
+627.0,Flittle,4.0,5
+628.0,Garchomp,66.0,1
+628.0,Meowscarada,65.0,2
+628.0,Tinkaton,64.0,3
+628.0,Raging Bolt,61.0,4
+628.0,Dragapult,55.0,5
+628.001,Iron Treads,58.0,1
+628.001,Iron Valiant,55.0,2
+628.001,Roaring Moon,55.0,3
+628.001,Sandy Shocks,47.0,4
+628.001,Meowscarada,46.0,5
+629.0,Sandy Shocks,21.0,1
+629.0,Basculin-White-Striped,19.0,2
+629.0,Gabite,18.0,3
+629.0,Electivire,14.0,4
+629.0,Scream Tail,14.0,5
+630.0,Dragapult,362.0,1
+630.0,Garchomp,342.0,2
+630.0,Iron Valiant,341.0,3
+630.0,Slowking-Galar,336.0,4
+630.0,Tinkaton,296.0,5
+632.0,Aurorus,1.0,1
+632.0,Gouging Fire,1.0,2
+632.0,Raging Bolt,1.0,3
+632.0,Scream Tail,1.0,4
+632.0,Walking Wake,1.0,5
+633.0,Buizel,2.0,1
+633.0,Greavard,2.0,2
+633.0,Salandit,2.0,3
+633.0,Toedscool,2.0,4
+633.0,Cetoddle,1.0,5
+634.0,Carkol,7.0,1
+634.0,Dewott,7.0,2
+634.0,Gurdurr,7.0,3
+634.0,Muk,6.0,4
+634.0,Bayleef,5.0,5
+635.0,Iron Valiant,371.0,1
+635.0,Iron Treads,300.0,2
+635.0,Great Tusk,291.0,3
+635.0,Gholdengo,276.0,4
+635.0,Ogerpon-Wellspring,273.0,5
+636.0,Chinchou,10.0,1
+636.0,Pawniard,7.0,2
+636.0,Diglett,6.0,3
+636.0,Drilbur,5.0,4
+636.0,Grookey,4.0,5
+637.0,Meowscarada,262.0,1
+637.0,Iron Valiant,232.0,2
+637.0,Urshifu,189.0,3
+637.0,Garchomp,176.0,4
+637.0,Roaring Moon,164.0,5
+638.0,Slowking-Galar,187.0,1
+638.0,Palafin,151.0,2
+638.0,Tornadus-Therian,137.0,3
+638.0,Meowscarada,123.0,4
+638.0,Landorus-Therian,120.0,5
+639.0,Meowscarada,93.0,1
+639.0,Gholdengo,82.0,2
+639.0,Landorus-Therian,82.0,3
+639.0,Enamorus,81.0,4
+639.0,Iron Bundle,81.0,5
+640.0,Gholdengo,32.0,1
+640.0,Heatran,32.0,2
+640.0,Alomomola,31.0,3
+640.0,Krookodile,28.0,4
+640.0,Pecharunt,27.0,5
+641.0,Urshifu,102.0,1
+641.0,Gouging Fire,85.0,2
+641.0,Great Tusk,83.0,3
+641.0,Overqwil,76.0,4
+641.0,Raging Bolt,73.0,5
+641.001,Ting-Lu,1265.0,1
+641.001,Iron Treads,842.0,2
+641.001,Slowking-Galar,828.0,3
+641.001,Garchomp,816.0,4
+641.001,Samurott-Hisui,701.0,5
+642.0,Great Tusk,365.0,1
+642.0,Urshifu,302.0,2
+642.0,Gouging Fire,250.0,3
+642.0,Greninja,239.0,4
+642.0,Iron Bundle,224.0,5
+642.001,Great Tusk,547.0,1
+642.001,Roaring Moon,329.0,2
+642.001,Greninja,328.0,3
+642.001,Iron Valiant,327.0,4
+642.001,Pelipper,322.0,5
+643.0,Great Tusk,42.0,1
+643.0,Flutter Mane,33.0,2
+643.0,Clodsire,25.0,3
+643.0,Mandibuzz,24.0,4
+643.0,Corviknight,23.0,5
+644.0,Gholdengo,35.0,1
+644.0,Meowscarada,28.0,2
+644.0,Mew,24.0,3
+644.0,Ting-Lu,24.0,4
+644.0,Terapagos,23.0,5
+645.0,Meowscarada,511.0,1
+645.0,Roaring Moon,463.0,2
+645.0,Urshifu,445.0,3
+645.0,Raging Bolt,443.0,4
+645.0,Terapagos,435.0,5
+645.001,Iron Valiant,934.0,1
+645.001,Meowscarada,843.0,2
+645.001,Raging Bolt,778.0,3
+645.001,Darkrai,752.0,4
+645.001,Terapagos,627.0,5
+646.0,Slowking-Galar,1152.0,1
+646.0,Great Tusk,597.0,2
+646.0,Slowking,580.0,3
+646.0,Iron Treads,468.0,4
+646.0,Gliscor,420.0,5
+646.001,Slowking-Galar,49.0,1
+646.001,Iron Valiant,48.0,2
+646.001,Ursaluna-Bloodmoon,40.0,3
+646.001,Slowking,39.0,4
+646.001,Iron Treads,38.0,5
+646.002,Zamazenta,78.0,1
+646.002,Slowking-Galar,73.0,2
+646.002,Slowking,51.0,3
+646.002,Landorus-Therian,41.0,4
+646.002,Flutter Mane,40.0,5
+647.0,Meowscarada,414.0,1
+647.0,Landorus-Therian,244.0,2
+647.0,Roaring Moon,209.0,3
+647.0,Terapagos,194.0,4
+647.0,Jirachi,147.0,5
+647.001,Meowscarada,691.0,1
+647.001,Landorus-Therian,324.0,2
+647.001,Iron Treads,300.0,3
+647.001,Gliscor,294.0,4
+647.001,Garchomp,260.0,5
+648.0,Meowscarada,126.0,1
+648.0,Weezing-Galar,114.0,2
+648.0,Iron Treads,108.0,3
+648.0,Donphan,105.0,4
+648.0,Cinderace,84.0,5
+650.0,Zorua-Hisui,6.0,1
+650.0,Scraggy,5.0,2
+650.0,Axew,4.0,3
+650.0,Litleo,4.0,4
+650.0,Glimmet,3.0,5
+651.0,Enamorus,10.0,1
+651.0,Gallade,10.0,2
+651.0,Sliggoo-Hisui,10.0,3
+651.0,Pecharunt,9.0,4
+651.0,Samurott-Hisui,9.0,5
+652.0,Dragapult,95.0,1
+652.0,Slowking-Galar,89.0,2
+652.0,Iron Treads,88.0,3
+652.0,Urshifu,87.0,4
+652.0,Gholdengo,85.0,5
+653.0,Golett,7.0,1
+653.0,Cottonee,6.0,2
+653.0,Shellder,6.0,3
+653.0,Vullaby,5.0,4
+653.0,Elekid,4.0,5
+654.0,Gabite,14.0,1
+654.0,Vullaby,9.0,2
+654.0,Munchlax,8.0,3
+654.0,Basculin-White-Striped,6.0,4
+654.0,Charjabug,5.0,5
+655.0,Tinkaton,80.0,1
+655.0,Iron Valiant,75.0,2
+655.0,Sneasler,74.0,3
+655.0,Gholdengo,63.0,4
+655.0,Dragapult,62.0,5
+656.0,Cetoddle,9.0,1
+656.0,Cutiefly,9.0,2
+656.0,Koffing,7.0,3
+656.0,Mudbray,7.0,4
+656.0,Bagon,6.0,5
+657.0,Fraxure,12.0,1
+657.0,Chansey,11.0,2
+657.0,Gabite,11.0,3
+657.0,Mareanie,11.0,4
+657.0,Clefairy,10.0,5
+658.0,Great Tusk,1000.0,1
+658.0,Garchomp,836.0,2
+658.0,Iron Treads,781.0,3
+658.0,Landorus-Therian,584.0,4
+658.0,Corviknight,570.0,5
+661.0,Dewpider,3.0,1
+661.0,Espurr,3.0,2
+661.0,Glimmet,3.0,3
+661.0,Scraggy,3.0,4
+661.0,Solosis,3.0,5
+662.0,Sliggoo-Hisui,12.0,1
+662.0,Clefairy,10.0,2
+662.0,Gligar,10.0,3
+662.0,Carkol,9.0,4
+662.0,Drakloak,9.0,5
+663.0,Iron Valiant,314.0,1
+663.0,Raging Bolt,287.0,2
+663.0,Gholdengo,270.0,3
+663.0,Slowking-Galar,231.0,4
+663.0,Great Tusk,226.0,5
+665.0,Armarouge,1.0,1
+665.0,Brambleghast,1.0,2
+665.0,Dusclops,1.0,3
+665.0,Maushold-Four,1.0,4
+665.0,Mienshao,1.0,5
+666.0,Slowking-Galar,12.0,1
+666.0,Skeledirge,10.0,2
+666.0,Baxcalibur,9.0,3
+666.0,Iron Hands,9.0,4
+666.0,Toxapex,9.0,5
+666.001,Annihilape,5.0,1
+666.001,Clefable,4.0,2
+666.001,Darkrai,4.0,3
+666.001,Mimikyu,4.0,4
+666.001,Tsareena,4.0,5
+666.002,Charizard,6.0,1
+666.002,Decidueye-Hisui,6.0,2
+666.002,Malamar,6.0,3
+666.002,Tinkatuff,6.0,4
+666.002,Meowstic,5.0,5
+667.0,Dewpider,10.0,1
+667.0,Scraggy,8.0,2
+667.0,Pineco,6.0,3
+667.0,Zorua-Hisui,6.0,4
+667.0,Pikipek,5.0,5
+668.0,Tsareena,22.0,1
+668.0,Clodsire,20.0,2
+668.0,Gallade,16.0,3
+668.0,Inteleon,16.0,4
+668.0,Orthworm,14.0,5
+670.0,Drizzile,10.0,1
+670.0,Prinplup,10.0,2
+670.0,Piloswine,8.0,3
+670.0,Dipplin,7.0,4
+670.0,Rhydon,7.0,5
+670.001,Greninja,6.0,1
+670.001,Landorus-Therian,6.0,2
+670.001,Lucario,6.0,3
+670.001,Toxapex,5.0,4
+670.001,Tsareena,4.0,5
+671.0,Iron Treads,147.0,1
+671.0,Ogerpon-Wellspring,138.0,2
+671.0,Great Tusk,137.0,3
+671.0,Meowscarada,126.0,4
+671.0,Terapagos,125.0,5
+672.0,Growlithe-Hisui,4.0,1
+672.0,Magikarp,4.0,2
+672.0,Murkrow,4.0,3
+672.0,Riolu,4.0,4
+672.0,Spinarak,4.0,5
+673.0,Sneasler,21.0,1
+673.0,Donphan,19.0,2
+673.0,Muk-Alola,19.0,3
+673.0,Ursaluna-Bloodmoon,19.0,4
+673.0,Dragapult,17.0,5
+677.0,Greninja,6.0,1
+677.0,Rhyperior,6.0,2
+677.0,Sneasler,6.0,3
+677.0,Deoxys-Speed,4.0,4
+677.0,Elekid,3.0,5
+678.0,Iron Treads,31.0,1
+678.0,Garchomp,30.0,2
+678.0,Alomomola,27.0,3
+678.0,Meowscarada,27.0,4
+678.0,Skeledirge,26.0,5
+678.002,Camerupt,7.0,1
+678.002,Klawf,7.0,2
+678.002,Rotom-Frost,7.0,3
+678.002,Blastoise,6.0,4
+678.002,Talonflame,6.0,5
+681.0,Diancie,1.0,1
+681.0,Emboar,1.0,2
+681.0,Gothitelle,1.0,3
+681.0,Omastar,1.0,4
+681.0,Stakataka,1.0,5
+685.0,Deoxys-Speed,1.0,1
+685.0,Krookodile,1.0,2
+685.0,Toxtricity,1.0,3
+685.0,Tsareena,1.0,4
+685.0,Zamazenta,1.0,5
+686.0,Growlithe,2.0,1
+686.0,Mudbray,2.0,2
+686.0,Noibat,2.0,3
+686.0,Bergmite,1.0,4
+686.0,Chinchou,1.0,5
+687.0,Cinderace,35.0,1
+687.0,Mimikyu,28.0,2
+687.0,Greninja,27.0,3
+687.0,Goodra-Hisui,26.0,4
+687.0,Glimmora,24.0,5
+690.0,Eelektrik,7.0,1
+690.0,Pupitar,7.0,2
+690.0,Haunter,5.0,3
+690.0,Drifloon,4.0,4
+690.0,Meowth,4.0,5
+691.0,Great Tusk,150.0,1
+691.0,Iron Treads,144.0,2
+691.0,Meowscarada,122.0,3
+691.0,Terapagos,118.0,4
+691.0,Iron Valiant,114.0,5
+692.0,Sandshrew-Alola,6.0,1
+692.0,Yanma,6.0,2
+692.0,Mienfoo,5.0,3
+692.0,Solosis,4.0,4
+692.0,Shroodle,3.0,5
+693.0,Meowscarada,30.0,1
+693.0,Cyclizar,28.0,2
+693.0,Sneasler,28.0,3
+693.0,Mandibuzz,27.0,4
+693.0,Hitmontop,24.0,5
+699.0,Durant,1.0,1
+699.0,Gouging Fire,1.0,2
+699.0,Raging Bolt,1.0,3
+699.0,Scream Tail,1.0,4
+699.0,Walking Wake,1.0,5
+700.0,Meowscarada,362.0,1
+700.0,Great Tusk,324.0,2
+700.0,Urshifu,314.0,3
+700.0,Garchomp,307.0,4
+700.0,Corviknight,303.0,5
+701.0,Rillaboom,787.0,1
+701.0,Indeedee,193.0,2
+701.0,Heatran,165.0,3
+701.0,Gouging Fire,157.0,4
+701.0,Raging Bolt,155.0,5
+702.0,Forretress,9.0,1
+702.0,Gliscor,8.0,2
+702.0,Iron Valiant,8.0,3
+702.0,Jirachi,8.0,4
+702.0,Krookodile,8.0,5
+703.0,Meowscarada,51.0,1
+703.0,Terapagos,46.0,2
+703.0,Iron Valiant,37.0,3
+703.0,Ursaluna-Bloodmoon,37.0,4
+703.0,Dragonite,35.0,5
+704.0,Buizel,3.0,1
+704.0,Stunky,3.0,2
+704.0,Wattrel,3.0,3
+704.0,Duskull,2.0,4
+704.0,Fuecoco,2.0,5
+705.0,Rhydon,13.0,1
+705.0,Tinkatuff,8.0,2
+705.0,Wartortle,8.0,3
+705.0,Drizzile,7.0,4
+705.0,Alomomola,5.0,5
+705.001,Meowscarada,14.0,1
+705.001,Trumbeak,13.0,2
+705.001,Weezing-Galar,13.0,3
+705.001,Fletchinder,12.0,4
+705.001,Gurdurr,12.0,5
+706.0,Gliscor,110.0,1
+706.0,Meowscarada,104.0,2
+706.0,Weezing-Galar,103.0,3
+706.0,Iron Valiant,98.0,4
+706.0,Ogerpon-Wellspring,86.0,5
+706.001,Great Tusk,333.0,1
+706.001,Meowscarada,276.0,2
+706.001,Landorus-Therian,270.0,3
+706.001,Iron Valiant,246.0,4
+706.001,Sneasler,240.0,5
+707.0,Terapagos,376.0,1
+707.0,Urshifu,328.0,2
+707.0,Landorus-Therian,266.0,3
+707.0,Great Tusk,253.0,4
+707.0,Meowscarada,228.0,5
+708.0,Doduo,4.0,1
+708.0,Meowth,4.0,2
+708.0,Sandshrew,4.0,3
+708.0,Chinchou,3.0,4
+708.0,Cutiefly,3.0,5
+709.0,Great Tusk,42.0,1
+709.0,Iron Treads,29.0,2
+709.0,Quagsire,29.0,3
+709.0,Roaring Moon,29.0,4
+709.0,Empoleon,25.0,5
+712.0,Staravia,6.0,1
+712.0,Girafarig,4.0,2
+712.0,Pikipek,4.0,3
+712.0,Prinplup,4.0,4
+712.0,Dewpider,3.0,5
+713.0,Slowking-Galar,100.0,1
+713.0,Alomomola,93.0,2
+713.0,Primarina,90.0,3
+713.0,Meowscarada,84.0,4
+713.0,Gholdengo,82.0,5
+713.001,Clodsire,109.0,1
+713.001,Roaring Moon,103.0,2
+713.001,Slowking-Galar,96.0,3
+713.001,Tornadus-Therian,94.0,4
+713.001,Ogerpon-Wellspring,86.0,5
+714.0,Grimer,3.0,1
+714.0,Vullaby,3.0,2
+714.0,Froakie,2.0,3
+714.0,Growlithe,2.0,4
+714.0,Inkay,2.0,5
+715.0,Great Tusk,206.0,1
+715.0,Urshifu,198.0,2
+715.0,Tinkaton,192.0,3
+715.0,Iron Valiant,177.0,4
+715.0,Ogerpon-Wellspring,163.0,5
+718.0,Starmie,20.0,1
+718.0,Tapu Koko,19.0,2
+718.0,Terapagos,16.0,3
+718.0,Latias,15.0,4
+718.0,Corviknight,10.0,5
+719.0,Meowscarada,292.0,1
+719.0,Iron Treads,257.0,2
+719.0,Urshifu,248.0,3
+719.0,Great Tusk,239.0,4
+719.0,Darkrai,232.0,5
+720.0,Great Tusk,119.0,1
+720.0,Iron Bundle,66.0,2
+720.0,Meowscarada,62.0,3
+720.0,Sneasler,58.0,4
+720.0,Garchomp,53.0,5
+720.001,Iron Treads,224.0,1
+720.001,Corviknight,178.0,2
+720.001,Iron Valiant,169.0,3
+720.001,Pecharunt,161.0,4
+720.001,Sneasler,159.0,5
+721.0,Great Tusk,282.0,1
+721.0,Iron Valiant,278.0,2
+721.0,Iron Treads,263.0,3
+721.0,Annihilape,231.0,4
+721.0,Landorus-Therian,212.0,5
+722.0,Cutiefly,3.0,1
+722.0,Amoonguss,2.0,2
+722.0,Cetoddle,2.0,3
+722.0,Froakie,2.0,4
+722.0,Hydrapple,2.0,5
+723.0,Hoopa,9.0,1
+723.0,Iron Leaves,8.0,2
+723.0,Flygon,7.0,3
+723.0,Slowbro,7.0,4
+723.0,Mienshao,5.0,5
+724.0,Iron Valiant,126.0,1
+724.0,Greninja,112.0,2
+724.0,Iron Treads,105.0,3
+724.0,Garchomp,102.0,4
+724.0,Iron Moth,95.0,5
+724.001,Dragapult,65.0,1
+724.001,Gholdengo,54.0,2
+724.001,Fezandipiti,53.0,3
+724.001,Gliscor,53.0,4
+724.001,Roaring Moon,52.0,5
+725.0,Bulbasaur,5.0,1
+725.0,Rufflet,5.0,2
+725.0,Timburr,5.0,3
+725.0,Cetoddle,4.0,4
+725.0,Cutiefly,4.0,5
+726.0,Haunter,11.0,1
+726.0,Eelektrik,10.0,2
+726.0,Rillaboom,10.0,3
+726.0,Garganacl,9.0,4
+726.0,Clefable,8.0,5
+727.0,Garchomp,203.0,1
+727.0,Landorus-Therian,201.0,2
+727.0,Gholdengo,191.0,3
+727.0,Iron Valiant,187.0,4
+727.0,Sneasler,176.0,5
+728.0,Axew,1.0,1
+728.0,Chinchou,1.0,2
+728.0,Cosmog,1.0,3
+728.0,Gimmighoul,1.0,4
+728.0,Teddiursa,1.0,5
+729.0,Krokorok,10.0,1
+729.0,Pachirisu,9.0,2
+729.0,Tauros-Paldea-Blaze,9.0,3
+729.0,Donphan,8.0,4
+729.0,Haunter,7.0,5
+730.0,Iron Treads,823.0,1
+730.0,Meowscarada,747.0,2
+730.0,Great Tusk,738.0,3
+730.0,Sneasler,622.0,4
+730.0,Roaring Moon,621.0,5
+731.0,Bronzor,8.0,1
+731.0,Dewpider,7.0,2
+731.0,Voltorb-Hisui,7.0,3
+731.0,Sandygast,6.0,4
+731.0,Litleo,5.0,5
+732.0,Qwilfish-Hisui,21.0,1
+732.0,Piloswine,19.0,2
+732.0,Quaxwell,16.0,3
+732.0,Dewott,15.0,4
+732.0,Gurdurr,14.0,5
+733.0,Gholdengo,14.0,1
+733.0,Meowscarada,14.0,2
+733.0,Volcanion,14.0,3
+733.0,Flamigo,13.0,4
+733.0,Kilowattrel,13.0,5
+734.0,Cottonee,2.0,1
+734.0,Fennekin,2.0,2
+734.0,Golett,2.0,3
+734.0,Vullaby,2.0,4
+734.0,Makuhita,1.0,5
+735.0,Dragapult,11.0,1
+735.0,Revavroom,8.0,2
+735.0,Annihilape,7.0,3
+735.0,Gardevoir,7.0,4
+735.0,Golem-Alola,7.0,5
+736.0,Blitzle,2.0,1
+736.0,Chi-Yu,2.0,2
+736.0,Cinccino,2.0,3
+736.0,Florges,2.0,4
+736.0,Greninja,2.0,5
+737.0,Iron Valiant,25.0,1
+737.0,Gholdengo,19.0,2
+737.0,Meowscarada,17.0,3
+737.0,Sylveon,16.0,4
+737.0,Azumarill,14.0,5
+738.0,Gholdengo,214.0,1
+738.0,Urshifu,196.0,2
+738.0,Great Tusk,191.0,3
+738.0,Iron Valiant,183.0,4
+738.0,Iron Treads,171.0,5
+739.0,Aipom,6.0,1
+739.0,Drifloon,6.0,2
+739.0,Quaxly,6.0,3
+739.0,Shieldon,6.0,4
+739.0,Grimer-Alola,5.0,5
+740.0,Donphan,19.0,1
+740.0,Raikou,15.0,2
+740.0,Araquanid,14.0,3
+740.0,Meowscarada,12.0,4
+740.0,Torkoal,12.0,5
+741.0,Urshifu,34.0,1
+741.0,Primarina,30.0,2
+741.0,Meowscarada,24.0,3
+741.0,Clefable,22.0,4
+741.0,Ting-Lu,22.0,5
+741.001,Urshifu,36.0,1
+741.001,Sneasler,33.0,2
+741.001,Forretress,31.0,3
+741.001,Dragapult,30.0,4
+741.001,Great Tusk,26.0,5
+741.003,Ninetales,29.0,1
+741.003,Sandy Shocks,25.0,2
+741.003,Excadrill,24.0,3
+741.003,Tinkaton,24.0,4
+741.003,Gouging Fire,21.0,5
+742.0,Iron Treads,22.0,1
+742.0,Meowscarada,17.0,2
+742.0,Chi-Yu,15.0,3
+742.0,Glimmora,15.0,4
+742.0,Annihilape,14.0,5
+743.0,Gholdengo,314.0,1
+743.0,Urshifu,292.0,2
+743.0,Great Tusk,234.0,3
+743.0,Ogerpon-Wellspring,206.0,4
+743.0,Raging Bolt,201.0,5
+744.0,Aipom,2.0,1
+744.0,Chimchar,2.0,2
+744.0,Mankey,2.0,3
+744.0,Slowpoke,2.0,4
+744.0,Koffing,1.0,5
+745.0,Tyranitar,94.0,1
+745.0,Hippowdon,57.0,2
+745.0,Weezing-Galar,45.0,3
+745.0,Quaquaval,44.0,4
+745.0,Gholdengo,42.0,5
+745.001,Muk,25.0,1
+745.001,Zoroark,19.0,2
+745.001,Avalugg,16.0,3
+745.001,Meowscarada,16.0,4
+745.001,Charizard,14.0,5
+745.002,Great Tusk,142.0,1
+745.002,Primarina,124.0,2
+745.002,Ting-Lu,124.0,3
+745.002,Annihilape,115.0,4
+745.002,Darkrai,112.0,5
+747.0,Electabuzz,11.0,1
+747.0,Frogadier,11.0,2
+747.0,Vikavolt,11.0,3
+747.0,Empoleon,9.0,4
+747.0,Iron Bundle,9.0,5
+748.0,Gliscor,344.0,1
+748.0,Iron Valiant,324.0,2
+748.0,Corviknight,295.0,3
+748.0,Meowscarada,244.0,4
+748.0,Garchomp,238.0,5
+749.0,Magnezone,13.0,1
+749.0,Sliggoo-Hisui,10.0,2
+749.0,Ursaring,10.0,3
+749.0,Dragalge,9.0,4
+749.0,Mismagius,9.0,5
+750.0,Corviknight,88.0,1
+750.0,Primarina,86.0,2
+750.0,Urshifu,80.0,3
+750.0,Dragapult,74.0,4
+750.0,Gholdengo,73.0,5
+751.0,Scraggy,11.0,1
+751.0,Litleo,10.0,2
+751.0,Gliscor,9.0,3
+751.0,Electrode-Hisui,7.0,4
+751.0,Koffing,7.0,5
+752.0,Gholdengo,355.0,1
+752.0,Iron Valiant,341.0,2
+752.0,Enamorus,248.0,3
+752.0,Iron Treads,235.0,4
+752.0,Urshifu,221.0,5
+753.0,Flygon,2.0,1
+753.0,Slowking-Galar,2.0,2
+753.0,Azumarill,1.0,3
+753.0,Cetoddle,1.0,4
+753.0,Hoopa-Unbound,1.0,5
+754.0,Incineroar,36.0,1
+754.0,Goodra-Hisui,33.0,2
+754.0,Tinkaton,31.0,3
+754.0,Enamorus-Therian,28.0,4
+754.0,Ribombee,27.0,5
+757.0,Corphish,8.0,1
+757.0,Magnemite,6.0,2
+757.0,Nymble,6.0,3
+757.0,Zorua-Hisui,6.0,4
+757.0,Mudbray,5.0,5
+758.0,Great Tusk,125.0,1
+758.0,Urshifu,98.0,2
+758.0,Meowscarada,97.0,3
+758.0,Primarina,92.0,4
+758.0,Terapagos,86.0,5
+761.0,Chespin,1.0,1
+761.0,Hatenna,1.0,2
+761.0,Kilowattrel,1.0,3
+761.0,Minccino,1.0,4
+761.0,Quagsire,1.0,5
+762.0,Fraxure,2.0,1
+762.0,Meditite,2.0,2
+762.0,Staravia,2.0,3
+762.0,Vigoroth,2.0,4
+762.0,Drifblim,1.0,5
+763.0,Ting-Lu,312.0,1
+763.0,Gholdengo,282.0,2
+763.0,Urshifu,271.0,3
+763.0,Iron Valiant,268.0,4
+763.0,Garchomp,265.0,5
+764.0,Corviknight,189.0,1
+764.0,Great Tusk,181.0,2
+764.0,Ogerpon-Wellspring,170.0,3
+764.0,Tornadus-Therian,167.0,4
+764.0,Greninja,160.0,5
+765.0,Infernape,16.0,1
+765.0,Annihilape,12.0,2
+765.0,Rillaboom,12.0,3
+765.0,Clawitzer,10.0,4
+765.0,Registeel,10.0,5
+766.0,Arcanine-Hisui,21.0,1
+766.0,Bellibolt,19.0,2
+766.0,Comfey,17.0,3
+766.0,Iron Treads,17.0,4
+766.0,Jirachi,17.0,5
+769.0,Voltorb-Hisui,18.0,1
+769.0,Pawniard,13.0,2
+769.0,Timburr,11.0,3
+769.0,Wingull,10.0,4
+769.0,Koffing,9.0,5
+770.0,Meowscarada,61.0,1
+770.0,Tsareena,44.0,2
+770.0,Cyclizar,42.0,3
+770.0,Gouging Fire,41.0,4
+770.0,Iron Valiant,41.0,5
+774.0,Weezing-Galar,30.0,1
+774.0,Primarina,26.0,2
+774.0,Rillaboom,26.0,3
+774.0,Clodsire,25.0,4
+774.0,Corviknight,25.0,5
+775.0,Bronzong,58.0,1
+775.0,Sneasler,54.0,2
+775.0,Ting-Lu,54.0,3
+775.0,Gholdengo,53.0,4
+775.0,Primarina,49.0,5
+778.0,Great Tusk,205.0,1
+778.0,Greninja,152.0,2
+778.0,Iron Valiant,152.0,3
+778.0,Garchomp,149.0,4
+778.0,Iron Moth,138.0,5
+779.0,Rotom-Heat,34.0,1
+779.0,Gholdengo,27.0,2
+779.0,Chandelure,23.0,3
+779.0,Kommo-o,22.0,4
+779.0,Lokix,22.0,5
+782.0,Dipplin,1.0,1
+782.0,Grumpig,1.0,2
+782.0,Rhyhorn,1.0,3
+782.0,Rookidee,1.0,4
+782.0,Shroodle,1.0,5
+783.0,Krokorok,9.0,1
+783.0,Vullaby,8.0,2
+783.0,Dachsbun,7.0,3
+783.0,Electabuzz,6.0,4
+783.0,Greavard,6.0,5
+784.0,Iron Treads,211.0,1
+784.0,Darkrai,173.0,2
+784.0,Gholdengo,167.0,3
+784.0,Corviknight,136.0,4
+784.0,Meowscarada,132.0,5
+785.0,Starmie,19.0,1
+785.0,Zygarde,19.0,2
+785.0,Terapagos,18.0,3
+785.0,Latias,15.0,4
+785.0,Corviknight,10.0,5
+786.0,Garchomp,15.0,1
+786.0,Lopunny,15.0,2
+786.0,Roaring Moon,15.0,3
+786.0,Sinistcha,15.0,4
+786.0,Slowking-Galar,15.0,5
+787.0,Pelipper,16.0,1
+787.0,Hippowdon,15.0,2
+787.0,Froslass,14.0,3
+787.0,Castform,12.0,4
+787.0,Weezing-Galar,10.0,5
+788.0,Greninja,9.0,1
+788.0,Hydreigon,9.0,2
+788.0,Thundurus-Therian,9.0,3
+788.0,Rotom-Wash,8.0,4
+788.0,Cobalion,6.0,5
+789.0,Avalugg-Hisui,3.0,1
+789.0,Chimchar,3.0,2
+789.0,Electabuzz,3.0,3
+789.0,Flabébé-Yellow,3.0,4
+789.0,Magikarp,2.0,5
+790.0,Dugtrio-Alola,5.0,1
+790.0,Eelektrik,5.0,2
+790.0,Granbull,5.0,3
+790.0,Pikachu,5.0,4
+790.0,Archaludon,3.0,5
+791.0,Dragapult,66.0,1
+791.0,Alomomola,47.0,2
+791.0,Weezing-Galar,44.0,3
+791.0,Great Tusk,39.0,4
+791.0,Cinderace,38.0,5
+792.0,Enamorus,64.0,1
+792.0,Terapagos,63.0,2
+792.0,Greninja,45.0,3
+792.0,Klefki,44.0,4
+792.0,Ting-Lu,43.0,5
+793.0,Dracovish,17.0,1
+793.0,Ting-Lu,17.0,2
+793.0,Baxcalibur,15.0,3
+793.0,Ninetales-Alola,11.0,4
+793.0,Staraptor,11.0,5
+794.0,Tapu Koko,8.0,1
+794.0,Starmie,7.0,2
+794.0,Terapagos,7.0,3
+794.0,Zygarde,7.0,4
+794.0,Latias,3.0,5
+796.0,Alomomola,2.0,1
+796.0,Hydrapple,2.0,2
+796.0,Iron Treads,2.0,3
+796.0,Skeledirge,2.0,4
+796.0,Urshifu,2.0,5
+797.0,Aerodactyl,1.0,1
+797.0,Blastoise,1.0,2
+797.0,Conkeldurr,1.0,3
+797.0,Krookodile,1.0,4
+797.0,Latias,1.0,5
+798.0,Dracovish,2.0,1
+798.0,Nihilego,2.0,2
+798.0,Ninetales-Alola,2.0,3
+798.0,Staraptor,2.0,4
+798.0,Ting-Lu,2.0,5
+800.0,Meowscarada,229.0,1
+800.0,Greninja,225.0,2
+800.0,Iron Valiant,208.0,3
+800.0,Iron Treads,202.0,4
+800.0,Garchomp,193.0,5
+800.001,Iron Valiant,36.0,1
+800.001,Dragapult,21.0,2
+800.001,Great Tusk,21.0,3
+800.001,Flutter Mane,16.0,4
+800.001,Landorus-Therian,16.0,5
+800.002,Urshifu,46.0,1
+800.002,Zamazenta,42.0,2
+800.002,Ting-Lu,30.0,3
+800.002,Ursaluna,26.0,4
+800.002,Iron Hands,25.0,5
+801.0,Landorus-Therian,68.0,1
+801.0,Gouging Fire,53.0,2
+801.0,Gliscor,47.0,3
+801.0,Pecharunt,44.0,4
+801.0,Glimmora,43.0,5
+801.001,Gliscor,3.0,1
+801.001,Necrozma,3.0,2
+801.001,Kyurem,2.0,3
+801.001,Magearna,2.0,4
+801.001,Samurott-Hisui,2.0,5
+804.0,Mandibuzz,1.0,1
+804.0,Ogerpon-Wellspring,1.0,2
+804.0,Regieleki,1.0,3
+804.0,Ursaluna-Bloodmoon,1.0,4
+804.0,Uxie,1.0,5
+805.0,Aegislash,1.0,1
+805.0,Deoxys-Speed,1.0,2
+805.0,Diancie,1.0,3
+805.0,Emboar,1.0,4
+805.0,Gothitelle,1.0,5
+807.0,Serperior,7.0,1
+807.0,Dragapult,5.0,2
+807.0,Gliscor,5.0,3
+807.0,Malamar,5.0,4
+807.0,Milotic,5.0,5
+810.0,Drifloon,17.0,1
+810.0,Toedscool,10.0,2
+810.0,Stunky,8.0,3
+810.0,Chinchou,7.0,4
+810.0,Scovillain,6.0,5
+811.0,Sneasler,162.0,1
+811.0,Hawlucha,63.0,2
+811.0,Terapagos,46.0,3
+811.0,Gholdengo,45.0,4
+811.0,Raging Bolt,43.0,5
+812.0,Sneasler,2039.0,1
+812.0,Hawlucha,787.0,2
+812.0,Raging Bolt,685.0,3
+812.0,Heatran,563.0,4
+812.0,Primarina,482.0,5
+813.0,Hippopotas,8.0,1
+813.0,Pineco,7.0,2
+813.0,Grimer-Alola,6.0,3
+813.0,Croagunk,5.0,4
+813.0,Voltorb-Hisui,5.0,5
+814.0,Piloswine,14.0,1
+814.0,Glimmet,11.0,2
+814.0,Sandshrew,11.0,3
+814.0,Drakloak,10.0,4
+814.0,Trumbeak,10.0,5
+815.0,Raging Bolt,612.0,1
+815.0,Garchomp,605.0,2
+815.0,Urshifu,588.0,3
+815.0,Great Tusk,551.0,4
+815.0,Iron Valiant,528.0,5
+816.0,Jolteon,3.0,1
+816.0,Garchomp,2.0,2
+816.0,Alomomola,1.0,3
+816.0,Arbok,1.0,4
+816.0,Clawitzer,1.0,5
+817.0,Monferno,12.0,1
+817.0,Rhydon,12.0,2
+817.0,Electabuzz,10.0,3
+817.0,Floette,10.0,4
+817.0,Quilladin,8.0,5
+818.0,Forretress,90.0,1
+818.0,Ting-Lu,89.0,2
+818.0,Great Tusk,88.0,3
+818.0,Gholdengo,86.0,4
+818.0,Corviknight,80.0,5
+820.0,Great Tusk,17.0,1
+820.0,Uxie,14.0,2
+820.0,Clawitzer,13.0,3
+820.0,Darkrai,13.0,4
+820.0,Scyther,13.0,5
+821.0,Chinchou,4.0,1
+821.0,Diglett,4.0,2
+821.0,Pawniard,4.0,3
+821.0,Cottonee,3.0,4
+821.0,Larvesta,3.0,5
+822.0,Dragonair,8.0,1
+822.0,Monferno,7.0,2
+822.0,Raboot,6.0,3
+822.0,Alcremie,5.0,4
+822.0,Drakloak,5.0,5
+823.0,Iron Valiant,941.0,1
+823.0,Garchomp,901.0,2
+823.0,Urshifu,831.0,3
+823.0,Meowscarada,740.0,4
+823.0,Raging Bolt,687.0,5
+830.0,Diancie,1.0,1
+830.0,Eelektross,1.0,2
+830.0,Landorus-Therian,1.0,3
+830.0,Okidogi,1.0,4
+830.0,Weavile,1.0,5
+833.0,Drilbur,7.0,1
+833.0,Chinchou,6.0,2
+833.0,Drifloon,5.0,3
+833.0,Cufant,4.0,4
+833.0,Grookey,4.0,5
+834.0,Pelipper,139.0,1
+834.0,Archaludon,128.0,2
+834.0,Politoed,50.0,3
+834.0,Iron Treads,29.0,4
+834.0,Blaziken,28.0,5
+837.0,Blitzle,1.0,1
+837.0,Grubbin,1.0,2
+837.0,Mareanie,1.0,3
+837.0,Porygon,1.0,4
+837.0,Sandile,1.0,5
+838.0,Meowscarada,15.0,1
+838.0,Morgrem,13.0,2
+838.0,Arboliva,12.0,3
+838.0,Gurdurr,12.0,4
+838.0,Iron Valiant,12.0,5
+839.0,Dragapult,139.0,1
+839.0,Sneasler,137.0,2
+839.0,Gholdengo,125.0,3
+839.0,Corviknight,118.0,4
+839.0,Urshifu,110.0,5
+840.0,Fuecoco,2.0,1
+840.0,Joltik,2.0,2
+840.0,Shroodle,2.0,3
+840.0,Excadrill,1.0,4
+840.0,Florges,1.0,5
+841.0,Blastoise,16.0,1
+841.0,Inteleon,16.0,2
+841.0,Pecharunt,16.0,3
+841.0,Pelipper,16.0,4
+841.0,Sneasler,15.0,5
+842.0,Iron Treads,84.0,1
+842.0,Great Tusk,67.0,2
+842.0,Iron Valiant,66.0,3
+842.0,Samurott-Hisui,62.0,4
+842.0,Slowking-Galar,56.0,5
+843.0,Bulbasaur,2.0,1
+843.0,Litten,2.0,2
+843.0,Lycanroc,2.0,3
+843.0,Rufflet,2.0,4
+843.0,Weezing-Galar,2.0,5
+844.0,Tentacruel,63.0,1
+844.0,Cyclizar,60.0,2
+844.0,Sylveon,58.0,3
+844.0,Klefki,52.0,4
+844.0,Weezing-Galar,51.0,5
+845.0,Kilowattrel,22.0,1
+845.0,Flamigo,21.0,2
+845.0,Meowscarada,20.0,3
+845.0,Minior,20.0,4
+845.0,Roaring Moon,20.0,5
+846.0,Cutiefly,5.0,1
+846.0,Growlithe-Hisui,5.0,2
+846.0,Tentacool,4.0,3
+846.0,Diglett-Alola,3.0,4
+846.0,Doduo,3.0,5
+847.0,Pelipper,1226.0,1
+847.0,Archaludon,807.0,2
+847.0,Zapdos,237.0,3
+847.0,Overqwil,214.0,4
+847.0,Iron Treads,212.0,5
+849.0,Garchomp,82.0,1
+849.0,Dragapult,79.0,2
+849.0,Urshifu,66.0,3
+849.0,Tinkaton,64.0,4
+849.0,Gholdengo,60.0,5
+849.001,Urshifu,11.0,1
+849.001,Garchomp,9.0,2
+849.001,Gardevoir,9.0,3
+849.001,Quaquaval,9.0,4
+849.001,Meowscarada,8.0,5
+854.0,Girafarig,3.0,1
+854.0,Qwilfish-Hisui,3.0,2
+854.0,Shelgon,3.0,3
+854.0,Drilbur,2.0,4
+854.0,Pawniard,2.0,5
+855.0,Sneasler,83.0,1
+855.0,Hatterene,61.0,2
+855.0,Indeedee,59.0,3
+855.0,Primarina,59.0,4
+855.0,Indeedee-F,47.0,5
+856.0,Diglett-Alola,5.0,1
+856.0,Growlithe-Hisui,5.0,2
+856.0,Squirtle,5.0,3
+856.0,Foongus,4.0,4
+856.0,Riolu,3.0,5
+857.0,Overqwil,16.0,1
+857.0,Pelipper,16.0,2
+857.0,Haunter,14.0,3
+857.0,Politoed,13.0,4
+857.0,Brambleghast,12.0,5
+858.0,Sneasler,424.0,1
+858.0,Walking Wake,386.0,2
+858.0,Great Tusk,372.0,3
+858.0,Torkoal,345.0,4
+858.0,Chi-Yu,317.0,5
+859.0,Glimmora,18.0,1
+859.0,Urshifu,11.0,2
+859.0,Dondozo,9.0,3
+859.0,Iron Valiant,9.0,4
+859.0,Meowscarada,9.0,5
+860.0,Dragapult,45.0,1
+860.0,Gouging Fire,45.0,2
+860.0,Great Tusk,45.0,3
+860.0,Garchomp,38.0,4
+860.0,Meowscarada,38.0,5
+861.0,Annihilape,332.0,1
+861.0,Great Tusk,294.0,2
+861.0,Gouging Fire,259.0,3
+861.0,Landorus-Therian,246.0,4
+861.0,Iron Bundle,242.0,5
+863.0,Cyclizar,29.0,1
+863.0,Kilowattrel,26.0,2
+863.0,Gastrodon,23.0,3
+863.0,Iron Valiant,23.0,4
+863.0,Weezing-Galar,23.0,5
+869.0,Raging Bolt,30.0,1
+869.0,Meowscarada,29.0,2
+869.0,Darkrai,28.0,3
+869.0,Mienshao,28.0,4
+869.0,Urshifu,25.0,5
+870.0,Tinkaton,33.0,1
+870.0,Moltres,26.0,2
+870.0,Dragapult,25.0,3
+870.0,Grimmsnarl,23.0,4
+870.0,Volcanion,22.0,5
+871.0,Iron Bundle,242.0,1
+871.0,Iron Valiant,235.0,2
+871.0,Raichu-Alola,173.0,3
+871.0,Iron Treads,167.0,4
+871.0,Iron Moth,160.0,5
+872.0,Darkrai,2.0,1
+872.0,Ninetales,2.0,2
+872.0,Toedscruel,2.0,3
+872.0,Walking Wake,2.0,4
+872.0,Arcanine,1.0,5
+873.0,Iron Valiant,70.0,1
+873.0,Araquanid,62.0,2
+873.0,Gholdengo,61.0,3
+873.0,Forretress,51.0,4
+873.0,Scizor,51.0,5
+874.0,Delphox,8.0,1
+874.0,Ceruledge,7.0,2
+874.0,Cyclizar,5.0,3
+874.0,Forretress,5.0,4
+874.0,Gliscor,5.0,5
+875.0,Slowking-Galar,30.0,1
+875.0,Kingambit,25.0,2
+875.0,Ninetales-Alola,25.0,3
+875.0,Iron Bundle,22.0,4
+875.0,Greninja,21.0,5
+876.0,Sneasler,429.0,1
+876.0,Hawlucha,193.0,2
+876.0,Deoxys-Speed,163.0,3
+876.0,Armarouge,127.0,4
+876.0,Hatterene,98.0,5
+876.002,Sneasler,183.0,1
+876.002,Iron Crown,100.0,2
+876.002,Hawlucha,87.0,3
+876.002,Hatterene,78.0,4
+876.002,Latios,48.0,5
+877.0,Ogerpon-Hearthflame,46.0,1
+877.0,Annihilape,25.0,2
+877.0,Archaludon,22.0,3
+877.0,Enamorus,22.0,4
+877.0,Sableye,22.0,5
+878.0,Snivy,6.0,1
+878.0,Chinchou,5.0,2
+878.0,Drifloon,5.0,3
+878.0,Chewtle,4.0,4
+878.0,Diglett,4.0,5
+879.0,Tsareena,42.0,1
+879.0,Roaring Moon,40.0,2
+879.0,Weezing-Galar,39.0,3
+879.0,Diancie,37.0,4
+879.0,Okidogi,34.0,5
+881.0,Cinccino,1.0,1
+881.0,Heatran,1.0,2
+881.0,Kyurem,1.0,3
+881.0,Landorus-Therian,1.0,4
+881.0,Ninetales-Alola,1.0,5
+882.0,Ting-Lu,19.0,1
+882.0,Baxcalibur,17.0,2
+882.0,Nihilego,17.0,3
+882.0,Ninetales-Alola,13.0,4
+882.0,Staraptor,11.0,5
+884.0,Meowscarada,69.0,1
+884.0,Donphan,63.0,2
+884.0,Weezing-Galar,55.0,3
+884.0,Iron Valiant,54.0,4
+884.0,Krookodile,54.0,5
+885.0,Phanpy,2.0,1
+885.0,Vullaby,2.0,2
+885.0,Chespin,1.0,3
+885.0,Eevee,1.0,4
+885.0,Grimer,1.0,5
+886.0,Glimmet,15.0,1
+886.0,Clefairy,13.0,2
+886.0,Typhlosion-Hisui,13.0,3
+886.0,Morgrem,12.0,4
+886.0,Servine,12.0,5
+887.0,Ting-Lu,749.0,1
+887.0,Quaquaval,636.0,2
+887.0,Iron Treads,624.0,3
+887.0,Clefable,581.0,4
+887.0,Urshifu,571.0,5
+888.0,Raging Bolt,55.0,1
+888.0,Darkrai,54.0,2
+888.0,Garchomp,51.0,3
+888.0,Glimmora,48.0,4
+888.0,Gholdengo,38.0,5
+889.0,Landorus-Therian,174.0,1
+889.0,Enamorus,166.0,2
+889.0,Primarina,157.0,3
+889.0,Gliscor,148.0,4
+889.0,Blastoise,143.0,5
+890.0,Registeel,18.0,1
+890.0,Slowking,17.0,2
+890.0,Terapagos,17.0,3
+890.0,Scizor,16.0,4
+890.0,Solgaleo,16.0,5
+890.001,Bulbasaur,1.0,1
+890.001,Iron Bundle,1.0,2
+890.001,Pachirisu,1.0,3
+890.001,Pikachu,1.0,4
+890.001,Squirtle,1.0,5
+891.0,Basculin-White-Striped,10.0,1
+891.0,Trumbeak,9.0,2
+891.0,Drakloak,8.0,3
+891.0,Krokorok,8.0,4
+891.0,Magmar,7.0,5
+892.0,Corviknight,831.0,1
+892.0,Iron Treads,765.0,2
+892.0,Slowking-Galar,708.0,3
+892.0,Terapagos,706.0,4
+892.0,Meowscarada,667.0,5
+893.0,Terapagos,508.0,1
+893.0,Iron Valiant,486.0,2
+893.0,Deoxys-Speed,460.0,3
+893.0,Cinderace,451.0,4
+893.0,Garchomp,440.0,5
+893.001,Cinderace,109.0,1
+893.001,Iron Treads,87.0,2
+893.001,Terapagos,80.0,3
+893.001,Landorus-Therian,78.0,4
+893.001,Iron Bundle,75.0,5
+894.0,Gliscor,258.0,1
+894.0,Iron Valiant,258.0,2
+894.0,Urshifu,255.0,3
+894.0,Landorus-Therian,232.0,4
+894.0,Palafin,228.0,5
+895.0,Iron Treads,85.0,1
+895.0,Pecharunt,77.0,2
+895.0,Primarina,73.0,3
+895.0,Meowscarada,61.0,4
+895.0,Chi-Yu,59.0,5
+896.0,Iron Valiant,126.0,1
+896.0,Great Tusk,114.0,2
+896.0,Hatterene,112.0,3
+896.0,Latios,112.0,4
+896.0,Slowking-Galar,112.0,5
+897.0,Urshifu,510.0,1
+897.0,Iron Hands,344.0,2
+897.0,Ting-Lu,283.0,3
+897.0,Sneasler,237.0,4
+897.0,Landorus-Therian,220.0,5
+898.0,Regice,8.0,1
+898.0,Regidrago,8.0,2
+898.0,Regigigas,8.0,3
+898.0,Regirock,8.0,4
+898.0,Registeel,8.0,5
+898.001,Slowking-Galar,40.0,1
+898.001,Terapagos,40.0,2
+898.001,Landorus-Therian,39.0,3
+898.001,Infernape,34.0,4
+898.001,Gliscor,33.0,5
+898.002,Iron Hands,6.0,1
+898.002,Jirachi,6.0,2
+898.002,Kingambit,6.0,3
+898.002,Scream Tail,6.0,4
+898.002,Ting-Lu,6.0,5
+899.0,Iron Hands,19.0,1
+899.0,Iron Treads,19.0,2
+899.0,Incineroar,18.0,3
+899.0,Swampert,17.0,4
+899.0,Iron Bundle,15.0,5
+900.0,Iron Valiant,159.0,1
+900.0,Goodra-Hisui,146.0,2
+900.0,Ursaluna-Bloodmoon,139.0,3
+900.0,Weezing-Galar,137.0,4
+900.0,Gholdengo,133.0,5
+901.0,Meowscarada,315.0,1
+901.0,Hatterene,264.0,2
+901.0,Iron Valiant,249.0,3
+901.0,Urshifu,215.0,4
+901.0,Iron Bundle,209.0,5
+901.001,Corviknight,407.0,1
+901.001,Roaring Moon,378.0,2
+901.001,Slowking-Galar,377.0,3
+901.001,Ogerpon-Wellspring,372.0,4
+901.001,Palafin,364.0,5
+902.0,Pelipper,485.0,1
+902.0,Archaludon,304.0,2
+902.0,Zapdos,103.0,3
+902.0,Iron Treads,98.0,4
+902.0,Politoed,95.0,5
+902.001,Pelipper,279.0,1
+902.001,Archaludon,162.0,2
+902.001,Iron Treads,101.0,3
+902.001,Overqwil,96.0,4
+902.001,Palafin,59.0,5
+903.0,Rillaboom,2039.0,1
+903.0,Raging Bolt,693.0,2
+903.0,Primarina,622.0,3
+903.0,Ting-Lu,610.0,4
+903.0,Terapagos,481.0,5
+904.0,Pelipper,746.0,1
+904.0,Archaludon,569.0,2
+904.0,Iron Treads,464.0,3
+904.0,Great Tusk,333.0,4
+904.0,Palafin,278.0,5
+905.0,Great Tusk,597.0,1
+905.0,Roaring Moon,562.0,2
+905.0,Cinderace,526.0,3
+905.0,Dragapult,491.0,4
+905.0,Samurott-Hisui,480.0,5
+905.001,Terapagos,176.0,1
+905.001,Ogerpon-Wellspring,165.0,2
+905.001,Iron Treads,164.0,3
+905.001,Jirachi,150.0,4
+905.001,Meowscarada,146.0,5
+906.0,Elekid,7.0,1
+906.0,Koffing,6.0,2
+906.0,Corphish,5.0,3
+906.0,Houndour,5.0,4
+906.0,Mankey,5.0,5
+907.0,Quaxwell,9.0,1
+907.0,Gastly,8.0,2
+907.0,Drakloak,7.0,3
+907.0,Arbok,5.0,4
+907.0,Azumarill,5.0,5
+908.0,Iron Treads,1034.0,1
+908.0,Landorus-Therian,843.0,2
+908.0,Raging Bolt,777.0,3
+908.0,Iron Moth,765.0,4
+908.0,Garchomp,751.0,5
+909.0,Greninja,7.0,1
+909.0,Annihilape,5.0,2
+909.0,Hatterene,5.0,3
+909.0,Sandy Shocks,4.0,4
+909.0,Baxcalibur,3.0,5
+910.0,Meowscarada,44.0,1
+910.0,Iron Valiant,39.0,2
+910.0,Annihilape,33.0,3
+910.0,Gholdengo,30.0,4
+910.0,Ting-Lu,29.0,5
+911.0,Iron Valiant,365.0,1
+911.0,Urshifu,308.0,2
+911.0,Meowscarada,300.0,3
+911.0,Iron Treads,278.0,4
+911.0,Gliscor,275.0,5
+912.0,Aipom,7.0,1
+912.0,Bulbasaur,7.0,2
+912.0,Shieldon,7.0,3
+912.0,Vulpix,7.0,4
+912.0,Crabrawler,6.0,5
+913.0,Tinkatuff,19.0,1
+913.0,Electabuzz,18.0,2
+913.0,Trumbeak,16.0,3
+913.0,Qwilfish-Hisui,14.0,4
+913.0,Vigoroth,14.0,5
+914.0,Dragapult,636.0,1
+914.0,Meowscarada,613.0,2
+914.0,Garchomp,607.0,3
+914.0,Darkrai,589.0,4
+914.0,Ting-Lu,554.0,5
+915.0,Arcanine,1.0,1
+915.0,Axew,1.0,2
+915.0,Blaziken,1.0,3
+915.0,Bruxish,1.0,4
+915.0,Charizard,1.0,5
+916.0,Bronzong,5.0,1
+916.0,Garchomp,5.0,2
+916.0,Ogerpon-Cornerstone,5.0,3
+916.0,Samurott-Hisui,5.0,4
+916.0,Tornadus-Therian,5.0,5
+916.001,Great Tusk,6.0,1
+916.001,Bronzong,5.0,2
+916.001,Tropius,5.0,3
+916.001,Amoonguss,4.0,4
+916.001,Azumarill,4.0,5
+917.0,Terapagos,9.0,1
+917.0,Breloom,8.0,2
+917.0,Drifblim,7.0,3
+917.0,Landorus,6.0,4
+917.0,Primarina,6.0,5
+918.0,Gholdengo,65.0,1
+918.0,Iron Valiant,57.0,2
+918.0,Quaquaval,42.0,3
+918.0,Great Tusk,39.0,4
+918.0,Urshifu,39.0,5
+919.0,Wigglytuff,7.0,1
+919.0,Magmar,6.0,2
+919.0,Salandit,6.0,3
+919.0,Wartortle,6.0,4
+919.0,Arbok,5.0,5
+920.0,Iron Bundle,235.0,1
+920.0,Great Tusk,211.0,2
+920.0,Slowking-Galar,202.0,3
+920.0,Urshifu,201.0,4
+920.0,Landorus-Therian,170.0,5
+921.0,Drilbur,1.0,1
+921.0,Flabébé-White,1.0,2
+921.0,Flittle,1.0,3
+921.0,Mankey,1.0,4
+921.0,Vulpix-Alola,1.0,5
+922.0,Duosion,8.0,1
+922.0,Sliggoo-Hisui,8.0,2
+922.0,Crocalor,6.0,3
+922.0,Dugtrio-Alola,5.0,4
+922.0,Gurdurr,5.0,5
+923.0,Corviknight,93.0,1
+923.0,Primarina,89.0,2
+923.0,Weezing-Galar,75.0,3
+923.0,Tornadus-Therian,73.0,4
+923.0,Tinkaton,71.0,5
+924.0,Blastoise,4.0,1
+924.0,Archaludon,3.0,2
+924.0,Darkrai,3.0,3
+924.0,Dewgong,3.0,4
+924.0,Gouging Fire,3.0,5
+925.0,Meowscarada,70.0,1
+925.0,Dragapult,64.0,2
+925.0,Gliscor,60.0,3
+925.0,Iron Valiant,57.0,4
+925.0,Mew,54.0,5
+926.0,Drilbur,5.0,1
+926.0,Magnemite,4.0,2
+926.0,Chewtle,2.0,3
+926.0,Growlithe-Hisui,2.0,4
+926.0,Lumineon,2.0,5
+927.0,Iron Bundle,57.0,1
+927.0,Great Tusk,55.0,2
+927.0,Zoroark-Hisui,50.0,3
+927.0,Scizor,47.0,4
+927.0,Torkoal,45.0,5
+929.0,Bergmite,3.0,1
+929.0,Girafarig,3.0,2
+929.0,Prinplup,3.0,3
+929.0,Staravia,3.0,4
+929.0,Altaria,2.0,5
+930.0,Great Tusk,224.0,1
+930.0,Sneasler,210.0,2
+930.0,Dragapult,167.0,3
+930.0,Iron Treads,151.0,4
+930.0,Annihilape,142.0,5
+931.0,Iron Valiant,17.0,1
+931.0,Revavroom,14.0,2
+931.0,Ribombee,14.0,3
+931.0,Overqwil,13.0,4
+931.0,Iron Treads,12.0,5
+932.0,Mienfoo,5.0,1
+932.0,Sandshrew-Alola,3.0,2
+932.0,Shroodle,3.0,3
+932.0,Yanma,3.0,4
+932.0,Clauncher,2.0,5
+933.0,Great Tusk,68.0,1
+933.0,Gholdengo,60.0,2
+933.0,Corviknight,54.0,3
+933.0,Garchomp,54.0,4
+933.0,Meowscarada,51.0,5
+934.0,Great Tusk,309.0,1
+934.0,Gholdengo,258.0,2
+934.0,Ogerpon-Wellspring,242.0,3
+934.0,Iron Valiant,215.0,4
+934.0,Kingambit,210.0,5
+935.0,Clefairy,2.0,1
+935.0,Marshtomp,2.0,2
+935.0,Alomomola,1.0,3
+935.0,Bagon,1.0,4
+935.0,Bisharp,1.0,5
+936.0,Indeedee,127.0,1
+936.0,Ogerpon-Cornerstone,94.0,2
+936.0,Roaring Moon,82.0,3
+936.0,Scream Tail,80.0,4
+936.0,Corviknight,75.0,5
+937.0,Meowscarada,366.0,1
+937.0,Iron Valiant,326.0,2
+937.0,Iron Treads,285.0,3
+937.0,Great Tusk,279.0,4
+937.0,Greninja,272.0,5
+938.0,Clauncher,1.0,1
+938.0,Drakloak,1.0,2
+938.0,Drilbur,1.0,3
+938.0,Fennekin,1.0,4
+938.0,Koffing,1.0,5
+939.0,Iron Valiant,203.0,1
+939.0,Meowscarada,191.0,2
+939.0,Great Tusk,188.0,3
+939.0,Darkrai,173.0,4
+939.0,Landorus-Therian,163.0,5
+940.0,Arctibax,6.0,1
+940.0,Growlithe-Hisui,6.0,2
+940.0,Aipom,5.0,3
+940.0,Dewpider,5.0,4
+940.0,Haunter,5.0,5
+941.0,Pelipper,347.0,1
+941.0,Archaludon,310.0,2
+941.0,Urshifu,284.0,3
+941.0,Iron Valiant,272.0,4
+941.0,Palafin,246.0,5
+942.0,Doduo,5.0,1
+942.0,Sandshrew,5.0,2
+942.0,Corphish,4.0,3
+942.0,Cutiefly,4.0,4
+942.0,Meowth,4.0,5
+943.0,Whimsicott,46.0,1
+943.0,Weezing-Galar,45.0,2
+943.0,Empoleon,43.0,3
+943.0,Goodra-Hisui,35.0,4
+943.0,Gligar,27.0,5
+944.0,Gholdengo,8.0,1
+944.0,Grookey,5.0,2
+944.0,Growlithe,5.0,3
+944.0,Sandile,5.0,4
+944.0,Sandshrew-Alola,5.0,5
+945.0,Rillaboom,103.0,1
+945.0,Great Tusk,102.0,2
+945.0,Annihilape,82.0,3
+945.0,Corviknight,77.0,4
+945.0,Terapagos,71.0,5
+946.0,Fletchinder,3.0,1
+946.0,Iron Valiant,3.0,2
+946.0,Porygon-Z,3.0,3
+946.0,Aipom,2.0,4
+946.0,Basculin-White-Striped,2.0,5
+947.0,Ting-Lu,181.0,1
+947.0,Slowking-Galar,155.0,2
+947.0,Iron Valiant,153.0,3
+947.0,Garchomp,144.0,4
+947.0,Urshifu,143.0,5
+948.0,Grookey,10.0,1
+948.0,Goodra,8.0,2
+948.0,Buizel,6.0,3
+948.0,Drifloon,6.0,4
+948.0,Iron Hands,6.0,5
+949.0,Urshifu,105.0,1
+949.0,Archaludon,90.0,2
+949.0,Gouging Fire,86.0,3
+949.0,Kilowattrel,84.0,4
+949.0,Weezing-Galar,74.0,5
+950.0,Hydrapple,21.0,1
+950.0,Cyclizar,19.0,2
+950.0,Great Tusk,19.0,3
+950.0,Krookodile,18.0,4
+950.0,Ninetales,17.0,5
+952.0,Torkoal,120.0,1
+952.0,Walking Wake,94.0,2
+952.0,Ninetales,89.0,3
+952.0,Great Tusk,47.0,4
+952.0,Roaring Moon,44.0,5
+954.0,Araquanid,34.0,1
+954.0,Scizor,30.0,2
+954.0,Forretress,28.0,3
+954.0,Volcarona,16.0,4
+954.0,Vikavolt,14.0,5
+955.0,Drilbur,5.0,1
+955.0,Mankey,5.0,2
+955.0,Vulpix-Alola,5.0,3
+955.0,Bulbasaur,4.0,4
+955.0,Litten,4.0,5
+956.0,Rillaboom,109.0,1
+956.0,Sneasler,105.0,2
+956.0,Iron Valiant,101.0,3
+956.0,Meowscarada,87.0,4
+956.0,Urshifu,87.0,5
+957.0,Wingull,7.0,1
+957.0,Glimmet,6.0,2
+957.0,Mudbray,6.0,3
+957.0,Piloswine,5.0,4
+957.0,Sandshrew-Alola,5.0,5
+958.0,Quaxwell,19.0,1
+958.0,Qwilfish-Hisui,16.0,2
+958.0,Deoxys-Speed,15.0,3
+958.0,Great Tusk,10.0,4
+958.0,Bayleef,9.0,5
+959.0,Great Tusk,700.0,1
+959.0,Terapagos,655.0,2
+959.0,Meowscarada,596.0,3
+959.0,Tornadus-Therian,542.0,4
+959.0,Slowking-Galar,538.0,5
+961.0,Bronzong,11.0,1
+961.0,Darkrai,9.0,2
+961.0,Sylveon,9.0,3
+961.0,Zapdos,9.0,4
+961.0,Bellibolt,8.0,5
+962.0,Cyclizar,39.0,1
+962.0,Hatterene,28.0,2
+962.0,Alomomola,26.0,3
+962.0,Jolteon,26.0,4
+962.0,Gardevoir,24.0,5
+963.0,Amoonguss,1.0,1
+963.0,Drilbur,1.0,2
+963.0,Flabébé-Yellow,1.0,3
+963.0,Flittle,1.0,4
+963.0,Gengar,1.0,5
+964.0,Raging Bolt,775.0,1
+964.0,Pelipper,699.0,2
+964.0,Archaludon,655.0,3
+964.0,Tornadus-Therian,583.0,4
+964.0,Iron Treads,456.0,5
+965.0,Scraggy,8.0,1
+965.0,Squirtle,7.0,2
+965.0,Dewpider,5.0,3
+965.0,Foongus,5.0,4
+965.0,Magby,5.0,5
+966.0,Great Tusk,217.0,1
+966.0,Dragapult,171.0,2
+966.0,Enamorus,161.0,3
+966.0,Quaquaval,144.0,4
+966.0,Greninja,129.0,5
+967.0,Ting-Lu,461.0,1
+967.0,Gholdengo,446.0,2
+967.0,Landorus-Therian,421.0,3
+967.0,Iron Valiant,397.0,4
+967.0,Gliscor,372.0,5
+968.0,Dragapult,140.0,1
+968.0,Great Tusk,136.0,2
+968.0,Terapagos,133.0,3
+968.0,Slowking-Galar,132.0,4
+968.0,Sneasler,117.0,5
+969.0,Gholdengo,43.0,1
+969.0,Iron Crown,29.0,2
+969.0,Araquanid,26.0,3
+969.0,Thwackey,20.0,4
+969.0,Hawlucha,19.0,5
+970.0,Gholdengo,805.0,1
+970.0,Meowscarada,505.0,2
+970.0,Roaring Moon,498.0,3
+970.0,Annihilape,476.0,4
+970.0,Iron Valiant,476.0,5
+971.0,Electabuzz,6.0,1
+971.0,Hakamo-o,6.0,2
+971.0,Krokorok,5.0,3
+971.0,Sandslash,5.0,4
+971.0,Diglett,4.0,5
+972.0,Tyranitar,295.0,1
+972.0,Excadrill,257.0,2
+972.0,Hippowdon,157.0,3
+972.0,Iron Valiant,68.0,4
+972.0,Meowscarada,64.0,5
+973.0,Gholdengo,55.0,1
+973.0,Sandy Shocks,54.0,2
+973.0,Iron Treads,51.0,3
+973.0,Gardevoir,44.0,4
+973.0,Landorus-Therian,43.0,5
+974.0,Cutiefly,9.0,1
+974.0,Froakie,9.0,2
+974.0,Koffing,7.0,3
+974.0,Mudbray,7.0,4
+974.0,Bagon,6.0,5
+975.0,Slowking-Galar,297.0,1
+975.0,Ninetales-Alola,271.0,2
+975.0,Slowking,220.0,3
+975.0,Abomasnow,71.0,4
+975.0,Meowscarada,70.0,5
+976.0,Brambleghast,18.0,1
+976.0,Tinkaton,18.0,2
+976.0,Indeedee,15.0,3
+976.0,Yanmega,15.0,4
+976.0,Eelektross,14.0,5
+977.0,Gliscor,193.0,1
+977.0,Iron Valiant,184.0,2
+977.0,Clodsire,177.0,3
+977.0,Blissey,165.0,4
+977.0,Gholdengo,154.0,5
+978.0,Annihilape,48.0,1
+978.0,Tinkaton,39.0,2
+978.0,Heatran,36.0,3
+978.0,Bisharp,33.0,4
+978.0,Ribombee,31.0,5
+979.0,Meowscarada,531.0,1
+979.0,Iron Treads,510.0,2
+979.0,Ting-Lu,482.0,3
+979.0,Glimmora,476.0,4
+979.0,Greninja,474.0,5
+980.0,Corviknight,666.0,1
+980.0,Urshifu,449.0,2
+980.0,Iron Valiant,431.0,3
+980.0,Iron Bundle,391.0,4
+980.0,Alomomola,353.0,5
+981.0,Tinkaton,80.0,1
+981.0,Gouging Fire,66.0,2
+981.0,Primarina,66.0,3
+981.0,Iron Valiant,64.0,4
+981.0,Mamoswine,64.0,5
+982.0,Iron Valiant,145.0,1
+982.0,Iron Treads,120.0,2
+982.0,Great Tusk,105.0,3
+982.0,Ogerpon-Wellspring,103.0,4
+982.0,Meowscarada,99.0,5
+983.0,Iron Valiant,499.0,1
+983.0,Great Tusk,476.0,2
+983.0,Slowking-Galar,422.0,3
+983.0,Kyurem,373.0,4
+983.0,Gliscor,370.0,5
+984.0,Greninja,1000.0,1
+984.0,Zapdos,991.0,2
+984.0,Slowking-Galar,926.0,3
+984.0,Roaring Moon,909.0,4
+984.0,Walking Wake,906.0,5
+985.0,Great Tusk,572.0,1
+985.0,Iron Treads,467.0,2
+985.0,Walking Wake,457.0,3
+985.0,Roaring Moon,444.0,4
+985.0,Gouging Fire,433.0,5
+986.0,Walking Wake,152.0,1
+986.0,Torkoal,135.0,2
+986.0,Gouging Fire,106.0,3
+986.0,Ninetales,74.0,4
+986.0,Great Tusk,60.0,5
+987.0,Torkoal,73.0,1
+987.0,Gouging Fire,56.0,2
+987.0,Landorus-Therian,52.0,3
+987.0,Walking Wake,52.0,4
+987.0,Incineroar,48.0,5
+988.0,Torkoal,507.0,1
+988.0,Walking Wake,470.0,2
+988.0,Gouging Fire,222.0,3
+988.0,Roaring Moon,192.0,4
+988.0,Venusaur,189.0,5
+989.0,Torkoal,362.0,1
+989.0,Roaring Moon,318.0,2
+989.0,Gouging Fire,299.0,3
+989.0,Walking Wake,293.0,4
+989.0,Terapagos,277.0,5
+990.0,Meowscarada,1034.0,1
+990.0,Iron Valiant,855.0,2
+990.0,Tornadus-Therian,842.0,3
+990.0,Primarina,823.0,4
+990.0,Greninja,781.0,5
+991.0,Slowking-Galar,1004.0,1
+991.0,Great Tusk,785.0,2
+991.0,Iron Treads,669.0,3
+991.0,Urshifu,591.0,4
+991.0,Landorus-Therian,579.0,5
+992.0,Iron Treads,484.0,1
+992.0,Greninja,434.0,2
+992.0,Iron Bundle,420.0,3
+992.0,Garchomp,406.0,4
+992.0,Corviknight,368.0,5
+993.0,Iron Treads,153.0,1
+993.0,Iron Valiant,130.0,2
+993.0,Tinkaton,114.0,3
+993.0,Pincurchin,105.0,4
+993.0,Cinderace,82.0,5
+994.0,Great Tusk,826.0,1
+994.0,Meowscarada,765.0,2
+994.0,Roaring Moon,684.0,3
+994.0,Urshifu,636.0,4
+994.0,Corviknight,584.0,5
+995.0,Iron Bundle,88.0,1
+995.0,Iron Moth,83.0,2
+995.0,Donphan,76.0,3
+995.0,Corviknight,74.0,4
+995.0,Pincurchin,73.0,5
+996.0,Cinccino,1.0,1
+996.0,Mienfoo,1.0,2
+996.0,Naclstack,1.0,3
+996.0,Servine,1.0,4
+996.0,Torracat,1.0,5
+997.0,Combusken,7.0,1
+997.0,Haunter,6.0,2
+997.0,Wattrel,6.0,3
+997.0,Graveler,5.0,4
+997.0,Grimer-Alola,5.0,5
+998.0,Slowking-Galar,1090.0,1
+998.0,Ninetales-Alola,817.0,2
+998.0,Slowking,569.0,3
+998.0,Iron Valiant,399.0,4
+998.0,Iron Treads,344.0,5
+999.0,Gimmighoul-Roaming,9.0,1
+999.0,Teddiursa,3.0,2
+999.0,Axew,2.0,3
+999.0,Chinchou,2.0,4
+999.0,Cosmoem,2.0,5
+1000.0,Gliscor,1018.0,1
+1000.0,Samurott-Hisui,964.0,2
+1000.0,Ting-Lu,905.0,3
+1000.0,Garchomp,886.0,4
+1000.0,Glimmora,805.0,5
+1001.0,Dragapult,87.0,1
+1001.0,Iron Valiant,85.0,2
+1001.0,Iron Bundle,72.0,3
+1001.0,Gliscor,71.0,4
+1001.0,Alomomola,70.0,5
+1002.0,Primarina,197.0,1
+1002.0,Zapdos,189.0,2
+1002.0,Pecharunt,183.0,3
+1002.0,Heatran,177.0,4
+1002.0,Annihilape,176.0,5
+1003.0,Tornadus-Therian,1265.0,1
+1003.0,Gholdengo,905.0,2
+1003.0,Iron Valiant,871.0,3
+1003.0,Pecharunt,802.0,4
+1003.0,Dragapult,749.0,5
+1004.0,Corviknight,616.0,1
+1004.0,Torkoal,544.0,2
+1004.0,Walking Wake,538.0,3
+1004.0,Great Tusk,486.0,4
+1004.0,Ogerpon-Wellspring,470.0,5
+1005.0,Terapagos,956.0,1
+1005.0,Great Tusk,909.0,2
+1005.0,Torkoal,832.0,3
+1005.0,Gholdengo,752.0,4
+1005.0,Gliscor,748.0,5
+1006.0,Corviknight,941.0,1
+1006.0,Landorus-Therian,934.0,2
+1006.0,Ting-Lu,871.0,3
+1006.0,Garchomp,869.0,4
+1006.0,Iron Treads,855.0,5
+1007.0,Chi-Yu,31.0,1
+1007.0,Walking Wake,17.0,2
+1007.0,Gouging Fire,15.0,3
+1007.0,Klefki,14.0,4
+1007.0,Corviknight,13.0,5
+1008.0,Iron Treads,16.0,1
+1008.0,Iron Valiant,11.0,2
+1008.0,Arceus-Water,9.0,3
+1008.0,Iron Moth,8.0,4
+1008.0,Samurott-Hisui,7.0,5
+1009.0,Torkoal,2806.0,1
+1009.0,Ninetales,1058.0,2
+1009.0,Venusaur,991.0,3
+1009.0,Gouging Fire,932.0,4
+1009.0,Great Tusk,906.0,5
+1010.0,Pincurchin,141.0,1
+1010.0,Iron Treads,102.0,2
+1010.0,Greninja,68.0,3
+1010.0,Iron Bundle,66.0,4
+1010.0,Iron Valiant,66.0,5
+1011.0,Gholdengo,41.0,1
+1011.0,Tornadus-Therian,38.0,2
+1011.0,Talonflame,37.0,3
+1011.0,Garganacl,33.0,4
+1011.0,Gliscor,33.0,5
+1012.0,Mienfoo,6.0,1
+1012.0,Sandshrew-Alola,5.0,2
+1012.0,Bronzor,4.0,3
+1012.0,Glimmet,4.0,4
+1012.0,Pikipek,4.0,5
+1013.0,Great Tusk,309.0,1
+1013.0,Greninja,294.0,2
+1013.0,Terapagos,292.0,3
+1013.0,Iron Treads,288.0,4
+1013.0,Garchomp,282.0,5
+1014.0,Iron Treads,272.0,1
+1014.0,Tornadus-Therian,196.0,2
+1014.0,Ogerpon-Wellspring,180.0,3
+1014.0,Meowscarada,174.0,4
+1014.0,Ting-Lu,172.0,5
+1015.0,Ting-Lu,82.0,1
+1015.0,Corviknight,78.0,2
+1015.0,Great Tusk,74.0,3
+1015.0,Raging Bolt,72.0,4
+1015.0,Scizor,62.0,5
+1016.0,Great Tusk,449.0,1
+1016.0,Iron Treads,400.0,2
+1016.0,Meowscarada,368.0,3
+1016.0,Ogerpon-Wellspring,355.0,4
+1016.0,Darkrai,316.0,5
+1017.0,Great Tusk,424.0,1
+1017.0,Gholdengo,378.0,2
+1017.0,Darkrai,354.0,3
+1017.0,Iron Valiant,319.0,4
+1017.0,Garchomp,301.0,5
+1017.001,Iron Valiant,802.0,1
+1017.001,Darkrai,726.0,2
+1017.001,Great Tusk,713.0,3
+1017.001,Terapagos,704.0,4
+1017.001,Gholdengo,652.0,5
+1017.002,Great Tusk,581.0,1
+1017.002,Raging Bolt,579.0,2
+1017.002,Gholdengo,491.0,3
+1017.002,Iron Bundle,490.0,4
+1017.002,Roaring Moon,446.0,5
+1017.003,Great Tusk,495.0,1
+1017.003,Tornadus-Therian,480.0,2
+1017.003,Greninja,438.0,3
+1017.003,Darkrai,414.0,4
+1017.003,Corviknight,403.0,5
+1018.0,Pelipper,2445.0,1
+1018.0,Barraskewda,807.0,2
+1018.0,Palafin,655.0,3
+1018.0,Overqwil,569.0,4
+1018.0,Zapdos,538.0,5
+1019.0,Iron Valiant,417.0,1
+1019.0,Iron Treads,408.0,2
+1019.0,Darkrai,401.0,3
+1019.0,Great Tusk,373.0,4
+1019.0,Alomomola,326.0,5
+1020.0,Torkoal,1006.0,1
+1020.0,Walking Wake,932.0,2
+1020.0,Corviknight,667.0,3
+1020.0,Tornadus-Therian,557.0,4
+1020.0,Iron Treads,535.0,5
+1021.0,Landorus-Therian,778.0,1
+1021.0,Meowscarada,777.0,2
+1021.0,Palafin,775.0,3
+1021.0,Great Tusk,762.0,4
+1021.0,Iron Treads,696.0,5
+1022.0,Corviknight,345.0,1
+1022.0,Great Tusk,272.0,2
+1022.0,Weezing-Galar,269.0,3
+1022.0,Iron Valiant,267.0,4
+1022.0,Samurott-Hisui,248.0,5
+1023.0,Iron Valiant,617.0,1
+1023.0,Landorus-Therian,494.0,2
+1023.0,Ogerpon-Wellspring,452.0,3
+1023.0,Great Tusk,451.0,4
+1023.0,Terapagos,451.0,5
+1024.0,Roaring Moon,956.0,1
+1024.0,Gliscor,932.0,2
+1024.0,Ting-Lu,742.0,3
+1024.0,Urshifu,706.0,4
+1024.0,Ogerpon-Wellspring,704.0,5
+1024.001,Azumarill,1.0,1
+1024.001,Gholdengo,1.0,2
+1024.001,Mesprit,1.0,3
+1024.001,Salamence,1.0,4
+1024.001,Sneasler,1.0,5
+1025.0,Ting-Lu,802.0,1
+1025.0,Iron Valiant,740.0,2
+1025.0,Tornadus-Therian,662.0,3
+1025.0,Terapagos,625.0,4
+1025.0,Meowscarada,567.0,5

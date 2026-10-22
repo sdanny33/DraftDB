@@ -23,6 +23,7 @@ class Mon:
         self.hit = 0
         self.tera = 0
         self.moves = []
+        self.partners = []
         self.active = 0
         self.move = 0
         self.super_effective = 0
@@ -127,6 +128,12 @@ class Mon:
 
     def add_moves(self, moves):
         self.moves.extend(moves)
+
+    def add_partners(self, partners):
+        self.partners.extend(partners)
+
+    def get_partners(self):
+        return self.partners
 
     def set_item(self, item):
         self.item = item
