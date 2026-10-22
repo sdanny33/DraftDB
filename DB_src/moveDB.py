@@ -103,6 +103,7 @@ def print_top(dbName, fileName):
             "id": row[0],
             "move": row[1],
             "usage": row[2],
+            "rank": row[3]
         })
     lookup_data_js = "const moveData = " + json.dumps(lookup_data, ensure_ascii=True) + ";\n\nexport { moveData };\n"
 

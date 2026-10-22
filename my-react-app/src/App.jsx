@@ -4,6 +4,7 @@ import { NavLink, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { dex } from './js/pokedex'
 import { monData } from './js/mon-data'
+import { moveData } from './js/move-data'
 Chart.register(...registerables)
 Chart.defaults.font.family = "'Geist Pixel', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
 Chart.defaults.color = 'rgba(0, 0, 0, 0.6)'
@@ -90,6 +91,31 @@ function getStats(name) {
   }
   return stats
 }
+
+function getMove(id, rank) {
+  if (!id) {
+    return null
+  }
+  if (!rank) {
+    return null
+  }
+
+  for (const [key, value] of Object.entries(moveData)) {
+    if (value.id === id && value.rank === rank) {
+      const move = moveData[key]
+      if (!move) {
+        return null
+      }
+      const info = {
+        id: move.id,
+        move: move.move,
+        usage: move.usage,
+        rank: move.rank,
+      }
+      return info
+    }
+  }
+} 
 
 function cssVar(name) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim()
@@ -178,8 +204,8 @@ function BattleStats() {
 
   const [selectedColumn, setSelectedColumn] = useState(null)
   const [sortDirection, setSortDirection] = useState('ascending')
-  const headers = ['sprite', 'name', 'points', 'games', 'winrate', 'kills', 'deaths', 'diff', 'kpg', 'move', 'crit', 'dpg', 'dtpg', 'hpg', 'hit','switches']
-  const columnValues = { sprite: 'name', name: 'name', points: 'points', games: 'gamesPlayed', winrate: 'winrate', kills: 'kills', deaths: 'deaths', diff: 'diff', kpg: 'kpg', move: 'move', crit: 'crit', dpg: 'avg_damage', dtpg: 'avg_damage_taken', hpg: 'avg_healing', hit: 'hit_percent', switches: 'avg_switches' }
+  const headers = ['sprite', 'name', 'points', 'games', 'winrate', 'kills', 'deaths', 'diff', 'kpg', 'move', 'super', 'crit', 'dpg', 'dtpg', 'hpg', 'hit','switches']
+  const columnValues = { sprite: 'name', name: 'name', points: 'points', games: 'gamesPlayed', winrate: 'winrate', kills: 'kills', deaths: 'deaths', diff: 'diff', kpg: 'kpg', move: 'move', super: 'super_effective', crit: 'crit', dpg: 'avg_damage', dtpg: 'avg_damage_taken', hpg: 'avg_healing', hit: 'hit_percent', switches: 'avg_switches' }
 
   function handleSort(column) {
     const nextDirection = selectedColumn === column && sortDirection === 'descending'
@@ -255,6 +281,7 @@ function BattleStats() {
                       <td>{mon.diff}</td>
                       <td>{mon.kpg}</td>
                       <td>{mon.move}</td>
+                      <td>{mon.super_effective}</td>
                       <td>{mon.crit}</td>
                       <td>{mon.avg_damage}</td>
                       <td>{mon.avg_damage_taken}</td>
@@ -277,6 +304,10 @@ function MonLookup() {
   const [query, setQuery] = useState('')
   const info = getInfo(query)
   const stats = getStats(query)
+  const move1 = getMove(info?.dexNum, 1)
+  const move2 = getMove(info?.dexNum, 2)
+  const move3 = getMove(info?.dexNum, 3)
+  const move4 = getMove(info?.dexNum, 4)
   const chartRef = useRef(null)
 
   useEffect(() => {
@@ -396,12 +427,17 @@ function MonLookup() {
               ['Diff', stats?.diff],
               ['KPG', stats?.kpg],
               ['Move', stats?.move],
+              ['Super Effective', stats?.super_effective],
               ['Crit', stats?.crit],
               ['DPG', stats?.dpg],
               ['DTPG', stats?.dtpg],
               ['HPG', stats?.hpg],
               ['Hit', stats?.hit_percent],
               ['Switches', stats?.switches],
+              ['Move1', move1?.move],
+              ['Move2', move2?.move],
+              ['Move3', move3?.move],
+              ['Move4', move4?.move],
             ].map(([label, value]) => (
               <div className="stat-card" key={label}>
                 <div className="header-text">{label}</div>
