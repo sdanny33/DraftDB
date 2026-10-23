@@ -5,6 +5,7 @@ import './App.css'
 import { dex } from './js/pokedex'
 import { monData } from './js/mon-data'
 import { moveData } from './js/move-data'
+import { partnerData } from './js/partner-data'
 Chart.register(...registerables)
 Chart.defaults.font.family = "'Geist Pixel', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
 Chart.defaults.color = 'rgba(0, 0, 0, 0.6)'
@@ -91,6 +92,31 @@ function getStats(name) {
   }
   return stats
 }
+
+function getPartner(id, rank) {
+  if (!id) {
+    return null
+  }
+  if (!rank) {
+    return null
+  }
+
+  for (const [key, value] of Object.entries(partnerData)) {
+    if (value.id === id && value.rank === rank) {
+      const partner = partnerData[key]
+      if (!partner) {
+        return null
+      }
+      const info = {
+        id: partner.id,
+        partner: partner.partner,
+        usage: partner.usage,
+        rank: partner.rank,
+      }
+      return info
+    }
+  }
+} 
 
 function getMove(id, rank) {
   if (!id) {
@@ -204,7 +230,7 @@ function BattleStats() {
 
   const [selectedColumn, setSelectedColumn] = useState(null)
   const [sortDirection, setSortDirection] = useState('ascending')
-  const headers = ['sprite', 'name', 'points', 'games', 'winrate', 'kills', 'deaths', 'diff', 'kpg', 'move', 'super', 'crit', 'dpg', 'dtpg', 'hpg', 'hit','switches']
+  const headers = ['sprite', 'name', 'points', 'games', 'winrate', 'kills', 'deaths', 'diff', 'kpg', 'dpg', 'dtpg', 'hpg', 'hit','switches', 'move', 'super', 'resisted', 'crit']
   const columnValues = { sprite: 'name', name: 'name', points: 'points', games: 'gamesPlayed', winrate: 'winrate', kills: 'kills', deaths: 'deaths', diff: 'diff', kpg: 'kpg', move: 'move', super: 'super_effective', crit: 'crit', dpg: 'avg_damage', dtpg: 'avg_damage_taken', hpg: 'avg_healing', hit: 'hit_percent', switches: 'avg_switches' }
 
   function handleSort(column) {
@@ -280,14 +306,15 @@ function BattleStats() {
                       <td>{mon.deaths}</td>
                       <td>{mon.diff}</td>
                       <td>{mon.kpg}</td>
-                      <td>{mon.move}</td>
-                      <td>{mon.super_effective}</td>
-                      <td>{mon.crit}</td>
                       <td>{mon.avg_damage}</td>
                       <td>{mon.avg_damage_taken}</td>
                       <td>{mon.avg_healing}</td>
                       <td>{mon.hit_percent}</td>
                       <td>{mon.avg_switches}</td>
+                      <td>{mon.move}</td>
+                      <td>{mon.super_effective}</td>
+                      <td>{mon.resisted}</td>
+                      <td>{mon.crit}</td>
                     </tr>
                   )
                 })}
@@ -308,6 +335,11 @@ function MonLookup() {
   const move2 = getMove(info?.dexNum, 2)
   const move3 = getMove(info?.dexNum, 3)
   const move4 = getMove(info?.dexNum, 4)
+  const partner1 = getPartner(info?.dexNum, 1)
+  const partner2 = getPartner(info?.dexNum, 2)
+  const partner3 = getPartner(info?.dexNum, 3)
+  const partner4 = getPartner(info?.dexNum, 4)
+  const partner5 = getPartner(info?.dexNum, 5)
   const chartRef = useRef(null)
 
   useEffect(() => {
@@ -426,18 +458,24 @@ function MonLookup() {
               ['Deaths', stats?.deaths],
               ['Diff', stats?.diff],
               ['KPG', stats?.kpg],
-              ['Move', stats?.move],
-              ['Super Effective', stats?.super_effective],
-              ['Crit', stats?.crit],
               ['DPG', stats?.dpg],
               ['DTPG', stats?.dtpg],
               ['HPG', stats?.hpg],
-              ['Hit', stats?.hit_percent],
               ['Switches', stats?.switches],
+              ['Super Effective', stats?.super_effective],
+              ['Resisted', stats?.resisted],
+              ['Crit', stats?.crit],
+              ['Hit', stats?.hit_percent],
+              ['Move', stats?.move],
               ['Move1', move1?.move],
               ['Move2', move2?.move],
               ['Move3', move3?.move],
               ['Move4', move4?.move],
+              ['Partner1', partner1?.partner],
+              ['Partner2', partner2?.partner],
+              ['Partner3', partner3?.partner],
+              ['Partner4', partner4?.partner],
+              ['Partner5', partner5?.partner],
             ].map(([label, value]) => (
               <div className="stat-card" key={label}>
                 <div className="header-text">{label}</div>
