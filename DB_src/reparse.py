@@ -31,6 +31,17 @@ def reparse(start, end, start_from):
                     edge_file.write(url + "\n")
                     print(f"Edge found and saved: {url}")
 
+def passive_dmg(lines):
+    for line in lines:
+        if line.startswith("|-damage"):
+            parts = line.split("|")
+            nickname = parts[2]
+            hp_str = parts[3]
+            is_passive = any("[from]" in p for p in parts[4:])
+            if is_passive:
+                passive = parts[4].split("[from]")[1].strip()
+                print(f"Passive damage detected for {nickname}: {hp_str} due to {passive}")
+
 # create db helper functions
 
 def copy_stats(source_db, target_db):
@@ -125,3 +136,15 @@ def refresh(dbName):
     cursor.execute('ALTER TABLE mons_new RENAME TO mons')
     conn.commit()
     conn.close()
+
+def test():
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2692976374.json"
+    data = fetch_json(url)
+    lines = data["log"].splitlines()
+    passive_dmg(lines)
+
+def main():
+    test()
+
+if __name__ == "__main__":
+    main()
