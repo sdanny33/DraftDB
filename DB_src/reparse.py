@@ -1,4 +1,15 @@
-from parser import *
+import sqlite3
+from parser import (
+    teams,
+    nickname,
+    reset,
+    fetch_json,
+    actors,
+    _mon_for_nickname,
+    _rebuild_nickname_lookup,
+    players,
+)
+
 
 # parser helper functions
 
@@ -32,16 +43,104 @@ def reparse(start, end, start_from):
                     print(f"Edge found and saved: {url}")
 
 def passive_dmg(lines):
+    actor1 = None
+    actor2 = None
+    hazard_sources = {"p1": {}, "p2": {}}
+    status_sources = {}
+    passive_moves = {"Stealth Rock", "Spikes", "Toxic Spikes"}
+    passive_statuses = {"psn", "brn"}
+
+    def side_for(mon):
+        for side in ("p1", "p2"):
+            if mon in players[side]:
+                return side
+        return None
+
     for line in lines:
+        if line.startswith("|switch|"):
+            parts = line.split("|")
+            mon = _mon_for_nickname(parts[2])
+            if mon is not None and len(parts) > 4:
+                mon.set_current_hp(int(parts[4].split("/")[0]))
+
+        if line.startswith("|move|"):
+            parts = line.split("|")
+            actor1_name, actor2_name = actors(line)
+            actor1 = _mon_for_nickname(actor1_name)
+            actor2 = _mon_for_nickname(actor2_name)
+            move = parts[3].strip()
+            if actor1 is not None and move in passive_moves:
+                actor1.add_hazard(move)
+                side = side_for(actor1)
+                if side is not None:
+                    hazard_sources[side][move] = actor1
+        if line.startswith("|-status"):
+            parts = line.split("|")
+            target_nickname = parts[2]
+            target = _mon_for_nickname(target_nickname)
+            status = parts[3].strip()
+            if status == "tox":
+                status = "psn"
+            if target is not None:
+                target.set_status(status)
+            status_source = None
+            for part in parts[4:]:
+                if "[of]" in part:
+                    status_source = _mon_for_nickname(
+                        part.split("[of]", 1)[1].strip()
+                    )
+                    break
+            if status_source is None and actor1 is not None and actor1 is not target:
+                status_source = actor1
+            if status in passive_statuses and status_source is not None:
+                status_sources[target_nickname] = status_source
+            if actor1 is not None and target is not None:
+                actor1.add_hazard(status + "*" + target.name)
         if line.startswith("|-damage"):
             parts = line.split("|")
-            nickname = parts[2]
+            nickname_val = parts[2]
             hp_str = parts[3]
             is_passive = any("[from]" in p for p in parts[4:])
-            if is_passive:
-                passive = parts[4].split("[from]")[1].strip()
-                print(f"Passive damage detected for {nickname}: {hp_str} due to {passive}")
 
+            mon = _mon_for_nickname(nickname_val)
+            if mon is None:
+                continue
+
+            current_hp = 0 if "fnt" in hp_str else int(hp_str.split("/")[0])
+            damage = mon.get_current_hp() - current_hp
+            mon.set_current_hp(current_hp)
+
+            if is_passive and damage > 0:
+                passive = next(
+                    (part.split("[from]", 1)[1].strip()
+                     for part in parts[4:] if "[from]" in part),
+                    None,
+                )
+                if passive in passive_moves:
+                    target_side = side_for(mon)
+                    if target_side is not None:
+                        source_side = "p2" if target_side == "p1" else "p1"
+                        source = hazard_sources[source_side].get(passive)
+                        if source is not None:
+                            source.increment_passive_damage(damage)
+                elif passive in passive_statuses:
+                    source = status_sources.get(nickname_val)
+                    if source is not None:
+                        source.increment_passive_damage(damage)
+
+            if len(parts) > 5 and "[of]" in parts[5]:
+                actor = parts[5].split("[of]", 1)[1].strip()
+                mon2 = _mon_for_nickname(actor)
+                if mon2 is not None and damage > 0:
+                    mon2.increment_passive_damage(damage)
+
+        if line.startswith("|-heal|") or line.startswith("|-sethp|"):
+            parts = line.split("|")
+            mon = _mon_for_nickname(parts[2])
+            if mon is not None and len(parts) > 3 and "/" in parts[3]:
+                mon.set_current_hp(int(parts[3].split("/")[0]))
+
+    return players
 # create db helper functions
 
 def copy_stats(source_db, target_db):
@@ -138,10 +237,18 @@ def refresh(dbName):
     conn.close()
 
 def test():
-    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2692976374.json"
+    url = "https://replay.pokemonshowdown.com/gen9natdexdraft-2697965136.json"
     data = fetch_json(url)
     lines = data["log"].splitlines()
+
+    reset()
+    teams(lines)
+    nickname(lines)
+    _rebuild_nickname_lookup()
     passive_dmg(lines)
+    for side in ("p1", "p2"):
+        for mon in players[side]:
+            print(f"{mon.name}: Passive Damage = {mon.get_passive_damage()}")
 
 def main():
     test()

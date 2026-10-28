@@ -16,6 +16,7 @@ class Mon:
         self.wins = 0
         self.nickname = ""
         self.damage = 0
+        self.passive_damage = 0
         self.damage_taken = 0
         self.healing = 0
         self.switches = 0
@@ -30,6 +31,8 @@ class Mon:
         self.resisted = 0
         self.immune = 0
         self.crit = 0
+        self.status = ""
+        self.hazards = []
         self.item = ""
         self.ability = ""
         self.evs = {
@@ -84,6 +87,9 @@ class Mon:
     def increment_damage(self, damage):
         self.damage += damage
 
+    def increment_passive_damage(self, damage):
+        self.passive_damage += damage
+
     def increment_damage_taken(self, damage):
         self.damage_taken += damage
 
@@ -119,6 +125,12 @@ class Mon:
 
     def increment_active(self):
         self.active += 1
+
+    def set_status(self, status):
+        self.status = status
+
+    def add_hazard(self, hazard):
+        self.hazards.append(hazard)
 
     def set_name(self, name):
         self.name = name
@@ -222,6 +234,9 @@ class Mon:
 
     def set_valid(self, valid):
         self.valid = valid
+
+    def get_passive_damage(self):
+        return self.passive_damage
 
     def print_stats(self):
         print(f"{self.name}: {self.kills} kills, {self.deaths} deaths, {self.games_played} games played, {self.wins} wins, {self.damage} damage dealt, {self.damage_taken} damage taken, {self.heal} healing done, {self.switches} switches, {self.tera} tera, {self.hit} hits, {self.miss} misses, {self.super_effective} super effective hits, {self.resisted} resisted hits, {self.immune} immune hits, {self.crit} critical hits, {self.active} active turns")
