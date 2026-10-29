@@ -27,7 +27,7 @@ def scrape_all(fileName):
 def fetch_replay(replay_id):
     return f"https://replay.pokemonshowdown.com/{replay_id}.json"
 
-def scrape_time(fileName, startTime, endTime, workers=8):
+def scrape_time(fileName, startTime, endTime, workers=16):
     time = startTime
     with open(fileName, 'a', newline='') as file, ThreadPoolExecutor(max_workers=workers) as pool:
         writer = csv.writer(file)
@@ -70,7 +70,7 @@ def scrape_recent(fileName):
 
 def test():
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysOU.csv'
-    scrape_time(replay_csv_path, 1793290227, 1669329600)
+    scrape_time(replay_csv_path, 1766059348, 1669329600)
 
 def main():
     replay_csv_path = DB_ROOT / 'DB_CSV' / 'replaysDraftTest.csv'
